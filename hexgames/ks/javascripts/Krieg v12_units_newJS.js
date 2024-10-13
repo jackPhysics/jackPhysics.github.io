@@ -3,10 +3,11 @@ var tecAddress="charts/tec_krieg.html";
 var crtAddress="charts/crtTables/CRT table n"; //"charts/goa crt.htm";
 var crt2Address="charts/CRT_krieg2.html";//"charts/Kr CRT.pdf";
 var crt3Address="charts/Kr CRT d12 noC 2x2t1.html";
+var crtD6Address="charts/Kr CRT d6 yesC.html";
 var crt4Address="charts/Kr CRT d12 yesC 2x2t1.html";
-var crt5Address="charts/Kr CRT d12 yesC ExNadv.html";
+var crt5Address="charts/Kr CRT d12 yesC ExNOadv.html";
 var crt6Address="charts/Kr CRT d12 yesC steps 2x2t1.html";
-
+var crt7Address="charts/Kr CRT d12 yesC ExNadv.html";
 var reinfAddress="charts/d20.htm"//reinforcments
 var pbmAddress="charts/rallyCalculator.html"//PBM or spare
 var seqOfPlayAddress="rules/new turn sequence.txt"//seq of play

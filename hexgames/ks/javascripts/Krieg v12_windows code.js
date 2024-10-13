@@ -36,6 +36,12 @@ function crt5_window(){
 function crt6_window(){
 	crt=open(crt6Address, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
 }
+function crt7_window(){
+	crt=open(crt6Address, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
+}
+function crtD6_window(){
+	crt=open(crtD6Address, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
+}
 
 function crt_window(){
 	var crtNumb = Math.floor(Math.random()*18)+1;
@@ -64,6 +70,15 @@ function para_window(){
 }
 function d6_window(){
 	d6=open("charts/d6.html", "D6", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=250,height=200,left=400,top=200");
+}
+
+function d12_window(){
+	d12=open("charts/d12.html", "D12", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=250,height=200,left=370,top=170");
+
+}
+
+function d100_window(){
+	d100=open("charts/d100.html", "D100", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=250,height=200,left=370,top=170");
 
 }
 
@@ -86,13 +101,6 @@ function move2_window(){
 	move2=open("charts/movefactor2.html", "move2", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=300,height=300,left=420,top=220");
 
 }
-
-
-function d100_window(){
-	d100=open("charts/d100.html", "D100", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=250,height=200,left=370,top=170");
-
-}
-
 
 function tec_window(){
 	tec=open(tecAddress, "TEC", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=630,height=270,left=100,top=100");

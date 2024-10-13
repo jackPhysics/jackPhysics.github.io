@@ -5,7 +5,7 @@ var hopperHTMLcode = '<table class="mover" id="keyPressTable">'+
 '<td class="button"  width="20%" onclick="virtualKey(25)">G</td>'+
 '<td class="button"  width="20%" onclick="virtualKey(11)">^</td>'+
 '<td class="button" width="20%" onclick="virtualKey(44)">rR</td>'+
-'<td class="button6" rowspan=2 onclick="virtualKey(3)" id="diceResult">d6</td>'+
+'<td class="button6" rowspan=2 onclick="virtualKey(3)" id="diceResult">d12</td>'+
 '</tr></tr><tr>'+
 '<td class="button" onclick="virtualKey(24)">H</td>'+
 '<td class="button" onclick="virtualKey(13)">&lt;</td>'+
@@ -29,40 +29,40 @@ var hopperHTMLcode = '<table class="mover" id="keyPressTable">'+
 
 var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcolor="gray"><tr id="pbrow">'
 +'<td>&nbsp;&nbsp;<a href="javascript:crt2_window()">Matrix Kr CRT</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:crt3_window()"  id="btn5"  >Die-roll Kr CRT</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:crt3_window()"  id="btn5"  >D12 Kr CRT</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:crtD6_window()"  id="btn14"  >D6 Kr CRT</a></td>'
 +'<td>&nbsp;&nbsp;<a href="javascript:tec_window()"  id="btn14"  >Terrain Effects Chart</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:unmarkAll()"  id="btn11"  >unmark all units</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:stepOrPoints()"  id="btn21"  >now:lose STEPS</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:makeSmaller()"  id="btn61"  >ZOOM OUT</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:disruptionNumber()"  id="btn7"  >double D</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:RotSideA()"  id="btn31"  >Rotate R.</a></td>'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:makeSmaller()"  id="btn61"  >ZOOM OUT</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:stepOrPoints()"  id="btn21"  >now:lose STEPS</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:changeDice()"  id="btn612"  >now:choose d12</a></td>'
 +'</tr><tr id="aiwrow">'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:crt3_window()"  id="btn8"  >Die-roll Kr CRT noCh</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt4_window()"  id="btn9"  >Die-roll Kr CRT yesCh</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt_window()"  id="btn12"  >random CRT</a></td>'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:d6_window()"  id="btn6"  >Six Sided Die</a></td>'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:help_window()"  id="btn1"  >Help (key-codes)</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:makeBigger()"  id="btn13"  >ZOOM IN</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:showBoard()"  id="btn26"  >show board</a></td>'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:crt3_window()"  id="btn8"  >D12 Kr CRT noCh</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt4_window()"  id="btn9"  >D12 Kr CRT yesCh</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt_window()"  id="btn12"  >random D6 CRT</a></td>'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:d6_window()"  id="btn6"  >D6</a></td>'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:help_window()"  id="btn1"  >Help (key-codes)</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:makeBigger()"  id="btn13"  >ZOOM IN</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:disruptionNumber()"  id="btn7"  >double D</a></td>'
 +'<td>&nbsp;&nbsp;<a  class="" href="javascript:RotSideB()"  id="btn32"  >Rotate B.</a></td>'
 +'</tr><tr id="mcarow">'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt5_window()"  id="btn9"  >Die-roll Kr CRT Ex</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt6_window()"  id="btn9"  >Die-roll Kr CRT steps</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:rulesQuick_window()"  id="btn12"  >AH General</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:tec_window()"  id="btn14"  >Terrain Effects Chart</a></td>'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:pdfRules_window()"  id="btn8"  >Game 1 rules</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:rules_window()"  id="btn9"  >Advanced rules</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:rulesQuick_window()"  id="btn12"  >AH General</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="" href="javascript:RotSideB()"  id="btn32"  >Rotate B.</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt5_window()"  id="btn9"  >D12 Kr CRT Ex only</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt6_window()"  id="btn9"  >D12 Kr CRT steps</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt7_window()"  id="btn12"  >D12 Kr CRT Ex n Adv</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:d12_window()"  id="btn14"  >D12</a></td>'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:pdfRules_window()"  id="btn8"  >Game I rules</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:rules_window()"  id="btn9"  >Game II rules</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:showBoard()"  id="btn26"  >show board</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:RotSideA()"  id="btn31"  >Rotate R.</a></td>'
 +'</tr><tr id="mcarow">'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:reloadSetup()"  id="btn4"  >SETUP GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:getCookie()"  id="btn30"  >RELOAD GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:reloadReset()"  id="btn22"  >RESET GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:d100_window()"  id="btn17"  >D100</a></td>'
-+'<td>&nbsp;&nbsp;<a class="" href="javascript:victoryPoints()"  id="btn20"  >Victory Points</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:pieceShrink=2;changeSize()"  id="btn19"  >half size</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:zombies()"  id="btn27"  >zombies</a></td>'
-+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:changeDice()"  id="btn612"  >choose d6</a></td>'
++'<td>&nbsp;&nbsp;<a class="" href="javascript:victoryPoints()"  id="btn20"  >Victory Points</a></td>'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:pieceShrink=2;changeSize()"  id="btn19"  >half size</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:zombies()"  id="btn27"  >zombies</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btnxx"  >-</a></td>'
 +'</tr><tr id="mcarow">'
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:colorRed()"  id="btn23"  >Color Red</a></td>'
 +'<td>&nbsp;&nbsp;<a href="javascript:colorBlack()"  id="btn24"  >Color Black</a></td>'

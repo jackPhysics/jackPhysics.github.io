@@ -20,7 +20,7 @@ var unitColorSm = "";
 var textColorSm = "";
 var textColor2Sm = "";
 var boxColor = "";
-var changeColor = "#333333";//"#222222";
+var changeColor = "#333333";//redefined below in function
 var unitColor1 = "#77eeee";
 var unitColor2 = "#55cccc";
 var unitColor3 = "#118888";
@@ -76,10 +76,13 @@ function printUnit(n, b, t, id, c0){//n=number of image b=battalion number, t=To
    colorThisBT = "#ffffff";
   }
 
+  //somewhere else 'changeColor' is changed to #111111 but I can't find where
+  changeColor = "#333333";//"#222222";
 	unitColor2 = "#"+shiftColor(colorThis, changeColor, 'add');
 	unitColor1 = "#"+shiftColor(unitColor2, changeColor, 'add');
 	unitColor3 = "#"+shiftColor(colorThis, changeColor, 'sub');
 	unitColor4 = "#"+shiftColor(unitColor3, changeColor, 'sub');
+  //if(n==1){alert(""+changeColor+": "+unitColor1+" "+unitColor2+" "+unitColor3+" "+unitColor4)}
   //boxColor = "#"+flipColor(colorThis);
 
   //countOutUnits=n;

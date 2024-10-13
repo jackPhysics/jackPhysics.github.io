@@ -76,6 +76,8 @@ var exitA= new Array();
 var cityA= new Array();
 var unionVP=0;
 var rebelVP=0;
+var unionVP2=0;
+var rebelVP2=0;
 var turnLetter = "A";
 var turnNumber = 0; //this is the turn number
 var turnNumb=1; //this is what part of a turn we are in 1:A's turn 2:end of A's turn 3:B's turn 4:end of B's turn
@@ -134,7 +136,8 @@ var unhideInf = true;//whether unhiding inf unit (true) or art unit (false)
 var unhiddenNoA = new Array();
 var countIndividual = new Array();
 var hasSteps = new Array();
-var flipBrdFlag=1;
+var flipBrdFlag=0;
+var mirrorBrd=0;
 var redBoardsList = ["red original.png", "red ardennes.png",
 "red biglake.png", "red blank.png", "red board01.png",
 "red plains.png", "red lostcity.png", "Kr Red n12crop.png"];
@@ -148,6 +151,8 @@ var redBno = 1;//red boards are ODD
 var blackBno = 0;//black boards are EVEN
 var flipBrdNoR=0;
 var flipBrdNoB=0;
+var mirrBrdNoR=0;
+var mirrBrdNoB=0;
 var stepFlag = true;
 var redArmyNo = 0;
 var blackArmyNo = 0;
@@ -178,7 +183,7 @@ var blackColor = false;
 var initFlag = false;
 var brdNameB = "";
 var brdNameR = "";
-var chooseD6 = true;
+var chooseD6 = false;
 var printArmiesFlag = false;
 
 function init(){
@@ -204,10 +209,16 @@ function findNewBoard(bad)//board address
   var brdAddr=bad;
   var flipLetR = "up";
   var flipLetB = "up";
+  var mirrLetR = "L";
+  var mirrLetB = "L";
     if(brdAddr==1){//red board
       flipBrdNoR++;
       if(flipBrdNoR>1){
+      mirrBrdNoR++;
+      flipBrdNoR=0;}
+      if(mirrBrdNoR>1&&flipBrdNoR>1){
       flipBrdNoR=0;
+      mirrBrdNoR=0;
       redBno++;redBno++;
       if(redBno>boardMax){redBno=1;}}
     }
@@ -223,8 +234,10 @@ function findNewBoard(bad)//board address
 
     if(flipBrdNoR==1){flipLetR = "dn";}
     if(flipBrdNoB==1){flipLetB = "dn";}
-    document.getElementById('boardNameR').innerText="Red Board #"+redBno+flipLetR+"\n"+brdNameR;
-    document.getElementById('boardNameB').innerText="Black Board #"+blackBno+flipLetB+"\n"+brdNameB;
+    if(mirrBrdNoR==1){mirrLetR = "R";}
+    if(mirrBrdNoB==1){mirrLetB = "R";}
+    document.getElementById('boardNameR').innerText="Red XBoard #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR;
+    document.getElementById('boardNameB').innerText="Black Board #"+blackBno+flipLetB+mirrLetB+"\n"+brdNameB;
 /*
           var d1 = document.getElementById('board');
           d1.setAttribute("src", boardAddress);
@@ -286,33 +299,46 @@ function findNewBoard(bad)//board address
 
 function findNewBoard2(bad)//board address
 {
-//alert(""+blackBno);
-  var brdAddr=bad;
-  var flipLetR = "up";
-  var flipLetB = "up";
-    if(brdAddr%2==1){//red board
-      flipBrdNoR++;
-      if(flipBrdNoR>1){
-      flipBrdNoR=0;
-      redBno=brdAddr;
-      if(redBno>boardMax){redBno=1;}}
-    }
-    else if(brdAddr%2==0){//black board
-      flipBrdNoB++;
-      if(flipBrdNoB>1){
-      flipBrdNoB=0;
-      blackBno=brdAddr;
-      //alert(""+blackBno);
-      if(blackBno>boardMax){blackBno=0;}}
-    }
+      var brdAddr=bad;
+      var flipLetR = "up";
+      var flipLetB = "up";
+      var mirrLetR = "L";
+      var mirrLetB = "L";
+        if(brdAddr%2==1){//red board
+          flipBrdNoR++;
+          if(flipBrdNoR>1){
+          mirrBrdNoR++;
+          flipBrdNoR=0;
+          if(mirrBrdNoR>1){
+          mirrBrdNoR=0;}}
+          if(mirrBrdNoR>1&&flipBrdNoR>1){
+          flipBrdNoR=0;
+          mirrBrdNoR=0;
+          redBno++;redBno++;
+          if(redBno>boardMax){redBno=1;}}
+        }
+        else if(brdAddr%2==0){//black board
+          flipBrdNoB++;
+          if(flipBrdNoB>1){
+          mirrBrdNoB++;
+          flipBrdNoB=0;
+          if(mirrBrdNoB>1){
+          mirrBrdNoB=0;}}
+          if(mirrBrdNoB>1&&flipBrdNoB>1){
+          flipBrdNoB=0;
+          flipBrdNoB=0;
+          blackBno++;blackBno++;
+          if(blackBno>boardMax){blackBno=1;}}
+        }
 
-    initBoard();
+        initBoard();
 
-    if(flipBrdNoR==1){flipLetR = "dn";}
-    if(flipBrdNoB==1){flipLetB = "dn";}
-    document.getElementById('boardNameR').innerText="Red Board #"+redBno+flipLetR+"\n"+brdNameR;
-    document.getElementById('boardNameB').innerText="Black Board #"+blackBno+flipLetB+"\n"+brdNameB;
-
+        if(flipBrdNoR==1){flipLetR = "dn";}
+        if(flipBrdNoB==1){flipLetB = "dn";}
+        if(mirrBrdNoR==1){mirrLetR = "R";}
+        if(mirrBrdNoB==1){mirrLetB = "R";}
+        document.getElementById('boardNameR').innerText="Red XBoard #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR+" "+flipBrdNoR+mirrBrdNoR;
+        document.getElementById('boardNameB').innerText="Black Board #"+blackBno+flipLetB+mirrLetB+"\n"+brdNameB+" "+flipBrdNoR+mirrBrdNoR;
 }
 
 
