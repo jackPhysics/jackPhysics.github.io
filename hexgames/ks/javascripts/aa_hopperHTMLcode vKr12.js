@@ -1,4 +1,4 @@
-
+var printArmiesFlag = false;//needs to be defined here, too late in newJS module
 var hopperHTMLcode = '<table class="mover" id="keyPressTable">'+
 '<tr>'+
 '<td class="button"  width="20%" onclick="virtualKey(22)">rL</td>'+
