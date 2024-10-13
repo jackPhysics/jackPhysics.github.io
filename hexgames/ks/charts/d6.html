@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional"
+"http://www.w3.org/TR/html4/loose/dtd">
+<HTML>
+<HEAD>
+<TITLE>six sided die</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {background-image:url(tiles/paper.JPG); text-align:center; font-size:18pt};
+
+p { font-size:0.5in; };
+input {font-size:18pt}
+
+-->
+</STYLE>
+
+<script language="Javascript1.2">
+var dieInHand=1;
+
+function rollDie()
+{
+if(dieInHand==1){
+	var noPips=0;
+	noPips=Math.round(Math.random()*6+0.5);
+	document.all.result.innerText="You rolled " + noPips;
+	document.all.rollBtn.value="pick up d6";
+	dieInHand=0;
+	}
+else{
+	document.all.result.innerText="";
+	document.all.rollBtn.value="Roll d6";
+	dieInHand=1;}
+}
+
+	
+
+</script>
+
+</HEAD>
+<BODY>
+
+<input class="button" id="rollBtn" type="button" value="Roll d6" onClick="rollDie()"><br>
+<p class="result" id="result"></p>
+
+
+</BODY>
+</HTML>
