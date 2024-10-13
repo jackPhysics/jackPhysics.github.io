@@ -236,7 +236,7 @@ function findNewBoard(bad)//board address
     if(flipBrdNoB==1){flipLetB = "dn";}
     if(mirrBrdNoR==1){mirrLetR = "R";}
     if(mirrBrdNoB==1){mirrLetB = "R";}
-    document.getElementById('boardNameR').innerText="Red XBoard #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR;
+    document.getElementById('boardNameR').innerText="Red Board #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR;
     document.getElementById('boardNameB').innerText="Black Board #"+blackBno+flipLetB+mirrLetB+"\n"+brdNameB;
 /*
           var d1 = document.getElementById('board');
@@ -305,6 +305,7 @@ function findNewBoard2(bad)//board address
       var mirrLetR = "L";
       var mirrLetB = "L";
         if(brdAddr%2==1){//red board
+        redBno = bad;
           flipBrdNoR++;
           if(flipBrdNoR>1){
           mirrBrdNoR++;
@@ -314,10 +315,12 @@ function findNewBoard2(bad)//board address
           if(mirrBrdNoR>1&&flipBrdNoR>1){
           flipBrdNoR=0;
           mirrBrdNoR=0;
-          redBno++;redBno++;
-          if(redBno>boardMax){redBno=1;}}
+          //redBno++;redBno++;
+          //if(redBno>boardMax){redBno=1;}
+        }
         }
         else if(brdAddr%2==0){//black board
+        blackBno = bad;
           flipBrdNoB++;
           if(flipBrdNoB>1){
           mirrBrdNoB++;
@@ -327,8 +330,10 @@ function findNewBoard2(bad)//board address
           if(mirrBrdNoB>1&&flipBrdNoB>1){
           flipBrdNoB=0;
           flipBrdNoB=0;
-          blackBno++;blackBno++;
-          if(blackBno>boardMax){blackBno=1;}}
+          //blackBno = bad;
+          //blackBno++;blackBno++;
+          //if(blackBno>boardMax){blackBno=1;}
+        }
         }
 
         initBoard();
@@ -337,7 +342,7 @@ function findNewBoard2(bad)//board address
         if(flipBrdNoB==1){flipLetB = "dn";}
         if(mirrBrdNoR==1){mirrLetR = "R";}
         if(mirrBrdNoB==1){mirrLetB = "R";}
-        document.getElementById('boardNameR').innerText="Red XBoard #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR+" "+flipBrdNoR+mirrBrdNoR;
+        document.getElementById('boardNameR').innerText="Red Board #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR+" "+flipBrdNoR+mirrBrdNoR;
         document.getElementById('boardNameB').innerText="Black Board #"+blackBno+flipLetB+mirrLetB+"\n"+brdNameB+" "+flipBrdNoR+mirrBrdNoR;
 }
 
