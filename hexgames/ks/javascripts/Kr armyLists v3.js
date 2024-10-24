@@ -1,6 +1,6 @@
 
-var redArmyMax = 43;
-var blackArmyMax = 43;
+var redArmyMax = 46;
+var blackArmyMax = 46;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -15,7 +15,8 @@ var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democrac
 "Evergreen Even Eden", "Ochlocratic Order of Odd Overlords", "Silvery Moon Meritocracy",
 "Rainbow Warriors", "Synthetic Technocracy Spectrum of States", "Infantry-only Indigo Intellectuals",
 "Ivory Invisible Forces Intelligencia", "Firebrick Feudal Fallschirmjager",  "Maroon Great-Hate Mandate",
-"Golden Ground Troops Government in Exile", "Day-Glo Dukedom", "Countdown Country #2"]
+"Golden Ground Troops Government in Exile", "Day-Glo Dukedom", "Countdown Country #2",
+"Green Dream Planeteers", "Goldbrick Graduates of Greater Gondwanaland", "Silverbacked Statists"]
 
 function findArmies(){
 
@@ -1806,21 +1807,21 @@ var noOfSide = unitsQ.length/noOfItems;
 else if(changeRedFlag&&redArmyNo==42||changeBlackFlag&&blackArmyNo==42){
 var nameQ="Countdown Country #2";
 
-var qbase = ["#ffffff","#ffffff", "#ffffff"];
+var qbase = ["#fffffd","#fffffd", "#fffffd"];
 
 
 var unitsQ=[
-  "#ffffff/#000000/#ffffff/#000000","Artillery","8","1","n","art","10","1","xx",
-  "#ffffff/#000000/#ffffff/#000000","Mobile Artillery","8","1","n","spa","9","2","xx",
-  "#ffffff/#000000/#ffffff/#000000","Infantry","8","3","n","inf","8","3","xx",
-  "#ffffff/#000000/#ffffff/#000000","Airborne","9","2","n","para","7","4","xx",
-  "#ffffff/#000000/#ffffff/#000000","Special Forces","11","4","n","sf","6","5","xx",
-  "#ffffff/#000000/#ffffff/#000000","Mechanised","8","1","n","mech","5","6","xx",
-  "#ffffff/#000000/#ffffff/#000000","Armour","8","2","n","arm","4","7","xx",
-  "#ffffff/#000000/#ffffff/#000000","Cavalry","8","2","n","cav","3","8","xx",
-  "#ffffff/#000000/#ffffff/#000000","Armoured Cavalry","8","1","n","acav","2","9","xx",
-  "#ffffff/#000000/#ffffff/#000000","Recon","8","1","n","recon","1","10","xx",
-  "#ffffff/#000000/#ffffff/#000000","Supply","0","0","n","supply","0","10","xx"
+  "#fffffd/#000000/#ffffff/#000000","Artillery","8","1","n","art","10","1","xx",
+  "#fffffd/#000000/#ffffff/#000000","Mobile Artillery","8","1","n","spa","9","2","xx",
+  "#fffffd/#000000/#ffffff/#000000","Infantry","8","3","n","inf","8","3","xx",
+  "#fffffd/#000000/#ffffff/#000000","Airborne","9","2","n","para","7","4","xx",
+  "#fffffd/#000000/#ffffff/#000000","Special Forces","11","4","n","sf","6","5","xx",
+  "#fffffd/#000000/#ffffff/#000000","Mechanised","8","1","n","mech","5","6","xx",
+  "#fffffd/#000000/#ffffff/#000000","Armour","8","2","n","arm","4","7","xx",
+  "#fffffd/#000000/#ffffff/#000000","Cavalry","8","2","n","cav","3","8","xx",
+  "#fffffd/#000000/#ffffff/#000000","Armoured Cavalry","8","1","n","acav","2","9","xx",
+  "#fffffd/#000000/#ffffff/#000000","Recon","8","1","n","recon","1","10","xx",
+  "#fffffd/#000000/#ffffff/#000000","Supply","0","0","n","supply","0","10","xx"
 
 ];
 
@@ -1836,6 +1837,135 @@ var designateRQ=["1","2","3","4","5",
 "13","14","15","16","6", "17","18"
 ];
 
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==43||changeBlackFlag&&blackArmyNo==43){
+var nameQ="Green Dream Planeteers";
+
+var qbase = ["#4edf78","#4edf78", "#4edf78"];
+
+
+var unitsQ=[
+"#4edf78/#000000/#caef67/#000000","Mechanised","8","4","n","mech","6","5","xx",
+"#4edf78/#000000/#caef67/#000000","Armour","10","3","n","arm","7","6","xx",
+"#4edf78/#000000/#caef67/#000000","Special Forces","11","3","n","sf","7","4","xx",
+"#4edf78/#000000/#caef67/#000000","Airborne","5","3","n","para","4","3","xx",
+"#4edf78/#000000/#caef67/#000000","Motorised","4","5","n","motor","2","5","xx",
+"#4edf78/#000000/#caef67/#000000","Infantry","2","10","n","inf","2","3","xx",
+"#4edf78/#000000/#caef67/#000000","supply","0","0","n","supply","0","10","xx",
+
+
+];
+
+
+var designateLQ=["Jupiter", "Mars", "Venus", "Pluto", "Titan", "Uranus", "Mars",
+ "Mercury", "Pluto", "Jupiter", "Titan", "Saturn", "Uranus", "Mercury",
+ "Jupiter", "Titan", "Neptune", "Venus", "Mercury", "Moon", "Moon",
+ "Titan", "Titan", "Saturn", "Moon", "Neptune", "Mercury", "Titan"
+];
+
+var designateRQ=["1", "1", "1", "1", "1", "1", "2",
+ "1", "2", "2", "2","1", "2", "2",
+"3", "3", "1", "2", "4", "1", "2",
+ "4", "5", "1", "3", "2", "1", "6"
+];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==44||changeBlackFlag&&blackArmyNo==44){
+var nameQ="Goldbrick Graduates of Greater Gondwanaland";
+
+var qbase = ["#d39600","#d39600", "#d39600"];
+
+
+var unitsQ=[
+  "#d39600/#ffffff/#79a25e/#d39600","Tank Troops","11","4","n","arm","9","5","xx",
+  "#d39600/#ffffff/#79a25e/#d39600","Elite Troops","11","4","n","sf","5","6","xx",
+  "#d39600/#ffffff/#79a25e/#d39600","Para Troops","3","4","n","para","4","1","xx",
+  "#d39600/#ffffff/#79a25e/#d39600","Motorbike Troops","4","5","n","motor","1","6","xx",
+  "#d39600/#ffffff/#79a25e/#d39600","Regular Troops","3","10","n","inf","3","3","xx",
+  "#d39600/#ffffff/#79a25e/#d39600","supply","0","0","n","supply","0","10","xx",
+
+];
+
+
+var designateLQ=["Hell Yeah", "Hell Yeah", "Hell Yeah", "Hell Yeah",
+"Howzat", "Howzat","Howzat", "Howzat",
+ "Who Dat", "Who Dat","Who Dat", "Who Dat",
+  "Hell No", "Hell No", "Hell No", "Hell No", "Hell No",
+     "H-Force", "H-Force", "H-Force", "H-Force", "H-Force",
+     "Hazard", "Hazard", "Hazard", "Hazard", "Hazard"
+];
+
+//"Happenstance" , "Hardmen"
+
+var designateRQ=["1", "2", "3", "4",
+ "1", "2", "3", "4",
+  "1", "2", "3", "4",
+  "1", "2", "3", "4", "5",
+  "1", "2", "3", "4", "5",
+  "1", "2", "3", "4", "5",
+];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==45||changeBlackFlag&&blackArmyNo==45){
+var nameQ="Silverbacked Statists";
+
+var qbase = ["#d2d7cf","#d2d7cf", "#d2d7cf"];
+
+var unitsQ=[
+  "#d2d7cf/#000000/#523ad0/#d2d7cf","art","11","2","n","art","12","2","xx",
+  "#d2d7cf/#000000/#523ad0/#d2d7cf","arm","11","4","n","arm","9","5","xx",
+  "#d2d7cf/#000000/#523ad0/#d2d7cf","sf","10","2","n","sf","5","5","xx",
+  "#d2d7cf/#000000/#523ad0/#d2d7cf","para","4","4","n","para","4","2","xx",
+  "#d2d7cf/#000000/#523ad0/#d2d7cf","inf","3","8","n","inf","4","2","xx",
+  "#d2d7cf/#000000/#523ad0/#d2d7cf","inf","3","8","n","inf","3","3","xx",
+  "#d2d7cf/#000000/#523ad0/#d2d7cf","supply","0","0","n","supply","0","10","xx",
+];
+
+var designateLQ=["Omicron", "Xi", "Lambda", "Xi", "Xi", "Xi",
+ "Omicron", "Lambda", "Xi", "Xi", "Omicron", "Xi", "Xi", "Xi",
+  "Omicron", "Xi", "Lambda", "Omicron", "Lambda", "Omicron",
+   "Omicron", "Omicron", "Xi", "Lambda", "Lambda", "Xi", "Lambda",
+    "Xi",
+];
+
+var designateRQ=["1", "1", "1", "2", "3", "4",
+ "2", "2", "5", "6", "3", "7", "8",  "9",
+  "4", "10", "3", "5", "4", "6",
+   "7","8", "11", "5", "6", "12", "7",
+   "13"
+];
 
 var noOfSide = unitsQ.length/noOfItems;
   var sideQ=new Array();

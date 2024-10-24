@@ -335,12 +335,15 @@ var classType = classFactor;//unit number - out of all
                 ctx.beginPath();
                 ctx.lineWidth = "4";
                 ctx.strokeStyle = colorThisBT;
+                //ctx.moveTo(i2*unitSize+60+20, j2*unitSize+40+75);
+                //ctx.arcTo(i2*unitSize+60+30, j2*unitSize+40+50,i2*unitSize+60+40, j2*unitSize+40+70, 10);
+                //ctx.lineTo(i2*unitSize+60+40, j2*unitSize+40+70);
+                //ctx.arcTo(i2*unitSize+60+50, j2*unitSize+40+50,i2*unitSize+60+60, j2*unitSize+40+75, 10);
+                //ctx.lineTo(i2*unitSize+60+60, j2*unitSize+40+75);
                 ctx.moveTo(i2*unitSize+(60+20)*unitScale, j2*unitSize+(boxTop+boxHt-5)*unitScale);//+75
-                ctx.arcTo(i2*unitSize+(60+30)*unitScale, j2*unitSize+(boxTop+boxHt-18)*unitScale,i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt-10)*unitScale, boxHt/10*unitScale);
-                //+50  +70
+                ctx.arcTo(i2*unitSize+(60+30)*unitScale, j2*unitSize+(boxTop+boxHt-30)*unitScale,i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt-10)*unitScale, boxHt/8*unitScale);
                 ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt-10)*unitScale);//70
-                ctx.arcTo(i2*unitSize+(60+50)*unitScale, j2*unitSize+(boxTop+boxHt-20)*unitScale,i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt-5)*unitScale, boxHt/10*unitScale);
-                //+50  +75
+                ctx.arcTo(i2*unitSize+(60+50)*unitScale, j2*unitSize+(boxTop+boxHt-30)*unitScale,i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt-5)*unitScale, boxHt/8*unitScale);
                 ctx.lineTo(i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt-5)*unitScale);//+75
                 ctx.stroke();
                 ctx.closePath();
