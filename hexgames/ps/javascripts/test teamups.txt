@@ -1,0 +1,12 @@
+﻿PRESTAGS tests:
+
+BW v SD
+SK v BW
+LB v HC
+HA v HC
+HA v MC
+MC v HC
+LC v SK
+PP v AL
+EL v ?
+OC v BC
