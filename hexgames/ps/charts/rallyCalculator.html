@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Rout Table </TITLE>
+<STYLE type="text/css">
+<!--
+BODY {background-image:url(tiles/Grass2.jpg); text-align:left; font-size:10pt;color:brown};
+
+table {width:10cm}
+td.big {font-size:12pt}
+td.span {font-size:12pt; width:7.5cm; text-align:center}
+.inst {color:black};
+input.button {color:white; background-color:black};
+-->
+</STYLE>
+
+<script language="Javascript1.2">
+var rollChance=0;
+
+
+function fire()
+{
+if(document.all.fire.value=="Rally!"){
+	var noPips=0;
+	noPips=Math.ceil(Math.random()*100);
+	if(noPips<=rollChance){
+		message="Unit Rallied";}
+	else{message="Unit Destroyed";}
+	document.all.result.innerText="" + message;
+	document.all.fire.value="Result...";
+}
+else{
+	document.all.fire.value="Rally!";
+	document.all.result.innerText="";}
+}
+
+function calc(i){
+
+var attack=parseFloat(document.all.af.value);
+
+	step1=attack-1;
+	if(step1<0)step1=0;
+	if(step1>10)step1=9;
+	step2=step1*10;
+	rollChance=step2;
+	document.all.chance.innerText=step2+"%";
+	document.all.result.innerText="";
+  
+}
+
+
+	
+
+
+function restart(){
+	rollChance=0;
+	document.all.chance.innerText=rollChance+"%";
+	document.all.result.innerText="";
+	document.all.direct.style.backgroundColor="black";
+	document.all.af.value="";
+	
+}
+
+
+
+</script>
+
+</HEAD>
+<BODY>
+<table cellpadding="10">
+
+<tr align="center" style="background-color:orange">
+<td class="inst">distance from<br> nearest enemy--&gt;</td>
+<td><input type="text" id="af" size="5" style="font-size:14pt; text-align:center"></td>
+
+</tr>
+
+<tr align="center" style="background-color:white"><td>&nbsp;</td>
+<td>HEXES</td></tr>
+
+<tr align="center" style="background-color:orange"><td class="inst">press to...--&gt;</td>
+<td colspan="2"><input class="button" id="direct" type="button" value="...calculate" onClick="calc(1)"></td>
+</tr>
+
+<tr align="center" style="background-color:white"><td class="inst">chance of rally--&gt;</td>
+<td class="big" id="chance">0%</td></tr>
+
+<tr align="center" style="background-color:orange"><td class="inst">press to rally--&gt;</td>
+<td><input class="button" id="fire" type="button" value="Rally!" onClick="fire()"></td></tr>
+
+<tr align="center" style="background-color:white"><td class="inst">result --&gt;</td>
+<td>
+<table style="width:100%" ><tr align="center"><td class="big" id="result"></td></tr></table>
+</td>
+</tr>
+<tr align="center" style="background-color:white"><td class="inst">&nbsp;</td>
+<td><input class="button" id="clear" type="button" value="clear all" style="background-color:green" onClick="restart()"></td></tr>
+</table>
+
+</BODY>
+</HTML>

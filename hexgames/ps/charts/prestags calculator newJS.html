@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Prestags Combat Calculator</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {background-image:url(tiles/Grass2.jpg); text-align:left; font-size:14pt;color:black};
+
+table {width:100%}
+td.big {font-size:18pt}
+td.span {font-size:18pt; width:7.5cm; text-align:center}
+.inst {color:black};
+input.button {color:white; background-color:black};
+-->
+</STYLE>
+
+<script language="Javascript1.2">
+var hideFlag=0;
+var dFlag=0;
+var rollChance=0;
+var oldRealChance;
+var realChance=0;
+var longChance=0;
+var hideModifier=0;
+var dModifier=0;
+var expandFlag=0;
+var afModifier=0;
+var aFact=0;
+var dFact=0;
+var rFact=0;
+var aType="a";
+var dType="a";
+var indFire=false;
+//PRESTAGS CODE
+var AF=1;
+var DF=1;
+var odds=1;
+var oddsArePos=true;
+var defUnits=1;
+var noOfRolls=1;
+var noOfDs=0;
+var colorFlag=true;
+
+function fire()
+{
+if(document.getElementById("fire").value=="FIRE"){
+	var noPips=0;
+	noPips=Math.ceil(Math.random()*100);
+	if(noPips<=rollChance){
+		noPips=Math.ceil(Math.random()*100);
+		if(noPips<=rollChance){
+			noPips=Math.ceil(Math.random()*100);
+			if(noPips<=rollChance){
+				message="Defender Destroyed";
+				//if(indFire==true){message="Defender disrupted";}
+				if(indFire==true&dType=="n"){message="Defender disrupted";}
+			}
+			else{message="Defender double disrupted";
+				//if(indFire==true){message="Defender disrupted";}
+				if(indFire==true&dType=="n"){message="Defender disrupted";}
+			}
+		}
+		else{message="Defender disrupted";}
+	}
+	else{message="No Effect on Defender";}
+	document.getElementById("result").innerHTML="" + message;
+	document.getElementById("fire").value="BRAKA!BRAKA!";
+}
+else{
+	document.getElementById("fire").value="FIRE";
+	document.getElementById("result").innerHTML="";}
+
+}
+
+function calc(i){
+
+indFire=false;
+document.getElementById("radioArm").innerHTML="Armoured";
+document.getElementById("radioNotArm").innerHTML="Non-armoured";
+
+if(i==0){indFire=true;
+	document.getElementById("radioArm").innerHTML="3 hex";
+	document.getElementById("radioNotArm").innerHTML="1 hex";}
+
+if(i==1){
+	document.getElementById("direct").style.backgroundColor="yellow";
+	document.getElementById("cat").style.backgroundColor="white";
+	document.getElementById("over").style.backgroundColor="white";
+	document.getElementById("indf").style.backgroundColor="white";
+	}
+else if(i==2){
+	document.getElementById("cat").style.backgroundColor="yellow";
+	document.getElementById("direct").style.backgroundColor="white";
+	document.getElementById("over").style.backgroundColor="white";
+	document.getElementById("indf").style.backgroundColor="white";
+	}
+else if(i==0){
+	document.getElementById("indf").style.backgroundColor="yellow";
+	document.getElementById("direct").style.backgroundColor="white";
+	document.getElementById("over").style.backgroundColor="white";
+	document.getElementById("cat").style.backgroundColor="white";
+	}
+else {
+	document.getElementById("over").style.backgroundColor="yellow";
+	document.getElementById("direct").style.backgroundColor="white";
+	document.getElementById("cat").style.backgroundColor="white";
+	document.getElementById("indf").style.backgroundColor="white";
+	}
+
+if(i==0){
+	if(dType=="a"){document.getElementById("df").value=19;}
+	else if(dType=="n"){document.getElementById("df").value=19;}
+	}
+var attack=parseFloat(document.getElementById("af").value);
+aFact=attack;
+var defence=parseFloat(document.getElementById("df").value);
+dFact=defence;
+rFact=parseFloat(document.getElementById("range").value);
+if(i==1){
+	WEC(aType, dType, rFact);}
+else{afModifier=1;}
+if(i==3&aType=="i"&dType=="a"){afModifier=0;}
+attack=attack*afModifier;
+if(4*attack<defence){
+	step6=0;
+	rollChance=0;
+	realChance=0;
+	hideModifier=0;
+	dModifier=1;
+	document.getElementById("chance").innerHTML=step6+"%";
+	} //zero chance
+else{
+	if(i>1){ //if cat or over
+	stepA=2*attack;
+	if(stepA>=defence){attack=attack+defence;}
+	else{defence=defence-attack;}
+	}
+	if(i>2){ //if over
+	stepA=2*attack;
+	if(stepA>=defence){attack=attack+defence;}
+	else{
+		if(2*stepA>=defence){attack=attack+defence/2;}
+		else{defence=defence-attack;}}
+	}
+	step1=attack/defence;
+	step2=Math.pow(0.5, step1);
+	step3=step2*(-1);
+	step4=step3+1;
+	step5=step4*100;
+	step6=Math.floor(step5);
+	oldRealChance=step6;
+	if(hideFlag==1){step6=step6-15;
+			hideModifier=1;}
+	if(hideFlag==2){step6=step6-30;
+			hideModifier=2;}
+	if(hideFlag==0){step6=step6;
+			hideModifier=0;}
+	if(dFlag==1){step6=step6+10;
+			dModifier=1;}
+	rollChance=step6;
+	realChance=rollChance;
+	document.getElementById("chance").innerHTML=step6+"%";
+	document.getElementById("result").innerHTML="";
+   }
+}
+
+function dummy(){
+alert("hidden pressed");}
+
+function woods(){
+//alert("hidden2 pressed");
+	if(hideFlag==0){
+		hideFlag=1;
+		document.getElementById("hidden").style.backgroundColor="yellow";
+		document.getElementById("hidden").value="wood!";
+		realChance=realChance-15;
+		rollChance=realChance;
+		if(rollChance<0){rollChance=0;}
+		document.getElementById("chance").innerHTML=rollChance+"%";
+		hideModifier=1;}
+	else if(hideFlag==1){
+		hideFlag=2;
+		document.getElementById("hidden").style.backgroundColor="yellow";
+		document.getElementById("hidden").value="town!";
+		realChance=realChance-15;
+		rollChance=realChance;
+		if(rollChance<0){rollChance=0;}
+		document.getElementById("chance").innerHTML=rollChance+"%";
+		hideModifier=2;}
+	else{hideFlag=0;
+		document.getElementById("hidden").style.backgroundColor="yellow";
+		document.getElementById("hidden").value="hidden?";
+		if(hideModifier==2){
+		realChance=realChance+30;
+		rollChance=realChance;
+		if(rollChance>99){rollChance=99;}
+		document.getElementById("chance").innerHTML=rollChance+"%";
+		hideModifier=0;}
+	}
+}
+
+function disr(){
+
+	if(dFlag!=1){
+		dFlag=1;
+		document.getElementById("disr").style.backgroundColor="yellow";
+		document.getElementById("disr").value="Disrupted!";
+		if(dModifier==0){
+		realChance=realChance+10;
+		rollChance=realChance;
+		if(rollChance>99){rollChance=99;}
+		document.getElementById("chance").innerHTML=rollChance+"%";
+		dModifier=1;}
+	}
+	else{dFlag=0;
+		document.getElementById("disr").style.backgroundColor="yellow";
+		document.getElementById("disr").value="Disrupted?";
+		if(dModifier==1){
+		realChance=realChance-10;
+		rollChance=realChance;
+		if(rollChance<0){rollChance=0;}
+		document.getElementById("chance").innerHTML=rollChance+"%";
+		dModifier=0;}
+	}
+}
+
+function restart(){
+	hideFlag=0;
+	dFlag=0;
+	rollChance=0;
+	realChance=0;
+	longChance=0;
+	hideModifier=0;
+	expandFlag=0;
+	dModifier=0;
+	document.getElementById("chance").innerHTML="";
+	document.getElementById("hidden").style.backgroundColor="white";
+	document.getElementById("hidden").value="hidden?";
+	document.getElementById("disr").style.backgroundColor="white";
+	document.getElementById("over").style.backgroundColor="white";
+	document.getElementById("direct").style.backgroundColor="white";
+	document.getElementById("cat").style.backgroundColor="white";
+	document.getElementById("af").value="";
+	document.getElementById("df").value="";
+	document.getElementById("range").value="1";
+	document.getElementById("result").value="";
+}
+
+function expand(){
+
+	if(expandFlag!=1){
+		rollC1=rollChance;
+		rollC2=Math.round(rollC1*rollC1/100);
+		rollC3=Math.round(rollC2*rollC1/100);
+		document.getElementById("chance").innerHTML=rollC1+"/"+rollC2+"/"+rollC3+"%";
+		expandFlag=1;
+	}
+	else{
+		document.getElementById("chance").innerHTML=rollChance+"%";
+		expandFlag=0;
+	}
+
+
+}
+
+function radioHandler(i){
+
+	if(i==1){
+		document.getElementById("aradio").checked=true;
+		document.getElementById("iradio").checked=false;
+		document.getElementById("hradio").checked=false;
+		document.getElementById("mradio").checked=false;
+		aType="a";}
+	else if(i==2){
+		document.getElementById("aradio").checked=false;
+		document.getElementById("iradio").checked=true;
+		document.getElementById("hradio").checked=false;
+		document.getElementById("mradio").checked=false;
+		aType="i";}
+	else if(i==3){
+		document.getElementById("aradio").checked=false;
+		document.getElementById("iradio").checked=false;
+		document.getElementById("hradio").checked=true;
+		document.getElementById("mradio").checked=false;
+		aType="h";}
+	else if(i==4){
+		document.getElementById("aradio").checked=false;
+		document.getElementById("iradio").checked=false;
+		document.getElementById("hradio").checked=false;
+		document.getElementById("mradio").checked=true;
+		aType="b";}
+	else if(i==5){
+		document.getElementById("Darmour").checked=true;
+		document.getElementById("Dnonarm").checked=false;
+		dType="a";
+		if(indFire==true){document.getElementById("df").value=30;}
+	}
+	else if(i==6){
+		document.getElementById("Darmour").checked=false;
+		document.getElementById("Dnonarm").checked=true;
+		dType="n";
+		if(indFire==true){document.getElementById("df").value=10;}
+	}
+
+document.getElementById("chance").innerHTML="";
+document.getElementById("result").innerHTML="";
+document.getElementById("over").style.backgroundColor="white";
+document.getElementById("direct").style.backgroundColor="white";
+document.getElementById("cat").style.backgroundColor="white";
+}
+
+function WEC(a, d, r){
+if(a=="a"){
+	if(d=="a"){
+		if(r<3){afModifier=2;}
+		else if(r<6){afModifier=1;}
+		else{afModifier=0.5;}
+		}
+	else{//if non-a
+		if(r<3){afModifier=0.5;}
+		else{afModifier=0.25;}
+		}
+	}
+else if(a=="i"){
+	if(d=="a"){
+		if(r<3){afModifier=0;}
+		else if(r<6){afModifier=0;}
+		else{afModifier=0;}
+		}
+	else{//if non-a
+		if(r<3){afModifier=1;}
+		else{afModifier=0.5;}
+		}
+	}
+else{
+	if(d=="a"){
+		if(r<3){afModifier=1;}
+		else if(r<6){afModifier=0.5;}
+		else{afModifier=0.5;}
+		}
+	else{//if non-a
+		if(r<3){afModifier=1;}
+		else{afModifier=1;}
+	//if you want H and M doubled vs non-a (AIW perhaps) use lines below...
+		/*if(r<3){afModifier=2;}
+		else{afModifier=2;}*/
+		}
+	}
+
+}
+
+function attack(){
+var attack=parseFloat(document.getElementById("af").value);
+AF=attack;
+var defence=parseFloat(document.getElementById("df").value);
+DF=defence;
+defUnits=parseFloat(document.getElementById("range").value);
+if(AF>DF){
+	oddsArePos=true;
+	odds=Math.floor(AF/DF);
+}
+else{
+	oddsArePos=false;
+	odds=Math.ceil(DF/AF);
+}
+noOfDs=0;
+	for(j=0;j<defUnits;j++){
+if(oddsArePos){
+	for(i=0;i<odds;i++){
+		if(Math.random()<0.501){
+			noOfDs++;
+		}
+	}
+}
+else{
+	var hit=true;
+	for(i=0;i<odds;i++){
+		if(Math.random()<0.501){
+		}
+		else{
+			hit=false;
+		}
+	}
+	if(hit){
+		noOfDs++;
+	}
+}
+}
+if(colorFlag){
+document.getElementById("result").style.color="green";
+colorFlag=false;}
+else{
+document.getElementById("result").style.color="red";
+colorFlag=true;}
+if(oddsArePos){
+	document.getElementById("result").innerHTML=""+odds+"-1: "+noOfDs+"Ds";
+}
+else{
+	document.getElementById("result").innerHTML="1-"+odds+": "+noOfDs+"Ds";
+}
+
+}
+
+</script>
+
+</HEAD>
+<BODY>
+<table cellpadding="10" width="100%">
+
+<tr align="center" style="background-color:orange">
+<td>AF:<input type="text" id="af" size="5" style="font-size:14pt; text-align:center"></td>
+<td>No of def:<input type="text" id="range" size="5" style="font-size:14pt; text-align:center" value="1"></td>
+</tr>
+
+<tr align="center" style="background-color:silver">
+<td>DF:<input type="text" id="df" size="5" style="font-size:14pt; text-align:center"></td>
+<td><input class="button" id="cat" type="button" value="Attack" onClick="attack()"></td>
+</tr>
+
+<tr align="center" style="background-color:white"><td class="inst">result of attack--&gt;</td>
+<td colspan="2">
+<table style="width:100%" ><tr align="center"><td class="big" id="result" style="color:red"></td></tr></table>
+</td><td>&nbsp;</td>
+</tr>
+
+</table>
+
+</BODY>
+</HTML>
