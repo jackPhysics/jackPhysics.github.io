@@ -20,7 +20,7 @@ var unitColorSm = "";
 var textColorSm = "";
 var textColor2Sm = "";
 var boxColor = "";
-var changeColor = "#333333";//redefined below in function
+var changeColor = "#333333";//"#333333";//"#222222";
 var unitColor1 = "#77eeee";
 var unitColor2 = "#55cccc";
 var unitColor3 = "#118888";
@@ -76,13 +76,11 @@ function printUnit(n, b, t, id, c0){//n=number of image b=battalion number, t=To
    colorThisBT = "#ffffff";
   }
 
-  //somewhere else 'changeColor' is changed to #111111 but I can't find where
-  changeColor = "#333333";//"#222222";
 	unitColor2 = "#"+shiftColor(colorThis, changeColor, 'add');
 	unitColor1 = "#"+shiftColor(unitColor2, changeColor, 'add');
 	unitColor3 = "#"+shiftColor(colorThis, changeColor, 'sub');
 	unitColor4 = "#"+shiftColor(unitColor3, changeColor, 'sub');
-  //if(n==1){alert(""+changeColor+": "+unitColor1+" "+unitColor2+" "+unitColor3+" "+unitColor4)}
+  //if(n==1){alert(""+unitColor1+" "+unitColor2+" "+unitColor3+" "+unitColor4)}
   //boxColor = "#"+flipColor(colorThis);
 
   //countOutUnits=n;
@@ -199,12 +197,11 @@ var classType = classFactor;//unit number - out of all
         ctx.textAlign = "left";
         ctx.textBaseline = "bottom";
         ctx.lineWidth = "2";
-        if(cmbtFactorsMaxA[noOfImgPrnt]>0){
-        ctx.fillText(""+cmbtFactorsMaxA[noOfImgPrnt],i2*unitSize+edgeSize*1*unitScale,j2*unitSize+(unitSize-edgeSize*0.9)*unitScale);}//25   35
-        else if(unitsA[whatType*noOfItems+5]=="air"){
-        ctx.fillText("",i2*unitSize+edgeSize*1*unitScale,j2*unitSize+(unitSize-edgeSize*0.9)*unitScale);}
-        else{
-        ctx.fillText("",i2*unitSize+edgeSize*1*unitScale,j2*unitSize+(unitSize-edgeSize*0.9)*unitScale);}
+      //  if(cmbtFactorsMaxA[noOfImgPrnt]>0){
+      //  ctx.fillText(""+cmbtFactorsMaxA[noOfImgPrnt],i2*unitSize+edgeSize*1*unitScale,j2*unitSize+(unitSize-edgeSize*0.9)*unitScale);}//25   35
+      //  else{
+        ctx.fillText("",i2*unitSize+edgeSize*1*unitScale,j2*unitSize+(unitSize-edgeSize*0.9)*unitScale);
+      //}
 
   //if(countOutUnits>loopNoXtra){break;}
 
@@ -337,15 +334,15 @@ var classType = classFactor;//unit number - out of all
                 ctx.beginPath();
                 ctx.lineWidth = "4";
                 ctx.strokeStyle = colorThisBT;
-                //ctx.moveTo(i2*unitSize+60+20, j2*unitSize+40+75);
-                //ctx.arcTo(i2*unitSize+60+30, j2*unitSize+40+50,i2*unitSize+60+40, j2*unitSize+40+70, 10);
-                //ctx.lineTo(i2*unitSize+60+40, j2*unitSize+40+70);
-                //ctx.arcTo(i2*unitSize+60+50, j2*unitSize+40+50,i2*unitSize+60+60, j2*unitSize+40+75, 10);
-                //ctx.lineTo(i2*unitSize+60+60, j2*unitSize+40+75);
                 ctx.moveTo(i2*unitSize+(60+20)*unitScale, j2*unitSize+(boxTop+boxHt-5)*unitScale);//+75
-                ctx.arcTo(i2*unitSize+(60+30)*unitScale, j2*unitSize+(boxTop+boxHt-30)*unitScale,i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt-10)*unitScale, boxHt/8*unitScale);
-                ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt-10)*unitScale);//70
-                ctx.arcTo(i2*unitSize+(60+50)*unitScale, j2*unitSize+(boxTop+boxHt-30)*unitScale,i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt-5)*unitScale, boxHt/8*unitScale);
+                ctx.arcTo(i2*unitSize+(60+30)*unitScale, j2*unitSize+(boxTop+boxHt-18)*unitScale,i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt-10)*unitScale, boxHt/10*unitScale);
+                //                                                                -15
+                //+50  +70
+                ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt-7)*unitScale);//70
+                //                                                                 -10
+                ctx.arcTo(i2*unitSize+(60+50)*unitScale, j2*unitSize+(boxTop+boxHt-20)*unitScale,i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt-10)*unitScale, boxHt/10*unitScale);
+                //                                                                                                                                       -5
+                //+50  +75
                 ctx.lineTo(i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt-5)*unitScale);//+75
                 ctx.stroke();
                 ctx.closePath();
@@ -520,37 +517,6 @@ var classType = classFactor;//unit number - out of all
                               ctx.stroke();
                               ctx.closePath();
                           }
-                                 //guard
-                                      if(unitsA[whatType*noOfItems+5]=="guard"){
-                                          ctx.beginPath();
-                                          ctx.lineWidth = "4";
-                                          ctx.fillStyle = colorThisBT;
-                                          ctx.moveTo(i2*unitSize+60+40, j2*unitSize+boxTop+10);
-                                          ctx.arcTo(i2*unitSize+60+45, j2*unitSize+boxTop+15,i2*unitSize+60+55, j2*unitSize+boxTop+10, 10);
-                                          ctx.lineTo(i2*unitSize+60+55, j2*unitSize+boxTop+10);
-                                          ctx.arcTo(i2*unitSize+60+65, j2*unitSize+boxTop+30,i2*unitSize+60+40, j2*unitSize+boxTop+55, 20);
-                                          ctx.lineTo(i2*unitSize+60+40, j2*unitSize+boxTop+55);
-                                          ctx.lineTo(i2*unitSize+60+40, j2*unitSize+boxTop+10);
-                                          ctx.fill();
-                                          ctx.closePath();ctx.beginPath();
-                                          ctx.moveTo(i2*unitSize+60+40, j2*unitSize+boxTop+10);
-                                          ctx.arcTo(i2*unitSize+60+35, j2*unitSize+boxTop+15,i2*unitSize+60+25, j2*unitSize+boxTop+10, 10);
-                                          ctx.lineTo(i2*unitSize+60+25, j2*unitSize+boxTop+10);
-                                          ctx.arcTo(i2*unitSize+60+15, j2*unitSize+boxTop+30,i2*unitSize+60+40, j2*unitSize+boxTop+55, 20);
-                                          ctx.lineTo(i2*unitSize+60+40, j2*unitSize+boxTop+55);
-                                          ctx.lineTo(i2*unitSize+60+40, j2*unitSize+boxTop+10);
-                                          ctx.fill();
-                                          ctx.closePath();
-                                            ctx.beginPath();
-                                            ctx.lineWidth = "3";
-                                            ctx.font = "bold 16px Arial";
-                                            ctx.fillStyle = boxColor;
-                                            ctx.textAlign = "center";
-                                            ctx.textBaseline = "middle";
-                                            ctx.fillText("GUARD",i2*unitSize+(60+40), j2*unitSize+(boxTop+30), 40);
-                                            ctx.stroke();
-                                            ctx.closePath();
-                                      }
 
              //supply
             if(unitsA[whatType*noOfItems+5]=="supply"){
@@ -569,6 +535,38 @@ var classType = classFactor;//unit number - out of all
               ctx.stroke();
               ctx.closePath();
             }
+                 //guard
+                        if(unitsA[whatType*noOfItems+5]=="guard"){
+                            ctx.beginPath();
+                            ctx.lineWidth = "4";
+                            ctx.fillStyle = colorThisBT;
+                            ctx.moveTo(i2*unitSize+60+40, j2*unitSize+boxTop+10);
+                            ctx.arcTo(i2*unitSize+60+45, j2*unitSize+boxTop+15,i2*unitSize+60+55, j2*unitSize+boxTop+10, 10);
+                            ctx.lineTo(i2*unitSize+60+55, j2*unitSize+boxTop+10);
+                            ctx.arcTo(i2*unitSize+60+65, j2*unitSize+boxTop+30,i2*unitSize+60+40, j2*unitSize+boxTop+55, 20);
+                            ctx.lineTo(i2*unitSize+60+40, j2*unitSize+boxTop+55);
+                            ctx.lineTo(i2*unitSize+60+40, j2*unitSize+boxTop+10);
+                            ctx.fill();
+                            ctx.closePath();ctx.beginPath();
+                            ctx.moveTo(i2*unitSize+60+40, j2*unitSize+boxTop+10);
+                            ctx.arcTo(i2*unitSize+60+35, j2*unitSize+boxTop+15,i2*unitSize+60+25, j2*unitSize+boxTop+10, 10);
+                            ctx.lineTo(i2*unitSize+60+25, j2*unitSize+boxTop+10);
+                            ctx.arcTo(i2*unitSize+60+15, j2*unitSize+boxTop+30,i2*unitSize+60+40, j2*unitSize+boxTop+55, 20);
+                            ctx.lineTo(i2*unitSize+60+40, j2*unitSize+boxTop+55);
+                            ctx.lineTo(i2*unitSize+60+40, j2*unitSize+boxTop+10);
+                            ctx.fill();
+                            ctx.closePath();
+                              ctx.beginPath();
+                              ctx.lineWidth = "3";
+                              ctx.font = "bold 16px Arial";
+                              ctx.fillStyle = boxColor;
+                              ctx.textAlign = "center";
+                              ctx.textBaseline = "middle";
+                              ctx.fillText("GUARD",i2*unitSize+(60+40), j2*unitSize+(boxTop+30), 40);
+                              ctx.stroke();
+                              ctx.closePath();
+                        }
+
              //HQ
             if(unitsA[whatType*noOfItems+5]=="hq"){
               ctx.beginPath();
@@ -731,10 +729,8 @@ var classType = classFactor;//unit number - out of all
     ctx.fillStyle = textColorThis;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        if(unitsA[whatType*noOfItems+5]!="air"){
-        ctx.fillText(""+cmbtFactorsA[noOfImgPrnt]+"-"+unitsA[whatType*noOfItems+7],i2*unitSize+100*unitScale,j2*unitSize+155*unitScale);}
-        else{
-        ctx.fillText(""+cmbtFactorsA[noOfImgPrnt],i2*unitSize+100*unitScale,j2*unitSize+155*unitScale);
+        if(unitsA[whatType*noOfItems+5]!="blank"){
+        ctx.fillText(""+cmbtFactorsA[noOfImgPrnt]+"-"+unitsA[whatType*noOfItems+7],i2*unitSize+100*unitScale,j2*unitSize+155*unitScale);
         }
         //countOutUnits++;
         //if(countOutUnits>loopNoXtra){break;}
@@ -751,7 +747,7 @@ var classType = classFactor;//unit number - out of all
         	  ctx.textAlign = "center";
         	  ctx.textBaseline = "middle";
           	ctx.lineWidth = "2";
-        	  ctx.fillText(""+designateLA[noOfImgPrnt],i2*unitSize+20*unitScale,j2*unitSize+unitSize/4.5*unitScale, 110);//, 30
+        	  ctx.fillText(""+designateLA[noOfImgPrnt],i2*unitSize+20*unitScale,j2*unitSize+unitSize/4.5*unitScale, 120);//, 30
             ctx.translate(50, 50);
             ctx.rotate(Math.PI/2);
             ctx.translate(-50, -50);
@@ -766,7 +762,7 @@ var classType = classFactor;//unit number - out of all
             ctx.fillStyle = textColorThis;
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
-            ctx.fillText(""+designateRA[noOfImgPrnt],i2*unitSize+220*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 70);
+            ctx.fillText(""+designateRA[noOfImgPrnt],i2*unitSize+220*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 110);
             ctx.translate(150, 150);
             ctx.rotate(Math.PI/2);
             ctx.translate(-150, -150);
@@ -981,4 +977,13 @@ function printUnitBlank(n, b, t, id, c0){//n=number of image b=battalion number,
 					//ctx.stroke();
 					ctx.fill();
 
+
+          //**unit box
+        ctx.fillStyle = boxColor;//boxColor;
+        ctx.fillRect(i2*unitSize+60*unitScale, j2*unitSize+boxTop*unitScale, 80*unitScale, boxHt*unitScale);
+        ctx.beginPath();
+          ctx.lineWidth = "4";
+        ctx.strokeStyle =colorThisBT;
+        ctx.rect(i2*unitSize+60*unitScale, j2*unitSize+boxTop*unitScale, 80*unitScale, boxHt*unitScale);
+        ctx.stroke();
 }

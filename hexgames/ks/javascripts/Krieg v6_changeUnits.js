@@ -40,8 +40,10 @@ function upStep(id){
 function dropPoints(id){
   var noToDrop = id;
   cmbtFactorsA[noToDrop]--;
-  if(cmbtFactorsA[noToDrop]<1){cmbtFactorsA[noToDrop]=1;}
-  imageArray[noToDrop].setAttribute("title", "#"+(noToDrop+1)+": "+cmbtFactorsA[noToDrop]+"-"+unitsA[thisIsA[noToDrop]*noOfItems+7]+" "+unitsA[thisIsA[noToDrop]*noOfItems+3]+"pts ("+(typeNumbA[noToDrop])+"/"+typeTotalA[noToDrop]+")");
+  if(cmbtFactorsA[noToDrop]<1&&armourA[noToDrop]!="a"){cmbtFactorsA[noToDrop]=1;}
+  else if(cmbtFactorsA[noToDrop]<0){cmbtFactorsA[noToDrop]=0;}
+  imageArray[noToDrop].setAttribute("title", "#"+(noToDrop+1)+": "+unitsA[thisIsA[noToDrop]*noOfItems+1]+" "+designateLA[noToDrop]+"/"+designateRA[noToDrop]+" "+cmbtFactorsA[noToDrop]+"-"+unitsA[thisIsA[noToDrop]*noOfItems+7]+" (pts:"+unitsA[thisIsA[noToDrop]*noOfItems+2]+") ("+(typeNumbA[noToDrop])+"/"+typeTotalA[noToDrop]+")");
+  //imageArray[noToDrop].setAttribute("title", "#"+(noToDrop+1)+": "+cmbtFactorsA[noToDrop]+"-"+unitsA[thisIsA[noToDrop]*noOfItems+7]+" "+unitsA[thisIsA[noToDrop]*noOfItems+3]+"pts ("+(typeNumbA[noToDrop])+"/"+typeTotalA[noToDrop]+")");
   document.getElementById('hopText').innerText=""+activeImage.getAttribute("title");
   printUnit(noToDrop, typeNumbA[noToDrop], typeTotalA[noToDrop], thisIsA[noToDrop],countIndividual[noToDrop]);
 
@@ -50,8 +52,9 @@ function dropPoints(id){
 function upPoints(id){
   var noToDrop = id;
   cmbtFactorsA[noToDrop]++;
-  if(cmbtFactorsA[noToDrop]>cmbtFactorsMaxA[noToDrop]){cmbtFactorsA[noToDrop]=cmbtFactorsMaxA[noToDrop];}
-  imageArray[noToDrop].setAttribute("title", "#"+(noToDrop+1)+": "+cmbtFactorsA[noToDrop]+"-"+unitsA[thisIsA[noToDrop]*noOfItems+7]+" "+unitsA[thisIsA[noToDrop]*noOfItems+3]+"pts ("+(typeNumbA[noToDrop])+"/"+typeTotalA[noToDrop]+")");
+  if(cmbtFactorsA[noToDrop]>cmbtFactorsMaxA[noToDrop]&&armourA[noToDrop]!="a"){cmbtFactorsA[noToDrop]=cmbtFactorsMaxA[noToDrop];}
+  imageArray[noToDrop].setAttribute("title", "#"+(noToDrop+1)+": "+unitsA[thisIsA[noToDrop]*noOfItems+1]+" "+designateLA[noToDrop]+"/"+designateRA[noToDrop]+" "+cmbtFactorsA[noToDrop]+"-"+unitsA[thisIsA[noToDrop]*noOfItems+7]+" (pts:"+unitsA[thisIsA[noToDrop]*noOfItems+2]+") ("+(typeNumbA[noToDrop])+"/"+typeTotalA[noToDrop]+")");
+  //imageArray[noToDrop].setAttribute("title", "#"+(noToDrop+1)+": "+cmbtFactorsA[noToDrop]+"-"+unitsA[thisIsA[noToDrop]*noOfItems+7]+" "+unitsA[thisIsA[noToDrop]*noOfItems+3]+"pts ("+(typeNumbA[noToDrop])+"/"+typeTotalA[noToDrop]+")");
   document.getElementById('hopText').innerText=""+activeImage.getAttribute("title");
   printUnit(noToDrop, typeNumbA[noToDrop], typeTotalA[noToDrop], thisIsA[noToDrop],countIndividual[noToDrop]);
 

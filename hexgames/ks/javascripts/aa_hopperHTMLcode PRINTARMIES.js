@@ -1,66 +1,59 @@
-var printArmiesFlag = false;//needs to be defined here, too late in newJS module
+var printArmiesFlag = true;
 var hopperHTMLcode = '<table class="mover" id="keyPressTable">'+
 '<tr>'+
 '<td class="button"  width="20%" onclick="virtualKey(22)">rL</td>'+
+'<td class="button"  width="20%" onclick="virtualKey(25)">G</td>'+
 '<td class="button"  width="20%" onclick="virtualKey(11)">^</td>'+
 '<td class="button" width="20%" onclick="virtualKey(44)">rR</td>'+
-'<td class="button6" rowspan=2 colspan=2 onclick="virtualKey(3)" id="diceResult">d12</td>'+
+'<td class="button6" rowspan=2 onclick="virtualKey(3)" id="diceResult">d6</td>'+
 '</tr></tr><tr>'+
+'<td class="button" onclick="virtualKey(24)">H</td>'+
 '<td class="button" onclick="virtualKey(13)">&lt;</td>'+
-'<td class="button" onclick="virtualKey(88)">Jump</td>'+
+'<td class="button" onclick="virtualKey(88)">J</td>'+
 '<td class="button" onclick="virtualKey(14)">&gt;</td>'+
 '</tr><tr>'+
 '<td class="button" onclick="virtualKey(7)">Z</td>'+
-'<td class="button" onclick="virtualKey(12)">v</td>'+
-'<td class="button" onclick="virtualKey(24)">H</td>'+
 '<td class="button" onclick="virtualKey(9)">dn</td>'+
+'<td class="button" onclick="virtualKey(12)">v</td>'+
 '<td class="button" onclick="virtualKey(8)">up</td>'+
+'<td class="button" onclick="virtualKey(1)">M</td>'+
 '</tr><tr>'+
 '<td class="button1" colspan=5 id="hopText" onclick="virtualKey(33)"></td>'+
 '</tr>'+
 '<tr><td class="button" onclick="virtualKey(49)">T-</td>'+
 '<td class="button5" rowspan=2 colspan=3 id="timebox" onclick="virtualKey(99)">&lt;</td>'+
-'<td class="button" onclick="virtualKey(1)">M</td>'+
+'<td class="button" onclick="virtualKey(4)">D</td></tr>'+
 '<tr><td class="button" onclick="virtualKey(99)">T+</td>'+
 '<td class="button" onclick="virtualKey(2)">X</td>'+
 '</tr></tr></table>';
 
 var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcolor="gray"><tr id="pbrow">'
-+'<td>&nbsp;&nbsp;<a href="javascript:crt2_window()">Matrix Kr CRT</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:crt3_window()"  id="btn5"  >D12 Kr CRT</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:crtD6_window()"  id="btn14"  >D6 Kr CRT</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:tec_window()"  id="btn14"  >Terrain Effects Chart</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:crt2_window()">Kr CRT</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:crt_window()"  id="btn5"  >random CRT</a></td>'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:d6_window()"  id="btn6"  >Six Sided Die</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:unmarkAll()"  id="btn11"  >unmark all units</a></td>'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:makeSmaller()"  id="btn61"  >ZOOM OUT</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:stepOrPoints()"  id="btn21"  >now:lose FACTORS</a></td>'
-+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:changeDice()"  id="btn612"  >now:choose d12</a></td>'
-+'</tr><tr id="aiwrow">'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:crt3_window()"  id="btn8"  >D12 Kr CRT noCh</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt4_window()"  id="btn9"  >D12 Kr CRT yesCh</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt_window()"  id="btn12"  >random D6 CRT</a></td>'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:d6_window()"  id="btn6"  >D6</a></td>'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:help_window()"  id="btn1"  >Help (key-codes)</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:makeBigger()"  id="btn13"  >ZOOM IN</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:disruptionNumber()"  id="btn7"  >double D</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="" href="javascript:RotSideB()"  id="btn32"  >Rotate B.</a></td>'
-+'</tr><tr id="mcarow">'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt5_window()"  id="btn9"  >D12 Kr CRT Ex only</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt6_window()"  id="btn9"  >D12 Kr CRT steps</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:crt7_window()"  id="btn12"  >D12 Kr CRT Ex n Adv</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:d12_window()"  id="btn14"  >D12</a></td>'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:pdfRules_window()"  id="btn8"  >Game I rules</a></td>'
-+'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:rules_window()"  id="btn9"  >Game II rules</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:showBoard()"  id="btn26"  >show board</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:stepOrPoints()"  id="btn21"  >now:lose STEPS</a></td>'+
+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:makeSmaller()"  id="btn61"  >ZOOM OUT</a></td>'+
+'<td>&nbsp;&nbsp;<a href="javascript:disruptionNumber()"  id="btn7"  >double D</a></td>'
 +'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:RotSideA()"  id="btn31"  >Rotate R.</a></td>'
++'</tr><tr id="aiwrow">'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:pdfRules_window()"  id="btn8"  >PDF rules</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:rules_window()"  id="btn9"  >extra rules</a></td>'
++'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:rulesQuick_window()"  id="btn12"  >AH General</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:tec_window()"  id="btn14"  >Terrain Effects Chart</a></td>'
++'<td>&nbsp;&nbsp;<a class="neut" href="javascript:help_window()"  id="btn1"  >Help (key-codes)</a></td>'+
+'<td>&nbsp;&nbsp;<a href="javascript:makeBigger()"  id="btn13"  >ZOOM IN</a></td>'+
+'<td>&nbsp;&nbsp;<a href="javascript:showBoard()"  id="btn26"  >show board</a></td>'
++'<td>&nbsp;&nbsp;<a  class="" href="javascript:RotSideB()"  id="btn32"  >Rotate B.</a></td>'
 +'</tr><tr id="mcarow">'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:reloadSetup()"  id="btn4"  >SETUP GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:getCookie()"  id="btn30"  >RELOAD GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:reloadReset()"  id="btn22"  >RESET GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:d100_window()"  id="btn17"  >D100</a></td>'
-+'<td>&nbsp;&nbsp;<a class="" href="javascript:victoryPoints()"  id="btn20"  >Victory Points</a></td>'
-+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:pieceShrink=2;changeSize()"  id="btn19"  >half size</a></td>'
-+'<td>&nbsp;&nbsp;<a href="javascript:zombies()"  id="btn27"  >zombies</a></td>'
-+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btnxx"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="" href="javascript:victoryPoints()"  id="btn20"  >Victory Points</a></td>'+
+'<td>&nbsp;&nbsp;<a class="neut" href="javascript:pieceShrink=2;changeSize()"  id="btn19"  >half size</a></td>'+
+'<td>&nbsp;&nbsp;<a href="javascript:zombies()"  id="btn27"  >zombies</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:changeDice()"  id="btn612"  >choose d6</a></td>'
 +'</tr><tr id="mcarow">'
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:colorRed()"  id="btn23"  >Color Red</a></td>'
 +'<td>&nbsp;&nbsp;<a href="javascript:colorBlack()"  id="btn24"  >Color Black</a></td>'
@@ -103,43 +96,14 @@ var table2HTMLcode = '<table BORDER="2" id="saveTable" bgcolor="silver">'+
 '</table>'+
 '</td><td valign=top></td>'+
 '<td align="center">'+
-'<p id="boardNameB">Black Board #0u</p>'+
-'<br><br>'+
 '<div class="dropdown">'+
-  '<button class="dropbtn">choose Black board</button>'+
-  '<div id="boardMenu1" class="dropdown-content">'+
+  '<button class="dropbtn">Dropdown</button>'+
+  '<div id="armyMenu" class="dropdown-content">'+
   '</div>'+
 '</div>'+
-'<br><br>'+
-'<p id="boardNameR">Red Board #0u</p>'+
-'<br><br>'+
-'<div class="dropdown">'+
-  '<button class="dropbtn">choose Red board</button>'+
-  '<div id="boardMenu2" class="dropdown-content">'+
-  '</div>'+
-'</div>'+
-'<br><br>'+
-'<p id="armyNameB">Black Army #0</p>'+
-'<br><br>'+
-'<div class="dropdown">'+
-  '<button class="dropbtn">choose Black army</button>'+
-  '<div id="armyMenu1" class="dropdown-content">'+
-  '</div>'+
-'</div>'+
-'<br><br>'+
+'<br>'+
 '<p id="armyNameR">Red Army #0</p>'+
-'<br><br>'+
-'<div class="dropdown">'+
-  '<button class="dropbtn">choose Red army</button>'+
-  '<div id="armyMenu2" class="dropdown-content">'+
-  '</div>'+
-'</div></td>'+
-'<td>'+
-'<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'+
-'<a class="save" href="javascript:supplyUnitsYesNo()"  id="btnSupply">Supply Units - No</a>'+
-'<br><br>'+
-'<a class="save" href="javascript:blankUnitsYesNo()"  id="btnBlank">Blank Units - No</a>'+
-'<br><br>'+
-'<a class="save" href="javascript:airUnitsYesNo()"  id="btnAir">Air Units - No</a>'+
+'<br>'+
+'<a class="save" href="javascript:changeRedArmy()"  id="btnBrR">Change Red Army</a>'+
 '<br><br></td>'+
 '</td></tr></table>';

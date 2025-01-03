@@ -4,6 +4,7 @@ var blackArmyMax = 46;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
+var addAirPowerFlag = false;
 
 var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democracy", "Green Jacket Junta",
  "Purple Reign", "Orange Orthodoxy", "Blue-Steel Legions","Guardians of the Green Grasslands",
@@ -1984,9 +1985,16 @@ if(addSupplyUnitsFlag){
 }
 
 if(addDummyUnitsFlag){
-  unitsQ.push(unitsQ[0], "Blank","","8","b","blank","","","");
+  unitsQ.push(unitsQ[0], "Blank","0","8","b","blank","","","");
   designateLQ.push("", "", "", "", "", "", "", "");
   designateRQ.push("","","","","","", "", "");
+}
+
+
+if(addAirPowerFlag){
+  unitsQ.push(unitsQ[0], "Air Power","0","6","a","air","0","","");
+  designateLQ.push("Air Power", "Air Power", "Air Power", "Air Power","Air Power", "Air Power");
+  designateRQ.push("1","2","3","4","5","6");
 }
 
 if(printArmiesFlag){
@@ -2211,5 +2219,17 @@ function blankUnitsYesNo(){
   else{
     addDummyUnitsFlag=true;
     document.getElementById('btnBlank').innerText="Blank Units - Yes";
+  }
+}
+
+
+function airUnitsYesNo(){
+  if(addAirPowerFlag){
+    addAirPowerFlag=false;
+    document.getElementById('btnAir').innerText="Air Units - No";
+  }
+  else{
+    addAirPowerFlag=true;
+    document.getElementById('btnAir').innerText="Air Units - Yes";
   }
 }
