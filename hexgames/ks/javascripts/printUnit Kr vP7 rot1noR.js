@@ -247,7 +247,7 @@ var classType = classFactor;//unit number - out of all
             &&unitsA[whatType*noOfItems+5]!="trans"&&unitsA[whatType*noOfItems+5]!="seab"
             &&unitsA[whatType*noOfItems+5]!="rock"&&unitsA[whatType*noOfItems+5]!="strans"
             &&unitsA[whatType*noOfItems+5]!="mort"&&unitsA[whatType*noOfItems+5]!="flak"
-            &&unitsA[whatType*noOfItems+5]!="mg"){
+            &&unitsA[whatType*noOfItems+5]!="mg"&&unitsA[whatType*noOfItems+5]!="depot"){
                 ctx.beginPath();
                 ctx.lineWidth = "4";
                 ctx.strokeStyle = colorThisBT;
@@ -569,6 +569,22 @@ var classType = classFactor;//unit number - out of all
               ctx.stroke();
               ctx.closePath();
             }
+            if(unitsA[whatType*noOfItems+5]=="depot"){
+              ctx.beginPath();
+              ctx.lineWidth = "3";
+              ctx.strokeStyle = colorThisBT;
+              ctx.arc(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/2)*unitScale, 35*unitScale, 0, 2*Math.PI);
+              ctx.stroke();
+              ctx.closePath();
+              ctx.beginPath();
+              ctx.font = "bold 48px Arial";
+              ctx.fillStyle = colorThisBT;
+              ctx.textAlign = "center";
+              ctx.textBaseline = "middle";
+              ctx.fillText("D",i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/1.9)*unitScale);
+              ctx.stroke();
+              ctx.closePath();
+            }
              //HQ
             if(unitsA[whatType*noOfItems+5]=="hq"){
               ctx.beginPath();
@@ -731,7 +747,7 @@ var classType = classFactor;//unit number - out of all
     ctx.fillStyle = textColorThis;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        if(unitsA[whatType*noOfItems+5]!="air"){
+        if(unitsA[whatType*noOfItems+5]!="air"&&unitsA[whatType*noOfItems+5]!="depot"){
         ctx.fillText(""+cmbtFactorsA[noOfImgPrnt]+"-"+unitsA[whatType*noOfItems+7],i2*unitSize+100*unitScale,j2*unitSize+155*unitScale);}
         else{
         ctx.fillText(""+cmbtFactorsA[noOfImgPrnt],i2*unitSize+100*unitScale,j2*unitSize+155*unitScale);

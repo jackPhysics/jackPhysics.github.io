@@ -151,8 +151,8 @@ var redBno = 1;//red boards are ODD
 var blackBno = 0;//black boards are EVEN
 var flipBrdNoR=0;
 var flipBrdNoB=0;
-var mirrBrdNoR=0;
-var mirrBrdNoB=0;
+var mirrBrdNoR=1;
+var mirrBrdNoB=1;
 var stepFlag = false;
 var redArmyNo = 0;
 var blackArmyNo = 0;
@@ -1482,7 +1482,7 @@ doEdgeColor();
     lastTurn();
 	}
 
-if(keyText==88){ //zombies! bury dead or raise dead
+if(keyText==88){ //jump the hopper
     hopHop(hopperL, hopperT);}
 
 if(keyText==87){ //zombies! bury dead or raise dead
