@@ -16,12 +16,14 @@ font-family: "American Typewriter", serif;
 				color: Yellow;
   				background-color: Blue;
   				padding: inherit;
+    				top: 20px;
       }
 			h1.kr {
 				font-family: "Lucida Calligraphy";
 				color: Orange;
   				background-color: Black;
   				padding: inherit;
+    				top: 20px;
       }
 		
 			h1.ps {
@@ -29,6 +31,7 @@ font-family: "American Typewriter", serif;
 				color: Lime;
   				background-color: Purple;
   				padding: inherit;
+    				top: 20px;
       }
 			/* hex code */
 			h2 {
@@ -36,12 +39,14 @@ font-family: "American Typewriter", serif;
 				color: Blue;
   				background-color: Yellow;
   				padding: inherit;
+    				top: 20px;
         }
 	h2.kr {
 				font-family: "Lucida Calligraphy";
 				color: Black;
   				background-color: Orange;
   				padding: inherit;
+    				top: 20px;
         }
 
 	h2.ps {
@@ -49,6 +54,7 @@ font-family: "American Typewriter", serif;
 				color: Purple;
   				background-color: Lime;
   				padding: inherit;
+    				top: 20px;
         }
 			/* rgb value */
 			p {
