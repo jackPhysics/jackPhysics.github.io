@@ -16,6 +16,7 @@ font-family: "American Typewriter", serif;
 				color: Yellow;
   				background-color: Blue;
   				padding: inherit;
+    				position: relative;
     				top: 20px;
       }
 			h1.kr {
@@ -23,6 +24,7 @@ font-family: "American Typewriter", serif;
 				color: Orange;
   				background-color: Black;
   				padding: inherit;
+    				position: relative;
     				top: 20px;
       }
 		
@@ -31,6 +33,7 @@ font-family: "American Typewriter", serif;
 				color: Lime;
   				background-color: Purple;
   				padding: inherit;
+    				position: relative;
     				top: 20px;
       }
 			/* hex code */
@@ -39,6 +42,7 @@ font-family: "American Typewriter", serif;
 				color: Blue;
   				background-color: Yellow;
   				padding: inherit;
+    				position: relative;
     				top: 20px;
         }
 	h2.kr {
@@ -46,6 +50,7 @@ font-family: "American Typewriter", serif;
 				color: Black;
   				background-color: Orange;
   				padding: inherit;
+    				position: relative;
     				top: 20px;
         }
 
@@ -54,6 +59,7 @@ font-family: "American Typewriter", serif;
 				color: Purple;
   				background-color: Lime;
   				padding: inherit;
+    				position: relative;
     				top: 20px;
         }
 			/* rgb value */
