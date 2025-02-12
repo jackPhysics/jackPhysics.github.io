@@ -36,7 +36,6 @@ function defaultSetup(){
       alert(""+gameName[setUpGameNo]);
       setUpGameNo++;
       if(setUpGameNo==maxNoOfSetUps){setUpGameNo=0;}
-      alert(""+gameName[setUpGameNo])
 }
 
 function advancedGameSetup(){

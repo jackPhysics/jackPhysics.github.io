@@ -1701,6 +1701,14 @@ function reload(){
   canvW = 1*loadA[loopTill-9-shiftBackwards];
   canvW0 = 1*loadA[loopTill-10-shiftBackwards];
 
+  hideHills = false;
+  hideWoods = false;
+  hideTowns = false;
+  hideRivers = false;
+  hideRoads = false;
+  hideLakes = false;
+  hideSwamps = false;
+  hideLetters = false;
 
 if(loadA[loopTill-11-shiftBackwards]=="true"){
   hideSwamps = true;
