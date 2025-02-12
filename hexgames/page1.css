@@ -75,7 +75,7 @@ font-family: "American Typewriter", serif;
       }
 
 	p.first {font-family: Arial, Helvetica, sans-serif;
-				background-color: hsla(100%,100%,0,0.5);
+				background-color: Yellow;
     				color: #000000;}
 
 	      p.link {background-color: hsla(0,100%,100%,0.5);
