@@ -74,6 +74,10 @@ font-family: "American Typewriter", serif;
     				margin: 20px;
       }
 
+	p.first {font-family: Arial, Helvetica, sans-serif;
+				background-color: hsla(100%,100%,0,0.5);
+    				color: #000000;}
+
 	      p.link {background-color: hsla(0,100%,100%,0.5);
 	     				color: #000000;
 			          opacity: 1;
