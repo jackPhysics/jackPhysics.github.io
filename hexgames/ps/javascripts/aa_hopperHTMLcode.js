@@ -58,7 +58,7 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 '<td>&nbsp;&nbsp;<table><tr><td><a class="mini" href="javascript:reloadSetupSizeUp()"  id="btn20a"  >+</a>'+
 '</td><td><a class="mini" href="javascript:reloadSetupSizeDown()"  id="btn20b"  >-</a></td></tr></table></td>'+
 '<td>&nbsp;&nbsp;<a href="javascript:crtNap_window()"  id="btn2b"  >NAW CRT</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:changeDice()"  id="btn612"  >now: d2</a></td>'+
+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:changeDice()"  id="btn612"  >now: d6</a></td>'+
 '<td>&nbsp;&nbsp;</td>'+
 '<td>&nbsp;&nbsp;</td>'+
 '<td>&nbsp;&nbsp;</td>'+

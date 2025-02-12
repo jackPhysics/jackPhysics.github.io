@@ -48,8 +48,8 @@ var gerNumber=36; //the index number of the last side A piece
 var neutNumber=53; //index number of first neutral piece
 
 
-var Abase = "blue/"
-var Bbase = "cream/"
+var Abase = "navy/"
+var Bbase = "redonwhite/"
 var Apanic=38;
 var Bpanic=24;
 var maxTurns = 15;
@@ -75,16 +75,16 @@ var itemsPerUnit = noOfItems;
 
 var unitsA=[
 
-"blue/mi.jpg", "MI af:2 mf:3 vp:", "1",  "12", "n",
-"blue/hc.jpg", "HC af:[4] mf:7 vp:", "2",  "16", "c",
-"blue/cb.jpg", "CB mf:5 fire:2/3 vp:", "2",  "6", "f",
-"blue/3l.jpg", "3L combat:+3 radius:1 mf:9 vp", "2", "2", "l",
+"navy/mi.jpg", "MI af:2 mf:3 vp:", "1",  "12", "n",
+"navy/hc.jpg", "HC af:[4] mf:7 vp:", "2",  "16", "c",
+"navy/cb.jpg", "CB mf:5 fire:2/3 vp:", "2",  "6", "f",
+"navy/3l.jpg", "3L combat:+3 radius:1 mf:9 vp", "2", "2", "l",
 
-"cream/pp.jpg", "PP af:6 mf:4 vp:", "3",  "3", "n",
-"cream/hc.jpg", "HC af:[4] mf:7 vp:", "2",  "3", "c",
-"cream/lb.jpg", "LB mf:5 fire:3/3 vp:", "3",  "8", "f",
-"cream/2l.jpg", "2L combat:+6 radius:2 mf:9 HENRY V  vp", "3", "1", "l",
-"cream/3l.jpg", "3L combat:+3 radius:1 mf:9 vp", "2", "1", "l",
+"redonwhite/pp.jpg", "PP af:6 mf:4 vp:", "3",  "3", "n",
+"redonwhite/hc.jpg", "HC af:[4] mf:7 vp:", "2",  "3", "c",
+"redonwhite/lb.jpg", "LB mf:5 fire:3/3 vp:", "3",  "8", "f",
+"redonwhite/2l.jpg", "2L combat:+6 radius:2 mf:9 HENRY V  vp", "3", "1", "l",
+"redonwhite/3l.jpg", "3L combat:+3 radius:1 mf:9 vp", "2", "1", "l",
 
 "neut/battle.jpg", "BATTLE!", "","0", "x",
 "neut/turn1.jpg", "TURN NOW", "", "1", "x",

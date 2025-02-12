@@ -117,7 +117,7 @@ var supplyA = 3;//0 - all in supply; 1- all out of supply; 2 - random supply
 var supplyB = 3;
 var boardMult = 1;
 var setupMult = 1;
-var chooseD6=0;
+var chooseD6=1;
 
 
 function addAllHandlers(){
