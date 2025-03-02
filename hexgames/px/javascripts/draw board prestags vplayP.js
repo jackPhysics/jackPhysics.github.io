@@ -129,6 +129,7 @@ var fordCOY = [100];
 var hillTopDir = [100];
 var hillTopCOY = [100];
 var namedHexes = [100];
+var iconHexes = [100];
 
 var noOfTurns0 = 20;
 var blackBrdNo = 0;
@@ -1956,6 +1957,42 @@ var roadALen = roadCOX.length;
 }
 ctx.setLineDash([0]);
 //END OF ROADS code
+
+//iconHexes
+var namedALen = iconHexes.length;
+for(nh=0;nh<namedALen;nh=nh+3){
+ctx.font = "48px Arial";
+ctx.fillStyle = "Black";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+ctx.lineWidth = "2";
+var dumX = iconHexes[nh+1];
+var dumY = iconHexes[nh+2];
+var xPos = (dumX+brdSftCoX)*(hexD*3)+brdEdge;//Math.floor(dumX*(hexD*3)+brdEdge);//+hexD/2;
+if(dumY%2==1){xPos=xPos+(hexD/2+hexD);}
+var yPos = (dumY+brdSftCoY)*(hexLong)+brdEdge;//Math.floor(dumY*(hexLong)+brdEdge);//+hexLong;
+var posNowX = xPos+hexD/2;
+var posNowY = yPos+hexLong;
+//ctx.arc(posNowX,posNowY, 10, 0, Math.PI*2);
+//ctx.fillStyle = "Red";
+//ctx.fill();
+//ctx.closePath();
+var rotateText=false;//set to ture it rotates clockwise
+ctx.beginPath();
+ctx.fillStyle = "Black";
+if(rotateText){
+ctx.save()
+var rad = 90 * Math.PI / 180;
+ctx.translate(posNowX+0,posNowY+0);
+//ctx.translate(posNowX+hexD,posNowY+hexLong);
+ctx.rotate(rad);
+ctx.fillText(""+iconHexes[nh],0,0);
+//ctx.fillText(""+namedHexes[nh],0,-hexLong/2);
+ctx.restore();}
+else{
+ctx.fillText(""+iconHexes[nh],posNowX,posNowY);
+}
+}
 
 //namedHexes
 var namedALen = namedHexes.length;

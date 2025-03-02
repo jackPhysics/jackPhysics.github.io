@@ -672,6 +672,7 @@ function changeDead(p, i, f){//unit destroyed and left in place
 				//console.log(activeIndex, unitsA[activeIndex*itemsPerUnit], unitsA[thisIsA[activeIndex]*itemsPerUnit]);
 					//activeImage.setAttribute("src", "units/"+unitsA[thisIsA[activeIndex]*itemsPerUnit]);
 
+					deadA[activeIndex]=0;
 				  printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex],countIndividual[activeIndex]);
 
 					var vp=unitsA[thisIsA[activeIndex]*itemsPerUnit+2];
@@ -1834,7 +1835,7 @@ function hopHop(x, y){ //jump Hopper to new position
 
 		function reload2(d){
 			var catchText= ""+d;
-			alert(""+catchText);//ALLOW THIS to show the data in the cookie *****
+			//alert(""+catchText);//ALLOW THIS to show the data in the cookie *****
 			  var loadA=catchText.split(",");
 			  var loopTill = loadA.length;
 			  var shiftBackwards = 7;//due to board and army numbers added to list
@@ -1849,6 +1850,15 @@ function hopHop(x, y){ //jump Hopper to new position
 			  canvH0 = 1*loadA[loopTill-8-shiftBackwards];
 			  canvW = 1*loadA[loopTill-9-shiftBackwards];
 			  canvW0 = 1*loadA[loopTill-10-shiftBackwards];
+
+				hideHills = false;
+				hideWoods = false;
+				hideTowns = false;
+				hideRivers = false;
+				hideRoads = false;
+				hideLakes = false;
+				hideSwamps = false;
+				hideLetters = false;
 
 			if(loadA[loopTill-11-shiftBackwards]=="true"){
 			  hideSwamps = true;
@@ -2072,7 +2082,7 @@ function hopHop(x, y){ //jump Hopper to new position
 			    hideToggle();
 			    }
 			//loadBox.setAttribute("value", "Data re-loaded successfully!");
-			alert("Data re-loaded successfully!");
+			//alert("Data re-loaded successfully!");
 			changeSize();
 			}
 

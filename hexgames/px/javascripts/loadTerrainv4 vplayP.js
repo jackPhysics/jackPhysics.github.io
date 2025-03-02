@@ -1,10 +1,10 @@
 //hold texture data
-var boardMax=14;//1 more than largest chooseBrd number
+var boardMax=16;//1 more than largest chooseBrd number
 
 var allTheBoardsA = ["Blank Board", "Chariot", "Spartan", "Legion","Viking","Yeoman", "Yeoman S2N", "Stratego",
  "Arena", "Deathmatch", "Xiangqi", "Kampfpanzer",
  "Dark Ages", "Renaissance of Infantry",
- "Red big lake", "Black Stalingrad", "Red Sealion",
+ "Grenadier", "Armageddon",, "Red Sealion",
 "Black Sealion", "Red Sealion 2", "Black France40", "Red Norway", "Black Low terrain",
  "Red Desert", "Black Badlands",
 "Red 6 Cities", "Black 2 Large Cities", "Red Canals", "Black Invasion Caldera", "Red The Hiddent City",
@@ -78,6 +78,7 @@ hillTopCOX = [100];
 hillTopCOY = [100];
 hillTopDir = [100];
  hillTopCOY = [100];//make this the same as hillTopDir
+ iconHexes = [100];
  namedHexes = [100];
 }
 else if(chooseBrd==1){//black high terrain
@@ -133,6 +134,7 @@ hillTopDir = [4,5,4,3,2,3,2,1,2,1,6,1,6,5,4,5,4,5,100,
 7,27,4,3,4,3,2,3,2,3,2,1,2,1,6,5,6,5,6,5,6,5,100,
 3,55,4,3,4,3,4,3,2,3,2,3,2,3,2,1,6,1,6,5,6,5,6,1,6,5,6,5,100,
 13,47,4,3,4,3,2,3,2,3,2,1,6,1,6,5,6,5,6,5,100];
+iconHexes = [100];
 namedHexes = ["A",6,66,"B",9,65,"C",14,49,"D",3,55,"E",7,43,"F",1,44,
 "G",8,30,"H",3,23,"I",6,23,"J",8,16,"K",5,19,"L",5,6,"M",2,10,"N",5,13,"P",13,11,
 "Q",17,12,"north ->",9,5,"<- south",7,5,"west",8,3,"east",8,7,"+",8,5]
@@ -224,6 +226,7 @@ hillTopDir = [3,15,4,3,4,3,2,1,2,3,2,1,2,3,4,3,2,1,6,1,6,1,100,
  13,49,4,3,4,5,6,5,4,5,4,3,2,1,2,3,2,1,2,3,2,1,6,5,6,1,6,5,100,
  17,59,6,5,6,5,4,5,4,5,4,3,4,5,4,3,4,5,4,3,4,5,4,3,4,3,4,5,4,3,4,3,4,3,100,
  7,66,4,100,7,66,6,1,2,1,2,1,2,3,2,1,6,1,2,3,4,3,2,3,4,3,2,3,4,5,4,100];//make this the same as hillTopDir
+ iconHexes = [100];
  namedHexes = ["A",15,17,"B",15,27,"C",12,33,"D",13,51,"E",11,48,"F",10,38,
  "G",4,13,"H",6,22,"J",3,64,"K",2,25,"L",2,46,"M",9,22,"N",8,14,"P",9,52,
  "Q",6,37,"R",5,59,"S",9,62,"north",5,5,"south",5,9,"west",4,7,"east",6,7,"+",5,7,100];
@@ -304,6 +307,7 @@ hillTopDir = [1,3,2,3,2,3,2,3,2,3,2,3,4,5,4,5,4,5,4,3,4,5,6,1,6,1,6,5,6,1,6,5,6,
 7,39,2,3,2,3,4,5,4,5,6,5,6,1,100,
 5,43,2,3,2,3,4,3,2,3,4,3,4,3,4,5,4,5,4,100,
 9,51,2,3,2,3,2,3,4,3,4,3,4,5,6,5,6,5,6,1,6,1,6,1,100];
+iconHexes = [100];
 namedHexes = ["A",14,10,"B",8,4,"C",8,19,"D",6,13,"E",5,47,"F",2,42,
 "G",10,36,"H",12,55,"J",6,58,"K",15,37,"north",2,5,"south",2,9,"west",1,7,"east",3,7,"+",2,7]
 }
@@ -390,6 +394,7 @@ hillTopDir = [6,54,4,3,4,3,4,3,2,3,4,3,2,1,2,1,6,1,6,1,6,5,6,5,6,5,100,
 4,58,4,5,4,3,4,3,2,3,2,3,2,1,2,1,6,5,6,1,6,5,6,5,100,
 5,41,4,5,4,3,2,3,4,3,2,3,2,1,2,1,6,1,6,5,6,5,6,5,100,
 14,33,4,3,4,3,4,3,4,3,2,1,2,1,2,1,2,1,6,1,6,5,6,5,4,5,6,5,100];
+iconHexes = [100];
 namedHexes = ["A",15,35,"B",15,58,"C",10,35,"D",9,60,"E",11,50,"F",8,16,
 "G",4,47,"H",7,33,"J",4,33,"north ->",3,6,"<- south",1,6,"west",2,4,"east",2,8,"+",2,6]
 }
@@ -448,6 +453,7 @@ hillTopDir = [1,50,2,1,2,3,4,3,2,3,4,3,4,3,2,3,4,5,4,5,6,5,100,
 5,4,4,3,2,3,4,3,4,3,2,3,4,3,2,3,2,3,2,3,2,1,6,1,6,1,6,1,100,
 15,18,4,3,4,5,4,5,6,5,6,1,6,1,6,1,6,1,2,1,6,1,2,100,
 15,34,4,5,4,5,6,1,6,1,6,1,6,12,1,2,1,2,100];
+iconHexes = [100];
 namedHexes = ["A",2,64,"B",8,73,"C",14,67,"E",11,56,"F",6,55,
 "G",1,53,"H",14,43,"J",8,37,"K",5,29,"L",1,30,"M",14,16,"N",10,24,"P",14,29,
 "Q",14,24,"R",6,7,"S",3,13,"north",2,5,"south",2,9,"west",1,7,"east",3,7,"+",2,7];
@@ -511,6 +517,7 @@ hillTopDir = [11,18,2,100,11,18,6,5,4,5,4,3,4,3,4,3,2,3,4,3,2,1,100,
 9,67,6,1,6,1,6,1,2,3,2,3,2,3,2,3,4,3,2,3,4,3,4,3,2,3,4,3,100,
 2,51,2,1,2,1,6,1,6,1,6,1,6,5,4,5,4,100,
 3,68,2,1,6,1,2,1,6,1,6,1,6,1,6,5,6,5,4,5,4,3,4,100];
+iconHexes = [100];
 namedHexes = ["A",15,12,"B",8,5,"C",2,9,"E",6,20,"F",10,21,
 "G",15,23,"H",2,33,"J",8,39,"K",11,47,"L",16,46,"M",3,60,"N",7,51,"P",2,47,
 "Q",3,52,"R",10,69,"S",13,63];
@@ -557,6 +564,7 @@ hillTopDir = [9,39,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,
   6,1,6,1,6,1,6,1,6,1,6,1,6,1,100,
   1,2,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,100,
   1,2,6,100];
+  iconHexes = [100];
 namedHexes = [100];
 }
 else if(chooseBrd==8){//black lake district
@@ -605,9 +613,10 @@ hillTopDir = [9,38,2,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,
   1,2,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,100,
   1,2,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,100,
   1,38,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,100];
-namedHexes = ["\u{1f3f2}",5,30,"\u{1f3f1}",5,8,"\u{1f3aa}",4,19,"\u{1f571}",7,12,
-"\u{1f5e1}",3,22,"\u{1f578}",7,26,"\u{1f334}",2,12,"\u{1f342}",2,31,"\u{1f396}",8,7,
- "\u{2620}",5,17,100];
+  iconHexes = ["\u{1f3f2}",5,30,"\u{1f3f1}",5,8,"\u{1f3aa}",4,19,"\u{1f571}",7,12,
+  "\u{1f5e1}",3,22,"\u{1f578}",7,26,"\u{1f334}",2,12,"\u{1f342}",2,31,"\u{1f396}",8,7,
+   "\u{2620}",5,17,100];
+namedHexes = [100];
 }
 else if(chooseBrd==9){//red lake district
 brdNameB = "Deathmatch";
@@ -654,7 +663,8 @@ hillTopDir = [9,38,2,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,
   1,2,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,100,
   1,2,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,100,
   1,38,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,100];
-namedHexes = ["\u{1f3f2}",5,30,"\u{1f3f1}",5,8,"\u{2620}",5,18,100];
+  iconHexes = ["\u{1f3f2}",5,30,"\u{1f3f1}",5,8,"\u{2620}",5,18,100];
+namedHexes = [100];
 }
 else if(chooseBrd==10){//black big lake
 brdNameB = "Xiangqi";
@@ -702,7 +712,8 @@ hillTopDir = [9,32,2,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6
   1,32,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,2,1,2,3,100,
   4,29,6,1,6,1,2,1,2,3,2,3,4,3,4,100,
   6,4,4,3,4,3,4,5,4,5,6,5,6,1,6,1,6,1,100];
-namedHexes = ["\u{1f3ef}",5,28,"\u{1f3f0}",5,4,100];
+  iconHexes = ["\u{1f3ef}",5,28,"\u{1f3f0}",5,4,100];
+namedHexes = [100];
 }
 else if(chooseBrd==11){//red plains
 brdNameB = "Kampfpanzer";
@@ -768,6 +779,7 @@ hillTopDir = [15,20,2,3,2,1,2,3,2,3,2,3,2,3,2,3,4,3,4,3,4,3,4,3,4,3,4,5,4,
   5,4,5,6,5,6,5,6,5,6,5,6,1,6,1,2,1,6,1,6,1,6,1,6,5,6,1,100,
   0,72,2,3,2,3,4,3,2,3,2,3,2,3,2,3,2,3,2,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,100,
   16,88,2,1,2,3,4,3,4,3,4,5,4,5,6,1,6,1,6,1,100];
+  iconHexes = [100];
 namedHexes = ["Hill 1",16,29,"Hill 2",1,87,"Hill 3",16,82,
 "Town 1",11,36,"Town 2",5,24, "Z",0,54,"Y",10,106,"X",19,53,"W",10,0];
 }
@@ -867,6 +879,7 @@ hillTopDir = [11,60,2,3,4,5,6,1,100, 17,66,2,3,4,5,4,3,4,3,4,5,4,5,6,1,6,1,6,1,2
 6,66,4,5,4,3,2,3,4,3,2,3,2,1,6,1,6,1,6,5,6,5,100,
 15,30,2,3,4,3,4,3,2,3,2,3,4,3,4,3,4,5,4,5,4,5,6,5,6,5,6,5,6,1,6,1,6,1,2,1,2,1,2,1,6,1,100,
 15,45,4,3,2,3,2,3,4,3,2,1,2,1,2,1,6,1,6,1,6,1,6,5,6,5,100];
+iconHexes = [100];
 namedHexes = [100]
 }
 else if(chooseBrd==13){//red big lake
@@ -930,7 +943,125 @@ hillTopDir = [3,1,4,3,4,3,4,5,6,5,4,5,6,1,6,5,6,100,
 0,15,2,3,4,5,100,    15,10,2,3,4,5,6,1,100,
 5,18,2,1,2,3,4,3,2,3,4,3,4,3,4,5,4,5,6,5,100,
 2,28,2,3,4,3,4,3,4,3,4,5,4,5,6,5,6,1,6,1,6,1,2,1,2,1,100];
+iconHexes = [100];
 namedHexes = ["N",8,0,"S",8,44,"W",0,22,"E",16,22]
+}
+else if(chooseBrd==14){//red big lake
+brdNameB = "Grenadier";
+maxXshift = 20;
+maxYshift = 30;
+shiftX = 0+shiftXmore;
+shiftY = 0+shiftYmore;
+swampCOX = [100];
+swampCOY = [100];
+hillCOX = [100];
+hillCOY = [100];
+smLakeCOX = [100];
+smLakeCOY = [100];
+cityCOX = [5,5,6,6,     13,  6,   3,  9,9,    13, 10,  8,100];
+cityCOY = [13,15,14,15,  9,  50,  44, 34,35,  63, 65,  80,100];
+woodCOX = [5,5,5,5,5,5,5,4,4,4,4,4,4,4,3,3,3,
+  4,4,4,4,4,4,4,4,4,4,4,3,3,
+  5,5,6,6,6,6,6,6,6,6,6,6,7,7,  10,10,    100];
+woodCOY = [3,5,7,2,4,6,8,3,5,7,9,4,6,8,5,7,6,
+  13,15,17,19,21,14,16,18,20,22,24,21,23,
+  71,73,66,68,70,72,74,65,67,69,71,73,64,66,  48,50,   100];
+mountCOX = [100];
+mountCOY = [100];
+beachCOX = [100];
+beachCOY = [100];
+lakeCOX = [100];
+lakeCOY = [100];
+riverCOX = [100];
+riverCOY = [100];
+bridgeCOX = [100];
+bridgeCOY = [100];
+fordCOX = [100];
+fordCOY = [100];
+roadCOX = [100];
+roadCOY = [100];
+slopeCOX = [18,18,18,17,17,17,17,17,17,17,17,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
+  15,15,15,15,15,15,15,15,15,15,15,15,15,15,
+  14,14,14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,12,12,12,12,12,12,12,12,11,11,11,
+  13,13,13,13,13,14,14,14,14,14,14,14,14,15,15,15,15,15,15,15,15,16,16,16,100];
+slopeCOY = [56,58,60,55,57,59,61,56,58,60,62,57,59,61,63,65,67,69,58,60,62,64,66,68,70,72,
+  59,61,63,65,67,69,71,60,62,64,66,68,70,72,
+  73,71,69,67,74,72,70,68,75,73,71,69,76,74,72,70,77,75,73,71,78,76,74,72,77,75,73,
+  36,38,35,37,39,34,36,38,40,35,37,39,41,36,38,40,42,37,39,41,43,38,40,42,100];
+hillTopCOX = [100];
+hillTopCOY = [100];
+hillTopDir = [18,58,4,5,4,5,4,5,4,5,4,3,4,3,4,3,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,100,
+13,37,2,3,2,3,2,3,2,3,2,3,100];
+iconHexes = [100];
+namedHexes = ["Lemot",6,18,"Dulauloy",13,13,"Duvigneau",9,38,"Chatham",
+3,48,"Frimont",6,54,"Sohr",13,67,"Mack",10,69,"Longwood",9,82,"north",2,9,"south",0,9,"west",1,5,"east",1,13,"+",1,9,100];
+namedRange = ["H",6,22,4,"Yellow","L",2,46,3,"Red"];
+}
+else if(chooseBrd==15){//red big lake
+brdNameB = "Armageddon";
+maxXshift = 20;
+maxYshift = 25;
+shiftX = 0+shiftXmore;
+shiftY = 0+shiftYmore;
+swampCOX = [100];
+swampCOY = [100];
+hillCOX = [100];
+hillCOY = [100];
+smLakeCOX = [100];
+smLakeCOY = [100];
+//cityCOX = [6,6,100];
+//cityCOY = [66,68,100];
+cityCOX = [100];
+cityCOY = [100];
+//woodCOX = [5,5,5,4,6,1,7,7,7,7,8,9,9,100];
+//woodCOY = [19,18,16,15,23,44,42,44,43,45,44,65,66,100];
+woodCOX = [100];
+woodCOY = [100];
+mountCOX = [100];
+mountCOY = [100];
+beachCOX = [100];
+beachCOY = [100];
+lakeCOX = [100];
+lakeCOY = [100];
+riverCOX = [3,3,5,5,6,6,7,7,5,5,6,6,6,6,7,7,7,7,7,7,100];
+riverCOY = [-2,6,11,17,18,20,22,24,27,37,38,40,41,47,48,54,55,71,72,74,100];
+bridgeCOX = [100];
+bridgeCOY = [100];
+fordCOX = [100];
+fordCOY = [100];
+roadCOX = [100];
+roadCOY = [100];
+slopeCOX = [5,5,4,5,5,100,
+1,1,2,2,2,2,2,2,3,3,100,
+2,2,2,3,3,3,3,3,3,4,4,4,4,100,
+7,7,7,7,7,8,8,8,8,8,8,8,100,
+7,7,8,8,8,8,9,100,
+13,13,14,14,14,14,100,
+3,3,3,4,4,4,4,4,5,5,100,];
+slopeCOY = [3,4,5,5,6,100,
+5,7,6,8,10,7,9,11,10,12,100,
+17,19,21,18,20,22,21,23,25,22,24,26,25,100,
+10,12,11,13,15,12,14,16,18,15,17,19,100,
+27,29,28,30,29,31,30,100,
+47,49,48,50,49,51,100,
+55,57,59,56,58,60,59,61,60,62,100];
+hillTopCOX = [100];
+hillTopCOY = [100];
+hillTopDir = [5,6,2,1,6,100,5,6,4,100,
+3,12,6,5,6,1,6,5,6,100,
+4,27,6,5,6,1,6,5,6,5,6,1,6,100,
+8,19,6,1,6,5,6,1,6,5,6,100,
+8,31,2,100,8,31,6,5,6,100,
+5,62,6,5,6,5,6,1,6,100,
+13,49,2,3,2,3,2,100];
+iconHexes = ["\u{1F334}",5,19,"\u{1F334}",5,18,"\u{1F334}",5,16,"\u{1F334}",4,15,
+"\u{1F334}",6,23,"\u{1F334}",1,44,"\u{1F334}",7,42,"\u{1F334}",7,44,"\u{1F334}",7,43,
+"\u{1F334}",7,45,"\u{1F334}",8,44,"\u{1F334}",9,65,"\u{1F334}",9,66,
+"\u{1F3db}",6,66,"\u{1F3db}",6,68,100];
+namedHexes = ["A",6,66,"B",9,65,"C",14,49,"D",3,55,"E",7,43,"F",1,44,
+"G",8,30,"H",3,23,"I",6,23,"J",8,16,"K",5,19,"L",5,6,"M",2,10,"N",5,13,"P",13,11,
+"north",15,7,"south",13,7,"west",14,3,"east",14,11,"+",14,7,100]
+namedRange = ["H",6,22,4,"Yellow","L",2,46,3,"Red"];
 }
 else if(chooseBrd==12){//
 brdNameB = "Black Stalingrad";}
@@ -1006,10 +1137,10 @@ if(hideLetters){
   var dummyTarrayY = new Array();
   var dummyTarrayX2 = new Array();//hold original coords
   var dummyTarrayY2 = new Array();
-   dummyTarrayX = [swampCOX, hillCOX, smLakeCOX,  cityCOX, woodCOX, mountCOX,  beachCOX, lakeCOX, riverCOX, roadCOX, slopeCOX, bridgeCOX, fordCOX, hillTopDir, namedHexes];
-   dummyTarrayY = [swampCOY, hillCOY, smLakeCOY,  cityCOY, woodCOY, mountCOY,  beachCOY, lakeCOY, riverCOY, roadCOY, slopeCOY, bridgeCOY, fordCOY, hillTopDir, namedHexes];
-   dummyTarrayX2 = [swampCOX, hillCOX, smLakeCOX,  cityCOX, woodCOX, mountCOX,  beachCOX, lakeCOX, riverCOX, roadCOX,slopeCOX, bridgeCOX, fordCOX, hillTopDir, namedHexes];
-   dummyTarrayY2 = [swampCOY, hillCOY, smLakeCOY,  cityCOY, woodCOY, mountCOY,  beachCOY, lakeCOY, riverCOY, roadCOY, slopeCOY, bridgeCOY, fordCOY, hillTopDir, namedHexes];
+   dummyTarrayX = [swampCOX, hillCOX, smLakeCOX,  cityCOX, woodCOX, mountCOX,  beachCOX, lakeCOX, riverCOX, roadCOX, slopeCOX, bridgeCOX, fordCOX, hillTopDir, namedHexes, iconHexes];
+   dummyTarrayY = [swampCOY, hillCOY, smLakeCOY,  cityCOY, woodCOY, mountCOY,  beachCOY, lakeCOY, riverCOY, roadCOY, slopeCOY, bridgeCOY, fordCOY, hillTopDir, namedHexes, iconHexes];
+   dummyTarrayX2 = [swampCOX, hillCOX, smLakeCOX,  cityCOX, woodCOX, mountCOX,  beachCOX, lakeCOX, riverCOX, roadCOX,slopeCOX, bridgeCOX, fordCOX, hillTopDir, namedHexes, iconHexes];
+   dummyTarrayY2 = [swampCOY, hillCOY, smLakeCOY,  cityCOY, woodCOY, mountCOY,  beachCOY, lakeCOY, riverCOY, roadCOY, slopeCOY, bridgeCOY, fordCOY, hillTopDir, namedHexes, iconHexes];
   for(t1=0;t1<13;t1++){//13 as don't do it to hillTop
   for(t2=0;t2<dummyTarrayX[t1].length;t2++){
     if(dummyTarrayY2[t1][t2]!=100){
@@ -1072,6 +1203,21 @@ for(t2=0;t2<dummyTarrayX[14].length;t2++){
     t2++;
     }
 }
+//for icon hexes
+for(t2=0;t2<dummyTarrayX[15].length;t2++){
+  if(dummyTarrayX2[15][t2]==100||!Number.isInteger(dummyTarrayX2[15][t2])){
+    ////console.log(""+dummyTarrayX[14][t2]+ "  found")
+    //dummyTarrayY[t1][t2] = 100;
+    //dummyTarrayX[t1][t2] = 100;
+    }
+    else{
+    //var y2Dum = dummyTarrayY[t1][t2]%2;//find if y is odd or even
+    dummyTarrayX[15][t2+1] = Math.round(dummyTarrayX2[15][t2+1] - shiftY*2);
+    dummyTarrayX[15][t2] = dummyTarrayX2[15][t2] - Math.ceil(shiftX/2);
+      ////console.log(""+dummyTarrayX[14][t2]+", "+dummyTarrayX[14][t2+1]+"  found");
+    t2++;
+    }
+}
 
 ////console.log("original: "+hillTopDir);//+dummyTarrayX2[13]);
 ////console.log("shifted: "+dummyTarrayX[13]);
@@ -1107,6 +1253,7 @@ fordCOY = dummyTarrayY[12];
 hillTopDir = dummyTarrayX[13];
 hillTopCOY = dummyTarrayX[13];
 namedHexes = dummyTarrayX[14];
+iconHexes = dummyTarrayX[15];
 
 //if(mirrorBrd==1){//mirrored board - reflect across middle column
 
