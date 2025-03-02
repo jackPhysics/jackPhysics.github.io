@@ -1,6 +1,6 @@
 
-var redArmyMax = 46;
-var blackArmyMax = 46;
+var redArmyMax = 47;
+var blackArmyMax = 47;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -17,7 +17,8 @@ var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democrac
 "Rainbow Warriors", "Synthetic Technocracy Spectrum of States", "Infantry-only Indigo Intellectuals",
 "Ivory Invisible Forces Intelligencia", "Firebrick Feudal Fallschirmjager",  "Maroon Great-Hate Mandate",
 "Golden Ground Troops Government in Exile", "Day-Glo Dukedom", "Countdown Country #2",
-"Green Dream Planeteers", "Goldbrick Graduates of Greater Gondwanaland", "Silverbacked Statists"]
+"Green Dream Planeteers", "Goldbrick Graduates of Greater Gondwanaland", "Silverbacked Statists",
+"HiLo Holistic Hotpink Honeydew Hegemony"]
 
 function findArmies(){
 
@@ -1517,8 +1518,8 @@ var unitsQ=[
   "#fffffe/#000000/#ffa500/#000000","Driverless Gun-Trucks","8","3","n","arm","5","6","xx",
   "#fffffe/#000000/#ffff00/#000000","Tracked Robots","6","4","n","inf","4","5","xx",
   "#fffffe/#000000/#00ff00/#000000","Legged Robots","7","3","n","sf","4","3","xx",
-  "#fffffe/#000000/#4169e1/#000000","Aerial Drones","7","3","n","para","3","5","xx",
-  "#fffffe/#000000/#4b0082/#000000","Cyborg Zombies","3","5","n","inf","4","2","xx",
+  "#fffffe/#000000/#4169e1/#fffffe","Aerial Drones","7","3","n","para","3","5","xx",
+  "#fffffe/#000000/#4b0082/#fffffe","Cyborg Zombies","3","5","n","inf","4","2","xx",
   "#fffffe/#000000/#ee82ee/#000000","Scout Drones","4","3","n","scout","1","6","xx",
   "#fffffe/#000000/#ffffff/#000000","Data Bus","0","0","n","supply","0","10","xx"
 
@@ -1978,6 +1979,49 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
+
+else if(changeRedFlag&&redArmyNo==46||changeBlackFlag&&blackArmyNo==46){
+var nameQ="HiLo Holistic Hotpink Honeydew Hegemony";
+
+var qbase = ["#ff69b4","#ff69b4", "#ff69b4"];
+
+var unitsQ=[
+  "#ff69b4/#000000/#f0fff0/#000000","arm","10","3","n","arm","10","5","xx",
+  "#ff69b4/#000000/#f0fff0/#000000","acav","5","4","n","acav","1","7","xx",
+  "#ff69b4/#000000/#f0fff0/#000000","sf","8","2","n","sf","4","4","xx",
+  "#ff69b4/#000000/#f0fff0/#000000","sf","7","3","n","sf","1","6","xx",
+  "#ff69b4/#000000/#f0fff0/#000000","para","5","2","n","para","4","3","xx",
+  "#ff69b4/#000000/#f0fff0/#000000","para","1","5","n","para","1","2","xx",
+  "#ff69b4/#000000/#f0fff0/#000000","inf","7","4","n","inf","6","4","xx",
+  "#ff69b4/#000000/#f0fff0/#000000","cav","4","5","n","cav","1","6","xx",
+  "#ff69b4/#000000/#f0fff0/#000000","supply","0","0","n","supply","0","10","xx",
+];
+
+var designateLQ=["Hi", "Hi", "Hi", "Lo", "Lo",
+ "Lo", "Lo", "Hi", "Hi", "Lo",
+  "Lo", "Lo", "Hi", "Hi", "Lo",
+   "Lo", "Lo", "Lo", "Lo", "Hi",
+   "Hi", "Hi", "Hi", "Lo",
+    "Lo", "Lo", "Lo", "Lo"
+];
+
+var designateRQ=["1", "2", "3", "1", "2",
+ "3", "4", "4", "5", "5",
+  "6", "7", "6",  "7",  "8",
+   "9", "10", "11", "12", "8",
+   "9","10", "11", "12",
+    "13","14", "15", "16"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
 if(addSupplyUnitsFlag){
   unitsQ.push(unitsQ[0], "Supply","0","8","n","supply","0","10","xx");
   designateLQ.push("", "", "", "", "", "", "captured", "captured");

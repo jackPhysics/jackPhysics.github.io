@@ -1,14 +1,15 @@
 //hold texture data
-var boardMax=29;//odd=black, even = red
+var boardMax=34;//odd=black, even = red
 
-var allTheBoardsA = ["Black original","Red original", "Black high terrain", "Red lost city", "Black blank",
- "Red blank", "Black lake district",
-"Red lake district", "Black big lake", "Red plains", "Black lost city",
- "Red big lake", "Black Stalingrad", "Red Sealion",
-"Black Sealion", "Red Sealion 2", "Black France40", "Red Norway", "Black Low terrain",
+var allTheBoardsA = ["Black Original","Red Original", "Black High Terrain", "Red Lost City", "Black Blank",
+ "Red Blank", "Black Lake District",
+"Red Lake District", "Black Big Lake", "Red Plains", "Black Lost City",
+ "Red Big Lake", "Black Stalingrad", "Red Sealion",
+"Black Sealion", "Red Sealion 2", "Black France'40", "Red Norway", "Black Low Terrain",
  "Red Desert", "Black Badlands",
-"Red 6 Cities", "Black 2 Large Cities", "Red Canals", "Black Invasion Caldera", "Red The Hiddent City",
-"Black Lone Capital", "Red Compact Country", "Black Tank-country", "Red Tank-country"]
+"Red 6 Cities", "Black 2 Large Cities", "Red Canals", "Black Invasion Caldera", "Red: The Hidden City",
+"Black Lone Capital", "Red Compact Country", "Black Tank-country", "Red Tank-country",
+"Black Half-half", "Red Mountain Pass", "Black Parallel Roads","Red Desert War"]
 
 
 function loadTerrain(n,m,o){
@@ -1049,7 +1050,7 @@ roadCOY = [1,1,3,5,7,9,11,15,100,35,35,33,31,30,29,27,25,23,21,19,17,16,100,24,2
   35,32,22,100,15,16,100,28,29,100,32,30,100,26,25,100];
 }
 else if(chooseBrd==29){//
-brdNameR = "Red Tank-ountry";
+brdNameR = "Red Tank-country";
 swampCOX = [100];
 swampCOY = [100];
 hillCOX = [100];
@@ -1074,6 +1075,112 @@ roadCOX = [2,2,100,2,2,1,1,100,0,0,0,1,1,2,100,
 roadCOY = [1,25,100,35,31,29,25,100,24,24,23,24,25,26,100,
   12,12,13,14,15,16,17,18,19,20,21,23,100,24,24,23,22,21,20,19,18,17,16,100,
   12,12,13,14,15,16,17,100,17,16,100,25,26,100,17,18,100,11,14,100];
+}
+
+else if(chooseBrd==30){//
+brdNameB = "Black Half-Half";
+swampCOX = [100];
+swampCOY = [100];
+hillCOX = [100];
+hillCOY = [100];
+smLakeCOX = [2,2,1,1,2,2,3,3,2,2,100];
+smLakeCOY = [31,30,31,33,32,33,32,30,29,27,100];
+cityCOX = [2,2,3,2,4,100];
+cityCOY = [18,33,12,20,9,100];
+woodCOX = [4,3,4,4,4,100,4,4,4,4,4,100,
+  2,2,2,3,4,1,1,1,1,100];
+woodCOY = [23,20,24,23,25,100,24,25,27,25,23,100,
+  19,21,20,27,26,20,20,19,20,100];
+mountCOX = [3,3,3,100];
+mountCOY = [23,3,19,100];
+beachCOX = [1,1,1,100];
+beachCOY = [29,30,32,100];
+lakeCOX = [100];
+lakeCOY = [100];
+riverCOX = [3,3,3,3,3,100,2,2,2,2,2,2,2,3,3,4,4,100,0,0,0,100,5,5,4,4,3,3,100,3,3,3,100,2,2,2,2,2,2,3,3,4,4,100,0,0,0,1,1,1,2,2,3,3,4,4,100,5,5,4,100];
+riverCOY = [0,0,2,4,6,100,36,36,34,32,30,28,27,26,25,24,23,100,26,26,25,100,10,10,11,12,13,15,100,0,0,2,100,36,36,34,33,31,29,28,27,26,25,100,26,26,25,24,23,21,20,19,18,17,16,15,100,10,10,11,100];
+roadCOX = [2,2,2,100,2,3,3,3,4,100,
+  0,4,100,2,3,3,3,100,
+  5,3,100,0,1,4,100,
+  2,2,100,3,3,100,2,1,100,4,4,100];
+roadCOY = [1,1,3,100,33,34,33,29,27,100,
+  24,15,100,3,4,28,29,100,
+  24,20,100,12,14,7,100,
+  33,35,100,12,12,100,20,21,100,9,8,100];
+
+}
+else if(chooseBrd==31){//
+brdNameR = "Red Mountain-pass";
+swampCOX = [100];
+swampCOY = [100];
+hillCOX = [100];
+hillCOY = [100];
+smLakeCOX = [100];
+smLakeCOY = [100];
+cityCOX = [4,3,2,2,3,100,,100,,100];
+cityCOY = [17,17,33,21,16,100,,100,,100];
+woodCOX = [1,1,1,1,1,0,0,0,  0,0,1,1,0,0,0,1,1,  5,5,4,  4,3,3,3,3,4,100];
+woodCOY = [19,18,20,19,20,21,20,19,  21,19,18,16,15,17,15,16,17,  16,14,15,  14,13,14,12,11,12,100];
+mountCOX = [1,1,1,1,1,   2,2,2,2,2,2,2,      3,3,3,3,3,3,3,3,3,         4,4,4,100];
+mountCOY = [5,7,9,6,8,   6,4,8,19,17,1,21,  8,22,19,20,7,6,4,2,18,    24,22,20,100];
+beachCOX = [3,4,100];
+beachCOY = [23,18,100];
+lakeCOX = [4,4,3,3,3,100];
+lakeCOY = [21,19,25,26,24,100];
+riverCOX = [3,3,2,2,1,100,  0,0,1,2,100,  5,2,100,  2,2,0,0,100,  2,2,100];
+riverCOY = [36,32,31,32,33,100,  10,9,10,12,100,  26,31,100,  0,2,5,9,100,  32,12,100];
+roadCOX = [2,2,3,4,4,100,  2,2,2,2,2,100,  0,2,100,  5,3,100,  5,2,100,  0,2,100];
+roadCOY = [1,15,17,16,17,100,  35,21,20,16,15,100,  24,20,100,  12,16,100,  24,29,100,  12,16,100];
+}
+
+else if(chooseBrd==32){//
+brdNameB = "Black Parallel Roads";
+swampCOX = [100];
+swampCOY = [100];
+hillCOX = [100];
+hillCOY = [100];
+smLakeCOX = [100];
+smLakeCOY = [100];
+cityCOX = [4,2,4,2,2,2,100];
+cityCOY = [9,14,9,25,24,10,100];
+woodCOX = [3,3,3,    2,2,2,2,     3,3,   2,3,  1,1,1,1,      0,0,100];
+woodCOY = [27,12,28, 27,29,26,11, 7,8,   7,6,  33,32,31,30,  31,32,100];
+mountCOX = [4,2,1,1,2,100];
+mountCOY = [3,12,11,13,10,100];
+beachCOX = [1,2,1,100];
+beachCOY = [29,30,25,100];
+lakeCOX = [3,2,3,3,2,1,2,   4,1,100];
+lakeCOY = [10,34,9,10,32,31,32,8,23,100];
+riverCOX = [3,3,2,2,3,100,  2,2,100,  0,4,4,100,   5,4,4,3,3,100,     0,0,0,0,100];
+riverCOY = [0,2,3,9,10,100, 36,34,100,26,18,10,100,10,11,10,11,10,100,26,26,25,23,100];
+roadCOX = [2,2,2,2,1,1,1,100,    2,2,4,4,100,     0,2,3,100,    5,2,1,100,
+  5,1,1,100,    0,1,2,2,2,100,    4,4,100,   2,4,4,100,   2,4,100,    2,3,100];
+roadCOY = [1,5,6,10,9,10,14,100, 35,31,28,22,100, 24,19,21,100, 12,17,14,100,
+  24,17,15,100, 12,15,13,9,8,100, 9,13,100,  3,7,13,100,  25,22,100,  24,21,100];
+}
+else if(chooseBrd==33){//
+brdNameR = "Red Desert War";
+swampCOX = [100];
+swampCOY = [100];
+hillCOX = [100];
+hillCOY = [100];
+smLakeCOX = [100];
+smLakeCOY = [100];
+cityCOX = [4,4,4,4,4,100];
+cityCOY = [8,9,10,28,30,100];
+woodCOX = [100];
+woodCOY = [100];
+mountCOX = [2,2,3,3,3,4,4,3,3,3,4,100];
+mountCOY = [31,33,30,32,31,16,18,9,7,5,6,100];
+beachCOX = [4,4,4,100];
+beachCOY = [4,2,27,100];
+lakeCOX = [3,3,4,4,4,  4,4,4,4,4,   4,4,4,4,4,4,4,100];
+lakeCOY = [34,33,34,32,33, 31,29,23,21,19,  17,15,13,3,2,5,7,  100];
+riverCOX = [2,2,1,1,0,0,0,100,5,4,4,100];
+riverCOY = [0,2,3,2,3,9,10,100,26,25,23,100];
+roadCOX = [2,2,2,3,4,4,3,3,4,4,3,3,3,2,2,100,5,4,100,5,4,100,0,0,100,0,1,100];
+roadCOY = [35,34,30,28,30,20,19,15,14,10,11,10,4,3,1,100,24,26,100,12,10,100,24,23,100,12,14,100];
+
 }
 else{}
 //if(mirrorBrd==1){//mirrored board - reflect across middle column
