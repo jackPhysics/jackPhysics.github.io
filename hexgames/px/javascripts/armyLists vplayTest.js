@@ -1,22 +1,23 @@
 
-var redArmyMax = 52;
-var blackArmyMax = 52;
+var redArmyMax = 38;
+var blackArmyMax = 38;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
 var addAirPowerFlag = false;
 var designateLN=[49,106,80,118,45,102,77,103,43,23,298,112];
 
-var allTheArmiesA = ["All Units Red","All Units Black", "Militia", "Militia Spears", "Professional Spears", "Professional Pikemen",
- "Light Troops","Experimental Phalanx","Barbarian Infantry", "Swordsmen", "Axemen",
-   "Light Cavalry", "Medium Cavalry","Heavy Cavalry","Bowmen", "Improved Bowmen",
-    "Skirmishers","Balista", "Crossbows", "Early Arquebus", "Late Arquebus",
-"Longbow", "Horsebows", "Oriental Cavalry", "Byzantine Cavalry", "Heavy Artillery",
-"Light Artillery", "Elephants", "Vikings - AX", "Vikings - IB", "Chariots - Bows",
- "Chariots - IB", "Chariots - SK", "Chariots - AX","Chariots - MI", "Heavy Chariots - BI",
-"Light Chariots - EX",  "Light Chariots - LT","Spartans", "Normans", "Vikings",
-  "Saxons","Romans", "Pike and Shot", "Henry V","Arabs", "Hordes",
- "Mongols", "Angry Mob", "Mob", "Franks", "Legionaires"];
+var allTheArmiesA = ["All Units Red","All Units Black", "Militia", "Militia Spears", "Professional Spears",
+"Professional Pikemen", "Light Troops","Experimental Phalanx","Barbarian Infantry", "Swordsmen",
+"Axemen","Light Cavalry", "Medium Cavalry","Heavy Cavalry","Bowmen",
+"Improved Bowmen", "Skirmishers","Balista", "Crossbows", "Early Arquebus",
+"Late Arquebus","Longbow", "Horsebows", "Oriental Cavalry", "Byzantine Cavalry",
+"Heavy Artillery","Light Artillery", "Elephants", "Vikings - AX", "Vikings - IB",
+"Chariots - Bows", "Chariots - IB", "Chariots - SK", "Chariots - AX","Chariots - MI",
+"Heavy Chariots - BI","Light Chariots - EX",  "Light Chariots - LT","Spartans", "Normans",
+"Vikings", "Saxons","Romans", "Pike and Shot", "Henry V",
+"Arabs", "Hordes", "Mongols", "Angry Mob", "Mob",
+"Franks", "Legionaires", "British WWI Infantry", "US Cavalry c.1776","Lakota Sioux"];
 
 var allTheUnitsA = [
   "0","A", "n","inf","2","3","","","MI",
@@ -1643,6 +1644,80 @@ var noOfSide = unitsQ.length/noOfItems;
   for(s=0;s<noOfSide;s++){
     sideQ[s]=1;    }}
 }
+
+else if(changeRedFlag&&redArmyNo==52||changeBlackFlag&&blackArmyNo==52){
+var nameQ="British WWI Infantry";//single types are 24 pts, armies more points?
+
+var qbase = ["#6B8E23","#6B8E23", "#6B8E23"];
+
+var unitsQ=[
+  "#6B8E23/#ffffff/#F0E68C/#000000","Ff", "6", "3", "f","inf","2","5","11","6","|",
+    "#6B8E23/#ffffff/#F0E68C/#000000","Ff", "6", "1", "f","mg","2","5","6","10",".."
+];//#FFDEAD
+
+var designateLQ=[202,303, 261,305, 323,304, 379,304];
+
+var designateRQ=[261,546, 317,547, 380,547, 440,547];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==53||changeBlackFlag&&blackArmyNo==53){
+var nameQ="US Cavalry c.1776";//single types are 24 pts, armies more points?
+
+var qbase = ["#0000dd","#0000dd", "#0000dd"];
+
+var unitsQ=[
+  "#0000dd/#ffff00/#ff0000/#ffffff","Mf", "4", "6", "f","cav","2","8","3","3","US"
+];//#FFDEAD
+
+var designateLQ=[202,303, 261,305, 323,304, 379,304, 442,305, 500,302];
+
+var designateRQ=[261,546, 317,547, 380,547, 440,547, 503,546, 558,545];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==54||changeBlackFlag&&blackArmyNo==54){
+var nameQ="Lakota Sioux";//single types are 24 pts, armies more points?
+
+var qbase = ["#ffeedd","#ffeedd", "#ffeedd"];
+
+var unitsQ=[
+  "#eedddd/#ff0000/#cccc00/#00cc00","Mf", "4", "6", "f","cav","4","12","2","2","^"
+];//#FFDEAD
+
+var designateLQ=[202,303, 261,305, 323,304, 379,304, 442,305, 500,302];
+
+var designateRQ=[261,546, 317,547, 380,547, 440,547, 503,546, 558,545];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
 
 if(addSupplyUnitsFlag){
   unitsQ.push(unitsQ[0], "D","0","4","n","trans","o","6","","","WG");

@@ -444,29 +444,22 @@ for(i=0;i<loopLen;i++){
     neutUnits = 1*neutUnits + 1*unitsA[(i*noOfItems)+3];
   }*/
 }
-//console.log("1 changeRedFlag="+changeRedFlag+" changeBlackFlag="+changeBlackFlag+" rusUnits="+rusUnits+" gerUnits="+gerUnits);
-/*
 if(addSupplyUnitsFlag){
-  if(changeRedFlag&&changeSupplyFlag){
+  if(changeRedFlag){
     rusUnits = rusUnits+4;
-    loopLen++;}
-  if(changeBlackFlag&&changeSupplyFlag){gerUnits = gerUnits+4;
-  loopLen++;}
+    gerUnits = gerUnits+4;}
+  if(changeBlackFlag){gerUnits = gerUnits+4;}
 }
 if(addDummyUnitsFlag){
-  if(changeRedFlag&&changeDummyUnitsFlag){rusUnits = rusUnits+8;
-  loopLen++;}
-  if(changeBlackFlag&&changeDummyUnitsFlag){gerUnits = gerUnits+8;
-  loopLen++;}
+  if(changeRedFlag){rusUnits = rusUnits+8;
+  gerUnits = gerUnits+8;}
+  if(changeBlackFlag){gerUnits = gerUnits+8;}
 }
 if(addAirPowerFlag){
-  if(changeRedFlag&&changeAirPowerFlag){rusUnits = rusUnits+3;
-  loopLen++;}
-  if(changeBlackFlag&&changeAirPowerFlag){gerUnits = gerUnits+3;
-  loopLen++;}
+  if(changeRedFlag){rusUnits = rusUnits+3;
+  gerUnits = gerUnits+3;}
+  if(changeBlackFlag){gerUnits = gerUnits+3;}
 }
-*/
-//console.log("2 changeRedFlag="+changeRedFlag+" changeBlackFlag="+changeBlackFlag+" rusUnits="+rusUnits+" gerUnits="+gerUnits);
 
 noOfPieces= rusUnits+gerUnits+neutUnits; //no of pieces in game
   //console.log("noOfPieces "+  noOfPieces + " " + rusUnits);

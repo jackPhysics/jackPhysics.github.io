@@ -10,7 +10,7 @@ var hopperHTMLcode = '<table class="mover" id="keyPressTable"><tr>'+
 '<td class="button6" onclick="virtualKey(3)" id="diceResult">dice</td>'+
 '<td class="button" onclick="virtualKey(14)">&gt;</td>'+
 '<td class="button" onclick="virtualKey(6)">S</td></tr>'+
-'<tr><td class="button" onclick="virtualKey(86)">B</td>'+
+'<tr><td class="button" onclick="virtualKey(9)">C</td>'+
 '<td class="button" onclick="virtualKey(87)">Z</td>'+
 '<td class="button" onclick="virtualKey(12)">&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;&nbsp;&nbsp;&nbsp;</td>'+
 '<td class="button" onclick="virtualKey(8)">F</td>'+
@@ -156,6 +156,8 @@ var table2HTMLcode = '<table BORDER="2" id="saveTable" bgcolor="silver">'+
 '</div></td>'+
 '<td>'+
 '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'+
+'<a class="save" href="javascript:airUnitsYesNo()"  id="btnAir">Leader Units - No</a>'+
+'<br><br>'+
 '<a class="save" href="javascript:supplyUnitsYesNo()"  id="btnSupply">Supply Units - No</a>'+
 '<br><br>'+
 '<a class="save" href="javascript:blankUnitsYesNo()"  id="btnBlank">Blank Units - No</a>'+

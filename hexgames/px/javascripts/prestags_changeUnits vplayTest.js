@@ -109,6 +109,224 @@ function findNameSrc(p, i){
   return pieceName1;
 }
 
+function findTryValue(m){
+  var maxValue = m;
+  var chanceNumber = Math.pow(maxValue,0.5);
+  chanceNumber = 0.4+chanceNumber/10;
+  console.log(chanceNumber);
+  var actualValue = 0;
+  if(maxValue>2){actualValue = 1;}
+  var jumpOut = false;
+  while(!jumpOut){
+    if(Math.random()<chanceNumber){actualValue++;}
+    else{jumpOut=true;}
+  }
+  if(actualValue>1*maxValue+1){
+    actualValue=1*maxValue+1;
+  }
+/*
+  if(Math.random()<0.2){
+    actualValue = 1*maxValue+1;
+  }
+  else if(maxValue>2){
+    actualValue = Math.floor(Math.random()*maxValue)+1;
+  }
+  else{//if(maxValue<=2)
+    actualValue = Math.round(Math.random()*maxValue);
+  }
+  */
+  return actualValue;
+}
+
+function untriedTry(n){
+	var tryUnitIndex=n;
+  var dummyValue = 0;
+    //console.log(" untriedPrint="+untriedPrint[tryUnitIndex]);
+  if(untriedPrint[tryUnitIndex]=="?"){//untried, give it a value
+    dummyValue = findTryValue(untriedMax[tryUnitIndex]);
+    untriedPrint[tryUnitIndex] = dummyValue;
+      //console.log(" dummyValue="+dummyValue+" untriedMax[tryUnitIndex]="+untriedMax[tryUnitIndex]);
+  }
+  else{
+  untriedPrint[tryUnitIndex] = "?";
+  }
+	printUnit(tryUnitIndex, typeNumbA[tryUnitIndex], typeTotalA[tryUnitIndex], thisIsA[tryUnitIndex],countIndividual[tryUnitIndex]);
+  mouseActive=0;
+  doEdgeColor();
+}
+
+function changeNeutralPic(n){
+	var leaderIndex=n;
+	leaderA[leaderIndex]++;
+	if(leaderA[leaderIndex]==6){
+		//leaderA[leaderIndex]=5;
+	}
+	else if(leaderA[leaderIndex]>6){
+		leaderA[leaderIndex]=5;
+	}
+	else if(leaderA[leaderIndex]>4){
+		leaderA[leaderIndex]=1;
+	}
+	else{}
+	unitsA[thisIsA[leaderIndex]*itemsPerUnit+10] = ""+leaderA[leaderIndex]+"L";
+	printUnit(leaderIndex, typeNumbA[leaderIndex], typeTotalA[leaderIndex], thisIsA[leaderIndex],countIndividual[leaderIndex]);
+  mouseActive=0;
+  doEdgeColor();
+	//alert(""+n);
+  //if (n=="1L"){leaderName="1";}
+	//alert("2:"+leaderName+":"+n);
+/*
+	var base=Abase;
+	if(activeIndex>=gerNumber){base=Bbase;}
+	var titles3 = "";
+
+	//alert("activeIndex:"+activeIndex);
+  if (leaderName==1){
+	//alert(""+"1L to 2L");
+	activeImage.setAttribute("src", "units/"+base+"2l"+unitExtension);
+		titles = activeImage.getAttribute("title");
+	if (activeIndex<10){
+	titles2=titles.slice(26);
+		titles3 = titles.slice(0,4);
+		activeImage.setAttribute("title", titles3+"2L combat:+6 radius:2 "+titles2);
+
+   }
+ 	else if (activeIndex<100){
+	titles2=titles.slice(27);
+		titles3 = titles.slice(0,5);
+		activeImage.setAttribute("title", titles3+"2L combat:+6 radius:2 "+titles2);
+   }
+ 	else{
+	titles2=titles.slice(28);
+		titles3 = titles.slice(0,6);
+		activeImage.setAttribute("title", titles3+"2L combat:+6 radius:2 "+titles2);
+   }
+   neutN[activeIndex]=2;
+   leaderValueA[activeIndex]=2;
+		}
+
+	if(leaderName==2){
+	//alert(""+"2L to 3L");
+		activeImage.setAttribute("src", "units/"+base+"3l"+unitExtension);
+		titles = activeImage.getAttribute("title");
+	if (activeIndex<10){
+	titles2=titles.slice(26);
+		titles3 = titles.slice(0,4);
+		activeImage.setAttribute("title", titles3+"3L combat:+3 radius:1 "+titles2);
+   }
+ 	else if (activeIndex<100){
+	titles2=titles.slice(27);
+		titles3 = titles.slice(0,5);
+		activeImage.setAttribute("title", titles3+"3L combat:+3 radius:1 "+titles2);
+   }
+ 	else{
+	titles2=titles.slice(28);
+		titles3 = titles.slice(0,6);
+		activeImage.setAttribute("title", titles3+"3L combat:+3 radius:1 "+titles2);
+   }
+	 //alert("units/"+base+"3l"+unitExtension+"  "+titles3+"3L combat:+3 radius:1 "+titles2);
+   neutN[activeIndex]=3;
+   leaderValueA[activeIndex]=3;
+		 }
+
+	if(leaderName==3)
+		{
+		//alert(""+"3L to 4L");
+    activeImage.setAttribute("src", "units/"+base+"4l"+unitExtension);
+		titles = activeImage.getAttribute("title");
+	if (activeIndex<10){
+	titles2=titles.slice(26);
+		titles3 = titles.slice(0,4);
+		activeImage.setAttribute("title", titles3+"4L combat:+3 radius:0 "+titles2);
+   }
+ 	else if (activeIndex<100){
+	titles2=titles.slice(27);
+		titles3 = titles.slice(0,5);
+		activeImage.setAttribute("title", titles3+"4L combat:+3 radius:0 "+titles2);
+   }
+ 	else{
+	titles2=titles.slice(28);
+		titles3 = titles.slice(0,6);
+		activeImage.setAttribute("title", titles3+"4L combat:+3 radius:0 "+titles2);
+   }
+   neutN[activeIndex]=4;
+   leaderValueA[activeIndex]=4;
+    }
+
+	if(leaderName==4)
+		{
+		//alert(""+"4L to 1L");
+    activeImage.setAttribute("src", "units/"+base+"1l"+unitExtension);
+		titles = activeImage.getAttribute("title");
+	if (activeIndex<10){
+	titles2=titles.slice(26);
+		titles3 = titles.slice(0,4);
+		activeImage.setAttribute("title", titles3+"1L combat:+9 radius:2 "+titles2);
+   }
+ 	else if (activeIndex<100){
+	titles2=titles.slice(27);
+		titles3 = titles.slice(0,5);
+		activeImage.setAttribute("title", titles3+"1L combat:+9 radius:2 "+titles2);
+   }
+ 	else{
+	titles2=titles.slice(28);
+		titles3 = titles.slice(0,6);
+		activeImage.setAttribute("title", titles3+"1L combat:+9 radius:2 "+titles2);
+   }
+   neutN[activeIndex]=1;
+   leaderValueA[activeIndex]=1;
+    }
+
+	if(leaderName==5)
+		{
+    activeImage.setAttribute("src", "units/"+base+"6l"+unitExtension);
+		titles = activeImage.getAttribute("title");
+	if (activeIndex<10){
+	titles2=titles.slice(26);
+		titles3 = titles.slice(0,4);
+		activeImage.setAttribute("title", titles3+"6L combat:+0 radius:1 "+titles2);
+   }
+ 	else if (activeIndex<100){
+	titles2=titles.slice(27);
+		titles3 = titles.slice(0,5);
+		activeImage.setAttribute("title", titles3+"6L combat:+0 radius:1 "+titles2);
+   }
+ 	else{
+	  titles2=titles.slice(28);
+		titles3 = titles.slice(0,6);
+		activeImage.setAttribute("title", titles3+"6L combat:+0 radius:1 "+titles2);
+    }
+  neutN[activeIndex]=6;
+   leaderValueA[activeIndex]=6;
+    }
+	if(leaderName==6)
+		{
+    activeImage.setAttribute("src", "units/"+base+"5l"+unitExtension);
+		titles = activeImage.getAttribute("title");
+	if (activeIndex<10){
+	  titles2=titles.slice(26);
+		titles3 = titles.slice(0,4);
+		activeImage.setAttribute("title", titles3+"5L combat:+0 radius:2 "+titles2);
+   }
+ 	else if (activeIndex<100){
+	   titles2=titles.slice(27);
+		titles3 = titles.slice(0,5);
+		activeImage.setAttribute("title", titles3+"5L combat:+0 radius:2 "+titles2);
+   }
+ 	else{
+	//alert("5: ");
+   titles2=titles.slice(28);
+		titles3 = titles.slice(0,6);
+		activeImage.setAttribute("title", titles3+"5L combat:+0 radius:2 "+titles2);
+    }
+   neutN[activeIndex]=5;
+   leaderValueA[activeIndex]=5;
+    }
+		mouseActive=0;
+		doEdgeColor();
+    document.getElementById('hopText').innerText=""+activeImage.getAttribute("title");
+*/
+}
 
 function changeUnit(p, i, f){
   var activePiece = p;
