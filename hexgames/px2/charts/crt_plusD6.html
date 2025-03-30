@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>CRT Stalingrad</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {background-image:url(tiles/paper.JPG); text-align:center; font-size:18pt}
+
+p { font-size:0.5in}
+input {font-size:18pt}
+p.key { font-size:12pt}
+
+-->
+</STYLE>
+
+<script language="Javascript1.2">
+var dieInHand=1;
+
+function rollDie()
+{
+if(dieInHand==1){
+	var noPips=0;
+	noPips=Math.round(Math.random()*6+0.5);
+	document.getElementById("result").textContent = "" + noPips;//"You rolled " + noPips;
+	document.getElementById("rollBtn").setAttribute("value", "pick up d6");
+	dieInHand=0;
+	}
+else{
+	document.getElementById("result").textContent = "-";
+	document.getElementById("rollBtn").setAttribute("value", "Roll d6");
+	dieInHand=1;}
+}
+
+</script>
+</HEAD>
+<BODY bgcolor=ivory>
+<font face="Ab2ial">
+<table>
+<tr><td>
+<table border="2" width=100%>
+<tr bgcolor=cyan><td colspan="13"><font size="5">CRT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font size="4"> COMBAT RESULTS TABLE</font></td></tr>
+<tr align=center bgcolor=white><td rowspan="2"  bgcolor=cyan>DIE ROLL</td><td colspan="11">ODDS (Attacker's Strength-to-Defenders's Strength)<Ex><small>Odds greater than 6-1 or 1-6 mean automatic elimination.</small></td><td rowspan="2"  bgcolor=cyan>DIE ROLL</td></tr>
+<tr align=center bgcolor=white><td>1-6</td><td>1-5</td><td>1-4</td><td>1-3</td><td>1-2</td><td>1-1</td><td>2-1</td><td>3-1</td><td>4-1</td><td>5-1</td><td>6-1</td></tr>
+
+<tr align=center bgcolor=pink><td>1</td><td>Ae</td><td>Ae</td><td>Ab2</td><td>Ab2</td><td>Db2</td><td>De</td><td>De</td><td>De</td><td>De</td><td>De</td><td>De</td> <td>1</td></tr>
+<tr align=center bgcolor=white><td>2</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ab2</td><td>Ex</td><td>Ex</td><td>Ex</td><td>Ex</td><td>Ex</td><td>Db2</td><td>Db2</td><td>2</td></tr>
+<tr align=center bgcolor=pink><td>3</td><td>Ab2</td><td>Ab2</td><td>Ab2</td><td>Ab2</td><td>Ab2</td><td>Db2</td><td>Db2</td><td>Db2</td><td>De</td><td>De</td><td>De</td><td>3</td></tr>
+<tr align=center bgcolor=white><td>4</td><td>Ae</td><td>Ab2</td><td>Ab2</td><td>Ab2</td><td>Ab2</td><td>Ab2</td><td>Ab2</td><td>Db2</td><td>Db2</td><td>Db2</td><td>De</td> <td>4</td></tr>
+<tr align=center bgcolor=pink><td>5</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ex</td><td>Ex</td><td>Db2</td><td>De</td><td>De</td><td>5</td></tr>
+<tr align=center bgcolor=white><td>6</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ae</td><td>Ae</td><td>De</td><td>De</td><td>De</td><td>De</td> <td>6</td></tr>
+
+</table>
+<p class=key>Ae=A elim, Ab2=A back 2, Ex=Exchange, Db2=D back 2, De=D elim</p>
+</td>
+<td>
+
+<input class="button" id="rollBtn" type="button" value="Roll d6" onClick="rollDie()">
+<table><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><p class="result" id="result">-</p></td>
+</tr></table>
+
+</td><tr>
+</table>
+</font>
+
+</BODY>
+</HTML>

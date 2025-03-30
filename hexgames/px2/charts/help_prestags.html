@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>HELP</TITLE>
+<STYLE>
+<!--
+BODY {};
+p {font-size:18};
+p.title {font-size:22; text-decoration:underline};
+td {font-size:20};
+td.small {font-size:16}
+ul {list-style-type:disc};
+-->
+</STYLE>
+
+
+</head>
+<body>
+<p>Keyboard codes:</p>
+<table border="1">
+<tr><td>"x"</td><td>........</td><td>eliminate</td><td class="small">replaces the piece with a 'dead unit'. Pieces marked with white border</td></tr>
+<tr><td>"d"</td><td>........</td><td>disrupted</td><td class="small">marks the piece as 'disrupted', - <font color=red> RED </font>border, unless 'Double D' is chosen then each side has its own disruption colour (which can be applied to either side - it shows the player-turn of disruption).</td></tr>
+<tr><td>"r"</td><td>........</td><td>routed/panicked</td><td class="small">marks the piece as 'panicked',  - <font color=orange> ORANGE </font>border.</td></tr>
+<tr><td>"s"</td><td>........</td><td>un-supplied</td><td class="small">marks the piece as 'out of command', - (<font color=grey> GREY </font>) DOUBLE border (buttons exist to unsupple/suppl/randomly supply a whole side).</td></tr>
+<tr><td>"m"</td><td>........</td><td>mark a piece</td><td class="small">if you wish to mark units for some reason eg. moved pieces - <font color=gray> DASHED</font> border</td></tr>
+<tr><td>"f"</td><td>........</td><td>fired</td><td class="small">to mark a fire unit that is considered unable to fire again - <font color=blue> DARK BLUE</font> border (buttons exist to unfire whole side)</td></tr>
+<tr><td>"c"</td><td>........</td><td>change</td><td class="small">change unit into another unit that it is allowed to change to - leaders move to next leader down; cavalry dismount; single shot troops lose fire ability; etc - not all troops can 'change'</td></tr>
+<tr><td>"e"</td><td>........</td><td>exited</td><td class="small">to mark unit that has exited the battlefield</td></tr>
+<tr><td>"q"</td><td>........</td><td>rotate left (ACW)</td><td class="small">rotate by 30<sup>0</sup></td></tr>
+<tr><td>"w"</td><td>........</td><td>rotate right (CW)</td><td class="small">rotate by 30 (buttons exist to rotate whole side)</td></tr>
+<tr><td>"a"</td><td>........</td><td>centre the rotation</td><td class="small">place piece upright</td></tr>
+<tr><td>"t"</td><td>........</td><td>turn advance</td><td class="small">Moves the turn calculator (lower left) to the next player turn - can be done by using button as well</td></tr>
+<tr><td>"y"</td><td>........</td><td>turn retreat</td><td class="small">Moves the turn calculator (lower left) back a player turn - can be done by using button as well</td></tr>
+<tr><td>"1"</td><td>........</td><td>zoom out</td><td class="small">shrinks board and pieces down a level</td></tr>
+<tr><td>"2"</td><td>........</td><td>zoom in</td><td class="small">shrinks board and pieces up a level</td></tr>
+<tr><td>"3"</td><td>........</td><td>shrink pieces</td><td class="small">shrink pieces to one level smaller than board</td></tr>
+<tr><td>"4"</td><td>........</td><td>normal piece size</td><td class="small">makes piece-size same level as board-size</td></tr>
+<tr><td>"b"</td><td>........</td><td>show board</td><td class="small">all pieces disappear so you can view the board clearly</td></tr>
+<tr><td>"z"</td><td>........</td><td>'zombies'</td><td class="small">remove dead units, or show dead pieces (if press 'z' after 'b' then only dead units are shown)</td></tr>
+<tr><td>"L"</td><td>........</td><td>unit zoom</td><td class="small">if 'on' when mouse moves over unit it expands to show counter</td></tr>
+<tr><td>"h"</td><td>........</td><td>hopper</td><td class="small">hide/show the hopper</td></tr>
+<tr><td>"j"</td><td>........</td><td>jump hopper</td><td class="small">move hopper to next position</td></tr>
+<tr><td>"0,O,P,L"</td><td>........</td><td>shift piece</td><td class="small">0,O,P and L will shift highlighted piece 5 pixels N, W, E or S (5 pixels whatever board size - so on larger board you get finer movement)</td></tr>
+<tr><td>"9"</td><td>........</td><td>unselect piece</td><td class="small">unselect, un-highlight, a chosen piece</td></tr>
+<tr><td><font color=red>"F5"</td><td>........</td><td><font color=red>DO NOT PRESS<br>THIS KEY!<br>(unless about to load a position)</td><td class="small"><font color=red>wipes out all moves and returns everything to initial positions!</td></tr>
+</table>
+<p>Repeating the code reverses the effect.<br>
+Upper or lower-case code letters should work.</p>
+
+<p><b>To move a unit</b> click on it to select it, then click on where you want it to move to - if second click is another piece then 2st piece is stacked on top of 2nd (the program remembers where you clicked on the piece and will place it at its new place in the same relative position to the mouse point) (if you want them to overlap exactly, so one piece is hidden under another, try using the "0,O,P,L" keys to manuever it and then use "9" to unselect it)</p>
+
+<p>Clicking a second time on the same piece unselects it - clicking the second time on a second piece also unselects the first piece but does not select the second, you'll need to click again on the second piece to do that.</p>
+
+<p>When a piece is selected if you press certain keys the piece will be altered in some way as mentioned in the keycodes above. .</p>
+
+
+<p class="title">SAVING THE POSITION</p>
+<p>The game can be saved at any time. What is being saved is a 'snapshot' of where all the pieces are on the board and what state they are in.</p>
+<p>To save a position follow these steps:</p>
+<ol>
+<li>Check all the pieces are as you want them to be saved - check the 'Game Turn' marker, check the game-turn calculator, check the City Control boxes, do you want to leave units marked or unmarked? "--REMEMBER TO PICK APPROPRIATE TURN BUTTON BEFORE CREATING SAVE DATA..."" - this determines which side is hidden when a new game is re-loaded with hidden movement chosen.
+<li>Press the 'create save-data' button located at the bottom of the screen
+<li>A new window will pop up full of numbers seperated by commas - this is the data that provides the 'snapshot'
+<li>In this new window choose <b><u>E</u>dit | Select <u>A</u>ll</b> to highlight all the data
+<li>Then choose <b><u>E</u>dit | <u>C</u>opy</b> to copy all the data
+<ul>
+<li>DO NOT choose <b><u>F</u>ile | Save <u>A</u>s...</b> or <b><u>F</u>ile | <u>S</u>ave</b> in the new window as this will not save the data correctly!</ul>
+<li>Open a Notepad window (<b>Start | <u>P</u>rograms | Accessories | Notepad</b>)
+<li>Paste your copied data into this Notepad window (<b><u>E</u>dit | <u>P</u>aste</b>)
+<li>Now save this Notepad window in order to save your data... Choose <b><u>F</u>ile | Save <u>A</u>s...</b> from the Notepad menu bar. Save the file with an appropriate name in an appropriate place.
+<ul><li>You could then clear the Notepad window ( <b><u>E</u>dit | Select <u>A</u>ll</b> then press the <b>Delete</b> key) and so have it all ready for the next bit of data you want to save.</ul>
+</ol>
+
+<p class="title">RELOADING THE POSITION</p>
+<p>Before re-loading a new position you MUST 'Refresh' the game. This is done by pressing the 'Refresh' button on the toolbar or choosing <b><u>V</u>iew | <u>R</u>efresh</b> (or pressing the 'F5' key). 'Refreshing' wipes out all existing moves and puts the game back to initial positions. Check you do not want to save your position before you 'refresh'.</p>
+<p>To re-load a position follow these steps:</p>
+<ol>
+<li>Your data should be saved in a .txt file somewhere
+<li>Find the appropriate file and double-click it to open it
+<li>The data will be opened up in its own Notepad window. Select the data by choosing <b><u>E</u>dit | Select <u>A</u>ll</b>
+<li>Copy the data by choosing <b><u>E</u>dit | <u>C</u>opy</b>
+<li>We will now paste the data into the game: <b>right</b>-click with the mouse over the 're-load' box at the very bottom of the game screen - this will pop-up a little menu of options - choose <b><u>P</u>aste</b>
+<li>The data should all now be visible inside the 're-load' box - press the 'press to re-load' button
+<li>Voila!
+</ol>
+
+</body>
+</html>
