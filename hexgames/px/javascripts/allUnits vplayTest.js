@@ -309,6 +309,7 @@ changeBlackFlag = false;
 redArmyNo=n;
 findArmies();
 sortArmies();
+findColours();
 placePics2();
 changeRedFlag = false;
 document.getElementById('armyNameR').innerText="Red Army #"+redArmyNo+"\n"+nameA;
@@ -335,6 +336,7 @@ function changeRedArmy(){
   if(redArmyNo>redArmyMax){redArmyNo=0;}
   findArmies();
   sortArmies();
+  findColours();
   placePics2();
   changeRedFlag = false;
   document.getElementById('armyNameR').innerText="Red Army #"+redArmyNo+"\n"+nameA;
@@ -363,6 +365,7 @@ changeBlackFlag = true;
 blackArmyNo=n;
 findArmies();
 sortArmies();
+findColours();
 placePics2();
 changeRedFlag = false;
 document.getElementById('armyNameB').innerText="Black Army #"+blackArmyNo+"\n"+nameB;
@@ -382,6 +385,7 @@ function changeBlackArmy(){
   if(blackArmyNo>blackArmyMax){blackArmyNo=0;}
   findArmies();
   sortArmies();
+  findColours();
   placePics2();
   changeBlackFlag = false;
   document.getElementById('armyNameB').innerText="Black Army #"+blackArmyNo+"\n"+nameB;

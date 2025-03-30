@@ -1135,7 +1135,7 @@ var classType = classFactor;//unit number - out of all
               ctx.closePath();
               ctx.beginPath();
               ctx.font = "bold 54px Arial";
-              ctx.fillStyle = colorThis;
+              ctx.fillStyle = colorThisBT;
               ctx.textAlign = "center";
               ctx.textBaseline = "middle";
             //hexstring = "\u{1f5fa}";//world
@@ -1689,4 +1689,218 @@ function printUnitBlank(n, b, t, id, c0){//n=number of image b=battalion number,
 					//ctx.stroke();
 					ctx.fill();
 
+}
+
+
+
+function makeColor(){
+  var rndR = Math.floor(Math.random()*255);
+  var rndG = Math.floor(Math.random()*255);
+  var rndB = Math.floor(Math.random()*255);
+  var rndRH = rndR.toString(16);
+  var rndGH = rndG.toString(16);
+  var rndBH = rndB.toString(16);
+  if(Math.random()<0.5){}
+  else{
+  var dumCol = Math.ceil(Math.random()*18);
+  switch (dumCol) {
+  case 1://rndR
+    rndGH="00";
+    rndBH="00";
+    break;
+case 2://rndR
+  rndGH="ff";
+  rndBH="00";
+  break;
+case 3://rndR
+rndGH="00";
+rndBH="ff";
+break;
+case 4://rndR
+rndGH="ff";
+rndBH="ff";
+break;
+case 5://rndG
+rndRH="00";
+rndBH="00";
+break;
+case 6://rndG
+rndRH="ff";
+rndBH="00";
+break;
+case 7://rndG
+rndRH="00";
+rndBH="ff";
+break;
+case 8://rndG
+rndRH="ff";
+rndBH="ff";
+break;
+case 9://rndB
+rndGH="00";
+rndRH="00";
+break;
+case 10://rndB
+rndGH="ff";
+rndRH="00";
+break;
+case 11://rndB
+rndGH="00";
+rndRH="ff";
+break;
+case 12://rndB
+rndGH="ff";
+rndRH="ff";
+break;
+case 13://rndB
+rndRH="ff";
+break;
+case 14://rndB
+rndGH="ff";
+break;
+case 15://rndB
+rndBH="ff";
+break;
+case 16://rndB
+rndRH="00";
+break;
+case 17://rndB
+rndGH="00";
+break;
+case 18://rndB
+rndBH="00";
+break;
+  }}
+  unitColor = "#"+rndRH+rndGH+rndBH;
+
+  if(unitColor.length<6){
+    var oldCol = unitColor;
+    var colDigit1 = Math.floor(Math.random()*10);
+    var colDigit2 = Math.floor(Math.random()*10);
+    unitColor=""+unitColor+colDigit1+colDigit2;
+    //alert("5: "+oldCol+" "+unitColor);
+  }
+  else if(unitColor.length<7){
+    var oldCol = unitColor;
+    var colDigit = Math.floor(Math.random()*10);
+    unitColor=""+unitColor+colDigit;
+    //alert("6: "+oldCol+" "+unitColor);
+  }
+  else{}
+  //unitColor = unitColor.toUpperCase();
+  rndR = parseInt(rndRH, 16);
+  rndG = parseInt(rndGH, 16);
+  rndB = parseInt(rndBH, 16);
+  var shade = +rndR+rndG+rndB;
+  //alert("RH:"+rndRH+" R:"+rndR+" GH:"+rndGH+" G:"+rndG+" BH:"+rndBH+" B:"+rndB);
+  //alert("H:"+1*(rndRH+rndGH+rndBH)+" dec:"+(rndR+rndG+rndB));
+  shadeCol=shade;
+  //if(shade<380){
+  if(rndR<128&&rndG<128&&rndB<128||shade<380){
+    textColor="#ffffff";textColor2="#000000";}
+  else{textColor="#000000";textColor2="#ffffff";}
+
+  goColor=unitColor;
+  goColorT=textColor;
+
+  makeUnitColor();
+  goColorB=unitColorSm;
+
+	unitColor2 = "#"+shiftColor(unitColor, changeColor, 'add');
+	unitColor1 = "#"+shiftColor(unitColor2, changeColor, 'add');
+	unitColor3 = "#"+shiftColor(unitColor, changeColor, 'sub');
+	unitColor4 = "#"+shiftColor(unitColor3, changeColor, 'sub');
+  boxColor = "#"+flipColor(unitColor3);
+
+  //printUnits();
+  findUnits();
+  //return unitColor0;
+}
+
+function makeUnitColor(){
+
+  var rndR = Math.floor(Math.random()*256);
+  var rndG = Math.floor(Math.random()*256);
+  var rndB = Math.floor(Math.random()*256);
+  var extra = Math.floor(Math.random()*16);
+  var rndRH = rndR.toString(16);
+  var rndGH = rndG.toString(16);
+  var rndBH = rndB.toString(16);
+  var extraH = extra.toString(16);
+  unitColorSm = "#"+rndRH+rndGH+rndBH;
+  while(unitColorSm.length<7){
+    unitColorSm=unitColorSm+extraH;
+  }
+  //if(unitColorSm.length==6){
+  //  unitColorSm=unitColorSm+extraH;
+  //}
+  var shade = +rndR+rndG+rndB;
+  if(shade>383){textColorSm="#000000";}
+  else{textColorSm="#ffffff";}
+
+  var finalColours = unitColorSm+"/"+textColorSm;
+
+  return finalColours;
+
+  /*
+	unitColor2 = "#"+shiftColor(unitColor, changeColor, 'add');
+	unitColor1 = "#"+shiftColor(unitColor2, changeColor, 'add');
+	unitColor3 = "#"+shiftColor(unitColor, changeColor, 'sub');
+	unitColor4 = "#"+shiftColor(unitColor3, changeColor, 'sub');
+  boxColor = "#"+flipColor(unitColor3);
+  */
+	//alert(""+unitColor+" "+unitColor1+" "+unitColor2+" "+unitColor3+" "+unitColor4);
+  //printUnits();
+}
+
+function findColours(){
+//console.log("1: "+unitsA);
+  var changeColorUnit = "#333333";
+  var changeDir = "sub";
+  var dumUnitLen = unitsA.length/noOfItems;
+  //console.log("1: "+unitsA+" ****len: "+dumUnitLen);
+  var allTimeColors  = makeUnitColor();//fixed color
+  var allTimeColors2  = allTimeColors;
+  var oldColorLock = "";
+  var newColorLock = "";
+  for(var a=0;a<dumUnitLen-1;a++){
+    if(unitsA[a*noOfItems].slice(0,5)=="#rand"){
+    if(unitsA[a*noOfItems].slice(5,6)=="A"){//if to use fixed color
+      newColorLock = unitsA[a*noOfItems].slice(0,7);
+      //console.log("new: "+newColorLock+"  old: "+oldColorLock);
+      if(newColorLock!=oldColorLock){//new army, new colours
+       allTimeColors  = makeUnitColor();//fixed color
+       allTimeColors2  = allTimeColors;
+      }
+      unitsA[a*noOfItems] = "";//clear old colours
+      unitsA[a*noOfItems] = allTimeColors;//use fixed colour
+      if(true){//compare if part of same army unitsA[a*noOfItems].slice(6,7)==oldColorLock
+      var allTimePartCol = allTimeColors.slice(0,7);//main color
+      var allTimePartCol2 = allTimeColors.slice(7,15);//text color
+      //console.log("1: "+allTimeColors+"  2: "+allTimePartCol+"  3: "+allTimePartCol2);
+        if(Math.random()<0.5){changeDir = "sub";}
+        else{changeDir = "add";}
+        if(Math.random()<0.25){changeColorUnit = "#330000";}
+        else if(Math.random()<0.33){changeColorUnit = "#003300";}
+        else if(Math.random()<0.5){changeColorUnit = "#000033";}
+        else{changeColorUnit = "#333333";}
+      allTimeColors2 = "#"+shiftColor(allTimePartCol, changeColorUnit, changeDir);//alter main color
+      allTimeColors2 = allTimeColors2 + allTimePartCol2;//add back text color
+      unitsA[a*noOfItems] = allTimeColors2;//store colour
+      }
+      thisTimeColors = makeUnitColor();//make box colours
+      unitsA[a*noOfItems] = unitsA[a*noOfItems]+"/"+thisTimeColors;
+      oldColorLock = newColorLock;
+    }
+    else{
+      unitsA[a*noOfItems] = "";//clear old colours
+      var thisTimeColors = makeUnitColor();
+      //console.log(" "+a+" "+thisTimeColors);
+      unitsA[a*noOfItems] = thisTimeColors;//make main colour
+      thisTimeColors = makeUnitColor();//make box colours
+      unitsA[a*noOfItems] = unitsA[a*noOfItems]+"/"+thisTimeColors;}
+    }
+    else{}
+  }
+  //console.log("2: "+unitsA);
 }

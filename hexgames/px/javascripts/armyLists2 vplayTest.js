@@ -1,6 +1,6 @@
 
-var redArmyMax = 23;
-var blackArmyMax = 23;
+var redArmyMax = 24;
+var blackArmyMax = 24;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -8,9 +8,9 @@ var addAirPowerFlag = false;
 var designateLN=[49,106,80,118,45,102,77,103,43,23,298,112];
 
 var allTheArmiesA = ["All Units Red","All Units Black","Spartans", "Normans", "Vikings",
-  "Saxons","Romans", "Pike and Shot", "Henry V","Arabs", "Hordes",
+  "Saxons","Romans", "Pike and Shot", "Henry V","Arabs", "Hordes", "Militia Levy",
  "Mongols", "Angry Mob", "Mob", "Franks", "Legionaires",
- "British WWI Infantry", "US Cavalry c.1776","Lakota Sioux", "Polish Winged Hussars",
+ "British WWI Infantry", "US Cavalry c.1776","Sioux Warriors", "Polish Winged Hussars",
 "Napoleonic French Grenadiers", "New Model Army", "Roundheads"];
 
 var allTheUnitsA = [
@@ -483,27 +483,25 @@ var noOfSide = unitsQ.length/noOfItems;
 else if(changeRedFlag&&redArmyNo==10||changeBlackFlag&&blackArmyNo==10){
 var nameQ="Hordes";//single types are 24 pts, armies more points?
 
-var qbase = ["#191970","#191970", "#191970"];
+var qbase = ["#randA4","#191970", "#191970"];
 
 var unitsQ=[
-  "#191970/#ffffff/#00FA9A/#000000","A", "1", "32", "n","inf","2","3","","","MI",
-  "#191970/#ffffff/#00FA9A/#000000","C", "1", "16", "n","scout","1","9","","","LC",
-  "#191970/#ffffff/#00FA9A/#000000","L", "0", "2", "l","hq","-","9","","","1L"
+  "#randA4/#ffffff/#00FA9A/#000000","A", "1", "32", "n","inf","2","3","","","MI",
+  "#randA4/#ffffff/#00FA9A/#000000","C", "1", "16", "n","scout","1","9","","","LC",
+  "#randA4/#ffffff/#00FA9A/#000000","L", "0", "2", "l","hq","-","9","","","1L"
 ];
 
+var designateLQ=[410,286, 382,301, 351,286, 200,303, 233,286, 262,304, 290,285, 324,301, 411,179, 440,197,
+501,200, 382,198, 412,214, 472,217, 502,232, 441,234, 501,267, 470,250, 262,199, 440,266,
+202,234, 229,215, 261,229, 289,215, 353,216, 323,200, 350,184, 411,249, 320,231, 380,233,
+203,199, 260,165, 291,181, 472,181, 442,165, 500,302, 321,164, 441,302, 231,179, 380,166,
+473,284, 352,253, 203,267, 231,250, 260,265, 290,248, 320,268, 379,268, 560,270, 560,299];
 
-var designateLQ=[200,150,223,150,245,150,268,150,290,150,313,150,335,150,358,150,380,150,403,150,
-200,173,230,173,245,173,268,173,290,173,313,173,335,173,358,173,380,173,403,173,
-200,195,223,195,245,195,268,195,290,195,313,195,335,195,358,195,320,231, 380,233,
-202,303, 261,305, 323,304, 379,304, 442,305, 500,302, 291,286, 410,285, 231,284, 352,282,
-   473,284, 352,253, 203,267, 231,250, 260,265, 290,248, 320,268, 379,268,     560,270,560,299];
-
-var designateRQ=[380,595,403,595,
-200,618,223,618,245,618,268,618,290,618,313,618,335,618,358,618,380,618,403,618,
-200,640,223,640,245,640,268,640,290,640,313,640,335,640,358,640,380,640,403,640,
-200,663,223,663,245,663,268,663,290,663,313,663,261,546, 317,547,380,547,
- 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565, 532,562, 412,595,
- 264,582, 324,580,382,579, 441,579, 499,580, 561,580, 291,598, 351,596, 471,596, 531,596, 171,526,   169,562];
+var designateRQ=[232,526, 202,510, 471,528, 531,528, 261,512, 503,509, 440,510, 382,510, 321,510, 353,528,
+291,528, 411,530, 380,618, 441,613, 173,598, 204,614, 231,630, 259,612, 291,633, 322,616,
+349,632, 501,612, 471,597, 409,629, 171,529, 232,563, 235,597, 172,563, 202,545, 200,579,
+261,546, 317,547, 380,547, 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565,
+532,562, 412,595, 264,582, 324,580, 382,579, 441,579, 499,580, 561,580, 291,598, 351,596];
 
 
 var noOfSide = unitsQ.length/noOfItems;
@@ -518,6 +516,42 @@ var noOfSide = unitsQ.length/noOfItems;
 
 
 else if(changeRedFlag&&redArmyNo==11||changeBlackFlag&&blackArmyNo==11){
+var nameQ="Militia Levy";//single types are 24 pts, armies more points?
+
+var qbase = ["#randA5","#191970", "#191970"];
+
+var unitsQ=[
+  "#randA5/#ffffff/#00FA9A/#000000","A", "1", "12", "n","inf","?3","3","","","ML",
+  "#randA5/#ffffff/#00FA9A/#000000","A", "1", "12", "n","inf","?2","3","","","ML",
+  "#randA5/#ffffff/#00FA9A/#000000","A", "1", "12", "n","inf","?2","3","","","ML",
+  "#randA5/#ffffff/#00FA9A/#000000","A", "1", "12", "n","inf","?1","3","","","ML",
+  "#randA5/#ffffff/#00FA9A/#000000","L", "0", "2", "l","hq","-","9","","","1L"
+];
+
+var designateLQ=[410,286, 382,301, 351,286, 200,303, 233,286, 262,304, 290,285, 324,301, 411,179, 440,197,
+501,200, 382,198, 412,214, 472,217, 502,232, 441,234, 501,267, 470,250, 262,199, 440,266,
+202,234, 229,215, 261,229, 289,215, 353,216, 323,200, 350,184, 411,249, 320,231, 380,233,
+203,199, 260,165, 291,181, 472,181, 442,165, 500,302, 321,164, 441,302, 231,179, 380,166,
+473,284, 352,253, 203,267, 231,250, 260,265, 290,248, 320,268, 379,268, 560,270, 560,299];
+
+var designateRQ=[232,526, 202,510, 471,528, 531,528, 261,512, 503,509, 440,510, 382,510, 321,510, 353,528,
+291,528, 411,530, 380,618, 441,613, 173,598, 204,614, 231,630, 259,612, 291,633, 322,616,
+349,632, 501,612, 471,597, 409,629, 171,529, 232,563, 235,597, 172,563, 202,545, 200,579,
+261,546, 317,547, 380,547, 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565,
+532,562, 412,595, 264,582, 324,580, 382,579, 441,579, 499,580, 561,580, 291,598, 351,596];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==12||changeBlackFlag&&blackArmyNo==12){
 var nameQ="Mongols";//single types are 24 pts, armies more points?
 
 var qbase = ["#FFE4B5","#FFE4B5", "#FFE4B5"];
@@ -551,68 +585,34 @@ var noOfSide = unitsQ.length/noOfItems;
 }
 
 
-else if(changeRedFlag&&redArmyNo==12||changeBlackFlag&&blackArmyNo==12){
+else if(changeRedFlag&&redArmyNo==13||changeBlackFlag&&blackArmyNo==13){
 var nameQ="Angry Mob";//single types are 24 pts, armies more points?
 
-var qbase = ["#FFE4E1","#FFE4E1", "#FFE4E1"];
+var qbase = ["#randA2","#FFE4E1", "#FFE4E1"];
 
 var unitsQ=[
-  "#FFE4E1/#000000/#808000/#ffffff","A", "1", "48", "n","mob","?4","3","","","mob!",
-  "#FFE4E1/#000000/#808000/#ffffff","L", "0", "2", "l","hq","-","5","","","5L"
+  "#randA2/#000000/#808000/#ffffff","A", "1", "8", "n","mob","?4","3","","","mob!",
+  "#randA2/#000000/#808000/#ffffff","A", "1", "8", "n","mob","?4","3","","","mob!",
+  "#randA2/#000000/#808000/#ffffff","A", "1", "8", "n","mob","?4","3","","","mob!",
+  "#randA2/#000000/#808000/#ffffff","A", "1", "8", "n","mob","?4","3","","","mob!",
+  "#randA2/#000000/#808000/#ffffff","A", "1", "8", "n","mob","?4","3","","","mob!",
+  "#randA2/#000000/#808000/#ffffff","A", "1", "8", "n","mob","?4","3","","","mob!",
+  "#randA2/#000000/#808000/#ffffff","L", "0", "2", "l","hq","-","5","","","5L"
 ];//#808000
 
 //"#FFE4E1/#000000/#808000/#ffffff","A", "1", "48", "n","mob","[2]","3","","","mob!"
 
-var designateLQ=[200,150,223,150,245,150,268,150,290,150,313,150,335,150,358,150,380,150,403,150,
-200,173,230,173,245,173,268,173,290,173,313,173,335,173,358,173,380,173,403,173,
-200,195,223,195,245,195,268,195,290,195,313,195,335,195,358,195,320,231, 380,233,
-202,303, 261,305, 323,304, 379,304, 442,305, 500,302, 291,286, 410,285, 231,284, 352,282,
-   473,284, 352,253, 203,267, 231,250, 260,265, 290,248, 320,268, 379,268,     560,270,560,299];
+var designateLQ=[410,286, 382,301, 351,286, 200,303, 233,286, 262,304, 290,285, 324,301, 411,179, 440,197,
+501,200, 382,198, 412,214, 472,217, 502,232, 441,234, 501,267, 470,250, 262,199, 440,266,
+202,234, 229,215, 261,229, 289,215, 353,216, 323,200, 350,184, 411,249, 320,231, 380,233,
+203,199, 260,165, 291,181, 472,181, 442,165, 500,302, 321,164, 441,302, 231,179, 380,166,
+473,284, 352,253, 203,267, 231,250, 260,265, 290,248, 320,268, 379,268, 560,270, 560,299];
 
-var designateRQ=[380,595,403,595,
-200,618,223,618,245,618,268,618,290,618,313,618,335,618,358,618,380,618,403,618,
-200,640,223,640,245,640,268,640,290,640,313,640,335,640,358,640,380,640,403,640,
-200,663,223,663,245,663,268,663,290,663,313,663,261,546, 317,547,380,547,
- 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565, 532,562, 412,595,
- 264,582, 324,580,382,579, 441,579, 499,580, 561,580, 291,598, 351,596, 471,596, 531,596, 171,526,   169,562];
-
-
-var noOfSide = unitsQ.length/noOfItems;
-  var sideQ=new Array();
-  if(changeRedFlag){
- for(s=0;s<noOfSide;s++){
-   sideQ[s]=0;    }}
-  else if(changeBlackFlag){
-  for(s=0;s<noOfSide;s++){
-    sideQ[s]=1;    }}
-}
-
-
-else if(changeRedFlag&&redArmyNo==13||changeBlackFlag&&blackArmyNo==13){
-var nameQ="Mob";//single types are 24 pts, armies more points?
-
-var qbase = ["#6B8E23","#6B8E23", "#6B8E23"];
-
-var unitsQ=[
-  "#6B8E23/#ffffff/#ff00000/#000000","A", "1", "8", "n","mob","?4","2","","","mob",
-  "#6B8E23/#ffffff/#000000/#000000","A", "1", "10", "n","mob","?3","2","","","mob",
-  "#6B8E23/#ffffff/#ffffff/#000000","A", "1", "30", "n","mob","?2","2","","","mob",
-  "#6B8E23/#ffffff/#ffffff/#000000","L", "0", "2", "l","hq","-","5","","","5L"
-];//#FFDEAD
-
-
-var designateLQ=[200,150,223,150,245,150,268,150,290,150,313,150,335,150,358,150,380,150,403,150,
-200,173,230,173,245,173,268,173,290,173,313,173,335,173,358,173,380,173,403,173,
-200,195,223,195,245,195,268,195,290,195,313,195,335,195,358,195,320,231, 380,233,
-202,303, 261,305, 323,304, 379,304, 442,305, 500,302, 291,286, 410,285, 231,284, 352,282,
-   473,284, 352,253, 203,267, 231,250, 260,265, 290,248, 320,268, 379,268,     560,270,560,299];
-
-var designateRQ=[380,595,403,595,
-200,618,223,618,245,618,268,618,290,618,313,618,335,618,358,618,380,618,403,618,
-200,640,223,640,245,640,268,640,290,640,313,640,335,640,358,640,380,640,403,640,
-200,663,223,663,245,663,268,663,290,663,313,663,261,546, 317,547,380,547,
- 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565, 532,562, 412,595,
- 264,582, 324,580,382,579, 441,579, 499,580, 561,580, 291,598, 351,596, 471,596, 531,596, 171,526,   169,562];
+var designateRQ=[232,526, 202,510, 471,528, 531,528, 261,512, 503,509, 440,510, 382,510, 321,510, 353,528,
+291,528, 411,530, 380,618, 441,613, 173,598, 204,614, 231,630, 259,612, 291,633, 322,616,
+349,632, 501,612, 471,597, 409,629, 171,529, 232,563, 235,597, 172,563, 202,545, 200,579,
+261,546, 317,547, 380,547, 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565,
+532,562, 412,595, 264,582, 324,580, 382,579, 441,579, 499,580, 561,580, 291,598, 351,596];
 
 
 var noOfSide = unitsQ.length/noOfItems;
@@ -627,6 +627,43 @@ var noOfSide = unitsQ.length/noOfItems;
 
 
 else if(changeRedFlag&&redArmyNo==14||changeBlackFlag&&blackArmyNo==14){
+var nameQ="Mob";//single types are 24 pts, armies more points?
+
+var qbase = ["#randA3","#6B8E23", "#6B8E23"];
+
+var unitsQ=[
+  "#randA3/#ffffff/#ff00000/#000000","A", "1", "8", "n","mob","?4","2","","","mob",
+  "#randA3/#ffffff/#000000/#000000","A", "1", "10", "n","mob","?3","2","","","mob",
+  "#randA3/#ffffff/#ffffff/#000000","A", "1", "30", "n","mob","?2","2","","","mob",
+  "#randA3/#ffffff/#ffffff/#000000","L", "0", "1", "l","hq","-","5","","","5L",
+  "#randA3/#ffffff/#ffffff/#000000","L", "0", "1", "l","hq","-","5","","","5L"
+];//#FFDEAD
+
+var designateLQ=[410,286, 382,301, 351,286, 200,303, 233,286, 262,304, 290,285, 324,301, 411,179, 440,197,
+501,200, 382,198, 412,214, 472,217, 502,232, 441,234, 501,267, 470,250, 262,199, 440,266,
+202,234, 229,215, 261,229, 289,215, 353,216, 323,200, 350,184, 411,249, 320,231, 380,233,
+203,199, 260,165, 291,181, 472,181, 442,165, 500,302, 321,164, 441,302, 231,179, 380,166,
+473,284, 352,253, 203,267, 231,250, 260,265, 290,248, 320,268, 379,268, 560,270, 560,299];
+
+var designateRQ=[232,526, 202,510, 471,528, 531,528, 261,512, 503,509, 440,510, 382,510, 321,510, 353,528,
+291,528, 411,530, 380,618, 441,613, 173,598, 204,614, 231,630, 259,612, 291,633, 322,616,
+349,632, 501,612, 471,597, 409,629, 171,529, 232,563, 235,597, 172,563, 202,545, 200,579,
+261,546, 317,547, 380,547, 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565,
+532,562, 412,595, 264,582, 324,580, 382,579, 441,579, 499,580, 561,580, 291,598, 351,596];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==15||changeBlackFlag&&blackArmyNo==15){
 var nameQ="Franks";//single types are 24 pts, armies more points?
 
 var qbase = ["#FFA500","#FFA500", "#FFA500"];
@@ -659,7 +696,7 @@ var noOfSide = unitsQ.length/noOfItems;
 }
 
 
-else if(changeRedFlag&&redArmyNo==15||changeBlackFlag&&blackArmyNo==15){
+else if(changeRedFlag&&redArmyNo==16||changeBlackFlag&&blackArmyNo==16){
 var nameQ="Legionaires";//single types are 24 pts, armies more points?
 
 var qbase = ["#FF4500","#FF4500", "#FF4500"];
@@ -690,15 +727,15 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
-else if(changeRedFlag&&redArmyNo==16||changeBlackFlag&&blackArmyNo==16){
+else if(changeRedFlag&&redArmyNo==17||changeBlackFlag&&blackArmyNo==17){
 var nameQ="British WWI Infantry";//single types are 24 pts, armies more points?
 
 var qbase = ["#6B8E23","#6B8E23", "#6B8E23"];
 
 var unitsQ=[
-  "#6B8E23/#ffffff/#F0E68C/#000000","Ff", "6", "6", "f","inf","2","5","11","6","|",
-    "#6B8E23/#ffffff/#F0E68C/#000000","Ff", "6", "2", "f","mg","2","5","6","10","..",
-  "#6B8E23/#ffffff/#F0E68C/#000000","L", "0", "2", "l","hq","-","9","","","1L"
+  "#6B8E23/#FFff00/#F0E68C/#000000","Ff", "6", "6", "f","inf","2","5","11","6","|",
+    "#6B8E23/#FFff00/#F0E68C/#000000","Ff", "6", "2", "f","mg","2","5","6","10","..",
+  "#6B8E23/#FFff00/#F0E68C/#000000","L", "0", "2", "l","hq","-","9","","","1L"
 ];//#FFDEAD
 
 var designateLQ=[202,303, 261,305, 323,304, 379,304, 442,305, 500,302,
@@ -717,7 +754,7 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
-else if(changeRedFlag&&redArmyNo==17||changeBlackFlag&&blackArmyNo==17){
+else if(changeRedFlag&&redArmyNo==18||changeBlackFlag&&blackArmyNo==18){
 var nameQ="US Cavalry c.1776";//single types are 24 pts, armies more points?
 
 var qbase = ["#0000dd","#0000dd", "#0000dd"];
@@ -747,14 +784,20 @@ var noOfSide = unitsQ.length/noOfItems;
 }
 
 
-else if(changeRedFlag&&redArmyNo==18||changeBlackFlag&&blackArmyNo==18){
-var nameQ="Lakota Sioux";//single types are 24 pts, armies more points?
+else if(changeRedFlag&&redArmyNo==19||changeBlackFlag&&blackArmyNo==19){
+var nameQ="Sioux Warriors";//single types are 24 pts, armies more points?
 
-var qbase = ["#ffeedd","#ffeedd", "#ffeedd"];
+var qbase = ["#rand01","#ffeedd", "#ffeedd"];
 
 var unitsQ=[
-  "#eedddd/#ff0000/#cccc00/#00cc00","Mf", "4", "12", "f","cav","?4","12","2","2","^",
-  "#eedddd/#ff0000/#cccc00/#00cc00","L", "0", "2", "l","hq","-","9","","","1L"
+  "#rand01/#ff0000/#cccc00/#00cc00","Mf", "4", "2", "f","hb","?4","9","2","3","^",
+  "#rand01/#ff0000/#cccc00/#00cc00","Mf", "4", "2", "f","hb","?4","9","2","3","^",
+  "#rand01/#ff0000/#cccc00/#00cc00","Mf", "4", "2", "f","hb","?4","9","2","3","^",
+  "#rand01/#ff0000/#cccc00/#00cc00","Mf", "4", "2", "f","hb","?4","9","2","3","^",
+  "#rand01/#ff0000/#cccc00/#00cc00","Mf", "4", "2", "f","hb","?4","9","2","3","^",
+  "#rand01/#ff0000/#cccc00/#00cc00","Mf", "4", "2", "f","hb","?4","9","2","3","^",
+  "#rand01/#ff0000/#cccc00/#00cc00","L", "0", "1", "l","hq","-","9","","","1L",
+  "#rand01/#ff0000/#cccc00/#00cc00","L", "0", "1", "l","hq","-","9","","","1L"
 ];//#FFDEAD
 
 var designateLQ=[202,303, 261,305, 323,304, 379,304, 442,305, 500,302,
@@ -777,7 +820,7 @@ var noOfSide = unitsQ.length/noOfItems;
 
 
 
-else if(changeRedFlag&&redArmyNo==19||changeBlackFlag&&blackArmyNo==19){
+else if(changeRedFlag&&redArmyNo==20||changeBlackFlag&&blackArmyNo==20){
 var nameQ="Polish Winged Hussars";//single types are 24 pts, armies more points?
 
 var qbase = ["#eeeeff","#eeeeff", "#eeeeff"];
@@ -805,7 +848,7 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
-else if(changeRedFlag&&redArmyNo==20||changeBlackFlag&&blackArmyNo==20){
+else if(changeRedFlag&&redArmyNo==21||changeBlackFlag&&blackArmyNo==21){
 var nameQ="Napoleonic French Grenadiers";//single types are 24 pts, armies more points?
 
 var qbase = ["#000080","#000080", "#000080"];
@@ -831,14 +874,14 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
-else if(changeRedFlag&&redArmyNo==21||changeBlackFlag&&blackArmyNo==21){
+else if(changeRedFlag&&redArmyNo==22||changeBlackFlag&&blackArmyNo==22){
 var nameQ="New Model Army";//single types are 24 pts, armies more points?
 
 var qbase = ["#F4A460","#F4A460", "#F4A460"];
 
 var unitsQ=[
-  "#F4A460/#000000/#d3d3d3/#000000","A", "2", "9", "n","inf","4","3","","","PP",
-  "#F4A460/#000000/#d3d3d3/#000000","Ff", "3", "9", "f","inf","o","3","5","5","PM",
+  "#F4A460/#000000/#d3d3d3/#000000","A", "2", "9", "n","hspear","4","3","","","PP",
+  "#F4A460/#000000/#d3d3d3/#000000","Ff", "3", "9", "f","arq","o","3","5","5","PM",
   "#F4A460/#000000/#d3d3d3/#000000","L", "0", "2", "l","hq","-","9","","","1L"
 ];//#FFDEAD
 
@@ -865,14 +908,14 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
-else if(changeRedFlag&&redArmyNo==22||changeBlackFlag&&blackArmyNo==22){
+else if(changeRedFlag&&redArmyNo==23||changeBlackFlag&&blackArmyNo==23){
 var nameQ="Roundheads";//single types are 24 pts, armies more points?
 
 var qbase = ["#F4A460","#F4A460", "#F4A460"];
 
 var unitsQ=[
   "#F4A460/#000000/#d3d3d3/#000000","A", "3", "9", "n","cav","5","6","","","HC",
-  "#F4A460/#000000/#d3d3d3/#000000","Ff", "4", "5", "n","cav","8","8","","","SC",
+  "#F4A460/#000000/#ffff00/#0000ff","Ff", "4", "5", "n","cav","8","8","","","SC",
   "#F4A460/#000000/#d3d3d3/#000000","L", "0", "2", "l","hq","-","9","","","1L"
 ];//#FFDEAD
 
@@ -1011,6 +1054,9 @@ for (const item of designateRQ) {
   designateRA = designateRA1.concat(designateRA2);
 
 unitsA = unitsA1.concat(unitsA2,unitsN);
+var dumLen12 = unitsA.length/noOfItems;
+for(d=0; d<dumLen12;d++){
+colorOrgCode[d] = unitsA[d*noOfItems+0].slice(0,7);}
     //alert("3:"+unitsA);
 
     sideA1 = [];
@@ -1050,6 +1096,9 @@ else if(changeBlackFlag){
    designateLA = designateLA1.concat(designateLA2);
    designateRA = designateRA1.concat(designateRA2);
  unitsA = unitsA1.concat(unitsA2,unitsN);
+ var dumLen12 = unitsA.length/noOfItems;
+ for(d=0; d<dumLen12;d++){
+ colorOrgCode[d] = unitsA[d*noOfItems+0].slice(0,7);}
     //alert("4:"+unitsA);
         sideA2 = [];
         for (const item of sideQ) {

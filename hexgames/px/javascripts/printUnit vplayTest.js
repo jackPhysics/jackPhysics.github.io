@@ -1581,3 +1581,5 @@ function printUnitBlank(n, b, t, id, c0){//n=number of image b=battalion number,
 					ctx.fill();
 
 }
+
+function findColours(){}

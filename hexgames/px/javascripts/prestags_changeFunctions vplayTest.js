@@ -1180,7 +1180,7 @@ activeImage = imageArray[activeIndex];
 		activeImage.style.borderColor=D2color;}//"PaleGreen";}//disorganised"pink"
 		if(deadA[activeIndex]==1){
 		activeImage.style.borderColor="white";}
-		if(leaderA[activeIndex]==1){
+		if(leaderA[activeIndex]>0){
 		activeImage.style.borderColor="white";}//white";
 		if(panicA[activeIndex]==1){
 		activeImage.style.borderColor="orange";}//routed
@@ -1680,6 +1680,7 @@ function hopHop(x, y){ //jump Hopper to new position
 		  changeRedFlag=false;changeBlackFlag=true;
 		  findArmies();
 		  sortArmies();
+		  findColours();
 		  placePics2();
 		  var loadSize=1*loadA[loopTill-4];
 		  reScale=size/loadSize;

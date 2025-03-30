@@ -113,7 +113,8 @@ function findTryValue(m){
   var maxValue = m;
   var chanceNumber = Math.pow(maxValue,0.5);
   chanceNumber = 0.4+chanceNumber/10;
-  console.log(chanceNumber);
+  //console.log(chanceNumber);
+  if(maxValue<4){
   var actualValue = 0;
   if(maxValue>2){actualValue = 1;}
   var jumpOut = false;
@@ -123,6 +124,9 @@ function findTryValue(m){
   }
   if(actualValue>1*maxValue+1){
     actualValue=1*maxValue+1;
+  }}
+  else{
+    actualValue = Math.floor(Math.random()*maxValue)+1;
   }
 /*
   if(Math.random()<0.2){
@@ -150,7 +154,9 @@ function untriedTry(n){
   else{
   untriedPrint[tryUnitIndex] = "?";
   }
+  cmbtFactorsA[tryUnitIndex]=untriedPrint[tryUnitIndex];
 	printUnit(tryUnitIndex, typeNumbA[tryUnitIndex], typeTotalA[tryUnitIndex], thisIsA[tryUnitIndex],countIndividual[tryUnitIndex]);
+  imageArray[tryUnitIndex].setAttribute("title", "#"+(tryUnitIndex+1)+": "+unitsA[thisIsA[tryUnitIndex]*noOfItems+10]+" "+cmbtFactorsA[tryUnitIndex]+"-"+unitsA[thisIsA[tryUnitIndex]*noOfItems+7]+" fire:"+unitsA[thisIsA[tryUnitIndex]*noOfItems+8]+"/"+unitsA[thisIsA[tryUnitIndex]*noOfItems+9]+" (pts:"+unitsA[thisIsA[tryUnitIndex]*noOfItems+2]+") ("+(typeNumbA[tryUnitIndex])+"/"+typeTotalA[tryUnitIndex]+")");
   mouseActive=0;
   doEdgeColor();
 }
@@ -168,10 +174,16 @@ function changeNeutralPic(n){
 		leaderA[leaderIndex]=1;
 	}
 	else{}
-	unitsA[thisIsA[leaderIndex]*itemsPerUnit+10] = ""+leaderA[leaderIndex]+"L";
+/*	unitsA[thisIsA[leaderIndex]*itemsPerUnit+10] = ""+leaderA[leaderIndex]+"L";
+  	printUnit(leaderIndex, typeNumbA[leaderIndex], typeTotalA[leaderIndex], thisIsA[leaderIndex],countIndividual[leaderIndex]);
+*/
+  	unitsA[thisIsA[leaderIndex]*itemsPerUnit+10] = ""+leaderA[leaderIndex]+"L";
+  cmbtFactorsA[leaderIndex]=""+leaderA[leaderIndex]+"L";
 	printUnit(leaderIndex, typeNumbA[leaderIndex], typeTotalA[leaderIndex], thisIsA[leaderIndex],countIndividual[leaderIndex]);
+  imageArray[leaderIndex].setAttribute("title", "#"+(leaderIndex+1)+": "+unitsA[thisIsA[leaderIndex]*noOfItems+10]+" "+cmbtFactorsA[leaderIndex]+"-"+unitsA[thisIsA[leaderIndex]*noOfItems+7]+" fire:"+unitsA[thisIsA[leaderIndex]*noOfItems+8]+"/"+unitsA[thisIsA[leaderIndex]*noOfItems+9]+" (pts:"+unitsA[thisIsA[leaderIndex]*noOfItems+2]+") ("+(typeNumbA[leaderIndex])+"/"+typeTotalA[leaderIndex]+")");
   mouseActive=0;
   doEdgeColor();
+
 	//alert(""+n);
   //if (n=="1L"){leaderName="1";}
 	//alert("2:"+leaderName+":"+n);

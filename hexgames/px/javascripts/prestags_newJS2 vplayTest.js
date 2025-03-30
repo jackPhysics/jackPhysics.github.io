@@ -194,6 +194,7 @@ var untriedAF = new Array();//actual CF
 var changeSupplyFlag=false;
 var changeDummyUnitsFlag=false;
 var changeAirPowerFlag=false;
+var colorOrgCode = new Array();
 
 function init(){
 changeRedFlag = true;
@@ -785,6 +786,7 @@ function placePics() //initialise, add the game pieces to the board
       untriedFlag[noOfImg]=true;
       untriedMax[noOfImg]=dummyAFvalue2;//maximum CF
       untriedPrint[noOfImg]="?";
+      cmbtFactorsA[noOfImg]=untriedPrint[noOfImg];
       //untriedAF[noOfImg]=dummyAFvalue2;//actual CF
     }
     else{
@@ -793,7 +795,7 @@ function placePics() //initialise, add the game pieces to the board
 
     //printUnit(noOfImg, j+1, totalNo, i, countOutUnits0);
 
-    imageArray[noOfImg].setAttribute("title", "#"+(noOfImg+1)+": "+unitsA[i*noOfItems+10]+" "+unitsA[i*noOfItems+6]+"-"+unitsA[i*noOfItems+7]+" fire:"+unitsA[i*noOfItems+8]+"/"+unitsA[i*noOfItems+9]+" (pts:"+unitsA[i*noOfItems+2]+") ("+(j+1)+"/"+totalNo+")");
+    imageArray[noOfImg].setAttribute("title", "#"+(noOfImg+1)+": "+unitsA[i*noOfItems+10]+" "+cmbtFactorsA[noOfImg]+"-"+unitsA[i*noOfItems+7]+" fire:"+unitsA[i*noOfItems+8]+"/"+unitsA[i*noOfItems+9]+" (pts:"+unitsA[i*noOfItems+2]+") ("+(j+1)+"/"+totalNo+")");
 	  //imageArray[noOfImg].setAttribute("title", "#"+(noOfImg+1)+": "+unitsA[i*noOfItems+1]+" "+designateLA[noOfImg]+"/"+designateRA[noOfImg]+" "+unitsA[i*noOfItems+6]+"-"+unitsA[i*noOfItems+7]+" (pts:"+unitsA[i*noOfItems+2]+") ("+(j+1)+"/"+totalNo+")");
 	  //if units have individual names then need "#"+(noOfImg+1)+": "+unitsA[i*noOfItems+1]+" "+(j+1)+"/"+totalNo +unitNamesA[noOfImg]
     armourA[noOfImg]=unitsA[i*noOfItems+4];
@@ -911,8 +913,8 @@ function placePics2() //print new armies
       colorLoop[2] = colorCode.slice(16,23);
       colorLoop[3] = colorCode.slice(24);
     colorIndividual[noOfImg] = colorLoop;
-    if(colorTester!=colorLoop[0]){
-      colorTester=colorLoop[0];
+    if(colorTester!=colorOrgCode[i]){
+      colorTester=colorOrgCode[i];
       countOutUnits0 = 1;
     }
     if(unitsA[i*noOfItems+5]!="supply"||unitsA[i*noOfItems+4]!="x"){
@@ -927,6 +929,7 @@ function placePics2() //print new armies
           untriedFlag[noOfImg]=true;
           untriedMax[noOfImg]=dummyAFvalue2;//maximum CF
           untriedPrint[noOfImg]="?";
+          cmbtFactorsA[noOfImg]=untriedPrint[noOfImg];
           //untriedAF[noOfImg]=dummyAFvalue2;//actual CF
         }
         else{
@@ -935,7 +938,7 @@ function placePics2() //print new armies
 
     //printUnit(noOfImg, j+1, totalNo, i, countOutUnits0);
 
-    imageArray[noOfImg].setAttribute("title", "#"+(noOfImg+1)+": "+unitsA[i*noOfItems+10]+" "+unitsA[i*noOfItems+6]+"-"+unitsA[i*noOfItems+7]+" fire:"+unitsA[i*noOfItems+8]+"/"+unitsA[i*noOfItems+9]+" (pts:"+unitsA[i*noOfItems+2]+") ("+(j+1)+"/"+totalNo+")");
+    imageArray[noOfImg].setAttribute("title", "#"+(noOfImg+1)+": "+unitsA[i*noOfItems+10]+" "+cmbtFactorsA[noOfImg]+"-"+unitsA[i*noOfItems+7]+" fire:"+unitsA[i*noOfItems+8]+"/"+unitsA[i*noOfItems+9]+" (pts:"+unitsA[i*noOfItems+2]+") ("+(j+1)+"/"+totalNo+")");
     //if units have individual names then need "#"+(noOfImg+1)+": "+unitsA[i*noOfItems+1]+" "+(j+1)+"/"+totalNo +unitNamesA[noOfImg]
     armourA[noOfImg]=unitsA[i*noOfItems+4];
     if(armourA[noOfImg]=="x"){neutN[noOfImg]=0;}
