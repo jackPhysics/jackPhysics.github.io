@@ -1,6 +1,6 @@
 
-var redArmyMax = 47;
-var blackArmyMax = 47;
+var redArmyMax = 50;
+var blackArmyMax = 50;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -18,7 +18,8 @@ var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democrac
 "Ivory Invisible Forces Intelligencia", "Firebrick Feudal Fallschirmjager",  "Maroon Great-Hate Mandate",
 "Golden Ground Troops Government in Exile", "Day-Glo Dukedom", "Countdown Country #2",
 "Green Dream Planeteers", "Goldbrick Graduates of Greater Gondwanaland", "Silverbacked Statists",
-"HiLo Holistic Hotpink Honeydew Hegemony"]
+"HiLo Holistic Hotpink Honeydew Hegemony", "FastSlo Fantastically Floral Federalists",
+"Crimson Celerity Cooperative","Zoetic zapping Zombie Hordes"]
 
 function findArmies(){
 
@@ -2022,6 +2023,149 @@ var noOfSide = unitsQ.length/noOfItems;
   for(s=0;s<noOfSide;s++){
     sideQ[s]=1;    }}
 }
+
+else if(changeRedFlag&&redArmyNo==47||changeBlackFlag&&blackArmyNo==47){
+var nameQ="FastSlo Fantastically Floral Federalists";
+
+var qbase = ["#FFFAF0","#FFFAF0", "#FFFAF0"];
+
+var unitsQ=[
+  "#FFFAF0/#ff0000/#0000ff/#FFFAF0","mech","9","2","n","mech","4","8","xx",
+  "#FFFAF0/#ff0000/#0000ff/#FFFAF0","acav","11","4","n","acav","2","12","xx",
+  "#FFFAF0/#0000ff/#ff0000/#FFFAF0","sf","7","4","n","sf","4","3","xx",
+  "#FFFAF0/#0000ff/#ff0000/#FFFAF0","para","4","3","n","para","4","2","xx",
+  "#FFFAF0/#0000ff/#ff0000/#FFFAF0","inf","3","8","n","inf","3","3","xx",
+  "#FFFAF0/#0000ff/#ff0000/#FFFAF0","garrison","6","4","n","guard","8","1","xx",
+  "#FFFAF0/#ff0000/#ffff00/#FFFAF0","supply","0","0","n","supply","0","10","xx",
+];
+
+var designateLQ=["Strike I", "Strike II", "Strike I",
+"Strike I", "Strike II", "Strike II",
+ "Strike III", "Strike III", "Strike IV",
+  "Strike IV", "Strike III", "Strike IV",
+   "", "Strike V", "Strike V", "Strike V","Strike V",
+    "City II", "City II", "City II", "City II",
+    "City I", "City I", "City I", "City I"
+];
+
+var designateRQ=["1", "1", "2",
+ "3", "2", "3",
+ "1", "2", "1",
+  "2",  "3", "3",
+   "Commando",  "1",  "2",  "3", "4",
+   "1","2", "3", "4",
+    "1","2", "3", "4"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==48||changeBlackFlag&&blackArmyNo==48){
+var nameQ="Crimson Celerity Cooperative";
+
+var qbase = ["#DC143C","#DC143C", "#DC143C"];
+
+var unitsQ=[
+  "#DC143C/#FFff00/#6495ED/#FFFfFf","mech","9","4","n","mech","4","8","xx",
+  "#DC143C/#FFff00/#6495ED/#FFFfFf","acav","8","4","n","acav","1","10","xx",
+  "#DC143C/#FFff00/#6495ED/#FFFfFf","sf","10","3","n","sf","4","6","xx",
+  "#DC143C/#FFff00/#6495ED/#FFFfFf","para","5","2","n","para","3","4","xx",
+  "#DC143C/#FFff00/#6495ED/#FFFfFf","inf","6","7","n","inf","3","6","xx",
+  "#DC143C/#FFff00/#6495ED/#FFFfFf","supply","0","0","n","supply","0","10","xx",
+];
+
+var designateLQ=["Thunder", "Thunder", "Thunder",
+"Thunder", "Lightning", "Lightning",
+ "Lightning", "Lightning", "Spark",
+  "Spark", "Spark",
+   "Strike", "Strike", "Bolt", "Bolt","Bolt",
+    "Bolt", "Bolt", "Bolt", "Bolt"
+];
+
+var designateRQ=["1", "2", "3",
+ "4", "5", "6",
+ "7", "8", "9",
+  "10",  "11", "12",
+   "13",  "14",  "15",  "16", "17",
+   "18","19", "20"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==49||changeBlackFlag&&blackArmyNo==49){
+var nameQ="Zoetic zapping Zombie Hordes";
+
+var qbase = ["#FAF0E6","#FAF0E6", "#FAF0E6"];
+
+var unitsQ=[
+  "#FAF0E6/#000000/#FAF0E6/#000000","zombie dogs","6","12","n","sf","2","4","xx",
+  "#FAF0E6/#000000/#FAF0E6/#000000","newly raised zombies","2","10","n","para","1","3","xx",
+  "#FAF0E6/#000000/#FAF0E6/#000000","zombie virus victims","1","10","n","para","1","2","xx",
+  "#FAF0E6/#000000/#FAF0E6/#000000","zombies","1","48","n","inf","1","3","xx",
+  "#FAF0E6/#000000/#FAF0E6/#000000","supply","0","0","n","supply","0","10","xx",
+];
+
+var designateLQ=["ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE",
+"ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE", "ZOMBIE"
+];
+
+var designateRQ=["DOG", "DOG", "DOG", "DOG", "DOG", "DOG", "DOG", "DOG", "DOG", "DOG", "DOG", "DOG",
+"UNDEAD", "UNDEAD", "UNDEAD", "UNDEAD", "UNDEAD", "UNDEAD", "UNDEAD", "UNDEAD", "UNDEAD", "UNDEAD",
+"VIRUS", "VIRUS", "VIRUS", "VIRUS", "VIRUS", "VIRUS", "VIRUS", "VIRUS", "VIRUS", "VIRUS",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", "",
+"", "", "", "", "", "", "", "", "", ""
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
 if(addSupplyUnitsFlag){
   unitsQ.push(unitsQ[0], "Supply","0","8","n","supply","0","10","xx");
   designateLQ.push("", "", "", "", "", "", "captured", "captured");
