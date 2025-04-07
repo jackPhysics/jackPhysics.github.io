@@ -54,6 +54,22 @@ font-family: "American Typewriter", serif;
     				top: 20px;
         }
 
+	h2.kr2 {
+				font-family: "Lucida Calligraphy";
+				color: Red;
+  				background-color: Black;
+  				padding: inherit;
+    				position: relative;
+    				top: 20px;
+        }
+	h2.kr0 {
+				font-family: "Lucida Calligraphy";
+				color: White;
+  				background-color: Black;
+  				padding: inherit;
+    				position: relative;
+    				top: 20px;
+        }
 	h2.ps {
 				font-family: "Lucida Calligraphy";
 				color: Purple;
