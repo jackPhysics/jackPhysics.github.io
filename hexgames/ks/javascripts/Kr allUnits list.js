@@ -149,6 +149,8 @@ var rusPieces =7;
 var gerPieces =6;
 var neutPieces = 5;
 
+//console.log("dummy gerNumber="+gerNumber+" neutNumber="+neutNumber);
+
 noOfPieces= 0; //no of pieces in game
 unitTotal= 0; //number of types of pieces
 lastIndex= 0; //index number of last piece - north marker
@@ -196,6 +198,42 @@ lastIndex= rusUnits+gerUnits+neutUnits; //index number of last piece - north mar
 gerNumber= rusUnits;//rusUnits+1; //the index number of the first german piece
 neutNumber= rusUnits+gerUnits;//+1;//rusUnits+gerUnits+1; //index number of first neutral piece
 
+//console.log("sorted gerNumber="+gerNumber+" neutNumber="+neutNumber);
+
+if(addSupplyUnitsFlag){
+  //noOfPieces= noOfPieces+16; //no of pieces in game
+  //unitTotal= unitTotal+2; //number of types of pieces
+  lastIndex= lastIndex+8; //index number of last piece - north marker
+  gerNumber= gerNumber+8;//rusUnits+1; //the index number of the first german piece
+  neutNumber= neutNumber+8;
+}
+
+if(addDummyUnitsFlag){
+  //noOfPieces= noOfPieces+16; //no of pieces in game
+  //unitTotal= unitTotal+2; //number of types of pieces
+  lastIndex= lastIndex+8; //index number of last piece - north marker
+  gerNumber= gerNumber+8;//rusUnits+1; //the index number of the first german piece
+  neutNumber= neutNumber+8;
+}
+
+
+if(addAirPowerFlag){
+  //noOfPieces= noOfPieces+12; //no of pieces in game
+  //unitTotal= unitTotal+2; //number of types of pieces
+  lastIndex= lastIndex+6; //index number of last piece - north marker
+  gerNumber= gerNumber+6;//rusUnits+1; //the index number of the first german piece
+  neutNumber= neutNumber+6;
+}
+
+if(addDepotUnitsFlag){
+  //noOfPieces= noOfPieces+8; //no of pieces in game
+  //unitTotal= unitTotal+2; //number of types of pieces
+  lastIndex= lastIndex+4; //index number of last piece - north marker
+  gerNumber= gerNumber+4;//rusUnits+1; //the index number of the first german piece
+  neutNumber= neutNumber+4;
+}
+
+//console.log("sorted2 gerNumber="+gerNumber+" neutNumber="+neutNumber);
 //alert("5:"+"noOfPieces="+noOfPieces+"unitTotal="+unitTotal+"lastIndex="+lastIndex+"gerNumber="+gerNumber+"rusUnits="+rusUnits+"neutNumber="+neutNumber)
 
 //alert("5:"+"noOfPieces="+noOfPieces+"unitTotal="+unitTotal+"lastIndex="+lastIndex+"gerUnits="+gerUnits+"rusUnits="+rusUnits+"neutUnits="+neutUnits)

@@ -37,7 +37,10 @@ function crt6_window(){
 	crt=open(crt6Address, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
 }
 function crt7_window(){
-	crt=open(crt6Address, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
+	crt=open(crt7Address, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
+}
+function crt8_window(){
+	crt=open(crt8Address, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
 }
 function crtD6_window(){
 	crt=open(crtD6Address, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");

@@ -581,7 +581,7 @@ var classType = classFactor;//unit number - out of all
               ctx.fillStyle = colorThisBT;
               ctx.textAlign = "center";
               ctx.textBaseline = "middle";
-              ctx.fillText("D",i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/1.9)*unitScale);
+              ctx.fillText("R",i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/1.9)*unitScale);
               ctx.stroke();
               ctx.closePath();
             }

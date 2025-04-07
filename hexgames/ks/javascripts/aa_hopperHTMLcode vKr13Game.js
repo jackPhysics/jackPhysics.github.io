@@ -102,47 +102,27 @@ var table2HTMLcode = '<table BORDER="2" id="saveTable" bgcolor="silver">'+
 '<tr> <td colspan="2" align="center">&nbsp;&nbsp;<a class="save" href="javascript:help2_window()"  id="btn2"  >Saving and loading help</a></td>'+
 '</table>'+
 '</td><td valign=top></td>'+
-'<td align="center">'+
-'<p id="boardNameB">Black Board #0u</p>'+
+'<td  valign="top" align="center">'+
+'<br><br>'+
+'<p id="boardNameB"></p>'+
 '<br><br>'+
 '<div class="dropdown">'+
-  '<button class="dropbtn">choose Black board</button>'+
-  '<div id="boardMenu1" class="dropdown-content">'+
+  '<button class="dropbtn">choose Game</button>'+
+  '<div id="gameMenu1" class="dropdown-content">'+
   '</div>'+
 '</div>'+
 '<br><br>'+
-'<p id="boardNameR">Red Board #0u</p>'+
 '<br><br>'+
-'<div class="dropdown">'+
-  '<button class="dropbtn">choose Red board</button>'+
-  '<div id="boardMenu2" class="dropdown-content">'+
-  '</div>'+
-'</div>'+
+'<p id="boardNameR"></p>'+
 '<br><br>'+
-'<p id="armyNameB">Black Army #0</p>'+
 '<br><br>'+
-'<div class="dropdown">'+
-  '<button class="dropbtn">choose Black army</button>'+
-  '<div id="armyMenu1" class="dropdown-content">'+
-  '</div>'+
-'</div>'+
+'<p id="armyNameB"></p>'+
 '<br><br>'+
-'<p id="armyNameR">Red Army #0</p>'+
 '<br><br>'+
-'<div class="dropdown">'+
-  '<button class="dropbtn">choose Red army</button>'+
-  '<div id="armyMenu2" class="dropdown-content">'+
-  '</div>'+
-'</div></td>'+
-'<td>'+
-'<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'+
-'<a class="save" href="javascript:supplyUnitsYesNo()"  id="btnSupply">Supply Units - No</a>'+
-'<br><br>'+
-'<a class="save" href="javascript:blankUnitsYesNo()"  id="btnBlank">Blank Units - No</a>'+
-'<br><br>'+
-'<a class="save" href="javascript:airUnitsYesNo()"  id="btnAir">Air Units - No</a>'+
-'<br><br>'+
-'<a class="save" href="javascript:depotUnitsYesNo()"  id="btnDepot">Depot Units - No</a>'+
+'<p id="armyNameR"></p>'+
 '<br><br>'+
 '</td>'+
+'<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'+
+'<br><br>'+
+'<br><br></td>'+
 '</td></tr></table>';

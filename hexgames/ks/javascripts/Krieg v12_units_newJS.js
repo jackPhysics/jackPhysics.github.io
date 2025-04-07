@@ -8,6 +8,7 @@ var crt4Address="charts/Kr CRT d12 yesC 2x2t1.html";
 var crt5Address="charts/Kr CRT d12 yesC ExNOadv.html";
 var crt6Address="charts/Kr CRT d12 yesC steps 2x2t1.html";
 var crt7Address="charts/Kr CRT d12 yesC ExNadv.html";
+var crt8Address="charts/Kr d12 CRT n6.html";
 var reinfAddress="charts/d20.htm"//reinforcments
 var pbmAddress="charts/rallyCalculator.html"//PBM or spare
 var seqOfPlayAddress="rules/new turn sequence.txt"//seq of play

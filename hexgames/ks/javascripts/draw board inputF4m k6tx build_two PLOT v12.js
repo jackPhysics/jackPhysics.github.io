@@ -224,6 +224,21 @@ function completeBoard(){
     ctx.fillStyle = "White";
     ctx.fillText("Replacements:",corner1X*1.3-20,corner4Y+corner1X*0.2+20);
       ctx.closePath();
+        ctx.beginPath();
+        ctx.font = "12px Arial";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "bottom";
+      ctx.lineWidth = "1";
+    ctx.fillStyle = "Black";
+      ctx.fillText("OPTIONS:",corner1X*1.3+12,corner4Y+corner1X*0.2+40);
+      ctx.font = "italic 12px Arial";
+        ctx.fillText("(See all the Reinforcement options... can apply any of those",corner1X*1.3+12,corner4Y+corner1X*0.2+60);
+        ctx.fillText("... same for Reinforcement and Replacements, or seperate rules for each)",corner1X*1.3+12,corner4Y+corner1X*0.2+80);
+          ctx.font = "12px Arial";
+            ctx.fillText("Options just for Replacements:",corner1X*1.3+12,corner4Y+corner1X*0.2+100);
+              ctx.fillText("~ can upgrade in enemy country (if not surrounded?)",corner1X*1.3+12,corner4Y+corner1X*0.2+120);
+                ctx.fillText("~ can upgrade in enemy ZOC",corner1X*1.3+12,corner4Y+corner1X*0.2+140);
+        ctx.closePath();
 
       //red replacements
         ctx.beginPath();
@@ -238,6 +253,23 @@ function completeBoard(){
       ctx.fillStyle = "White";
       ctx.fillText("Replacements:",canvH0/2+corner1X*0.28-20,corner4Y+corner1X*0.2+20);
           ctx.closePath();
+            ctx.beginPath();
+            ctx.font = "12px Arial";
+            ctx.textAlign = "left";
+            ctx.textBaseline = "bottom";
+          ctx.lineWidth = "1";
+        ctx.fillStyle = "Black";
+          ctx.fillText("Recieve 3 replacement points per turn, starting on turn 1;",canvH0/2+corner1X*0.28+12,corner4Y+corner1X*0.2+40);
+            ctx.fillText("minus 1 replacement points per home city hex captured by opponent",canvH0/2+corner1X*0.28+12,corner4Y+corner1X*0.2+60);
+              ctx.fillText("(city hex is captured on entry, not just being in ZOC).",canvH0/2+corner1X*0.28+12,corner4Y+corner1X*0.2+80);
+                ctx.fillText("Replacements are brought in on any vacant city hex* - even if in enemy ZOC.",canvH0/2+corner1X*0.28+12,corner4Y+corner1X*0.2+100);
+                  ctx.fillText("Replacement points can also be used to upgrade units that have lost combat",canvH0/2+corner1X*0.28+12,corner4Y+corner1X*0.2+130);
+                    ctx.fillText("factors: unit must be in the home country and NOT in enemy ZOC;",canvH0/2+corner1X*0.28+12,corner4Y+corner1X*0.2+150);
+                      ctx.fillText("can upgrade at anytime during the turn.",canvH0/2+corner1X*0.28+12,corner4Y+corner1X*0.2+170);
+                      //ctx.font = "10px Arial";
+                      ctx.font = "italic 10px Arial";
+                        ctx.fillText("* vacant at START of the turn.",canvH0/2+corner1X*0.28+20,corner4Y+corner1X*0.2+190);
+            ctx.closePath();
 
     //black reinforcements
       ctx.beginPath();
@@ -255,6 +287,30 @@ function completeBoard(){
     ctx.fillText("Reinforcements:",canvH0*0.5-25,corner1X*0.1-25);//canvH0/2+corner1X*0.28-20,20);
     ctx.restore();
       ctx.closePath();
+        ctx.beginPath();
+        ctx.font = "12px Arial";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "bottom";
+      ctx.lineWidth = "1";
+    ctx.fillStyle = "Black";
+      ctx.fillText("1/3 of units (rounded down,",corner1X*0.1+25,canvH0*0.5+20);
+        ctx.fillText("eg if 23 units --> 1/3 = 7.67 = 7)",corner1X*0.1+25,canvH0*0.5+40);
+          ctx.fillText("are set aside as reinforcements.",corner1X*0.1+25,canvH0*0.5+60);
+            ctx.fillText("But..",corner1X*0.1+25,canvH0*0.5+80);
+              ctx.fillText("- start with minimum of 13 units",corner1X*0.1+25,canvH0*0.5+100);
+                ctx.fillText("- never more than",corner1X*0.1+25,canvH0*0.5+120);
+                  ctx.fillText("   20 reinforcements",corner1X*0.1+25,canvH0*0.5+140);
+                    ctx.fillText("Reinforcements start on turn 4",corner1X*0.1+25,canvH0*0.5+200);
+                      ctx.fillText("Arriving at vacant",corner1X*0.1+25,canvH0*0.5+220);
+                        ctx.fillText("        Capital City hex.",corner1X*0.1+25,canvH0*0.5+240);
+                          ctx.fillText("1 unit if 7 or less left",corner1X*0.1+25,canvH0*0.5+260);
+                            ctx.fillText("2 units if 8 to 13 left",corner1X*0.1+25,canvH0*0.5+280);
+                              ctx.fillText("3 units if 14+ left",corner1X*0.1+25,canvH0*0.5+300);
+                              ctx.fillText("      OR     ",corner1X*0.1+25,canvH0*0.5+320);
+                      ctx.fillText("Recieve 1 unit per free",corner1X*0.1+25,canvH0*0.5+340);
+                        ctx.fillText("    Capital City hex.",corner1X*0.1+25,canvH0*0.5+360);
+                          ctx.fillText("(Decide before start)",corner1X*0.1+25,canvH0*0.5+380);
+        ctx.closePath();
 
 
     //red reinforcements
@@ -273,6 +329,23 @@ function completeBoard(){
     ctx.fillText("Reinforcements:",canvH0*0.5-25,-canvH0+corner1X*0.9+25);//canvH0*0.5-25,canvH0-corner1X*0.1+25);//canvH0/2+corner1X*0.28-20,20);
     ctx.restore();
       ctx.closePath();
+        ctx.beginPath();
+        ctx.font = "12px Arial";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "bottom";
+      ctx.lineWidth = "1";
+    ctx.fillStyle = "Black";
+      ctx.fillText("OPTIONS:",canvH0-corner1X*0.9+25,canvH0*0.5+20);
+        ctx.fillText("Reinforcements can...",canvH0-corner1X*0.9+25,canvH0*0.5+40);
+        ctx.fillText("~ start on turn 2",canvH0-corner1X*0.9+25,canvH0*0.5+60);
+          ctx.fillText("~ come in on any city hex",canvH0-corner1X*0.9+25,canvH0*0.5+80);
+            ctx.fillText("~ come in on edge road hexes",canvH0-corner1X*0.9+25,canvH0*0.5+100);
+            ctx.fillText("~ come in on occupied hexes",canvH0-corner1X*0.9+25,canvH0*0.5+120);
+              ctx.fillText("  (no stacking limits on entry)",canvH0-corner1X*0.9+25,canvH0*0.5+140);
+                ctx.fillText("~ even in captured enemy cities",canvH0-corner1X*0.9+25,canvH0*0.5+160);
+                  ctx.fillText("~ even in cities captured by ",canvH0-corner1X*0.9+25,canvH0*0.5+180);
+                    ctx.fillText("  enemy (if unoccupied)",canvH0-corner1X*0.9+25,canvH0*0.5+200);
+        ctx.closePath();
 /*
 var sizeOfBox = canvW0/(noOfTurns0+4);
   ctx.font = "56px Arial";
@@ -342,7 +415,7 @@ var sizeOfBox = canvW0/(noOfTurns0+4);
 
         ctx.save();
         ctx.rotate(Math.PI/2);
-          ctx.font = "36[po32], px Arial";
+          ctx.font = "40px Arial";//  ctx.font = "36[po32], px Arial";
           ctx.textAlign = "left";
           ctx.textBaseline = "bottom";
         ctx.lineWidth = "1";
