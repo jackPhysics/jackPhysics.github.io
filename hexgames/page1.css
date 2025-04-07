@@ -54,7 +54,7 @@ font-family: "American Typewriter", serif;
     				top: 20px;
         }
 
-	h2.kr2 {
+	h2.kr1 {
 				font-family: "Lucida Calligraphy";
 				color: Red;
   				background-color: Black;
@@ -62,7 +62,7 @@ font-family: "American Typewriter", serif;
     				position: relative;
     				top: 20px;
         }
-	h2.kr0 {
+	.kr0 {
 				font-family: "Lucida Calligraphy";
 				color: White;
   				background-color: Black;
