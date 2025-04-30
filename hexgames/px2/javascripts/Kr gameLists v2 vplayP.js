@@ -1,5 +1,5 @@
 
-var gamesMax = 10;
+var gamesMax = 11;
 
 var allTheGamesA = ["Romans vs Sabines 753 BC","Marathon 490 BC", "Mantinea 362 BC",
 "Arbela 331 BC", "Pharsalus 48 BC", "Qadisiya AD 637",
