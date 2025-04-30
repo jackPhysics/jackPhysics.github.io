@@ -68,11 +68,14 @@ var Bcolor = "red";
 var DcolorFlag = false;
 
 //unit sizes - 88 fits 3 to a hex, so hex=264, so if stackin=4 size = 264/4, if stacking=1 size =264 etc.
-var sunit=150; //unit width/height
+var unitSize = 120;
+var deltaSize = 0;
+var borderSize = 1.4;//this number gets multiplied by boardSize
+var sunit=unitSize; //unit width/height
 //alert("here!");
-var sunit2=150;
-var sunitB=150; //unit width/height
-var sunitB2=150;
+var sunit2=unitSize;
+var sunitB=unitSize; //unit width/height
+var sunitB2=unitSize;
 
 var noOfItems=11; //no of items of data for each unit type
 var itemsPerUnit = noOfItems;

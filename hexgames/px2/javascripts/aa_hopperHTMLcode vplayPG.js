@@ -37,8 +37,8 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 '<td>&nbsp;&nbsp;<a class="neut" href="javascript:hideToggle()"  id="btnHH"  >Show A./Hide B.</a></td>'+
 '<td>&nbsp;&nbsp;<a href="javascript:hideRusF()"  id="btnHB"  >Hide A.</a></td>'+
 '<td>&nbsp;&nbsp;<a class="neut" href="javascript:hideGerF()"  id="btnHA"  >Hide B.</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=1;changeSize()"  id="btn18"  >full size</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=2;changeSize()"  id="btn19"  >half size</a></td>'+
+'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=1;deltaSize=+1;changeSize()"  id="btn18"  >unit size++</a></td>'+
+'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=1;deltaSize=-1;changeSize()"  id="btn19"  >unit size--</a></td>'+
 '<td>&nbsp;&nbsp;<a href="javascript:help_window()"  id="btn17"  >Help window</a></td>'+
 '</tr>'+
 '<tr id="pbrow"><td>&nbsp;&nbsp;<a href="javascript:tec_window()"id="btn1"  >Terrain Effects Chart</a></td>'+
@@ -86,15 +86,16 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 '<td>&nbsp;&nbsp;<a class="mca" href="javascript:unDisrpAll()"  id="btnx4"  >Undisrupt All</a></td>'+
 '<td>&nbsp;&nbsp;<a class="mca" href="javascript:unDisrpA()"  id="btnx5"  >Undisrupt A</a></td>'+
 '<td>&nbsp;&nbsp;<a href="javascript:unDisrpB()"  id="btnx6"  >Undisrupt B</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:shiftNumber()"  id="btnx7"  >now: shift 5</a></td>'+
 '<td>&nbsp;&nbsp;<a  class="mca" href="javascript:hideTerrain(52)"  id="btnx9"  >trackers Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:crtNap_window()"  id="btn2b"  >NAW CRT</a></td>'+
+'<td>&nbsp;&nbsp;<a href="javascript:hideTerrain(13)"  id="btnx10"  >Flags Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a href="javascript:hideTerrain(14)"  id="btnx11"  >setups Y/N</a></td>'+
 '</tr><tr id="mcarow">'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:reloadSetup()"  id="btn4"  >SETUP GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:getCookie()"  id="btn30"  >RELOAD GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:reloadReset()"  id="btn22"  >RESET GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:situation_window()"  id="btn9"  >Situation</a></td>'
-
++'<td>&nbsp;&nbsp;<a href="javascript:crtNap_window()"  id="btn2b"  >NAW CRT</a></td>'
++'<td>&nbsp;&nbsp;<a href="javascript:shiftNumber()"  id="btnx7"  >now: shift 5</a></td>'
 +'</tr></table>';
 
 //unused stuff

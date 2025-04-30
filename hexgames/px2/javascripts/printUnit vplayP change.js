@@ -1379,10 +1379,13 @@ unitsA[whatType*noOfItems+5] = dummyHoldType;
         	  ctx.textAlign = "center";
         	  ctx.textBaseline = "middle";
           	ctx.lineWidth = "2";
+            //console.log("1: noOfImgPrnt="+noOfImgPrnt+" classFactor="+classFactor+" "+printData[1]+" leaderA[]="+leaderA[noOfImgPrnt]);
             if(leaderA[noOfImgPrnt]>0){
+            //console.log("2 "+leaderA[noOfImgPrnt]);
         	  ctx.fillText(""+printData[1],i2*unitSize+20*unitScale,j2*unitSize+unitSize/5*unitScale, 100);
             }
             else{
+            //console.log("3 "+leaderA[noOfImgPrnt]);
         	  ctx.fillText(""+classFactor,i2*unitSize+10*unitScale,j2*unitSize+unitSize/5*unitScale, 110);}//, 30
             ctx.translate(50, 50);
             ctx.rotate(Math.PI/2);

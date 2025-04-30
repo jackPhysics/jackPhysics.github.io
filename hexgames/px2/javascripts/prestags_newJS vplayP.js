@@ -814,7 +814,7 @@ if(placeInRowFlag){
   piecesTop[k] = Math.round(Math.floor(k/10)*pieceSize*1.5+50);
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;
   }
 }
@@ -828,7 +828,7 @@ else{
   piecesTop[k] = Math.round(Math.floor(k/10)*pieceSize*1.5+150);//50 less than imageArray[k].style.top
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;
 }
     else if(k<neutNumber){
@@ -838,7 +838,7 @@ else{
   piecesTop[k] = Math.round(Math.floor(k/10)*pieceSize*1.5+550);//50 less than imageArray[k].style.top
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
     else{
   imageArray[k].style.left=pieceSize*1.5+20+"px";//(k-(Math.floor(k/10)*10))+100+"px";//k*60+"px";
@@ -847,7 +847,7 @@ else{
   piecesTop[k] = Math.round(Math.floor(k-neutNumber)*pieceSize*1.5+300);//50 less than imageArray[k].style.top
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
   }
 }
@@ -972,7 +972,7 @@ function placePics2() //print new armies
     piecesTop[k] = Math.round(Math.floor(k/10)*pieceSize*1.5+50);
     imageArray[k].style.width=pieceSize+"px";
     imageArray[k].style.height=pieceSize+"px";
-    imageArray[k].style.borderWidth=boardSize*2+"px";
+    imageArray[k].style.borderWidth=boardSize*borderSize+"px";
     imageArray[k].style.zIndex = nextZ-1;
     }
   }
@@ -991,7 +991,7 @@ function placePics2() //print new armies
   */
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
     else if(k<neutNumber){
       reScale=size/8;
@@ -1005,7 +1005,7 @@ function placePics2() //print new armies
   */
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
     else{
       reScale=size/8;
@@ -1020,7 +1020,7 @@ function placePics2() //print new armies
   */
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
   }
 }
@@ -1227,7 +1227,7 @@ function changeSize() //change the size of board and pieces following key press
   for(k=0;k<noOfImages;k++){
   imageArray[k].style.width=(pieceSize*boardSize/pieceShrink)+"px";
   imageArray[k].style.height=(pieceSize*boardSize/pieceShrink)+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";//*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";//*2+"px";
   //if(k==20){
   //  alert(""+piecesLeft[k]+" "+boardSize*piecesLeft[k]);   }
   imageArray[k].style.left=(boardSize*piecesLeft[k])+"px";

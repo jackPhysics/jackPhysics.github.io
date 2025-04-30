@@ -1531,13 +1531,20 @@ for(i=0;i<unitTotal+1;i++){
      }
 }
 
-function changeNeutralPic0(n){//no change, for reload
+function changeNeutralPicL(n){//change leader
 	var leaderIndex=n;
   unitsA[thisIsA[leaderIndex]*itemsPerUnit+10] = ""+leaderA[leaderIndex]+"L";
   cmbtFactorsA[leaderIndex]=""+leaderA[leaderIndex]+"L";
 	printUnit(leaderIndex, typeNumbA[leaderIndex], typeTotalA[leaderIndex], thisIsA[leaderIndex],countIndividual[leaderIndex]);
   //imageArray[leaderIndex].setAttribute("title", "#"+(leaderIndex+1)+": "+unitsA[thisIsA[leaderIndex]*noOfItems+10]+" "+cmbtFactorsA[leaderIndex]+"-"+unitsA[thisIsA[leaderIndex]*noOfItems+7]+" fire:"+unitsA[thisIsA[leaderIndex]*noOfItems+8]+"/"+unitsA[thisIsA[leaderIndex]*noOfItems+9]+" (pts:"+unitsA[thisIsA[leaderIndex]*noOfItems+2]+") ("+(typeNumbA[leaderIndex])+"/"+typeTotalA[leaderIndex]+")");
   mouseActive=0;
+  doEdgeColor();
+
+}
+
+
+function changeNeutralPic0(n){//no change, for reload
+	mouseActive=0;
   doEdgeColor();
 
 }
@@ -1831,7 +1838,7 @@ function hopHop(x, y){ //jump Hopper to new position
 		    allLocs=allLocs+swLeft+","+swTop+",";
 		    if(activeIndex==gerNumber+1){allLocs=allLocs+"\n\n"}
 		    if(activeIndex==neutNumber+1){allLocs=allLocs+"\n\n"}
-		    //              rout        rotation     zindex       dead       mark   disrupted/fired  left    top           changed
+		    //              rout        rotation     zindex       dead       mark   disrupted/fired  left    top       changed
 		    allText=allText+swTrans+","+swTrans1+","+swTrans2+","+swDead+","+swMark+","+swDis+","+swLeft+","+swTop+","+swCav+", ";
 		    }
 					//llText=allText+redArmyNo+","+blackArmyNo+","+redBno+","+ flipBrdNoR +","+ blackBno +","+ flipBrdNoB+",";
@@ -1888,16 +1895,21 @@ function hopHop(x, y){ //jump Hopper to new position
 				hideLetters = false;
 
 
+				//console.log(" "+loadA[loopTill-17-shiftBackwards]+", "+loadA[loopTill-16-shiftBackwards]+", "+loadA[loopTill-15-shiftBackwards]+", "+loadA[loopTill-14-shiftBackwards]+", "+loadA[loopTill-13-shiftBackwards]+", "+loadA[loopTill-12-shiftBackwards]+", "+loadA[loopTill-11-shiftBackwards]);
+
+				//console.log("Number.isInteger(loadA[loopTill-16-shiftBackwards]*1)="+Number.isInteger(loadA[loopTill-16-shiftBackwards]*1));
+
 				if(loadA[loopTill-11-shiftBackwards]=="true"){
 				  hideSwamps = true;hideSwamps2 = 1;
 				}
-				else if(Number.isInteger(loadA[loopTill-11-shiftBackwards])){
+				else if(Number.isInteger(loadA[loopTill-11-shiftBackwards]*1)){
 				  hideSwamps2 = loadA[loopTill-11-shiftBackwards];
+					//console.log("hideSwamps2="+hideSwamps2);
 				}
 				if(loadA[loopTill-12-shiftBackwards]=="true"){
 				  hideLakes = true;hideLakes2 = 1;
 				}
-				else if(Number.isInteger(loadA[loopTill-12-shiftBackwards])){
+				else if(Number.isInteger(loadA[loopTill-12-shiftBackwards]*1)){
 				  hideLakes2 = loadA[loopTill-12-shiftBackwards];
 				}
 				if(loadA[loopTill-13-shiftBackwards]=="true"){
@@ -1911,14 +1923,18 @@ function hopHop(x, y){ //jump Hopper to new position
 				}
 				if(loadA[loopTill-16-shiftBackwards]=="true"){
 				  hideWoods = true;hideWoods2 = 1;
+					//console.log("hideWoods="+hideWoods);
 				}
-				else if(Number.isInteger(loadA[loopTill-16-shiftBackwards])){
+				else if(Number.isInteger(loadA[loopTill-16-shiftBackwards]*1)){
 				  hideWoods2 = loadA[loopTill-16-shiftBackwards];
+					//console.log("hideWoods2="+hideWoods2);
 				}
 				if(loadA[loopTill-17-shiftBackwards]=="true"){
 				  hideHills = true;
 				}
-			/*
+	//console.log(" "+hideHills+", "+hideWoods2+", "+hideTowns+", "+hideRoads+", "+hideRivers+", "+hideLakes2+", "+hideSwamps2);
+
+/*
 			  hideSwamps = (loadA[loopTill-11-shiftBackwards]);
 			  hideLakes = Boolean(loadA[loopTill-12-shiftBackwards]);
 			  hideRoads = Boolean(loadA[loopTill-13-shiftBackwards]);
@@ -1928,8 +1944,8 @@ function hopHop(x, y){ //jump Hopper to new position
 			  hideHills = loadA[loopTill-17-shiftBackwards];
 			*/
 			    loadTerrain(blackBno,flipBrdNoBX,flipBrdNoBY);
-			     allCOORDSX = [hillCOX, woodCOX, mountCOX, lakeCOX, smLakeCOX, swampCOX, cityCOX, beachCOX, slopeCOX, bridgeCOX, fordCOX];
-			     allCOORDSY = [hillCOY, woodCOY, mountCOY, lakeCOY, smLakeCOY, swampCOY, cityCOY, beachCOY, slopeCOY, bridgeCOY, fordCOY];
+			     allCOORDSX = [hillCOX, woodCOX, mountCOX, lakeCOX, smLakeCOX, swampCOX, cityCOX, beachCOX, slopeCOX, bridgeCOX, fordCOX,namedHexes, iconHexes, locationsA, setupsA];
+			     allCOORDSY = [hillCOY, woodCOY, mountCOY, lakeCOY, smLakeCOY, swampCOY, cityCOY, beachCOY, slopeCOY, bridgeCOY, fordCOY,namedHexes, iconHexes, locationsA, setupsA];
 			     printBoards(0);
 			     completeBoard();
 
@@ -2022,21 +2038,24 @@ function hopHop(x, y){ //jump Hopper to new position
 			    //cmbtFactorsA[activeIndex]=loadA[m+8];
 					var dumValue8 = loadA[m+8];
 					if(isNaN(dumValue8)){
-						leaderA[activeIndex]=0;
-						changeUnitA[activeIndex]=0;
+						//leaderA[activeIndex]=0;
+						//changeUnitA[activeIndex]=0;
 					}
 					else{
 			    if(leaderA[activeIndex]>0){leaderA[activeIndex]=1*loadA[m+8];}
 			    else{changeUnitA[activeIndex]=1*loadA[m+8];}
 
-			    if(changeUnitA[activeIndex]>0){
+			    //if(changeUnitA[activeIndex]>0){
+					if(changeUnitA[activeIndex]==1){
 			      changeUnitA[activeIndex]=0;//because parse adds 1
 			      changeUnitParse(activeIndex);
 			    }
 			    else if(leaderA[activeIndex]>0){
-			      changeNeutralPic0(activeIndex);
+			      changeNeutralPicL(activeIndex);
 			    }
-			    else{printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);}
+			    else{
+						//printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);
+					}
 					}
 			    //changed combat factors routine:
 			    if(cmbtFactorsA[activeIndex]=="x"||dismountDummyA[activeIndex]==" x"||dismountDummyA[activeIndex]==" x "){

@@ -789,8 +789,9 @@ function placePics() //initialise, add the game pieces to the board
       var dumLead = unitsA[i*noOfItems+10].slice(0,1)*1;
       leaderA[noOfImg]=dumLead;}
               else{leaderA[noOfImg]=0;
-                changeNeutralPic0(noOfImg);}
-
+                //changeNeutralPic0(noOfImg);
+              }
+    changeUnitA[noOfImg]=0;
         printUnit(noOfImg, j+1, totalNo, i, countOutUnits0);
 
 	activeImage=imageArray[noOfImg];
@@ -815,7 +816,7 @@ function placePics() //initialise, add the game pieces to the board
   piecesTop[k] = Math.round(Math.floor(k/10)*pieceSize*1.5+150);//50 less than imageArray[k].style.top
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;
 }
     else if(k<neutNumber){
@@ -825,7 +826,7 @@ function placePics() //initialise, add the game pieces to the board
   piecesTop[k] = Math.round(Math.floor(k/10)*pieceSize*1.5+550);//50 less than imageArray[k].style.top
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
     else{
   imageArray[k].style.left=pieceSize*1.5+20+"px";//(k-(Math.floor(k/10)*10))+100+"px";//k*60+"px";
@@ -834,7 +835,7 @@ function placePics() //initialise, add the game pieces to the board
   piecesTop[k] = Math.round(Math.floor(k-neutNumber)*pieceSize*1.5+300);//50 less than imageArray[k].style.top
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
   }
 
@@ -917,6 +918,7 @@ function placePics2() //print new armies
       colorTester=colorLoop[0];
       countOutUnits0 = 1;
     }
+    //console.log("noOfImg="+noOfImg+" colorTester"+colorTester);
     if(unitsA[i*noOfItems+5]!="supply"||unitsA[i*noOfItems+4]!="x"){
       hasSteps[noOfImg]=true;
     }
@@ -935,9 +937,10 @@ function placePics2() //print new armies
     if(armourA[noOfImg]=="l"){leaderA[noOfImg]=1;
       var dumLead = unitsA[i*noOfItems+10].slice(0,1)*1;
       leaderA[noOfImg]=dumLead;
-      changeNeutralPic0(noOfImg);}
+      //changeNeutralPic0(noOfImg);
+      }
               else{leaderA[noOfImg]=0;}
-
+  changeUnitA[noOfImg]=0;
                   printUnit(noOfImg, j+1, totalNo, i, countOutUnits0);
 
 	activeImage=imageArray[noOfImg];
@@ -967,7 +970,7 @@ function placePics2() //print new armies
   */
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
     else if(k<neutNumber){
       reScale=size/8;
@@ -981,7 +984,7 @@ function placePics2() //print new armies
   */
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
     else{
       reScale=size/8;
@@ -996,7 +999,7 @@ function placePics2() //print new armies
   */
   imageArray[k].style.width=pieceSize+"px";
   imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
   }
 
@@ -1182,6 +1185,17 @@ if(mouseOverFlag){
 
 function changeSize() //change the size of board and pieces following key press
 {
+//extra code for changing piece sizes
+
+pieceSize = pieceSize + deltaSize;
+//console.log("1 unitSize="+unitSize+" pieceSize="+pieceSize+" deltaSize="+deltaSize)
+if(pieceSize>20){pieceSize=20;}
+if(pieceSize<6){pieceSize=6;}
+deltaSize = 0;
+//pieceSize = unitSize/10;
+//console.log("2 unitSize="+unitSize+" pieceSize="+pieceSize+" deltaSize="+deltaSize);
+
+ //end of code
 
   var board = document.getElementById("board");
   //board.setAttribute("src", boardAddress);
@@ -1202,7 +1216,7 @@ function changeSize() //change the size of board and pieces following key press
   for(k=0;k<noOfImages;k++){
   imageArray[k].style.width=(pieceSize*boardSize/pieceShrink)+"px";
   imageArray[k].style.height=(pieceSize*boardSize/pieceShrink)+"px";
-  imageArray[k].style.borderWidth=boardSize*2+"px";//*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize/pieceShrink+"px";//*2+"px";
   //if(k==20){
   //  alert(""+piecesLeft[k]+" "+boardSize*piecesLeft[k]);   }
   imageArray[k].style.left=(boardSize*piecesLeft[k])+"px";
@@ -1872,8 +1886,8 @@ Apanic = 1*loadA[loopTill-19-shiftBackwards];
     //cmbtFactorsA[activeIndex]=loadA[m+8];
     var dumValue8 = loadA[m+8];
     if(isNaN(dumValue8)){
-      leaderA[activeIndex]=0;
-      changeUnitA[activeIndex]=0;
+      //leaderA[activeIndex]=0;
+      //changeUnitA[activeIndex]=0;
     }
     else{
     if(leaderA[activeIndex]>0){leaderA[activeIndex]=1*loadA[m+8];}
@@ -1884,9 +1898,11 @@ Apanic = 1*loadA[loopTill-19-shiftBackwards];
       changeUnitParse(activeIndex);
     }
     else if(leaderA[activeIndex]>0){
-      changeNeutralPic0(activeIndex);
+      changeNeutralPicL(activeIndex);
     }
-    else{printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);}
+    else{
+      //printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);
+    }
     }
     //changed combat factors routine:
     if(cmbtFactorsA[activeIndex]=="x"||dismountDummyA[activeIndex]==" x"||dismountDummyA[activeIndex]==" x "){
