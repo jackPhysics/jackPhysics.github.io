@@ -782,7 +782,7 @@ var classType = classFactor;//unit number - out of all
             ctx.fillStyle = textColorThis;
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
-            ctx.fillText(""+designateRA[noOfImgPrnt],i2*unitSize+220*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 70);
+            ctx.fillText(""+designateRA[noOfImgPrnt],i2*unitSize+225*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 110);
             ctx.translate(150, 150);
             ctx.rotate(Math.PI/2);
             ctx.translate(-150, -150);

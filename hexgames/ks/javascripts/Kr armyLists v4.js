@@ -1,6 +1,6 @@
 
-var redArmyMax = 51;
-var blackArmyMax = 51;
+var redArmyMax = 58;
+var blackArmyMax = 58;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -20,7 +20,9 @@ var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democrac
 "Golden Ground Troops Government in Exile", "Day-Glo Dukedom", "Countdown Country #2",
 "Green Dream Planeteers", "Goldbrick Graduates of Greater Gondwanaland", "Silverbacked Statists",
 "HiLo Holistic Hotpink Honeydew Hegemony", "FastSlo Fantastically Floral Federalists",
-"Crimson Celerity Cooperative","Zoetic zapping Zombie Hordes","Universal Church"]
+"Crimson Celerity Cooperative","Zoetic zapping Zombie Hordes","Universal Church", "London Underground",
+"Lost Souls","Armoured Fist", "Die Rolling Dystopians", "Coral Combat Committed Caeserian Confederation",
+"Sea-Green Route 66 Convoy", "Seviche Seventeen Servants Severalty"];
 
 function findArmies(){
 
@@ -2149,7 +2151,6 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
-
 else if(changeRedFlag&&redArmyNo==50||changeBlackFlag&&blackArmyNo==50){
 var nameQ="Universal Church";
 
@@ -2188,6 +2189,262 @@ var noOfSide = unitsQ.length/noOfItems;
   for(s=0;s<noOfSide;s++){
     sideQ[s]=1;    }}
 }
+
+else if(changeRedFlag&&redArmyNo==51||changeBlackFlag&&blackArmyNo==51){
+var nameQ="London Underground";
+
+var qbase = ["#ff1111","#ff1111", "#ff1111"];
+
+var unitsQ=[
+  "#ff1111/#ffffff/#800080/#ffffff","","10","2","n","mech","10","3","xx",
+  "#ff1111/#ffffff/#ffc0cb/#000000","","9","2","n","inf","9","3","xx",
+  "#ff1111/#ffffff/#00ff00/#0000ff","","11","2","n","inf","8","6","xx",
+  "#ff1111/#ffffff/#ffff00/#000000","","8","3","n","arm","7","4","xx",
+  "#ff1111/#ffffff/#000000/#ffffff","","8","2","n","inf","6","5","xx",
+  "#ff1111/#ffffff/#ff0000/#0000ff","","7","3","n","inf","5","5","xx",
+  "#ff1111/#ffffff/#8b4513/#ffffff","","4","2","n","inf","4","3","xx",
+  "#ff1111/#ffffff/#000099/#ffffff","","6","3","n","para","3","5","xx",
+  "#ff1111/#ffffff/#00ffff/#0000ff","","1","2","n","inf","2","2","xx",
+  "#ff1111/#ffffff/#a9a9a9/#0000ff","","1","1","n","inf","1","3","xx",
+  "#ff1111/#ffffff/#800080/#ffffff","supply","0","0","n","supply","0","10","xx",
+];
+
+var designateLQ=["Metropolitan", "Metropolitan", "Hammersmith", "Hammersmith", "District", "District",
+ "Circle", "Circle", "Circle",
+ "Northern", "Northern", "Central", "Central", "Central", "Bakerloo", "Bakerloo",
+  "Piccadilly", "Piccadilly", "Piccadilly", "Victoria",
+"Victoria", "Jubilee"
+];
+
+var designateRQ=["Uxbridge", "Aldgate", "Farringdon", "Barbican", "West Ham", "District",
+ "Victoria", "Liverpool St.", "Paddington",
+ "Finchley", "Balham", "Tot.Crt Road", "Mile End", "Stratford", "Baker St.", "Waterloo",
+  "Arsenal", "Heathrow T4", "Heathrow T5", "Brixton",
+"Pimlico", "Jubilee"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==52||changeBlackFlag&&blackArmyNo==52){
+var nameQ="Lost Souls";
+
+var qbase = ["#676869","#676869", "#676869"];
+
+var unitsQ=[
+  "#676869/#00ff00/#ff0000/#000000","","11","3","n","sf","6","5","xx",
+  "#676869/#00ff00/#ff0000/#000000","","10","3","n","mount","5","6","xx",
+  "#676869/#00ff00/#ff0000/#000000","","8","3","n","inf","8","3","xx",
+  "#676869/#00ff00/#ff0000/#000000","","5","4","n","inf","4","4","xx",
+  "#676869/#00ff00/#ff0000/#000000","","9","3","n","art","10","2","xx",
+  "#676869/#00ff00/#ff0000/#000000","","4","4","n","para","2","4","xx",
+  "#676869/#00ff00/#ff0000/#000000","supply","0","0","n","supply","0","10","xx",
+];
+
+var designateLQ=["Vampires", "Vampyres", "Bloodsuckers", "Werewolves", "Lychanthropes", "Wolfmen",
+ "Reanimated", "Flesh-eating", "Artificial",
+ "Alien", "Dark", "Evil", "Dark", "BEM", "BEM", "BEM",
+  "Spectres", "Ghosts", "Wraiths", "Spooks"
+];
+
+var designateRQ=["", "", "", "", "", "",
+ "Corpses", "Ghouls", "Life",
+ "Alter-egos", "Dopplegangers", "Halves", "Souls", "Blob", "Big Brain", "Grey",
+  "", "", "", ""
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==53||changeBlackFlag&&blackArmyNo==53){
+var nameQ="Armoured Fist";
+
+var qbase = ["#444444","#444444", "#444444"];
+
+var unitsQ=[
+  "#444444/#ffffff/#666666/#ffffff","Heavy Tanks","10","6","n","arm","8","5","xx",
+  "#444444/#ffffff/#666666/#ffffff","Self-propelled Guns","9","4","n","spa","6","6","xx",
+  "#444444/#ffffff/#666666/#ffffff","Mechanised","9","3","n","mech","4","8","xx",
+  "#444444/#ffffff/#666666/#ffffff","Light Tanks","9","3","n","acav","2","10","xx",
+  "#444444/#ffffff/#666666/#ffffff","supply","0","0","n","supply","0","10","xx",
+];
+
+var designateLQ=["Guderian", "Guderian","Guderian", "Guderian", "Guderian", "Guderian",
+ "Fuller", "Fuller", "Fuller", "Fuller",
+ "Rommel", "Rommel", "Rommel",
+  "Patton", "Patton", "Patton"
+];
+
+var designateRQ=["I", "II","III", "IV", "V", "VI",
+ "I", "II", "III", "IV",
+ "I", "II", "III",
+  "I", "II", "III"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==54||changeBlackFlag&&blackArmyNo==54){
+var nameQ="Die Rolling Dystopians";
+
+var qbase = ["#000080","#000080", "#000080"];
+
+var unitsQ=[
+  "#000080/#ffffff/#800000/#ffffff","Tracked","9","6","n","mech","6","6","xx",
+  "#000080/#ffffff/#800000/#ffffff","Marine and Mountain","10","3","n","sf","6","4","xx",
+  "#000080/#ffffff/#800000/#ffffff","Air Service","6","3","n","para","6","2","xx",
+  "#000080/#ffffff/#800000/#ffffff","Foot","6","8","n","inf","6","3","xx",
+  "#000080/#ffffff/#800000/#ffffff","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=["Box", "Box","Box", "Box", "Box", "Box",
+ "Natural", "Natural", "Nina",
+ "Hi-Lo-Yo", "Hi-Lo-Yo","Hi-Lo-Yo",
+  "Snake-Eyes", "Snake-Eyes", "Snake-Eyes", "Snake-Eyes","Snake-Eyes", "Snake-Eyes","Snake-Eyes", "Snake-Eyes"];
+
+var designateRQ=["4", "5","6" ,"8", "9", "10",
+ "7", "11", "9",
+ "2", "3", "12",
+  ".", ":",":.", "::", "::.", ":::",":::.","::::"];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==55||changeBlackFlag&&blackArmyNo==55){
+var nameQ="Coral Combat Committed Caeserian Confederation";
+
+var qbase = ["#FF7F50","#FF7F50", "#FF7F50"];
+
+var unitsQ=[
+  "#FF7F50/#000000/#D2691E/#ffffff","Heavy Tanks","10","5","n","arm","12","1","xx",
+  "#FF7F50/#000000/#D2691E/#ffffff","Marine and Mountain","7","4","n","sf","6","1","xx",
+  "#FF7F50/#000000/#D2691E/#ffffff","Paratroopers","5","4","n","para","6","1","xx",
+  "#FF7F50/#000000/#D2691E/#ffffff","Regular Infantry","6","6","n","inf","8","1","xx",
+  "#FF7F50/#000000/#D2691E/#ffffff","Elite Infantry","8","2","n","inf","10","1","xx",
+  "#FF7F50/#000000/#D2691E/#ffffff","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=["Julius", "Julius", "Julius", "Julius", "Julius",
+ "Claudius", "Claudius", "Claudius", "Claudius",
+ "Nero", "Nero", "Nero", "Nero",
+  "Augustus", "Augustus","Augustus", "Augustus", "Augustus", "Augustus",
+  "Hadrian", "Hadrian"];
+
+var designateRQ=["I", "II","III" ,"IV", "V",
+ "I", "II","III" ,"IV",
+ "I", "II","III" ,"IV",
+  "I", "II","III" ,"IV", "V", "VI",
+"I", "II"];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==56||changeBlackFlag&&blackArmyNo==56){
+var nameQ="Sea-Green Route 66 Convoy";
+
+var qbase = ["#2E8B57","#2E8B57", "#2E8B57"];
+
+var unitsQ=[
+  "#2E8B57/#ffffff/#fff5ee/#000000","Mach Trucks","9","5","n","arm","6","6","xx",
+  "#2E8B57/#ffffff/#fff5ee/#000000","Motorbikes","8","5","n","sf","2","6","xx",
+  "#2E8B57/#ffffff/#fff5ee/#000000","Microlights","7","5","n","para","3","6","xx",
+  "#2E8B57/#ffffff/#fff5ee/#000000","Pick-ups","6","5","n","inf","3","6","xx",
+  "#2E8B57/#ffffff/#fff5ee/#000000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=["California", "Arizona", "New Mexico", "Oklahoma", "Missouri",
+ "California", "Arizona", "New Mexico", "Oklahoma", "Missouri",
+"California", "Arizona", "New Mexico", "Oklahoma", "Missouri",
+"California", "Arizona", "New Mexico", "Oklahoma", "Missouri"];
+
+var designateRQ=["6", "12","18" ,"24", "30",
+ "36", "42","48" ,"54","60",
+  "66","72" ,"78",  "84", "90",
+  "96" ,"102", "108", "114", "120"];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==57||changeBlackFlag&&blackArmyNo==57){
+var nameQ="Seviche Seventeen Servants Severalty";
+
+var qbase = ["#708090","#708090", "#708090"];
+
+var unitsQ=[
+  "#708090/#FFFACD/#00FF00/#000000","Panzers","11","5","n","arm","7","7","xx",
+  "#708090/#FFFACD/#00FF00/#000000","Storm-Troopers","11","2","n","sf","7","5","xx",
+  "#708090/#FFFACD/#00FF00/#000000","Fallschirmjager","7","2","n","para","7","2","xx",
+  "#708090/#FFFACD/#00FF00/#000000","Infantry","7","5","n","inf","7","3","xx",
+  "#708090/#FFFACD/#00FF00/#000000","Panzergrenadiers","8","3","n","inf","7","4","xx",
+  "#708090/#FFFACD/#00FF00/#000000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=["Seven", "Seven", "Seven", "Seven", "Seven", "Seven", "Seven", "Seven",
+"Nine", "Seven", "Seven", "Seven", "Seven", "Seven", "Seven", "Seven", "Seven"];
+
+var designateRQ=["Days", "Sins","Planets" ,"Churches", "Circuits",
+ "Seas", "Hills" , "Heavens", "Clouds", "Ages",
+  "Plots", "Immersions" , "Religions",  "Sons", "Seals",
+  "Rivers" ,"Colours"];
+//championships, sexes, eons, worlds, angels, trumpets
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+//interesting colours
+//purple:800080   leaf green:808000
 
 if(addSupplyUnitsFlag){
   unitsQ.push(unitsQ[0], "Supply","0","8","n","supply","0","10","xx");

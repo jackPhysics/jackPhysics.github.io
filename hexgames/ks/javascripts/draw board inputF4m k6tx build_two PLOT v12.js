@@ -312,6 +312,41 @@ function completeBoard(){
                           ctx.fillText("(Decide before start)",corner1X*0.1+25,canvH0*0.5+380);
         ctx.closePath();
 
+    //reinforcements table
+    var reinfTable = ["13 or less","14","15","16","17","18","19-20","21-23","24-26","27-29",
+    "30-32","33-35","36-38","39-41","42-44","45-47","48-50","51-53","54-56","57-59","60 or more"]
+    ctx.beginPath();
+    ctx.fillStyle = "Pink";
+      ctx.fillRect(corner1X*0.1+5,canvH0*0.5+470, 155,30);
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.fillStyle = "White";
+    for(r=0;r<21;r=r+2){
+      ctx.fillRect(corner1X*0.1+5,canvH0*0.5+515+15*(r-1), 155,15);
+    }
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.fillStyle = "Pink";
+    for(r=0;r<20;r=r+2){
+      ctx.fillRect(corner1X*0.1+5,canvH0*0.5+515+15*(r), 155,15);
+    }
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.font = "14px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "bottom";
+    ctx.lineWidth = "1";
+    ctx.fillStyle = "Black";
+    ctx.fillText("Army",corner1X*0.1+40,canvH0*0.5+486);
+    ctx.fillText("Reinforce-",corner1X*0.1+125,canvH0*0.5+486);
+    ctx.fillText("Size:",corner1X*0.1+40,canvH0*0.5+500);
+    ctx.fillText("ments:",corner1X*0.1+125,canvH0*0.5+500);
+    for(r=0;r<21;r++){
+      ctx.fillText(""+reinfTable[r],corner1X*0.1+40,canvH0*0.5+515+15*r);
+      ctx.fillText(""+r,corner1X*0.1+125,canvH0*0.5+515+15*r);
+    }
+    ctx.closePath();
+
 
     //red reinforcements
       ctx.beginPath();
@@ -340,11 +375,13 @@ function completeBoard(){
         ctx.fillText("~ start on turn 2",canvH0-corner1X*0.9+25,canvH0*0.5+60);
           ctx.fillText("~ come in on any city hex",canvH0-corner1X*0.9+25,canvH0*0.5+80);
             ctx.fillText("~ come in on edge road hexes",canvH0-corner1X*0.9+25,canvH0*0.5+100);
-            ctx.fillText("~ come in on occupied hexes",canvH0-corner1X*0.9+25,canvH0*0.5+120);
-              ctx.fillText("  (no stacking limits on entry)",canvH0-corner1X*0.9+25,canvH0*0.5+140);
-                ctx.fillText("~ even in captured enemy cities",canvH0-corner1X*0.9+25,canvH0*0.5+160);
-                  ctx.fillText("~ even in cities captured by ",canvH0-corner1X*0.9+25,canvH0*0.5+180);
-                    ctx.fillText("  enemy (if unoccupied)",canvH0-corner1X*0.9+25,canvH0*0.5+200);
+            ctx.fillText("~ come in on friendly",canvH0-corner1X*0.9+25,canvH0*0.5+120);
+              ctx.fillText("           occupied hexes",canvH0-corner1X*0.9+25,canvH0*0.5+140);
+              ctx.fillText("  (no stacking limits on entry)",canvH0-corner1X*0.9+25,canvH0*0.5+160);
+                ctx.fillText("~ even in captured ",canvH0-corner1X*0.9+25,canvH0*0.5+180);
+                  ctx.fillText("               enemy cities",canvH0-corner1X*0.9+25,canvH0*0.5+200);
+                  ctx.fillText("~ even in cities captured by ",canvH0-corner1X*0.9+25,canvH0*0.5+220);
+                    ctx.fillText("  enemy (if unoccupied)",canvH0-corner1X*0.9+25,canvH0*0.5+240);
         ctx.closePath();
 /*
 var sizeOfBox = canvW0/(noOfTurns0+4);

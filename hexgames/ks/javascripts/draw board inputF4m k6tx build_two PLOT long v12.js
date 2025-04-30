@@ -243,6 +243,21 @@ function completeBoard(){
     ctx.fillStyle = "White";
     ctx.fillText("Replacements:",canvW0/2-corner1X*1.8-corner1X*0.56-20,corner4Y+corner1X*0.3+20);
       ctx.closePath();
+        ctx.beginPath();
+        ctx.font = "12px Arial";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "bottom";
+      ctx.lineWidth = "1";
+    ctx.fillStyle = "Black";
+      ctx.fillText("OPTIONS:",canvW0/2-corner1X*0.56-corner1X*1.8+12,corner4Y+corner1X*0.3+40);
+      ctx.font = "italic 12px Arial";
+        ctx.fillText("(See all the Reinforcement options... can apply any of those",canvW0/2-corner1X*0.56-corner1X*1.8+12,corner4Y+corner1X*0.3+60);
+        ctx.fillText("... same for Reinforcement and Replacements, or seperate rules for each)",canvW0/2-corner1X*0.56-corner1X*1.8+12,corner4Y+corner1X*0.3+80);
+          ctx.font = "12px Arial";
+            ctx.fillText("Options just for Replacements:",canvW0/2-corner1X*0.56-corner1X*1.8+12,corner4Y+corner1X*0.3+100);
+              ctx.fillText("~ can upgrade in enemy country (if not surrounded?)",canvW0/2-corner1X*0.56-corner1X*1.8+12,corner4Y+corner1X*0.3+120);
+                ctx.fillText("~ can upgrade in enemy ZOC",canvW0/2-corner1X*0.56-corner1X*1.8+12,corner4Y+corner1X*0.3+140);
+        ctx.closePath();
 
       //red replacements
         ctx.beginPath();
@@ -257,6 +272,23 @@ function completeBoard(){
       ctx.fillStyle = "White";
       ctx.fillText("Replacements:",canvW0/2+corner1X*0.13-20,corner4Y+corner1X*0.3+20);
           ctx.closePath();
+            ctx.beginPath();
+            ctx.font = "12px Arial";
+            ctx.textAlign = "left";
+            ctx.textBaseline = "bottom";
+          ctx.lineWidth = "1";
+        ctx.fillStyle = "Black";
+          ctx.fillText("Recieve 3 replacement points per turn, starting on turn 1;",canvW0/2+corner1X*0.13+12,corner4Y+corner1X*0.3+40);
+            ctx.fillText("minus 1 replacement points per home city hex captured by opponent",canvW0/2+corner1X*0.13+12,corner4Y+corner1X*0.3+60);
+              ctx.fillText("(city hex is captured on entry, not just being in ZOC).",canvW0/2+corner1X*0.13+12,corner4Y+corner1X*0.3+80);
+                ctx.fillText("Replacements are brought in on any vacant city hex* - even if in enemy ZOC.",canvW0/2+corner1X*0.13+12,corner4Y+corner1X*0.3+100);
+                  ctx.fillText("Replacement points can also be used to upgrade units that have lost combat",canvW0/2+corner1X*0.13+12,corner4Y+corner1X*0.3+130);
+                    ctx.fillText("factors: unit must be in the home country and NOT in enemy ZOC;",canvW0/2+corner1X*0.13+12,corner4Y+corner1X*0.3+150);
+                      ctx.fillText("can upgrade at anytime during the turn.",canvW0/2+corner1X*0.13+12,corner4Y+corner1X*0.3+170);
+                      //ctx.font = "10px Arial";
+                      ctx.font = "italic 10px Arial";
+                        ctx.fillText("* vacant at START of the turn.",canvW0/2+corner1X*0.13+20,corner4Y+corner1X*0.3+190);
+            ctx.closePath();
 
     //black reinforcements
       ctx.beginPath();
@@ -274,7 +306,20 @@ function completeBoard(){
     ctx.fillText("Reinforcements:",corner1X*1.3-20,corner4Y+corner1X*0.3+20);//canvH0/2+corner1X*0.28-20,20);
     //ctx.restore();
       ctx.closePath();
-
+        ctx.beginPath();
+        ctx.font = "12px Arial";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "bottom";
+      ctx.lineWidth = "1";
+    ctx.fillStyle = "Black";
+      ctx.fillText("1/3 of units (rounded down, eg if 23 units --> 1/3 = 7.67 = 7)",corner1X*1.3+25,corner4Y+corner1X*0.3+40);
+        ctx.fillText( "are set aside as reinforcements. But..",corner1X*1.3+25,corner4Y+corner1X*0.3+60);
+              ctx.fillText("- start with a minimum of 13 units and never more than 20 reinforcements",corner1X*1.3+25,corner4Y+corner1X*0.3+80);
+                    ctx.fillText("Reinforcements start on turn 4. Arriving at any vacant Capital City hex.",corner1X*1.3+25,corner4Y+corner1X*0.3+100);
+                          ctx.fillText("1 unit if 7 or less left. 2 units if 8 to 13 left. 3 units if 14+ left.",corner1X*1.3+25,corner4Y+corner1X*0.3+120);
+                              ctx.fillText("      OR     ",corner1X*1.3+25,corner4Y+corner1X*0.3+140);
+                      ctx.fillText("Recieve 1 unit per free Capital City hex. (Decide before start)",corner1X*1.3+25,corner4Y+corner1X*0.3+160);
+        ctx.closePath();
 
     //red reinforcements
       ctx.beginPath();
@@ -289,9 +334,60 @@ function completeBoard(){
     ctx.fillStyle = "Red";
       ctx.fillText("Reinforcements:",canvW0-corner1X*3.5-15,corner4Y+corner1X*0.3+23);//canvH0/2+corner1X*0.28-15,23);
     ctx.fillStyle = "White";
-    ctx.fillText("Reinforcements:",canvW0-corner1X*3.5-20,corner4Y+corner1X*0.3+20);//canvH0*0.5-25,canvH0-corner1X*0.1+25);//canvH0/2+corner1X*0.28-20,20);
+    ctx.fillText("Reinforcements:",canvW0-corner1X*3.5-20,corner4Y+corner1X*0.3+20);//corner4Y+corner1X*0.3-25,canvH0-corner1X*0.1+25);//canvH0/2+corner1X*0.28-20,20);
     //ctx.restore();
       ctx.closePath();
+        ctx.beginPath();
+        ctx.font = "12px Arial";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "bottom";
+      ctx.lineWidth = "1";
+    ctx.fillStyle = "Black";
+      ctx.fillText("OPTIONS:",canvW0-corner1X*3.5+25,corner4Y+corner1X*0.3+40);
+        ctx.fillText("Reinforcements can...",canvW0-corner1X*3.5+25,corner4Y+corner1X*0.3+60);
+        ctx.fillText("~ start on turn 2",canvW0-corner1X*3.5+25,corner4Y+corner1X*0.3+80);
+          ctx.fillText("~ come in on any city hex",canvW0-corner1X*3.5+25,corner4Y+corner1X*0.3+100);
+            ctx.fillText("~ come in on edge road hexes",canvW0-corner1X*3.5+25,corner4Y+corner1X*0.3+120);
+            ctx.fillText("~ come in on friendly occupied hexes (no stacking limits on entry)",canvW0-corner1X*3.5+25,corner4Y+corner1X*0.3+140);
+                ctx.fillText("~ even in captured enemy cities",canvW0-corner1X*3.5+25,corner4Y+corner1X*0.3+160);
+                  ctx.fillText("~ even in friendly cities captured by enemy (if unoccupied)",canvW0-corner1X*3.5+25,corner4Y+corner1X*0.3+180);
+        ctx.closePath();
+
+
+            //reinforcements table
+            var reinfTable = ["13 or less","14","15","16","17","18","19-20","21-23","24-26","27-29",
+            "30-32","33-35","36-38","39-41","42-44","45-47","48-50","51-53","54-56","57-59","60 or more"]
+            ctx.beginPath();
+            ctx.fillStyle = "Pink";
+              ctx.fillRect(canvW0/24*1.1*19.5+5,corner1Y*0.30+170, 155,30);
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.fillStyle = "White";
+            for(r=0;r<21;r=r+2){
+              ctx.fillRect(canvW0/24*1.1*19.5+5,corner1Y*0.30+215+15*(r-1), 155,15);
+            }
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.fillStyle = "Pink";
+            for(r=0;r<20;r=r+2){
+              ctx.fillRect(canvW0/24*1.1*19.5+5,corner1Y*0.30+215+15*(r), 155,15);
+            }
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.font = "14px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "bottom";
+            ctx.lineWidth = "1";
+            ctx.fillStyle = "Black";
+            ctx.fillText("Army",canvW0/24*1.1*19.5+40,corner1Y*0.30+186);
+            ctx.fillText("Reinforce-",canvW0/24*1.1*19.5+125,corner1Y*0.30+186);
+            ctx.fillText("Size:",canvW0/24*1.1*19.5+40,corner1Y*0.30+200);
+            ctx.fillText("ments:",canvW0/24*1.1*19.5+125,corner1Y*0.30+200);
+            for(r=0;r<21;r++){
+              ctx.fillText(""+reinfTable[r],canvW0/24*1.1*19.5+40,corner1Y*0.30+215+15*r);
+              ctx.fillText(""+r,canvW0/24*1.1*19.5+125,corner1Y*0.30+215+15*r);
+            }
+            ctx.closePath();
 /*
 var sizeOfBox = canvW0/(noOfTurns0+4);
   ctx.font = "56px Arial";
@@ -351,7 +447,7 @@ var sizeOfBox = canvW0/(noOfTurns0+4);
       ctx.fillStyle = "Black";
         for(i=0;i<10;i++){
           ctx.beginPath();
-          //corner1X*0.1,canvH0*0.5,corner1Y*0.7,corner1X*1.8
+          //corner1X*0.1,corner4Y+corner1X*0.3,corner1Y*0.7,corner1X*1.8
           ctx.fillStyle = "Black";
           ctx.fillRect(corner1X*0.3,corner1Y+10+55*i,100,50);
           ctx.fillStyle = "Red";
@@ -368,7 +464,7 @@ var sizeOfBox = canvW0/(noOfTurns0+4);
       ctx.fillStyle = "Black";
         ctx.fillText("Replacement points:",canvH0*0.28-20,corner1X*0.1-40);//canvH0/2+corner1X*0.28-15,23);
       //ctx.fillStyle = "White";
-      //ctx.fillText("Reinforcements:",canvH0*0.5-25,-canvH0+corner1X*0.9+25);//canvH0*0.5-25,canvH0-corner1X*0.1+25);//canvH0/2+corner1X*0.28-20,20);
+      //ctx.fillText("Reinforcements:",corner4Y+corner1X*0.3-25,-canvH0+corner1X*0.9+25);//corner4Y+corner1X*0.3-25,canvH0-corner1X*0.1+25);//canvH0/2+corner1X*0.28-20,20);
       ctx.restore();
         ctx.closePath();
 }
