@@ -1,6 +1,6 @@
 
-var redArmyMax = 58;
-var blackArmyMax = 58;
+var redArmyMax = 61;
+var blackArmyMax = 61;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -22,7 +22,8 @@ var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democrac
 "HiLo Holistic Hotpink Honeydew Hegemony", "FastSlo Fantastically Floral Federalists",
 "Crimson Celerity Cooperative","Zoetic zapping Zombie Hordes","Universal Church", "London Underground",
 "Lost Souls","Armoured Fist", "Die Rolling Dystopians", "Coral Combat Committed Caeserian Confederation",
-"Sea-Green Route 66 Convoy", "Seviche Seventeen Servants Severalty"];
+"Sea-Green Route 66 Convoy", "Seviche Seventeen Servants Severalty", "Geranium Giant Gentry",
+"DodgerBlue Defenders of Democracy","Godzilla"];
 
 function findArmies(){
 
@@ -2163,16 +2164,18 @@ var unitsQ=[
   "#ffd700/#800080/#9acd32/#000000","","5","8","n","inf","2","6","xx",
   "#ffd700/#000000/#ffffff/#ff0000","","1","2","n","inf","1","3","xx",
   "#110000/#ffffff/#ffffff/#000000","","1","4","n","inf","1","3","xx",
-  "#ffd700/#000000/#ffd700/#000000","","1","5","n","inf","1","3","xx",
+  "#ffd700/#0000ff/#0000ff/#ff0000","","1","5","n","inf","3","1","xx",
   "#800080/#ffd700/#ffd700/#000000","","9","2","n","para","1","10","xx",
   "#ffd700/#800080/#800080/#ffffff","supply","0","0","n","supply","0","10","xx",
 ];
 
 var designateLQ=["Pope", "Cardinal", "Cardinal", "Cardinal", "Bishop", "Bishop", "Bishop", "Bishop", "Bishop", "Bishop",
-"Priest", "Priest", "Priest", "Priest", "Priest", "Priest", "Priest", "Priest", "Altar Boys", "Altar Boys",
-"Nuns", "Nuns", "Nuns", "Nuns", "Congragation", "Congragation", "Congragation", "Congragation", "Congragation", "HERETIC",
+"Priest", "Priest", "Priest", "Priest", "Priest", "Priest", "Priest", "Priest", "Altar Server", "Altar Server",
+"Nuns", "Nuns", "Nuns", "Nuns", "Swiss Guard", "Swiss Guard", "Swiss Guard", "Swiss Guard", "Swiss Guard", "HERETIC",
  "HERETIC"
 ];
+
+//"#ffd700/#000000/#ffd700/#000000","","1","5","n","inf","1,"3","xx",   "Congragation"
 
 var designateRQ=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
 "1", "2", "3", "4", "5", "6", "7", "8", "1", "2",
@@ -2431,6 +2434,107 @@ var designateRQ=["Days", "Sins","Planets" ,"Churches", "Circuits",
  "Seas", "Hills" , "Heavens", "Clouds", "Ages",
   "Plots", "Immersions" , "Religions",  "Sons", "Seals",
   "Rivers" ,"Colours"];
+//championships, sexes, eons, worlds, angels, trumpets
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==58||changeBlackFlag&&blackArmyNo==58){
+var nameQ="Geranium Giant Gentry";
+
+var qbase = ["#800080","#800080", "#800080"];
+
+var unitsQ=[
+  "#800080/#ffffff/#808000/#000000","Heavy Armour","12","3","n","arm","12","3","xx",
+  "#800080/#ffffff/#808000/#000000","Super Strike Force","14","3","n","sf","12","2","xx",
+  "#800080/#ffffff/#808000/#000000","Airlanding Invaders","11","2","n","para","12","1","xx",
+  "#800080/#ffffff/#808000/#000000","Army Front","10","5","n","inf","12","1","xx",
+  "#800080/#ffffff/#808000/#000000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=["Chicxulub", "Krakatoa", "Vredefort", "Amazon", "Mount", "Olympus", "Hurricane", "Typhoon",
+"Mauna Loa", "Caspian", "Seller", "Boxing Day", "Lituya Bay"];
+
+var designateRQ=["Asteroid", "Eruption","Crater" ,"River", "Everest",
+ "Mons", "Wilma" , "Tip", "Volcano", "Sea",
+  "Glacier", "Quake" , "Tsunami"];
+//championships, sexes, eons, worlds, angels, trumpets
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==59||changeBlackFlag&&blackArmyNo==59){
+var nameQ="DodgerBlue Defenders of Democracy";
+
+var qbase = ["#1E90FF","#ffffee", "#ffffee"];
+
+var unitsQ=[
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Gun Emplacements","12","4","n","spa","15","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Mountain Forts","10","3","n","sf","10","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Fortress","17","3","n","inf","20","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Strongpoint","7","3","n","inf","10","0","xx",
+  "#ffffee/#0000ff/#1E90FF/#ff0000","dummy","7","0","n","inf","10","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=["Castle","Mukachevo", "Windsor", "Malbork",
+"Cheyenne", "", "Fortress Of",
+ "Maginot", "Citadel", "Fort",
+"Tower", "Krak des", "Chittorgarh"];
+
+var designateRQ=["Conwy" , "Castle", "Castle" ,"Castle",
+"Mountain", "Masada", "The Orsini",
+ "Line", "Of Aleppo", "Douaumont",
+"Of London", "Chevaliers" , "Fort"];
+//championships, sexes, eons, worlds, angels, trumpets
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==60||changeBlackFlag&&blackArmyNo==60){
+var nameQ="Godzilla";
+
+var qbase = ["#006400","#FF8b00", "#DCDCDb"];
+
+  //"#006400/#ffffff/#556B2F/#ffffff","Godzilla","118","1","n","godz","100","18","xx",
+var unitsQ=[
+  "#006400/#ffffff/#ffffff/#556B2F","Godzilla","118","1","n","godz","100","18","xx",
+  "#FF8b00/#000000/#ffff00/#ff0000","Fires","2","6","n","para","4","0","xx",
+  "#DCDCDb/#000000/#696969/#ffffff","Smoke","4","5","n","smoke","1","6","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=["Godzilla",
+"Flames", "Flames","Flames", "Flames","Flames","Flames",
+"Debris", "Debris","Debris","Debris","Debris"];
+
+var designateRQ=["Monster",
+"Fire", "Fire","Fire","Fire","Fire","Fire",
+ "Smoke", "Smoke","Smoke","Smoke","Smoke"];
 //championships, sexes, eons, worlds, angels, trumpets
 
 var noOfSide = unitsQ.length/noOfItems;

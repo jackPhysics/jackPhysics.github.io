@@ -69,7 +69,7 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:hideGerF()"  id="btn16"  >Hide R.</a></td>'
 +'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=1;changeSize()"  id="btn18"  >full size</a></td>'
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:mouseOverFlip()"  id="btn28"  >unit Zoom</a></td>'
-+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btnxx"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:d6x3_window()"  id="btn3x6"  >3d6</a></td>'
 +'</tr></table>';
 
 //'<td>&nbsp;&nbsp;<a class="mca" href="javascript:RotSideA()"  id="btn15"  >Rotate A</a></td>'

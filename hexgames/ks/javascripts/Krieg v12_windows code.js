@@ -75,6 +75,9 @@ function d6_window(){
 	d6=open("charts/d6.html", "D6", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=250,height=200,left=400,top=200");
 }
 
+function d6x3_window(){
+	d6=open("charts/d6x3.html", "D6", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=250,height=200,left=400,top=200");
+}
 function d12_window(){
 	d12=open("charts/d12.html", "D12", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=250,height=200,left=370,top=170");
 

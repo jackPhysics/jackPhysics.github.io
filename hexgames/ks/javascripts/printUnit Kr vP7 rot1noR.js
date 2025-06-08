@@ -247,7 +247,8 @@ var classType = classFactor;//unit number - out of all
             &&unitsA[whatType*noOfItems+5]!="trans"&&unitsA[whatType*noOfItems+5]!="seab"
             &&unitsA[whatType*noOfItems+5]!="rock"&&unitsA[whatType*noOfItems+5]!="strans"
             &&unitsA[whatType*noOfItems+5]!="mort"&&unitsA[whatType*noOfItems+5]!="flak"
-            &&unitsA[whatType*noOfItems+5]!="mg"&&unitsA[whatType*noOfItems+5]!="depot"){
+            &&unitsA[whatType*noOfItems+5]!="mg"&&unitsA[whatType*noOfItems+5]!="depot"
+            &&unitsA[whatType*noOfItems+5]!="smoke"&&unitsA[whatType*noOfItems+5]!="godz"){
                 ctx.beginPath();
                 ctx.lineWidth = "4";
                 ctx.strokeStyle = colorThisBT;
@@ -391,6 +392,138 @@ var classType = classFactor;//unit number - out of all
                 ctx.stroke();
                 ctx.closePath();
               }
+              if(unitsA[whatType*noOfItems+5]=="smoke"){
+                  //ctx.beginPath();
+                  ctx.lineWidth = "4";
+                  ctx.fillStyle = colorThisBT;
+                  //ctx.moveTo(i2*unitSize+(60+25)*unitScale, j2*unitSize+(boxTop+boxHt/5*2)*unitScale);//+75
+                  //ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/5*3)*unitScale);//70
+                  //ctx.stroke();
+                  //ctx.closePath();
+                  //ctx.beginPath();
+                  //ctx.moveTo(i2*unitSize+(60+25)*unitScale, j2*unitSize+(boxTop+boxHt/5*3)*unitScale);//+75
+                  //ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/5*2)*unitScale);//70
+                  //ctx.stroke();
+                  //ctx.closePath();
+                  for(s=0;s<8;s++){
+                  var dumSkX = Math.round(Math.random()*60);
+                  var dumSkY = Math.round(Math.random()*boxHt/2);
+                  var dumSkR = Math.round(Math.random()*boxHt/8)+boxHt/8;
+                  if(Math.random()<0.25){
+                  ctx.fillStyle = boxColor;}
+                  else{
+                  ctx.fillStyle = colorThisBT;}
+                  ctx.beginPath();
+                  ctx.arc(i2*unitSize+(70+dumSkX)*unitScale, j2*unitSize+(boxTop+boxHt/4+dumSkY)*unitScale, dumSkR*unitScale, -Math.PI, Math.PI);
+                  ctx.fill();
+                  ctx.closePath();}
+                  //ctx.beginPath();
+                  //ctx.arc(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/2)*unitScale, boxHt/10*unitScale, -Math.PI, Math.PI);
+                  //ctx.stroke();
+                  //ctx.closePath();
+                }
+
+                if(unitsA[whatType*noOfItems+5]=="godz"){
+                    ctx.lineWidth = "4";
+                    ctx.strokeStyle = colorThisBT;
+                    ctx.fillStyle = colorThisBT;
+                    ctx.beginPath();//body
+                    ctx.moveTo(i2*unitSize+(60+15)*unitScale, j2*unitSize+(boxTop+boxHt/5*4)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+25)*unitScale, j2*unitSize+(boxTop+boxHt/5*3)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+45)*unitScale, j2*unitSize+(boxTop+boxHt/5*2)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+48)*unitScale, j2*unitSize+(boxTop+boxHt/5*2)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+35)*unitScale, j2*unitSize+(boxTop+boxHt/5*3.5)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+15)*unitScale, j2*unitSize+(boxTop+boxHt/5*4)*unitScale);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.beginPath();//spine1
+                    ctx.moveTo(i2*unitSize+(60+30)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.7)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+33)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.7)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.beginPath();//spine2
+                    ctx.moveTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.2)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+43)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.2)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.beginPath();//spine3
+                    ctx.moveTo(i2*unitSize+(60+35)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.5)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+38)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.5)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.beginPath();//head
+                    ctx.moveTo(i2*unitSize+(60+45)*unitScale, j2*unitSize+(boxTop+boxHt/5*2)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+48)*unitScale, j2*unitSize+(boxTop+boxHt/5*1.7)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/5*1.7)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+58)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.2)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+45)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.2)*unitScale);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.beginPath();//leg1
+                    ctx.moveTo(i2*unitSize+(60+30)*unitScale, j2*unitSize+(boxTop+boxHt/5*3)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+25)*unitScale, j2*unitSize+(boxTop+boxHt/5*4.2)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+32)*unitScale, j2*unitSize+(boxTop+boxHt/5*4.3)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.beginPath();//leg2
+                    ctx.moveTo(i2*unitSize+(60+32)*unitScale, j2*unitSize+(boxTop+boxHt/5*3)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+35)*unitScale, j2*unitSize+(boxTop+boxHt/5*4.1)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5*4.2)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.lineWidth = "2";
+                    ctx.beginPath();//arm1
+                    ctx.moveTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.7)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+50)*unitScale, j2*unitSize+(boxTop+boxHt/5*3.1)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.beginPath();//arm2
+                    ctx.moveTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.5)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+52)*unitScale, j2*unitSize+(boxTop+boxHt/5*2.8)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.beginPath();//tail
+                    ctx.moveTo(i2*unitSize+(60+25)*unitScale, j2*unitSize+(boxTop+boxHt/5*3.8)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+5)*unitScale, j2*unitSize+(boxTop+boxHt/5*4.2)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+15)*unitScale, j2*unitSize+(boxTop+boxHt/5*4)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.strokeStyle = "Red";
+                    ctx.fillStyle = "Red";
+                    ctx.lineWidth = "3";
+                    ctx.beginPath();//eye
+                    ctx.arc(i2*unitSize+(60+52)*unitScale, j2*unitSize+(boxTop+boxHt/5*1.9)*unitScale,2, 0, Math.PI);
+                    ctx.fill();
+                    ctx.closePath();
+                    ctx.strokeStyle = "Chartreuse";
+                    ctx.fillStyle = "Chartreuse";
+                    ctx.lineWidth = "3";
+                    ctx.beginPath();//laser
+                    ctx.moveTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/5*2)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+80)*unitScale, j2*unitSize+(boxTop+boxHt/5*3.6)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.strokeStyle = "White";
+                    ctx.fillStyle = "White";
+                    ctx.lineWidth = "1";
+                    ctx.beginPath();//laser
+                    ctx.moveTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/5*1.8)*unitScale);
+                    ctx.lineTo(i2*unitSize+(60+80)*unitScale, j2*unitSize+(boxTop+boxHt/5*3.6)*unitScale);
+                    ctx.stroke();
+                    ctx.closePath();
+                    //hexstring = "\u{1f409}";
+                    //ctx.fillText(hexstring,i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/2)*unitScale);
+                    //ctx.stroke();
+                    //ctx.closePath();
+                    //ctx.beginPath();
+                    //ctx.arc(i2*unitSize+(70+dumSkX)*unitScale, j2*unitSize+(boxTop+boxHt/4+dumSkY)*unitScale, dumSkR*unitScale, -Math.PI, Math.PI);
+                    //ctx.fill();
+                    //ctx.closePath();
+                    //ctx.beginPath();
+                    //ctx.arc(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/2)*unitScale, boxHt/10*unitScale, -Math.PI, Math.PI);
+                    //ctx.stroke();
+                    //ctx.closePath();
+                  }
                if(unitsA[whatType*noOfItems+5]=="mount"){
                               ctx.beginPath();
                               ctx.lineWidth = "1";
