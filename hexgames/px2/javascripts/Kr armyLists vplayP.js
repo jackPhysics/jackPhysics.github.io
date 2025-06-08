@@ -1,6 +1,6 @@
 
-var redArmyMax = 22;
-var blackArmyMax = 22;
+var redArmyMax = 24;
+var blackArmyMax = 24;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -13,6 +13,7 @@ var allTheArmiesA = ["Marathon Greeks","Marathon Persians", "Qadisiya Persians",
   "Clontarf Vikings",   "Clontarf Irish", "Cerami Normans", "Cerami Arabs",
   "Qadisiya Persians v2", "Qadisiya Arabs v2", "Agincourt French", "Agincourt English",
 "Arbela Persians","Arbela Macedonians", "Minden Romans", "Minden Germans",
+"Brunstatt French","Brunstatt Germans",
   "", "", "","", "", "", ""];
 
 var allTheUnitsA = [
@@ -879,21 +880,29 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
-else if(changeRedFlag&&redArmyNo==20||changeBlackFlag&&blackArmyNo==20){
-var nameQ="Late Arquebus";
+else if(changeRedFlag&&redArmyNo==22||changeBlackFlag&&blackArmyNo==22){
+var nameQ="Brunstatt French";
 
-var qbase = ["#00CED1","#00CED1", "#00CED1"];
+var qbase = ["#0000ef","#0000ef", "#0000ef"];
 
 
 var unitsQ=[
-  "#00CED1/#ffffff/#9400D3/#ffffff","Ff", "3", "8", "f","arq","o","5","2","4","AL"
+  "#0000ef/#ffff00/#ff0000/#ffffff","Ff", "4", "24", "f","inf","::","5","3","3","INF",
+  "#0000ef/#ffff00/#ff0000/#ffffff","Ff", "5", "6", "f","mg",".","5","4","9","MG",
+  "#0000ef/#ffff00/#ff0000/#ffffff","Ff", "7", "3", "f","fart","::","6","6","25","FG",
+  "#0000ef/#ffff00/#ff0000/#ffffff","Mf", "5", "4", "c", "cav","::","8","4","1","CAV"
 ];
 
-var designateLQ=[202,303, 261,305, 323,304, 379,304, 442,305, 500,302,
- 291,286, 410,285];
+var designateLQ=[200,50,223,50,245,50,268,50,290,50,313,50,335,50,358,50,380,50,403,50,
+  200,73,223,73,245,73,268,73,290,73,313,73,335,73,358,73,380,73,403,73,
+  200,95,223,95,245,95,268,95,290,95,313,95,335,95,358,95,380,95,403,95,
+  200,118,223,118,245,118,268,118,290,118,313,118,335,118];
 
-var designateRQ=[261,546, 317,547, 380,547, 440,547, 503,546, 558,545,
- 352,563, 470,561];
+var designateRQ=[200,50,223,50,245,50,268,50,290,50,313,50,335,50,358,50,380,50,403,50,
+  200,73,223,73,245,73,268,73,290,73,313,73,335,73,358,73,380,73,403,73,
+  200,95,223,95,245,95,268,95,290,95,313,95,335,95,358,95,380,95,403,95,
+  200,118,223,118,245,118,268,118,290,118,313,118,335,118];
+
 
 
 var noOfSide = unitsQ.length/noOfItems;
@@ -907,21 +916,33 @@ var noOfSide = unitsQ.length/noOfItems;
 }
 
 
-else if(changeRedFlag&&redArmyNo==21||changeBlackFlag&&blackArmyNo==21){
-var nameQ="Longbows";
+else if(changeRedFlag&&redArmyNo==23||changeBlackFlag&&blackArmyNo==23){
+var nameQ="Brunstatt Germans";
 
-var qbase = ["#FF1493","#FF1493", "#FF1493"];
+var qbase = ["#000003","#000003", "#000003"];
 
 
 var unitsQ=[
-  "#FF1493/#ffffff/#00BFFF/#ffffff","Ff", "4", "6", "f","lb","o","5","3","3","LB"
+  "#000003/#ffffff/#999999/#000000","Ff", "8", "12", "f","inf","::","5","7","4","INF",
+  "#000003/#ffffff/#999999/#000000","Ff", "18", "1", "f","mg","::","3","17","10","MG",
+  "#000003/#ffffff/#999999/#000000","Ff", "11", "2", "f","fart","::","4","10","25","FG",
+  "#000003/#ffffff/#999999/#000000","Ff", "10", "1", "f","how","::","4","9","25","HW",
+  "#000003/#ffffff/#999999/#000000","Mf", "5", "4", "c", "cav","::","8","4","1","CAV"
 ];
 
-var designateLQ=[202,303, 261,305, 323,304, 379,304, 442,305, 500,302];
 
-var designateRQ=[261,546, 317,547, 380,547, 440,547, 503,546, 558,545];
+//"#000003/#ffffff/#999999/#000000","Ff", "5", "1", "f","mg","o","3","17","10","MG",
+//"#000003/#ffffff/#999999/#000000","Ff", "7", "2", "f","fart","o","4","10","25","FG",
+//"#000003/#ffffff/#999999/#000000","Ff", "7", "1", "f","how","o","4","9","25","HW",
 
-
+var designateLQ=[200,50,223,50,245,50,268,50,290,50,313,50,335,50,358,50,380,50,403,50,
+  200,73,223,73,245,73,268,73,290,73,313,73,335,73,358,73,380,73,403,73];
+//200,95,223,95,245,95,268,95,290,95,313,95,335,95,358,95,380,95,403,95,
+//200,118,223,118,245,118,268,118,290,118,313,118,335,118
+var designateRQ=[200,50,223,50,245,50,268,50,290,50,313,50,335,50,358,50,380,50,403,50,
+  200,73,223,73,245,73,268,73,290,73,313,73,335,73,358,73,380,73,403,73];
+//200,95,223,95,245,95,268,95,290,95,313,95,335,95,358,95,380,95,403,95,
+//200,118,223,118,245,118,268,118,290,118,313,118,335,118
 
 var noOfSide = unitsQ.length/noOfItems;
   var sideQ=new Array();

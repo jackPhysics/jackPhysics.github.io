@@ -352,7 +352,8 @@ unitsA[whatType*noOfItems+5] = printData[5];
             &&unitsA[whatType*noOfItems+5]!="hb"&&unitsA[whatType*noOfItems+5]!="bc"
             &&unitsA[whatType*noOfItems+5]!="cb"&&unitsA[whatType*noOfItems+5]!="el"
             &&unitsA[whatType*noOfItems+5]!="ch1"&&unitsA[whatType*noOfItems+5]!="ch2"
-            &&unitsA[whatType*noOfItems+5]!="vf"&&unitsA[whatType*noOfItems+5]!="mob"){
+            &&unitsA[whatType*noOfItems+5]!="vf"&&unitsA[whatType*noOfItems+5]!="mob"
+            &&unitsA[whatType*noOfItems+5]!="fart"&&unitsA[whatType*noOfItems+5]!="how"){
                 ctx.beginPath();
                 ctx.lineWidth = "4";
                 ctx.strokeStyle = colorThisBT;
@@ -1281,6 +1282,110 @@ unitsA[whatType*noOfItems+5] = printData[5];
               ctx.stroke();
               ctx.closePath();
             }
+                        if(unitsA[whatType*noOfItems+5]=="mg"){
+                              ctx.beginPath();
+                              ctx.lineWidth = "4";
+                              ctx.strokeStyle = colorThisBT;
+                              ctx.moveTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/4)*unitScale);//+10
+                              ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/4*3)*unitScale);//+18
+                              //ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+30
+                              ctx.stroke();
+                              ctx.closePath();
+                                  ctx.beginPath();
+                                  ctx.moveTo(i2*unitSize+(60+30)*unitScale, j2*unitSize+(boxTop+boxHt/4*1.6)*unitScale);//+10
+                                  ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/4)*unitScale);//+18
+                                  ctx.lineTo(i2*unitSize+(60+50)*unitScale, j2*unitSize+(boxTop+boxHt/4*1.6)*unitScale);//+30
+                                  ctx.stroke();
+                                  ctx.closePath();
+                                      ctx.beginPath();
+                                      ctx.moveTo(i2*unitSize+(60+30)*unitScale, j2*unitSize+(boxTop+boxHt/12*7)*unitScale);//+10
+                                      ctx.lineTo(i2*unitSize+(60+50)*unitScale, j2*unitSize+(boxTop+boxHt/12*7)*unitScale);//+18
+                                      ctx.stroke();
+                                      ctx.closePath();
+                        }
+                        if(unitsA[whatType*noOfItems+5]=="fart"){
+                              ctx.beginPath();
+                              ctx.lineWidth = "4";
+                              ctx.strokeStyle = colorThisBT;
+                              ctx.moveTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5)*unitScale);//+10
+                              ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5*4)*unitScale);//+18
+                              //ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+30
+                              ctx.stroke();
+                              ctx.closePath();
+                                  ctx.beginPath();
+                                  ctx.moveTo(i2*unitSize+(60+32)*unitScale, j2*unitSize+(boxTop+boxHt/12*5)*unitScale);//+10
+                                  ctx.lineTo(i2*unitSize+(60+32)*unitScale, j2*unitSize+(boxTop+boxHt/4*3)*unitScale);//+18
+                                  ctx.stroke();
+                                  ctx.closePath();
+                                      ctx.beginPath();
+                                      ctx.moveTo(i2*unitSize+(60+48)*unitScale, j2*unitSize+(boxTop+boxHt/12*5)*unitScale);//+10
+                                      ctx.lineTo(i2*unitSize+(60+48)*unitScale, j2*unitSize+(boxTop+boxHt/4*3)*unitScale);//+18
+                                      ctx.stroke();
+                                      ctx.closePath();
+                            }
+                            if(unitsA[whatType*noOfItems+5]=="how"){
+                                  ctx.beginPath();
+                                  ctx.lineWidth = "4";
+                                  ctx.strokeStyle = colorThisBT;
+                                  ctx.moveTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5)*unitScale);//+10
+                                  ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/4*3)*unitScale);//+18
+                                  //ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+30
+                                  ctx.stroke();
+                                  ctx.closePath();
+                                      ctx.beginPath();
+                                      ctx.moveTo(i2*unitSize+(60+32)*unitScale, j2*unitSize+(boxTop+boxHt/12*5)*unitScale);//+10
+                                      ctx.lineTo(i2*unitSize+(60+32)*unitScale, j2*unitSize+(boxTop+boxHt/12*7)*unitScale);//+18
+                                      ctx.stroke();
+                                      ctx.closePath();
+                                          ctx.beginPath();
+                                          ctx.moveTo(i2*unitSize+(60+48)*unitScale, j2*unitSize+(boxTop+boxHt/12*5)*unitScale);//+10
+                                          ctx.lineTo(i2*unitSize+(60+48)*unitScale, j2*unitSize+(boxTop+boxHt/12*7)*unitScale);//+18
+                                          ctx.stroke();
+                                          ctx.closePath();
+                                      ctx.beginPath();
+                                      ctx.arc(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5*4)*unitScale, 4*unitScale, 0, 2*Math.PI);
+                                      ctx.stroke();
+                                      ctx.closePath();
+                                }
+                        if(unitsA[whatType*noOfItems+5]=="flak"){
+                              ctx.beginPath();
+                              ctx.lineWidth = "6";
+                              ctx.strokeStyle = colorThisBT;
+                              ctx.moveTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/4)*unitScale);//+10
+                              ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/4*3)*unitScale);//+18
+                              //ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+30
+                              ctx.stroke();
+                              ctx.closePath();
+                                  ctx.beginPath();
+                                  ctx.moveTo(i2*unitSize+(60+25)*unitScale, j2*unitSize+(boxTop+boxHt/4*1.6)*unitScale);//+10
+                                  ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/4)*unitScale);//+18
+                                  ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/4*1.6)*unitScale);//+30
+                                  ctx.stroke();
+                                  ctx.closePath();
+                                  ctx.beginPath();
+                                  ctx.moveTo(i2*unitSize+(60+25)*unitScale, j2*unitSize+(boxTop+boxHt/4*3)*unitScale);//+10
+                                  ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt/4*3)*unitScale);//+18
+                                  //ctx.lineTo(i2*unitSize+(60+55)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+30
+                                  ctx.stroke();
+                                  ctx.closePath();
+                            }
+                          if(unitsA[whatType*noOfItems+5]=="aa"){
+                              ctx.beginPath();
+                              ctx.lineWidth = "6";
+                              ctx.strokeStyle = colorThisBT;
+                              ctx.moveTo(i2*unitSize+(60+0)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+10
+                              ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop)*unitScale);//+18
+                              ctx.lineTo(i2*unitSize+(60+80)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+30
+                              ctx.stroke();
+                              ctx.closePath();
+                                  ctx.beginPath();
+                                  ctx.lineWidth = "6";
+                                  ctx.strokeStyle = colorThisBT;
+                                  ctx.moveTo(i2*unitSize+(60+20)*unitScale, j2*unitSize+(boxTop+boxHt/2)*unitScale);//+10
+                                  ctx.lineTo(i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt/2)*unitScale);//+30
+                                  ctx.stroke();
+                                  ctx.closePath();
+                          }
              //apc
                   if(unitsA[whatType*noOfItems+5]=="apc"){
                           ctx.beginPath();
