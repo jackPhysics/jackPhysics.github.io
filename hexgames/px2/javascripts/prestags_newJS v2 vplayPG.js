@@ -189,7 +189,7 @@ var brdNameB = "";
 var brdNameR = "";
 var chooseD6 = true;
 var printArmiesFlag = false;
-var placeInRowFlag = true;//true = rows, false = by coords
+var rulerCounter = 0;
 var untriedFlag = new Array();
 var untriedMax = new Array();//maximum CF
 var untriedPrint = new Array();
@@ -247,8 +247,8 @@ function findNewBoard(bad)//board address
     if(flipBrdNoB==1){flipLetB = "dn";}
     if(mirrBrdNoR==1){mirrLetR = "R";}
     if(mirrBrdNoB==1){mirrLetB = "R";}
-    document.getElementById('boardNameR').innerText="Red Board #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR;
-    document.getElementById('boardNameB').innerText="Black Board #"+blackBno+flipLetB+mirrLetB+"\n"+brdNameB;
+    //document.getElementById('boardNameR').innerText="Red Board #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR;
+    //document.getElementById('boardNameB').innerText="Black Board #"+blackBno+flipLetB+mirrLetB+"\n"+brdNameB;
 /*
           var d1 = document.getElementById('board');
           d1.setAttribute("src", boardAddress);
@@ -335,7 +335,7 @@ function findNewBoard2(bad)//board address
         initBoard();
 
         //document.getElementById('boardNameR').innerText="Red Board #"+redBno+flipLetR+mirrLetR+"\n"+brdNameR+" "+flipBrdNoR+mirrBrdNoR;
-        document.getElementById('boardNameB').innerText="Board #"+blackBno+"\n"+brdNameB+" x+"+flipBrdNoBX+" y+"+flipBrdNoBY;
+        //document.getElementById('boardNameB').innerText="Board #"+blackBno+"\n"+brdNameB+" x+"+flipBrdNoBX+" y+"+flipBrdNoBY;
 }
 
 
@@ -462,7 +462,7 @@ function whereEnded(evt)
 
 
 function drawLine(event){//-4 and -17 are because of offset of h1 elements
-	if(ruler){
+	if(ruler&&rulerCounter<6){
 	xpos2=event.pageX-2;//evnt.offsetX-4;//event.x-4;
 	ypos2=event.pageY-32;//evnt.offsetY-17;//event.y-17;
 //offsetXY works when the window scrolls but not when you click on pieces
@@ -473,12 +473,26 @@ function drawLine(event){//-4 and -17 are because of offset of h1 elements
 		line[i].style.top=ypos2-((ypos2-oldYpos)/32)*i +"px";
 		rulerT[i] = ((ypos2-((ypos2-oldYpos)/32)*i)+32)/boardSize;
 	}
+  var rulerLength = 0;
+  rulerLength = Math.pow((rulerL[0]-rulerL[32]),2)+Math.pow((rulerT[0]-rulerT[32]),2);
+  //alert(""+rulerLength);
+  if(rulerLength<100){
+    //rulerCounter=0;
+    LOSruler();
+    eraseLOSruler()
+    ruler=false;
+    }
 	oldXpos=xpos2;
 	oldYpos=ypos2;
+  //rulerCounter++;
 	}
-
+  else{
+  //rulerCounter=0;
+  //LOSruler();
+  //eraseLOSruler()
+  //ruler=false;
+  }
 }
-
 
  function placePieceHere(event) //move the active piece into a new position
 {
@@ -651,7 +665,7 @@ function placePics() //initialise, add the game pieces to the board
       keyBoard = document.getElementById('keyPressTable');
 
       initBoard();
-
+      /*
       var m1 = document.getElementById('armyMenu1');
       for(b=1;b<blackArmyMax;b=b+2){
       //document.getElementById('armyMenu').insertAdjacentHTML='<a class="save" href="javascript:changeRedArmy2("'+a+'")">"Army #"'+a+'</a>';
@@ -665,13 +679,13 @@ function placePics() //initialise, add the game pieces to the board
       var armyNow = allTheArmiesA[a];
       m2.innerHTML += '<a class="aiw" href="javascript:changeRedArmy2('+a+')">Army #'+a+': '+armyNow+'</a>';
       }
-
-            var m3 = document.getElementById('boardMenu1');
-            for(c=0;c<boardMax;c=c+1){
-            //document.getElementById('armyMenu').insertAdjacentHTML='<a class="save" href="javascript:changeRedArmy2("'+a+'")">"Army #"'+a+'</a>';
-            var boardNow = allTheBoardsA[c];
-            m3.innerHTML += '<a class="aiw" href="javascript:findNewBoard2('+c+')">Board #'+c+': '+boardNow+'</a>';
-            }
+      */
+      var m3 = document.getElementById('gameMenu1');
+      for(c=0;c<gamesMax;c=c+1){
+      //document.getElementById('armyMenu').insertAdjacentHTML='<a class="save" href="javascript:changeRedArmy2("'+a+'")">"Army #"'+a+'</a>';
+      findGames(c);
+      m3.innerHTML += '<a class="aiw" href="javascript:makeGame('+c+')">Game #'+c+': '+nameQ+'</a>';
+      }
 
 /*
       var m4 = document.getElementById('boardMenu2');
@@ -809,15 +823,17 @@ function placePics() //initialise, add the game pieces to the board
     if(armourA[noOfImg]=="l"){leaderA[noOfImg]=1;
       var dumLead = unitsA[i*noOfItems+10].slice(0,1)*1;
       leaderA[noOfImg]=dumLead;}
-              else{leaderA[noOfImg]=0;}
-
+              else{leaderA[noOfImg]=0;
+                //changeNeutralPic0(noOfImg);
+              }
+    changeUnitA[noOfImg]=0;
         printUnit(noOfImg, j+1, totalNo, i, countOutUnits0);
 
 	activeImage=imageArray[noOfImg];
 	activeIndex=noOfImg;
 	doEdgeColor();
-	thisIsA[noOfImg]=i;
-	typeNumbA[noOfImg]=j+1;
+	thisIsA[noOfImg]=i;//type of unit
+	typeNumbA[noOfImg]=j+1;//number within the type
   typeTotalA[noOfImg]=totalNo;
   countIndividual[noOfImg]=countOutUnits0;
   //printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);
@@ -826,20 +842,7 @@ function placePics() //initialise, add the game pieces to the board
        }
   }
 
-if(placeInRowFlag){
-  for(k=0;k<noOfImages;k++){
-  imageArray[k].style.left=(k-Math.floor(k/10)*10)*pieceSize*1.5+200+"px";//(k-(Math.floor(k/10)*10))+100+"px";//k*60+"px";
-  imageArray[k].style.top=Math.floor(k/10)*pieceSize*1.5+100+"px";//k*60+"px";
-  piecesLeft[k] = Math.round((k-Math.floor(k/10)*10)*pieceSize*1.5+200);
-  piecesTop[k] = Math.round(Math.floor(k/10)*pieceSize*1.5+50);
-  imageArray[k].style.width=pieceSize+"px";
-  imageArray[k].style.height=pieceSize+"px";
-  imageArray[k].style.borderWidth=boardSize*borderSize+"px";
-  imageArray[k].style.zIndex = nextZ-1;
-  }
-}
     //console.log("gerUnits="+gerUnits+" neutUnits="+neutNumber);
-else{
   for(k=0;k<noOfImages;k++){
     if(k<gerUnits){
   imageArray[k].style.left=(k-Math.floor(k/10)*10)*pieceSize*1.5+200+"px";//(k-(Math.floor(k/10)*10))+100+"px";//k*60+"px";
@@ -870,7 +873,7 @@ else{
   imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
   }
-}
+
   for(i=0;i<noOfImages;i++){
     effectiveA[i]=0;
     disruptedA[i]=0;
@@ -950,6 +953,7 @@ function placePics2() //print new armies
       colorTester=colorLoop[0];
       countOutUnits0 = 1;
     }
+    //console.log("noOfImg="+noOfImg+" colorTester"+colorTester);
     if(unitsA[i*noOfItems+5]!="supply"||unitsA[i*noOfItems+4]!="x"){
       hasSteps[noOfImg]=true;
     }
@@ -981,9 +985,11 @@ function placePics2() //print new armies
               else{isCavA[noOfImg]=0;}
     if(armourA[noOfImg]=="l"){leaderA[noOfImg]=1;
       var dumLead = unitsA[i*noOfItems+10].slice(0,1)*1;
-      leaderA[noOfImg]=dumLead;}
+      leaderA[noOfImg]=dumLead;
+      //changeNeutralPic0(noOfImg);
+      }
               else{leaderA[noOfImg]=0;}
-
+  changeUnitA[noOfImg]=0;
                   printUnit(noOfImg, j+1, totalNo, i, countOutUnits0);
 
 	activeImage=imageArray[noOfImg];
@@ -998,20 +1004,8 @@ function placePics2() //print new armies
 	if(noOfImg>noOfImages-1){noOfImg=noOfImages-1;}
        }
   }
-  if(placeInRowFlag){
-    for(k=0;k<noOfImages;k++){
-    imageArray[k].style.left=(k-Math.floor(k/10)*10)*pieceSize*1.5+200+"px";//(k-(Math.floor(k/10)*10))+100+"px";//k*60+"px";
-    imageArray[k].style.top=Math.floor(k/10)*pieceSize*1.5+100+"px";//k*60+"px";
-    piecesLeft[k] = Math.round((k-Math.floor(k/10)*10)*pieceSize*1.5+200);
-    piecesTop[k] = Math.round(Math.floor(k/10)*pieceSize*1.5+50);
-    imageArray[k].style.width=pieceSize+"px";
-    imageArray[k].style.height=pieceSize+"px";
-    imageArray[k].style.borderWidth=boardSize*borderSize+"px";
-    imageArray[k].style.zIndex = nextZ-1;
-    }
-  }
-      //console.log("gerUnits="+gerUnits+" neutUnits="+neutNumber);
-  else{
+
+      //console.log("gerUnits="+gerUnits+" neutUnits="+neutUnits);
   for(k=0;k<noOfImages;k++){
     if(k<gerNumber){
       reScale=size/8;
@@ -1057,7 +1051,6 @@ function placePics2() //print new armies
   imageArray[k].style.borderWidth=boardSize*borderSize+"px";
   imageArray[k].style.zIndex = nextZ-1;}
   }
-}
 
   for(i=0;i<noOfImages;i++){
     effectiveA[i]=0;
@@ -1241,6 +1234,17 @@ if(mouseOverFlag){
 
 function changeSize() //change the size of board and pieces following key press
 {
+//extra code for changing piece sizes
+
+pieceSize = pieceSize + deltaSize;
+//console.log("1 unitSize="+unitSize+" pieceSize="+pieceSize+" deltaSize="+deltaSize)
+if(pieceSize>20){pieceSize=20;}
+if(pieceSize<6){pieceSize=6;}
+deltaSize = 0;
+//pieceSize = unitSize/10;
+//console.log("2 unitSize="+unitSize+" pieceSize="+pieceSize+" deltaSize="+deltaSize);
+
+ //end of code
 
   var board = document.getElementById("board");
   //board.setAttribute("src", boardAddress);
@@ -1261,7 +1265,7 @@ function changeSize() //change the size of board and pieces following key press
   for(k=0;k<noOfImages;k++){
   imageArray[k].style.width=(pieceSize*boardSize/pieceShrink)+"px";
   imageArray[k].style.height=(pieceSize*boardSize/pieceShrink)+"px";
-  imageArray[k].style.borderWidth=boardSize*borderSize+"px";//*2+"px";
+  imageArray[k].style.borderWidth=boardSize*borderSize/pieceShrink+"px";//*2+"px";
   //if(k==20){
   //  alert(""+piecesLeft[k]+" "+boardSize*piecesLeft[k]);   }
   imageArray[k].style.left=(boardSize*piecesLeft[k])+"px";
@@ -1330,6 +1334,12 @@ if(keyPress=="3"){
 if(keyPress=="4"){
     pieceShrink=1;
     changeSize();//**COMMENT OUT for tablet version
+    }
+
+
+    	if(keyText==6){ //ruler//add and freeze LOS ruler
+        ruler=false;
+        LOSruler();
     }
 
 if(keyText=="z"||keyText=="Z"){ //zombies! bury dead or raise dead
@@ -1468,7 +1478,6 @@ if(keyText=="f"||keyText=="F"){ //unit fired
     changeFire(activeImage, activeIndex, 1);
 }//end of 'f' keyPress function
 
-
 if(keyText=="c"||keyText=="C"){
   if(leaderA[activeIndex]>0){
   changeNeutralPic(activeIndex);}
@@ -1537,6 +1546,12 @@ function virtualKey(k){
 
 	if(keyText==6){ //unit out of supply
     changeSupply(activeImage, activeIndex, 1);
+}
+
+
+	if(keyText==66){ //ruler//add and freeze LOS ruler
+    ruler=false;
+    LOSruler();
 }
 
   if(keyText==7){ //unit routed
@@ -1650,7 +1665,6 @@ if(keyText==86){ //show board
 
   saveWindow2();
 }
-
 
 function saveWindow(){
 
@@ -1929,8 +1943,8 @@ Apanic = 1*loadA[loopTill-19-shiftBackwards];
     //cmbtFactorsA[activeIndex]=loadA[m+8];
     var dumValue8 = loadA[m+8];
     if(isNaN(dumValue8)){
-      leaderA[activeIndex]=0;
-      changeUnitA[activeIndex]=0;
+      //leaderA[activeIndex]=0;
+      //changeUnitA[activeIndex]=0;
     }
     else{
     if(leaderA[activeIndex]>0){leaderA[activeIndex]=1*loadA[m+8];}
@@ -1941,9 +1955,11 @@ Apanic = 1*loadA[loopTill-19-shiftBackwards];
       changeUnitParse(activeIndex);
     }
     else if(leaderA[activeIndex]>0){
-      changeNeutralPic0(activeIndex);
+      changeNeutralPicL(activeIndex);
     }
-    else{printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);}
+    else{
+      //printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);
+    }
     }
     //changed combat factors routine:
     if(cmbtFactorsA[activeIndex]=="x"||dismountDummyA[activeIndex]==" x"||dismountDummyA[activeIndex]==" x "){
@@ -1951,7 +1967,7 @@ Apanic = 1*loadA[loopTill-19-shiftBackwards];
     }
     else if(cmbtFactorsA[activeIndex]<cmbtFactorsMaxA[activeIndex]){
       //routine to re-print unit if it has new value
-      printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);
+      printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex],countIndividual[activeIndex]);
     }
     //alert("|"+dismountDummyA[activeIndex]+"|")
       if(dismountDummyA[activeIndex]!="x"&&dismountDummyA[activeIndex]!=" x"&&dismountDummyA[activeIndex]!=" x "&&dismountDummyA[activeIndex]!=0){

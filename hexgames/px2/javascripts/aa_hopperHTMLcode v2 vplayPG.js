@@ -15,7 +15,8 @@ var hopperHTMLcode = '<table class="mover" id="keyPressTable"><tr>'+
 '<td class="button" onclick="virtualKey(12)">&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;&nbsp;&nbsp;&nbsp;</td>'+
 '<td class="button" onclick="virtualKey(8)">F</td>'+
 '<td class="button" onclick="virtualKey(7)">R</td></tr>'+
-'<tr><td colspan=5 class="button" onclick="virtualKey(88)">Jump hopper</td></tr>'+
+'<tr><td class="button" onclick="virtualKey(66)">los</td>'+
+'<td colspan=4 class="button" onclick="virtualKey(88)">Jump hopper</td></tr>'+
 '<td class="button5" rowspan=2 colspan=5 id="timebox" onclick="virtualKey(99)">&lt;</td>'+
 '<tr></tr><tr><td class="button1" colspan=5 id="hopText" onclick="virtualKey(33)"></td></tr></table>';
 

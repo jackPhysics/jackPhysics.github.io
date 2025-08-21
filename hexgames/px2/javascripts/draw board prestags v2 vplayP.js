@@ -141,6 +141,7 @@ var redBrdNo = 1;
 var longBoardFlag = false;
 var gameTurnTrackFlag = false;
 var vpTrackFlag = false;
+var lbhFlag = false;
 
 
 //loadTerrain(0);
@@ -811,60 +812,202 @@ ctx.closePath();
     ctx.fill();
     }
     }
-        else if(l==6){//city
-          colorNow=colorNow0;
-        for(tx=0;tx<10;tx++){//extra colours
-          colorNow="Maroon";
-          var dirColor = "add";
-          if(Math.random()<0.7){dirColor="sub"}
-          var colorNowH = col2Hex(colorNow);
-          colorNow = shiftColor(colorNowH, changeColor, dirColor);
-          colorNow = "#"+colorNow;
-            var texWd_x = xPos - hexD/2 +5 +Math.round(Math.random()*(hexD*2-25));
-            var texWd_y = yPos +5 +Math.round(Math.random()*(hexLong*2-25));
-            var texWd_w = Math.round(Math.random()*20)+5;
-            var texWd_h = Math.round(Math.random()*20)+5;
-          ctx.fillStyle = colorNow;
-        ctx.beginPath();
-        ctx.rect(texWd_x, texWd_y, texWd_w, texWd_h);
-        ctx.fill();
-        }
-        for(tx=0;tx<10;tx++){//black houses
-          var texWd_x = xPos - hexD/2 +5 +Math.round(Math.random()*(hexD*2-20));
-          var texWd_y = yPos +5 +Math.round(Math.random()*(hexLong*2-20));
-          var texWd_w = Math.round(Math.random()*10)+2;
-          var texWd_h = Math.round(Math.random()*10)+2;
-          //var texWd_r = 1;
-          ctx.fillStyle = "Maroon";
-        ctx.beginPath();
-        ctx.rect(texWd_x, texWd_y, 8, 6);
-        ctx.fill();
-        }
-        for(tx=0;tx<1;tx++){//city roads
-            var texWd_x = xPos +Math.round(Math.random()*(hexD));
-            var texWd_y = yPos+5;//yPos +5 +Math.round(Math.random()*(hexLong*2-25));
-            //var texWd_w = Math.round(Math.random()*20)+5;
-            //var texWd_h = Math.round(Math.random()*20)+5;
-          ctx.stokeStyle = "Maroon";
-        ctx.beginPath();
-        ctx.moveTo(texWd_x, texWd_y);
-        ctx.lineTo(texWd_x, texWd_y+hexLong*1.5);
-        ctx.stroke();
-        }
-        for(tx=0;tx<1;tx++){//city roads
-            var texWd_x = xPos +5;
-            var texWd_y = yPos+5 +Math.round(Math.random()*(hexLong));
-            //var texWd_w = Math.round(Math.random()*20)+5;
-            //var texWd_h = Math.round(Math.random()*20)+5;
-          ctx.stokeStyle = "Maroon";
-        ctx.beginPath();
-        ctx.moveTo(texWd_x, texWd_y);
-        ctx.lineTo(texWd_x+hexD, texWd_y);
-        ctx.stroke();
-        }
-      //ctx.stokeStyle = "Black";
-      //ctx.fillStyle = "Black";
-        }
+    else if(l==6){//city
+    colorNow=colorNow0;
+    if(lbhFlag){
+var noOfTents = Math.floor(Math.random()*3);
+  for(tx=0;tx<noOfTents;tx++){//tents
+  var texWd_x = xPos +Math.round(Math.random()*(hexD)-5);
+  var texWd_y = yPos+20+Math.round(Math.random()*10)+(tx*hexLong/4);
+  //var texWd_x = xPos +Math.round(Math.random()*(hexD)-5);
+  //var texWd_y = yPos+20+Math.round(Math.random()*(hexLong));
+  var snowLine = Math.round(Math.random()*3)+3;
+  //var texWd_w = Math.round(Math.random()*20)+5;
+  //var texWd_h = Math.round(Math.random()*20)+5;
+ctx.stokeStyle = "Black";
+ctx.beginPath();
+ctx.moveTo(texWd_x-5, texWd_y+10);
+ctx.lineTo(texWd_x+10, texWd_y-20);
+ctx.lineTo(texWd_x+25, texWd_y+10);
+ctx.lineTo(texWd_x-5, texWd_y+10);
+ctx.stroke();
+ctx.closePath();
+  ctx.fillStyle = "#ffdead";//"#531515";
+  ctx.beginPath();
+  ctx.moveTo(texWd_x-5, texWd_y+10);
+  ctx.lineTo(texWd_x+10, texWd_y-20);
+  ctx.lineTo(texWd_x+25, texWd_y+10);
+  ctx.fill();
+  ctx.closePath();
+  ctx.fillStyle = "Black";
+  ctx.beginPath();
+  ctx.moveTo(texWd_x+5, texWd_y+10);
+  ctx.lineTo(texWd_x+10, texWd_y-5);
+  ctx.lineTo(texWd_x+14, texWd_y+10);
+  //ctx.moveTo(texWd_x, texWd_y);
+  //ctx.lineTo(texWd_x+10, texWd_y-20);
+  //ctx.lineTo(texWd_x+9, texWd_y);
+  ctx.fill();
+  ctx.closePath();
+if(Math.random()<0.40){//Math.random()<0.4
+  //find random colours
+  var tentColor1 = "Ivory";
+  var tentColor2 = "Cyan";
+  var dumTcol = Math.floor(Math.random()*10);
+  switch(dumTcol){
+    case 1:
+      tentColor1 = "Red";
+      break;
+    case 2:
+      tentColor1 = "Orange";
+      break;
+    case 3:
+      tentColor1 = "Yellow";
+        case 4:
+          tentColor1 = "Green";
+          break;
+        case 5:
+          tentColor1 = "Blue";
+          break;
+        case 6:
+          tentColor1 = "Violet";
+            case 7:
+              tentColor1 = "Ivory";
+              break;
+            case 8:
+              tentColor1 = "Cyan";
+              break;
+            case 8:
+              tentColor1 = "Pink";
+      break;
+  }
+  dumTcol = Math.floor(Math.random()*10);
+  switch(dumTcol){
+    case 1:
+      tentColor2 = "Red";
+      break;
+    case 2:
+      tentColor2 = "Brown";
+      break;
+    case 3:
+      tentColor2 = "Black";
+        case 4:
+          tentColor2 = "Grey";
+          break;
+        case 5:
+          tentColor2 = "Tan";
+          break;
+        case 6:
+          tentColor2 = "Maroon";
+            case 7:
+              tentColor2 = "Silver";
+              break;
+            case 8:
+              tentColor2 = "CornflowerBlue";
+              break;
+            case 8:
+              tentColor2 = "Chocolate";
+      break;
+  }
+  ctx.fillStyle = tentColor1;
+  ctx.beginPath();
+  ctx.moveTo(texWd_x+snowLine/2, texWd_y-snowLine);
+  ctx.lineTo(texWd_x+10, texWd_y-20);
+  ctx.lineTo(texWd_x+20-snowLine/2, texWd_y-snowLine);
+  ctx.fill();
+    ctx.fillStyle = tentColor2;
+    ctx.beginPath();
+    ctx.moveTo(texWd_x+snowLine/2, texWd_y-snowLine);
+    ctx.lineTo(texWd_x+10, texWd_y-20);
+    ctx.lineTo(texWd_x+12-snowLine/2, texWd_y-snowLine);
+    ctx.fill();
+}
+else{
+  ctx.fillStyle = "#ffdead";//"#531515";
+  ctx.beginPath();
+  ctx.moveTo(texWd_x, texWd_y);
+  ctx.lineTo(texWd_x+10, texWd_y-20);
+  ctx.lineTo(texWd_x+20, texWd_y);
+  ctx.fill();
+    ctx.fillStyle = "#ffdead";//"Black";
+    ctx.beginPath();
+    ctx.moveTo(texWd_x, texWd_y);
+    ctx.lineTo(texWd_x+10, texWd_y-20);
+    ctx.lineTo(texWd_x+9, texWd_y);
+    ctx.fill();
+}
+ctx.beginPath();
+ctx.moveTo(texWd_x, texWd_y);
+ctx.lineTo(texWd_x+10, texWd_y-20);
+ctx.lineTo(texWd_x+20, texWd_y);
+ctx.stroke();
+}
+for(tx=0;tx<30;tx++){//extra dots
+  var texWd_x = xPos - hexD/2 +5 +Math.round(Math.random()*(hexD*2-10));
+  var texWd_y = yPos +5 +Math.round(Math.random()*(hexLong*2-10));
+  var texWd_r = 1;
+  var texWd_sA = 0;
+  var texWd_eA = Math.PI*2;
+ctx.fillStyle = "Black";
+ctx.beginPath();
+ctx.arc(texWd_x, texWd_y, 1, 0, Math.PI*2);
+ctx.fill();
+}
+    }
+    else{
+    for(tx=0;tx<10;tx++){//extra colours
+      colorNow="Maroon";
+      var dirColor = "add";
+      if(Math.random()<0.7){dirColor="sub"}
+      var colorNowH = col2Hex(colorNow);
+      colorNow = shiftColor(colorNowH, changeColor, dirColor);
+      colorNow = "#"+colorNow;
+        var texWd_x = xPos - hexD/2 +5 +Math.round(Math.random()*(hexD*2-25));
+        var texWd_y = yPos +5 +Math.round(Math.random()*(hexLong*2-25));
+        var texWd_w = Math.round(Math.random()*10)+5;
+        var texWd_h = Math.round(Math.random()*10)+5;
+      ctx.fillStyle = colorNow;
+    ctx.beginPath();
+    ctx.rect(texWd_x, texWd_y, texWd_w, texWd_h);
+    ctx.fill();
+    }
+    for(tx=0;tx<10;tx++){//black houses
+      var texWd_x = xPos - hexD/2 +5 +Math.round(Math.random()*(hexD*2-20));
+      var texWd_y = yPos +5 +Math.round(Math.random()*(hexLong*2-20));
+      var texWd_w = Math.round(Math.random()*10)+2;
+      var texWd_h = Math.round(Math.random()*10)+2;
+      //var texWd_r = 1;
+      ctx.fillStyle = "Maroon";
+    ctx.beginPath();
+    ctx.rect(texWd_x, texWd_y, 8, 6);
+    ctx.fill();
+    }
+    for(tx=0;tx<1;tx++){//city roads
+        var texWd_x = xPos +Math.round(Math.random()*(hexD));
+        var texWd_y = yPos+5;//yPos +5 +Math.round(Math.random()*(hexLong*2-25));
+        //var texWd_w = Math.round(Math.random()*20)+5;
+        //var texWd_h = Math.round(Math.random()*20)+5;
+      ctx.stokeStyle = "Maroon";
+    ctx.beginPath();
+    ctx.moveTo(texWd_x, texWd_y);
+    ctx.lineTo(texWd_x, texWd_y+hexLong*1.5);
+    ctx.stroke();
+    }
+    for(tx=0;tx<1;tx++){//city roads
+        var texWd_x = xPos +5;
+        var texWd_y = yPos+5 +Math.round(Math.random()*(hexLong));
+        //var texWd_w = Math.round(Math.random()*20)+5;
+        //var texWd_h = Math.round(Math.random()*20)+5;
+      ctx.stokeStyle = "Maroon";
+    ctx.beginPath();
+    ctx.moveTo(texWd_x, texWd_y);
+    ctx.lineTo(texWd_x+hexD, texWd_y);
+    ctx.stroke();
+    }
+  ctx.stokeStyle = "Maroon";
+  ctx.fillStyle = "Maroon";
+    }
+  }
             else if(l==8){//slope  var edge1X = -50;
                   colorNow="Tan";//colorNow0;
                   ////console.log(colorNow)

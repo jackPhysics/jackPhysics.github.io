@@ -57,6 +57,7 @@ var dumColorTA = "#000000";
 var dumColorNumbB = 0;
 var dumColorB = "#ffffff";
 var dumColorTB = "#000000";
+var usCavCmp = ["", "A", "B", "C", "D", "E", "F", "F", "H", "I", "K","L", "M", "N", "O", "P","Q", "R", "S", "T", "U","V", "W", "X", "Y", "Z"];
 
 function printUnit(n, b, t, id, c0){//n=number of image b=battalion number, t=Total, id=number of unit,
   noOfItems=11;
@@ -288,9 +289,11 @@ var classType = classFactor;//unit number - out of all
         ctx.textAlign = "center";//"left";
         ctx.textBaseline = "bottom";
         ctx.lineWidth = "2";
-        if(leaderA[noOfImgPrnt]==0){
-        ctx.fillText(""+printData[6],i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);}//25   35
-        //ctx.fillText(""+cmbtFactorsA[noOfImgPrnt],i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);}//25   35
+        if(untriedFlag[noOfImgPrnt]){
+        ctx.fillText(""+untriedPrint[noOfImgPrnt],i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);
+        }
+        else if(leaderA[noOfImgPrnt]==0){
+        ctx.fillText(""+cmbtFactorsA[noOfImgPrnt],i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);}//25   35
         else if(leaderA[noOfImgPrnt]>0){
         ctx.fillText(""+leaderBonus,i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);
         }
@@ -353,7 +356,8 @@ unitsA[whatType*noOfItems+5] = printData[5];
             &&unitsA[whatType*noOfItems+5]!="cb"&&unitsA[whatType*noOfItems+5]!="el"
             &&unitsA[whatType*noOfItems+5]!="ch1"&&unitsA[whatType*noOfItems+5]!="ch2"
             &&unitsA[whatType*noOfItems+5]!="vf"&&unitsA[whatType*noOfItems+5]!="mob"
-            &&unitsA[whatType*noOfItems+5]!="fart"&&unitsA[whatType*noOfItems+5]!="how"){
+            &&unitsA[whatType*noOfItems+5]!="fart"&&unitsA[whatType*noOfItems+5]!="how"
+            &&unitsA[whatType*noOfItems+5]!="teepee"){
                 ctx.beginPath();
                 ctx.lineWidth = "4";
                 ctx.strokeStyle = colorThisBT;
@@ -516,6 +520,16 @@ unitsA[whatType*noOfItems+5] = printData[5];
                 ctx.arc(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+boxHt/5*2)*unitScale, boxHt/5*2*unitScale, 0.5, Math.PI-0.5);
                 ctx.stroke();
                 ctx.closePath();
+            }
+            else if(unitsA[whatType*noOfItems+5]=="teepee"){
+              ctx.beginPath();
+              ctx.lineWidth = "1";
+              ctx.fillStyle = colorThisBT;
+              ctx.moveTo(i2*unitSize+(60+15)*unitScale, j2*unitSize+(boxTop+boxHt-4)*unitScale);//+10
+              ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop+4)*unitScale);//+18
+              ctx.lineTo(i2*unitSize+(60+65)*unitScale, j2*unitSize+(boxTop+boxHt-4)*unitScale);//+30
+              ctx.fill();
+              ctx.closePath();
             }
             else if(unitsA[whatType*noOfItems+5]=="mar"||unitsA[whatType*noOfItems+5]=="seab"
             ||unitsA[whatType*noOfItems+5]=="strans"){
@@ -1369,23 +1383,6 @@ unitsA[whatType*noOfItems+5] = printData[5];
                                   ctx.stroke();
                                   ctx.closePath();
                             }
-                          if(unitsA[whatType*noOfItems+5]=="aa"){
-                              ctx.beginPath();
-                              ctx.lineWidth = "6";
-                              ctx.strokeStyle = colorThisBT;
-                              ctx.moveTo(i2*unitSize+(60+0)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+10
-                              ctx.lineTo(i2*unitSize+(60+40)*unitScale, j2*unitSize+(boxTop)*unitScale);//+18
-                              ctx.lineTo(i2*unitSize+(60+80)*unitScale, j2*unitSize+(boxTop+boxHt)*unitScale);//+30
-                              ctx.stroke();
-                              ctx.closePath();
-                                  ctx.beginPath();
-                                  ctx.lineWidth = "6";
-                                  ctx.strokeStyle = colorThisBT;
-                                  ctx.moveTo(i2*unitSize+(60+20)*unitScale, j2*unitSize+(boxTop+boxHt/2)*unitScale);//+10
-                                  ctx.lineTo(i2*unitSize+(60+60)*unitScale, j2*unitSize+(boxTop+boxHt/2)*unitScale);//+30
-                                  ctx.stroke();
-                                  ctx.closePath();
-                          }
              //apc
                   if(unitsA[whatType*noOfItems+5]=="apc"){
                           ctx.beginPath();
@@ -1489,8 +1486,12 @@ unitsA[whatType*noOfItems+5] = dummyHoldType;
             //console.log("2 "+leaderA[noOfImgPrnt]);
         	  ctx.fillText(""+printData[1],i2*unitSize+20*unitScale,j2*unitSize+unitSize/5*unitScale, 100);
             }
+            else if(printData[10]=="US"||printData[10]=="7th"||printData[10]=="(7th)"){//printData[0].slice(0,5)=="#rand"  //printData[10]=="^"
+        	  ctx.fillText(""+usCavCmp[batNumb],i2*unitSize+10*unitScale,j2*unitSize+unitSize/5*unitScale, 100);
+            }
+            else if(classFactor==batNumb){//printData[0].slice(0,5)=="#rand"  //printData[10]=="^"
+        	  ctx.fillText(""+(noOfImgPrnt*1+1),i2*unitSize+10*unitScale,j2*unitSize+unitSize/5*unitScale, 110);}//, 30
             else{
-            //console.log("3 "+leaderA[noOfImgPrnt]);
         	  ctx.fillText(""+classFactor,i2*unitSize+10*unitScale,j2*unitSize+unitSize/5*unitScale, 110);}//, 30
             ctx.translate(50, 50);
             ctx.rotate(Math.PI/2);
@@ -1509,12 +1510,17 @@ unitsA[whatType*noOfItems+5] = dummyHoldType;
             if(leaderA[noOfImgPrnt]>0){
             ctx.fillText(""+printData[6],i2*unitSize+225*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 110);
             }
+            else if(printData[10]=="US"||printData[10]=="7th"||printData[10]=="(7th)"){//printData[0].slice(0,5)=="#rand"  //printData[10]=="^"
+        	  ctx.fillText("COY",i2*unitSize+210*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 100);
+            //console.log(""+batNumb+" "+usCavCmp[batNumb])
+            }//, 30
             else{
             ctx.fillText(""+batNumb,i2*unitSize+210*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 70);}
             ctx.translate(150, 150);
             ctx.rotate(Math.PI/2);
             ctx.translate(-150, -150);
 
+//console.log(" printData[1]="+printData[1]+" classFactor="+classFactor+" printData[6]="+printData[6]+" batNumb="+batNumb);
     if(panicA[noOfImgPrnt]==1){//routed
       /*
       ctx.beginPath();
@@ -1793,4 +1799,218 @@ function printUnitBlank(n, b, t, id, c0){//n=number of image b=battalion number,
 					//ctx.stroke();
 					ctx.fill();
 
+}
+
+
+
+function makeColor(){
+  var rndR = Math.floor(Math.random()*255);
+  var rndG = Math.floor(Math.random()*255);
+  var rndB = Math.floor(Math.random()*255);
+  var rndRH = rndR.toString(16);
+  var rndGH = rndG.toString(16);
+  var rndBH = rndB.toString(16);
+  if(Math.random()<0.5){}
+  else{
+  var dumCol = Math.ceil(Math.random()*18);
+  switch (dumCol) {
+  case 1://rndR
+    rndGH="00";
+    rndBH="00";
+    break;
+case 2://rndR
+  rndGH="ff";
+  rndBH="00";
+  break;
+case 3://rndR
+rndGH="00";
+rndBH="ff";
+break;
+case 4://rndR
+rndGH="ff";
+rndBH="ff";
+break;
+case 5://rndG
+rndRH="00";
+rndBH="00";
+break;
+case 6://rndG
+rndRH="ff";
+rndBH="00";
+break;
+case 7://rndG
+rndRH="00";
+rndBH="ff";
+break;
+case 8://rndG
+rndRH="ff";
+rndBH="ff";
+break;
+case 9://rndB
+rndGH="00";
+rndRH="00";
+break;
+case 10://rndB
+rndGH="ff";
+rndRH="00";
+break;
+case 11://rndB
+rndGH="00";
+rndRH="ff";
+break;
+case 12://rndB
+rndGH="ff";
+rndRH="ff";
+break;
+case 13://rndB
+rndRH="ff";
+break;
+case 14://rndB
+rndGH="ff";
+break;
+case 15://rndB
+rndBH="ff";
+break;
+case 16://rndB
+rndRH="00";
+break;
+case 17://rndB
+rndGH="00";
+break;
+case 18://rndB
+rndBH="00";
+break;
+  }}
+  unitColor = "#"+rndRH+rndGH+rndBH;
+
+  if(unitColor.length<6){
+    var oldCol = unitColor;
+    var colDigit1 = Math.floor(Math.random()*10);
+    var colDigit2 = Math.floor(Math.random()*10);
+    unitColor=""+unitColor+colDigit1+colDigit2;
+    //alert("5: "+oldCol+" "+unitColor);
+  }
+  else if(unitColor.length<7){
+    var oldCol = unitColor;
+    var colDigit = Math.floor(Math.random()*10);
+    unitColor=""+unitColor+colDigit;
+    //alert("6: "+oldCol+" "+unitColor);
+  }
+  else{}
+  //unitColor = unitColor.toUpperCase();
+  rndR = parseInt(rndRH, 16);
+  rndG = parseInt(rndGH, 16);
+  rndB = parseInt(rndBH, 16);
+  var shade = +rndR+rndG+rndB;
+  //alert("RH:"+rndRH+" R:"+rndR+" GH:"+rndGH+" G:"+rndG+" BH:"+rndBH+" B:"+rndB);
+  //alert("H:"+1*(rndRH+rndGH+rndBH)+" dec:"+(rndR+rndG+rndB));
+  shadeCol=shade;
+  //if(shade<380){
+  if(rndR<128&&rndG<128&&rndB<128||shade<380){
+    textColor="#ffffff";textColor2="#000000";}
+  else{textColor="#000000";textColor2="#ffffff";}
+
+  goColor=unitColor;
+  goColorT=textColor;
+
+  makeUnitColor();
+  goColorB=unitColorSm;
+
+	unitColor2 = "#"+shiftColor(unitColor, changeColor, 'add');
+	unitColor1 = "#"+shiftColor(unitColor2, changeColor, 'add');
+	unitColor3 = "#"+shiftColor(unitColor, changeColor, 'sub');
+	unitColor4 = "#"+shiftColor(unitColor3, changeColor, 'sub');
+  boxColor = "#"+flipColor(unitColor3);
+
+  //printUnits();
+  findUnits();
+  //return unitColor0;
+}
+
+function makeUnitColor(){
+
+  var rndR = Math.floor(Math.random()*256);
+  var rndG = Math.floor(Math.random()*256);
+  var rndB = Math.floor(Math.random()*256);
+  var extra = Math.floor(Math.random()*16);
+  var rndRH = rndR.toString(16);
+  var rndGH = rndG.toString(16);
+  var rndBH = rndB.toString(16);
+  var extraH = extra.toString(16);
+  unitColorSm = "#"+rndRH+rndGH+rndBH;
+  while(unitColorSm.length<7){
+    unitColorSm=unitColorSm+extraH;
+  }
+  //if(unitColorSm.length==6){
+  //  unitColorSm=unitColorSm+extraH;
+  //}
+  var shade = +rndR+rndG+rndB;
+  if(shade>383){textColorSm="#000000";}
+  else{textColorSm="#ffffff";}
+
+  var finalColours = unitColorSm+"/"+textColorSm;
+
+  return finalColours;
+
+  /*
+	unitColor2 = "#"+shiftColor(unitColor, changeColor, 'add');
+	unitColor1 = "#"+shiftColor(unitColor2, changeColor, 'add');
+	unitColor3 = "#"+shiftColor(unitColor, changeColor, 'sub');
+	unitColor4 = "#"+shiftColor(unitColor3, changeColor, 'sub');
+  boxColor = "#"+flipColor(unitColor3);
+  */
+	//alert(""+unitColor+" "+unitColor1+" "+unitColor2+" "+unitColor3+" "+unitColor4);
+  //printUnits();
+}
+
+function findColours(){
+//console.log("1: "+unitsA);
+  var changeColorUnit = "#333333";
+  var changeDir = "sub";
+  var dumUnitLen = unitsA.length/noOfItems;
+  //console.log("1: "+unitsA+" ****len: "+dumUnitLen);
+  var allTimeColors  = makeUnitColor();//fixed color
+  var allTimeColors2  = allTimeColors;
+  var oldColorLock = "";
+  var newColorLock = "";
+  for(var a=0;a<dumUnitLen-1;a++){
+    if(unitsA[a*noOfItems].slice(0,5)=="#rand"){
+    if(unitsA[a*noOfItems].slice(5,6)=="A"){//if to use fixed color
+      newColorLock = unitsA[a*noOfItems].slice(0,8);
+      //console.log("new: "+newColorLock+"  old: "+oldColorLock);
+      if(newColorLock!=oldColorLock){//new army, new colours
+       allTimeColors  = makeUnitColor();//fixed color
+       allTimeColors2  = allTimeColors;
+      }
+      unitsA[a*noOfItems] = "";//clear old colours
+      unitsA[a*noOfItems] = allTimeColors;//use fixed colour
+      if(true){//compare if part of same army unitsA[a*noOfItems].slice(6,7)==oldColorLock
+      var allTimePartCol = allTimeColors.slice(0,7);//main color
+      var allTimePartCol2 = allTimeColors.slice(7,15);//text color
+      //console.log("1: "+allTimeColors+"  2: "+allTimePartCol+"  3: "+allTimePartCol2);
+        if(Math.random()<0.5){changeDir = "sub";}
+        else{changeDir = "add";}
+        if(Math.random()<0.25){changeColorUnit = "#110000";}
+        else if(Math.random()<0.33){changeColorUnit = "#001100";}
+        else if(Math.random()<0.5){changeColorUnit = "#000011";}
+        else{changeColorUnit = "#111111";}
+      allTimeColors2 = "#"+shiftColor(allTimePartCol, changeColorUnit, changeDir);//alter main color
+      allTimeColors2 = allTimeColors2 + allTimePartCol2;//add back text color
+      unitsA[a*noOfItems] = allTimeColors2;//store colour
+      }
+      thisTimeColors = makeUnitColor();//make box colours
+      unitsA[a*noOfItems] = unitsA[a*noOfItems]+"/"+thisTimeColors;
+      oldColorLock = newColorLock;
+    }
+    else{
+      unitsA[a*noOfItems] = "";//clear old colours
+      var thisTimeColors = makeUnitColor();
+      //console.log(" "+a+" "+thisTimeColors);
+      unitsA[a*noOfItems] = thisTimeColors;//make main colour
+      thisTimeColors = makeUnitColor();//make box colours
+      unitsA[a*noOfItems] = unitsA[a*noOfItems]+"/"+thisTimeColors;}
+    }
+    else{}
+  }
+  //console.log("2: "+unitsA);
 }

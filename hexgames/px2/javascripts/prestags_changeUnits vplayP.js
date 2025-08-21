@@ -109,6 +109,58 @@ function findNameSrc(p, i){
   return pieceName1;
 }
 
+function findTryValue(m){
+  var maxValue = m;
+  var chanceNumber = Math.pow(maxValue,0.5);
+  chanceNumber = 0.4+chanceNumber/10;
+  //console.log(chanceNumber);
+  if(maxValue<4){
+  var actualValue = 0;
+  if(maxValue>2){actualValue = 1;}
+  var jumpOut = false;
+  while(!jumpOut){
+    if(Math.random()<chanceNumber){actualValue++;}
+    else{jumpOut=true;}
+  }
+  if(actualValue>1*maxValue+1){
+    actualValue=1*maxValue+1;
+  }}
+  else{
+    actualValue = Math.floor(Math.random()*maxValue)+1;
+  }
+/*
+  if(Math.random()<0.2){
+    actualValue = 1*maxValue+1;
+  }
+  else if(maxValue>2){
+    actualValue = Math.floor(Math.random()*maxValue)+1;
+  }
+  else{//if(maxValue<=2)
+    actualValue = Math.round(Math.random()*maxValue);
+  }
+  */
+  return actualValue;
+}
+
+function untriedTry(n){
+	var tryUnitIndex=n;
+  var dummyValue = 0;
+    //console.log(" untriedPrint="+untriedPrint[tryUnitIndex]);
+  if(untriedPrint[tryUnitIndex]=="?"){//untried, give it a value
+    dummyValue = findTryValue(untriedMax[tryUnitIndex]);
+    untriedPrint[tryUnitIndex] = dummyValue;
+      //console.log(" dummyValue="+dummyValue+" untriedMax[tryUnitIndex]="+untriedMax[tryUnitIndex]);
+  }
+  else{
+  untriedPrint[tryUnitIndex] = "?";
+  }
+  cmbtFactorsA[tryUnitIndex]=untriedPrint[tryUnitIndex];
+	printUnit(tryUnitIndex, typeNumbA[tryUnitIndex], typeTotalA[tryUnitIndex], thisIsA[tryUnitIndex],countIndividual[tryUnitIndex]);
+  imageArray[tryUnitIndex].setAttribute("title", "#"+(tryUnitIndex+1)+": "+unitsA[thisIsA[tryUnitIndex]*noOfItems+10]+" "+cmbtFactorsA[tryUnitIndex]+"-"+unitsA[thisIsA[tryUnitIndex]*noOfItems+7]+" fire:"+unitsA[thisIsA[tryUnitIndex]*noOfItems+8]+"/"+unitsA[thisIsA[tryUnitIndex]*noOfItems+9]+" (pts:"+unitsA[thisIsA[tryUnitIndex]*noOfItems+2]+") ("+(typeNumbA[tryUnitIndex])+"/"+typeTotalA[tryUnitIndex]+")");
+  mouseActive=0;
+  doEdgeColor();
+}
+
 function changeUnitType(p, i, pd){//(p, i, f){  i=index pr=printdata array
   var activePiece = p;
   var pieceIndex = i;
@@ -133,7 +185,7 @@ function changeUnitType(p, i, pd){//(p, i, f){  i=index pr=printdata array
   }
   else if(pieceName0=="MI"){
     if(changeUnitA[pieceIndex]==1){//the function is only called if changeUnitA>0, so is >0
-      //now detail the changes - change to "AX"
+      //now detail the changes - change to "SK"
       printDataDum[1] = ["Ff"];
       printDataDum[4] = ["f"];
       printDataDum[5] = ["sk"];
@@ -148,7 +200,7 @@ function changeUnitType(p, i, pd){//(p, i, f){  i=index pr=printdata array
   }
   else if(pieceName0=="MC"){
     if(changeUnitA[pieceIndex]==1){//the function is only called if changeUnitA>0, so is >0
-      //now detail the changes - change to "AX"
+      //now detail the changes - change to "SD"
       printDataDum[1] = ["B"];
       printDataDum[4] = ["n"];
       printDataDum[5] = ["sd"];
@@ -163,7 +215,7 @@ function changeUnitType(p, i, pd){//(p, i, f){  i=index pr=printdata array
   }
   else if(pieceName0=="HC"){
     if(changeUnitA[pieceIndex]==1){//the function is only called if changeUnitA>0, so is >0
-      //now detail the changes - change to "AX"
+      //now detail the changes - change to "PS"
       printDataDum[1] = ["A"];
       printDataDum[4] = ["n"];
       printDataDum[5] = ["hspear"];
@@ -176,6 +228,36 @@ function changeUnitType(p, i, pd){//(p, i, f){  i=index pr=printdata array
       changeMade = true;}
       else{firerA[pieceIndex]=0;changeUnitA[pieceIndex]=0}
   }
+  else if(pieceName0=="US"){
+    if(changeUnitA[pieceIndex]==1){//the function is only called if changeUnitA>0, so is >0
+      //now detail the changes - change to "PS"
+      printDataDum[1] = ["Ff"];
+      printDataDum[4] = ["f"];
+      printDataDum[5] = ["inf"];
+      printDataDum[6] = ["3"];
+      printDataDum[7] = ["2"];
+      printDataDum[8] = ["5"];
+      printDataDum[9] = ["5"];
+      printDataDum[10] = ["DM/US"];
+      firerA[pieceIndex]=1;
+      changeMade = true;}
+      else{firerA[pieceIndex]=1;changeUnitA[pieceIndex]=0}
+  }
+  else if(pieceName0=="7th"){
+    if(changeUnitA[pieceIndex]==1){//the function is only called if changeUnitA>0, so is >0
+      //now detail the changes - change to "PS"
+      printDataDum[1] = ["Ff"];
+      printDataDum[4] = ["f"];
+      printDataDum[5] = ["inf"];
+      printDataDum[6] = ["3"];
+      printDataDum[7] = ["2"];
+      printDataDum[8] = ["6"];
+      printDataDum[9] = ["12"];
+      printDataDum[10] = ["(7th)"];
+      firerA[pieceIndex]=1;
+      changeMade = true;}
+      else{firerA[pieceIndex]=1;changeUnitA[pieceIndex]=0}
+  }
   if(changeMade){
   imageArray[pieceIndex].setAttribute("title", "#"+(pieceIndex+1)+": "+printDataDum[10]+" "+printDataDum[6]+"-"+printDataDum[7]+" fire:"+printDataDum[8]+"/"+printDataDum[9]+" (pts:"+printDataDum[2]+")("+(typeNumbA[pieceIndex])+"/"+typeTotalA[pieceIndex]+")");
   document.getElementById('hopText').innerText=""+activePiece.getAttribute("title");
@@ -187,11 +269,13 @@ function changeUnitType(p, i, pd){//(p, i, f){  i=index pr=printdata array
 function changeUnitParse(i){
 var pieceIndex = i;
   if(unitsA[thisIsA[pieceIndex]*noOfItems+10]=="MI"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="LB"
-  ||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="MC"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="HC"){
+  ||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="MC"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="HC"
+  ||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="US"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="7th"){
     changeUnitA[pieceIndex]++;
-    console.log("changeUnitA[pieceIndex]="+changeUnitA[pieceIndex]);
+    //console.log("changeUnitA[pieceIndex]="+changeUnitA[pieceIndex]);
     //if(changeUnitA[activeIndex]>2){changeUnitA[activeIndex]=0;}
     printUnit(pieceIndex, typeNumbA[pieceIndex], typeTotalA[pieceIndex], thisIsA[pieceIndex],countIndividual[pieceIndex]);
+    doEdgeColor();
     //console.log("changeUnitA[activeIndex]="+changeUnitA[activeIndex]);
   }
 }
