@@ -1,6 +1,6 @@
 
-var redArmyMax = 61;
-var blackArmyMax = 61;
+var redArmyMax = 64;
+var blackArmyMax = 64;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -23,7 +23,8 @@ var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democrac
 "Crimson Celerity Cooperative","Zoetic zapping Zombie Hordes","Universal Church", "London Underground",
 "Lost Souls","Armoured Fist", "Die Rolling Dystopians", "Coral Combat Committed Caeserian Confederation",
 "Sea-Green Route 66 Convoy", "Seviche Seventeen Servants Severalty", "Geranium Giant Gentry",
-"DodgerBlue Defenders of Democracy","Godzilla"];
+"Gray Castles across the Borderland","Godzilla", "Blue Forts across the Frontier",
+"Simply Infantry", "5 Large Units"];
 
 function findArmies(){
 
@@ -1550,7 +1551,7 @@ var unitsQ=[
   "#4b0082/#ffffff/#4b0082/#ffffff","Imperial Guard","9","6","n","inf","8","4","xx",
   "#4b0082/#ffffff/#4b0082/#ffffff","Veterans","7","6","n","inf","6","4","xx",
   "#4b0082/#ffffff/#4b0082/#ffffff","Regulars","5","6","n","inf","4","4","xx",
-  "#4b0082/#ffffff/#4b0082/#ffffff","Militia","3","6","n","inf","2","4","xx",
+  "#4b0082/#ffffff/#4b0082/#ffffff","Militia","3","4","n","inf","2","4","xx",
   "#4b0082/#ffffff/#4b0082/#ffffff","Replacements","2","6","n","inf","1","4","xx",
   "#4b0082/#ffffff/#4b0082/#ffffff","Supply","0","0","n","supply","0","10","xx"
 
@@ -1568,7 +1569,7 @@ var designateRQ=[
 "1","2","3","4","5","6",
 "1","2","3","4","5","6",
 "1","2","3","4","5","6",
-"1","2","3","4","5","6",
+"1","2","3","4",
 "1","2","3","4","5","6"
 ];
 
@@ -2432,9 +2433,9 @@ var designateLQ=["Seven", "Seven", "Seven", "Seven", "Seven", "Seven", "Seven", 
 
 var designateRQ=["Days", "Sins","Planets" ,"Churches", "Circuits",
  "Seas", "Hills" , "Heavens", "Clouds", "Ages",
-  "Plots", "Immersions" , "Religions",  "Sons", "Seals",
+  "Plots", "Sisters" , "Oaks",  "Sons", "Seals",
   "Rivers" ,"Colours"];
-//championships, sexes, eons, worlds, angels, trumpets
+//championships, sexes, eons, worlds, angels, trumpets, "Immersions", "Religions"
 
 var noOfSide = unitsQ.length/noOfItems;
   var sideQ=new Array();
@@ -2480,17 +2481,16 @@ var noOfSide = unitsQ.length/noOfItems;
 
 
 else if(changeRedFlag&&redArmyNo==59||changeBlackFlag&&blackArmyNo==59){
-var nameQ="DodgerBlue Defenders of Democracy";
+var nameQ="Gray Castles across the Borderland";
 
-var qbase = ["#1E90FF","#ffffee", "#ffffee"];
+var qbase = ["#aaaaaa","#aaaaaa", "#aaaaaa"];
 
 var unitsQ=[
-  "#1E90FF/#ffffff/#0000ff/#ff0000","Gun Emplacements","12","4","n","spa","15","0","xx",
-  "#1E90FF/#ffffff/#0000ff/#ff0000","Mountain Forts","10","3","n","sf","10","0","xx",
-  "#1E90FF/#ffffff/#0000ff/#ff0000","Fortress","17","3","n","inf","20","0","xx",
-  "#1E90FF/#ffffff/#0000ff/#ff0000","Strongpoint","7","3","n","inf","10","0","xx",
-  "#ffffee/#0000ff/#1E90FF/#ff0000","dummy","7","0","n","inf","10","0","xx",
-  "#1E90FF/#ffffff/#0000ff/#ff0000","supply","0","0","n","supply","0","10","xx"
+  "#aaaaaa/#000000/#333333/#ffffff","Gun Emplacements","12","4","n","spa","15","0","xx",
+  "#aaaaaa/#000000/#333333/#ffffff","Mountain Forts","10","3","n","sf","10","0","xx",
+  "#aaaaaa/#000000/#333333/#ffffff","Fortress","17","3","n","inf","20","0","xx",
+  "#aaaaaa/#000000/#333333/#ffffff","Strongpoint","7","3","n","inf","10","0","xx",
+  "#aaaaaa/#000000/#333333/#ffffff","supply","0","0","n","supply","0","10","xx"
 ];
 
 var designateLQ=["Castle","Mukachevo", "Windsor", "Malbork",
@@ -2547,6 +2547,107 @@ var noOfSide = unitsQ.length/noOfItems;
     sideQ[s]=1;    }}
 }
 
+else if(changeRedFlag&&redArmyNo==61||changeBlackFlag&&blackArmyNo==61){
+var nameQ="Blue Forts across the Frontier";
+
+var qbase = ["#1E90FF","#ffffee", "#ffffee"];
+
+var unitsQ=[
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Fortress","15","2","n","inf","18","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Mountain Forts","8","6","n","sf","8","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Flying Fort","3","3","n","para","5","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Fort","9","5","n","inf","12","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","Strongpoint","3","6","n","arm","6","0","xx",
+  "#1E90FF/#ffffff/#0000ff/#ff0000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=["Fort","Fort", "Fort", "Fort", "Fort",
+"Fort","Fort", "Fort", "Fort", "Fort",
+ "Fort","Fort", "Fort", "Fort", "Fort",
+"Fort","Fort", "Fort", "Fort", "Fort",
+"Fort","Fort"];
+
+var designateRQ=["Laramie","Apache", "Sumner", "Reno", "Union",
+"Defiance","Cobb", "Phil Kearney", "Lyon", "Peck",
+ "Buford","Randall", "Sully", "Keogh", "Lincoln",
+"Bridger","CF Smith", "Wingate", "Dodge", "Hays",
+"Sedgwick","Wallace"];
+//"Clark","Concho", "Davis", "Griffin", "Worth",
+ //"Richardson","Wichita", "Elliot", "Larned", "Riley",
+//"Snelling","Yates", "Rice", "Robinson", "Berthold",
+//"Thomas","Sill", "Kearney"
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==62||changeBlackFlag&&blackArmyNo==62){
+var nameQ="Simply Infantry";
+
+var qbase = ["#dddddd","#dddddd", "#dddddd"];
+
+var unitsQ=[
+  "#dddddd/#000000/#bbbbbb/#000000","Active","10","10","n","sf","10","3","xx",
+  "#dddddd/#000000/#bbbbbb/#000000","Reserve","5","10","n","para","5","3","xx",
+  "#dddddd/#000000/#bbbbbb/#000000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=[
+"A","A","A","A","A","A","A","A","A","A",
+"R","R","R","R","R","R","R","R","R","R"
+];
+
+var designateRQ=[
+  "1","2","3","4","5","6","7","8","9","10",
+  "11","12","13","14","15","16","20","30","33","35"];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==63||changeBlackFlag&&blackArmyNo==63){
+var nameQ="5 Large Units";
+
+var qbase = ["#FFBF00","#FFBF00", "#FFBF00"];
+
+var unitsQ=[
+  "#FFBF00/#000000/#40E0D0/#000000","Front","30","3","n","inf","24","6","xx",
+  "#FFBF00/#000000/#40E0D0/#000000","Revolution","30","2","n","inf","30","2","xx",
+  "#FFBF00/#000000/#40E0D0/#000000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=[
+  "1st","2nd","3rd","4th","5th"
+];
+
+var designateRQ=[
+"Column","Column","Column","Column","Column"];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
 //interesting colours
 //purple:800080   leaf green:808000
 
