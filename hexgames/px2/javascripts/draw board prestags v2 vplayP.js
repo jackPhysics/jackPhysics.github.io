@@ -2142,6 +2142,7 @@ ctx.fillText(""+iconHexes[nh],posNowX,posNowY);
 
 
 //setup hexes
+console.log("setup");
 var namedALen = setupsA.length;
 var brdEdge = 0;
 for(nh=0;nh<namedALen;nh=nh+5){
@@ -2165,6 +2166,7 @@ ctx.globalAlpha = 1;
 }
 
 //locationsAHexes
+console.log("location");
 var namedALen = locationsA.length;
 var brdEdge = 0;
 for(nh=0;nh<namedALen;nh=nh+4){

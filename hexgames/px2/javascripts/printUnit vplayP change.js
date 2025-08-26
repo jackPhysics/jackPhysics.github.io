@@ -234,9 +234,11 @@ var classType = classFactor;//unit number - out of all
 	  //ctx.font = "30px Arial";
 	  ctx.fillStyle = textColorThis;
 	  ctx.textAlign = "left";
-	  ctx.textBaseline = "top";
+    ctx.textBaseline = "middle";
+	  //ctx.textBaseline = "top";
   	ctx.lineWidth = "2";
-	  ctx.fillText(""+printData[8],i2*unitSize+edgeSize*1.5*unitScale,j2*unitSize+edgeSize*1*unitScale);//25   35
+	  ctx.fillText(""+printData[8],i2*unitSize+edgeSize*1.5*unitScale,j2*unitSize+boxTop*2/3*unitScale);
+	  //ctx.fillText(""+printData[8],i2*unitSize+edgeSize*1.5*unitScale,j2*unitSize+edgeSize*1*unitScale);//25   35
 	  //ctx.fillText(""+unitsA[whatType*noOfItems+8],i2*unitSize+edgeSize*1.5*unitScale,j2*unitSize+edgeSize*1*unitScale);//25   35
 
     //TOP RIGHT
@@ -247,10 +249,12 @@ var classType = classFactor;//unit number - out of all
     //ctx.font = "30px Arial";
     ctx.fillStyle = textColorThis;
     ctx.textAlign = "right";
-    ctx.textBaseline = "top";
+    ctx.textBaseline = "middle";
+    //ctx.textBaseline = "top";
     ctx.lineWidth = "2";
     if(leaderA[noOfImgPrnt]==0){
-    ctx.fillText(""+printData[9],i2*unitSize+(unitSize-edgeSize*1.5)*unitScale,j2*unitSize+edgeSize*1*unitScale);
+    ctx.fillText(""+printData[9],i2*unitSize+(unitSize-edgeSize*1.5)*unitScale,j2*unitSize+boxTop*2/3*unitScale);
+    //ctx.fillText(""+printData[9],i2*unitSize+(unitSize-edgeSize*1.5)*unitScale,j2*unitSize+edgeSize*1*unitScale);
     }//25   35
     //ctx.fillText(""+unitsA[whatType*noOfItems+9],i2*unitSize+(unitSize-edgeSize*1.5)*unitScale,j2*unitSize+edgeSize*1*unitScale);}//25   35
     else{
@@ -261,19 +265,21 @@ var classType = classFactor;//unit number - out of all
         //BOTTOM RIGHT
         countOutUnits=0;
         dumFont=56*unitScale;
+        var mfPos = 2.5;
         if(printData[7]>9){
         //if(unitsA[whatType*noOfItems+7]>9){
-        dumFont=48*unitScale;}
+          dumFont=48*unitScale;
+          mfPos=3;}
         ctx.font = "bold "+dumFont+"px Arial";
         //ctx.font = ""+dumFont+"px Arial";
         //dumFont=24*unitScale;
         //ctx.font = "italic "+dumFont+"px Arial";
         //ctx.font = "30px Arial";
         ctx.fillStyle = textColorThis;
-        ctx.textAlign = "middle";//"right";
+        ctx.textAlign = "center";//"right";
         ctx.textBaseline = "bottom";
         ctx.lineWidth = "2";
-        ctx.fillText(""+printData[7],i2*unitSize+(unitSize-edgeSize*1.5)*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);//25   35 y scaler=0.75 if font size = 64
+        ctx.fillText(""+printData[7],i2*unitSize+(unitSize-edgeSize*mfPos)*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);//25   35 y scaler=0.75 if font size = 64
         //ctx.fillText(""+unitsA[whatType*noOfItems+7],i2*unitSize+(unitSize-edgeSize*1.5)*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);//25   35 y scaler=0.75 if font size = 64
 
 
@@ -357,7 +363,7 @@ unitsA[whatType*noOfItems+5] = printData[5];
             &&unitsA[whatType*noOfItems+5]!="ch1"&&unitsA[whatType*noOfItems+5]!="ch2"
             &&unitsA[whatType*noOfItems+5]!="vf"&&unitsA[whatType*noOfItems+5]!="mob"
             &&unitsA[whatType*noOfItems+5]!="fart"&&unitsA[whatType*noOfItems+5]!="how"
-            &&unitsA[whatType*noOfItems+5]!="teepee"){
+            &&unitsA[whatType*noOfItems+5]!="tipi"){
                 ctx.beginPath();
                 ctx.lineWidth = "4";
                 ctx.strokeStyle = colorThisBT;
@@ -521,7 +527,7 @@ unitsA[whatType*noOfItems+5] = printData[5];
                 ctx.stroke();
                 ctx.closePath();
             }
-            else if(unitsA[whatType*noOfItems+5]=="teepee"){
+            else if(unitsA[whatType*noOfItems+5]=="tipi"){
               ctx.beginPath();
               ctx.lineWidth = "1";
               ctx.fillStyle = colorThisBT;

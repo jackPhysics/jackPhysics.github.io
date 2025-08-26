@@ -249,12 +249,42 @@ function changeUnitType(p, i, pd){//(p, i, f){  i=index pr=printdata array
       printDataDum[1] = ["Ff"];
       printDataDum[4] = ["f"];
       printDataDum[5] = ["inf"];
-      printDataDum[6] = ["3"];
-      printDataDum[7] = ["2"];
-      printDataDum[8] = ["6"];
-      printDataDum[9] = ["12"];
+      printDataDum[6] = ["3"];//CF
+      printDataDum[7] = ["2"];//MF
+      printDataDum[8] = ["6"];//fire attack
+      printDataDum[9] = ["12"];//fire range
       printDataDum[10] = ["(7th)"];
       firerA[pieceIndex]=1;
+      changeMade = true;}
+      else{firerA[pieceIndex]=1;changeUnitA[pieceIndex]=0}
+  }
+  else if(pieceName0=="DR"){
+    if(changeUnitA[pieceIndex]==1){//the function is only called if changeUnitA>0, so is >0
+      //now detail the changes - change to "PS"
+      printDataDum[1] = ["Ff"];
+      printDataDum[4] = ["f"];
+      printDataDum[5] = ["inf"];
+      printDataDum[6] = ["o"];//CF
+      printDataDum[7] = ["3"];//MF
+      printDataDum[8] = ["3"];//fire attack
+      printDataDum[9] = ["4"];//fire range
+      printDataDum[10] = ["MM/DR"];
+      firerA[pieceIndex]=1;
+      changeMade = true;}
+      else{firerA[pieceIndex]=1;changeUnitA[pieceIndex]=0}
+  }
+  else if(pieceName0=="GN"){
+    if(changeUnitA[pieceIndex]==1){//the function is only called if changeUnitA>0, so is >0
+      //now detail the changes - change to "PS"
+      printDataDum[1] = ["D"];
+      printDataDum[4] = ["n"];
+      printDataDum[5] = ["ch1"];
+      printDataDum[6] = ["o"];//CF
+      printDataDum[7] = ["7"];//MF
+      printDataDum[8] = ["."];//fire attack
+      printDataDum[9] = ["."];//fire range
+      printDataDum[10] = ["TR/GN"];
+      firerA[pieceIndex]=0;
       changeMade = true;}
       else{firerA[pieceIndex]=1;changeUnitA[pieceIndex]=0}
   }
@@ -270,7 +300,8 @@ function changeUnitParse(i){
 var pieceIndex = i;
   if(unitsA[thisIsA[pieceIndex]*noOfItems+10]=="MI"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="LB"
   ||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="MC"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="HC"
-  ||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="US"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="7th"){
+  ||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="US"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="7th"
+  ||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="DR"||unitsA[thisIsA[pieceIndex]*noOfItems+10]=="GN"){
     changeUnitA[pieceIndex]++;
     //console.log("changeUnitA[pieceIndex]="+changeUnitA[pieceIndex]);
     //if(changeUnitA[activeIndex]>2){changeUnitA[activeIndex]=0;}
