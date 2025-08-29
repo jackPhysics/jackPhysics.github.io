@@ -1,11 +1,11 @@
 
-var gamesMax = 20;
+var gamesMax = 21;
 
 var allTheGamesA = ["Romans vs Sabines 753 BC","Marathon 490 BC", "Mantinea 362 BC",
 "Arbela 331 BC", "Pharsalus 48 BC", "Qadisiya AD 637",
 "Qadisiya AD 637 (by Joe Miranda)", "Clontarf AD 1014","Cerami AD 1063", "Agincourt AD 1415", "Brundstatt August 18th 1914",
 "Montana c.1875", "Little Big Horn 1876", "Stamford Bridge 1066", "Hastings 1066", "Apulia - Spartacus 71 BC",
-"Teutoburgerwald AD 9", "Brentford AD 1642", "Waterloo - Attack of the Imperial Guard AD 1815"];
+"Teutoburgerwald AD 9", "Brentford AD 1642", "Waterloo - Attack of the Imperial Guard AD 1815", "Poland AD 1939"];
 var thisGameData = "";
 var nameQ = "";
 var sitAddr = "";
@@ -272,6 +272,20 @@ else if(gameNo==19){
       nameB="Allies";
       locationsA2 = ["exit",2,86,"#0000ff","exit",18,86,"#0000ff"];
       setupsA2 = ["French",9,34,8,"#5555ff","French",9,35,8,"#5555ff", "Allies",8,58,0.5,"#ff0000","Allies",4,58,0.5,"#ff0000", "Allies",12,58,0.5,"#ff0000","Allies",16,58,0.5,"#ff0000"];
+      lbhFlag = false;
+}
+
+else if(gameNo==20){
+  nameQ="Poland AD 1939";
+      thisGameData = "0,0,250,0,0,0,626,514,0, 0,0,261,0,0,0,595,496,0, 0,0,253,0,0,0,651,565,0, 0,0,258,0,0,0,659,598,0, 0,0,247,0,0,0,681,584,0, 0,0,244,0,0,0,680,620,0, 0,0,229,0,0,0,504,513,0, 0,0,238,0,0,0,445,514,0, 0,0,241,0,0,0,565,515,0, 0,0,226,0,0,0,473,529,0, 0,0,235,0,0,0,443,547,0, 0,0,223,0,0,0,531,528,0, 0,0,264,0,0,0,532,1085,0, 0,0,282,0,0,0,711,1083,0, 0,0,289,0,0,0,652,1084,0, 0,0,273,0,0,0,591,1084,0, 0,0,276,0,0,0,772,1085,0, 0,0,270,0,0,0,801,1084,0, 0,0,267,0,0,0,560,1083,0, 0,0,286,0,0,0,623,1085,0, 0,0,293,0,0,0,681,1086,0, 0,0,279,0,0,0,742,1083,0, 0,0,116,0,0,0,35,156,0, 0,0,113,0,0,0,47,158,0, 0,0,110,0,0,0,48,145,0, 0,0,107,0,0,0,35,142,0, 0,0,104,0,0,0,135,62,0, 0,0,296,0,0,0,847,532,0, 100,100,false,0,false,false,false,0,0,1870,1440,2373.5382907360004,1939.5382907360004,40,41,16,25,16,0,0,0,1,8,A,0,situations/Playtesting Prestags";
+      sitAddr = "poland_sit.html";
+      Apanic=200;
+      Bpanic=200;
+      maxTurns = 10;
+      nameA="German";
+      nameB="Poles";
+      locationsA2 = ["no",0,0,"#ffffff"];
+      setupsA2 = ["Ger",15,74,5,"#000000","Pol",19,105,0.5,"#ff0000", "Pol",15,104,0.5,"#ff0000"];
       lbhFlag = false;
 }
 //return nameQ;

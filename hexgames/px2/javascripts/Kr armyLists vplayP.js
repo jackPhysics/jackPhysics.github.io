@@ -1,6 +1,6 @@
 
-var redArmyMax = 40;
-var blackArmyMax = 40;
+var redArmyMax = 42;
+var blackArmyMax = 42;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -19,7 +19,8 @@ var allTheArmiesA = ["Marathon Greeks","Marathon Persians", "Qadisiya Persians",
    "Hastings - Normans","Hastings - Anglo-Saxons", "Apulia - Spartacus", "Apulia - Romans",
    "Teutoburgerwald - Romans","Teutoburgerwald - Germans",
    "Brentford - Parliamentarians", "Brentford - Royalists",
- "Waterloo - Attack of Imperial Guard - French", "Waterloo - Attack of Imperial Guard - Allies"];
+ "Waterloo - Attack of Imperial Guard - French", "Waterloo - Attack of Imperial Guard - Allies",
+"Poland'39 Kampfpanzer - German","Poland'39 Kampfpanzer - Polish"];
 
 var allTheUnitsA = [
   "0","A", "n","inf","2","3","","","MI",
@@ -1519,6 +1520,77 @@ var unitsQ=[
 "#009900/#ffffff/#ffff00/#000000","Ff", "8", "5", "f","inf","4","4","6","5","INF",
 "#009900/#ffffff/#ffff00/#000000","C", "5", "2", "f","scout","[5]","8","2","3","CV",
 "#009900/#ffffff/#ffff00/#000000","6p", "19", "2", "f","art","o","0","18","5*","GN",
+];//#FFDEAD
+
+var designateLQ=[410,286, 382,301, 351,286, 200,303, 233,286, 262,304, 290,285, 324,301, 411,179, 440,197,
+501,200, 382,198, 412,214, 472,217, 502,232, 441,234, 501,267, 470,250, 262,199, 440,266,
+202,234, 229,215, 261,229, 289,215, 353,216, 323,200, 350,184, 411,249, 320,231, 380,233,
+203,199, 260,165, 291,181, 472,181, 442,165, 500,302, 321,164, 441,302, 231,179, 380,166,
+205,201, 262,167, 293,183, 474,183, 445,167, 502,304, 323,166,
+473,284, 352,253, 203,267, 231,250];
+
+var designateRQ=[232,526, 202,510, 471,528, 531,528, 261,512, 503,509, 440,510, 382,510, 321,510, 353,528,
+291,528, 411,530, 380,618, 441,613, 173,598, 204,614, 231,630, 259,612, 291,633, 322,616,
+349,632, 501,612, 471,597, 409,629, 171,529, 232,563, 235,597, 172,563, 202,545, 200,579,
+261,546, 317,547, 380,547, 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565,
+263,548, 319,549, 382,549, 442,549, 505,548, 560,547, 354,565,
+532,562, 412,595, 264,582, 324,580];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==40||changeBlackFlag&&blackArmyNo==40){
+var nameQ="Poland'39 Kampfpanzer - German";//single types are 24 pts, armies more points?
+
+var qbase = ["#888888","#888888", "#888888"];
+
+var unitsQ=[
+"#888888/#000000/#000000/#ffffff","A", "4", "4", "f","arm","(3)","15","2","5","Pz2",
+"#888888/#000000/#000000/#ffffff","A", "7", "2", "f","arm","(3)","11","5","10","Pz3",
+"#888888/#000000/#000000/#ffffff","R", "10", "4", "n","inf","8","1","6","12","|",
+"#888888/#000000/#000000/#ffffff","A", "5", "2", "f","at","4","0","3","5","37"
+];//#FFDEAD
+
+var designateLQ=[410,286, 382,301, 351,286, 200,303, 233,286, 262,304, 290,285, 324,301, 411,179, 440,197,
+501,200, 382,198, 412,214, 472,217, 502,232, 441,234, 501,267, 470,250, 262,199, 440,266,
+202,234, 229,215, 261,229, 289,215, 353,216, 323,200, 350,184, 411,249, 320,231, 380,233,
+203,199, 260,165, 291,181, 472,181, 442,165, 500,302, 321,164, 441,302, 231,179, 380,166,
+205,201, 262,167, 293,183, 474,183, 445,167, 502,304, 323,166,
+473,284, 352,253, 203,267, 231,250];
+
+var designateRQ=[232,526, 202,510, 471,528, 531,528, 261,512, 503,509, 440,510, 382,510, 321,510, 353,528,
+291,528, 411,530, 380,618, 441,613, 173,598, 204,614, 231,630, 259,612, 291,633, 322,616,
+349,632, 501,612, 471,597, 409,629, 171,529, 232,563, 235,597, 172,563, 202,545, 200,579,
+261,546, 317,547, 380,547, 440,547, 503,546, 558,545, 352,563, 470,561, 412,564, 290,565,
+263,548, 319,549, 382,549, 442,549, 505,548, 560,547, 354,565,
+532,562, 412,595, 264,582, 324,580];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==41||changeBlackFlag&&blackArmyNo==41){
+var nameQ="Poland'39 Kampfpanzer - Poles";//single types are 24 pts, armies more points?
+
+var qbase = ["#eeffee","#eeffee", "#eeffee"];
+
+var unitsQ=[
+"#eeffee/#ff0000/#ff0000/#ffffff","A", "4", "5", "f","arm","(3)","8","2","8","FT17",
+"#eeffee/#ff0000/#ff0000/#ffffff","A", "4", "5", "f","arm","(4)","6","2","8","R35"
 ];//#FFDEAD
 
 var designateLQ=[410,286, 382,301, 351,286, 200,303, 233,286, 262,304, 290,285, 324,301, 411,179, 440,197,

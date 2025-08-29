@@ -299,7 +299,7 @@ var classType = classFactor;//unit number - out of all
         ctx.fillText(""+untriedPrint[noOfImgPrnt],i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);
         }
         else if(leaderA[noOfImgPrnt]==0){
-        ctx.fillText(""+cmbtFactorsA[noOfImgPrnt],i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);}//25   35
+        ctx.fillText(""+printData[6],i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);}//25   35
         else if(leaderA[noOfImgPrnt]>0){
         ctx.fillText(""+leaderBonus,i2*unitSize+edgeSize*2.5*unitScale,j2*unitSize+(unitSize-edgeSize*1)*unitScale);
         }

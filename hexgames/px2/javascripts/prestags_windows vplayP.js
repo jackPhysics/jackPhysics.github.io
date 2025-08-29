@@ -125,6 +125,11 @@ function rules_window(){
 
 }
 
+function NAW_window(){
+	rules=open("rules/NAW_rules.html", "Rules", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=800,height=600,left=70,top=100");
+
+}
+
 function idiots_window(){
 	rules=open("rules/france40HistRules.html", "Rules", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=600,height=400,left=50,top=150");
 

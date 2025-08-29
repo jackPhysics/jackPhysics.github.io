@@ -22,78 +22,84 @@ var hopperHTMLcode = '<table class="mover" id="keyPressTable"><tr>'+
 var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcolor="gray">'+
 
 '<tr id="terrainrow">'+
-'<td>&nbsp;&nbsp;<a  class="mca" href="javascript:moveBoard(2)"  id="btnbr2"  >x--</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:moveBoard(1)"  id="btnbr1"  >x++</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:moveBoard(4)"  id="btnbr4"  >y--</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:moveBoard(3)"  id="btnbr3"  >y++</a></td>'+
-'<td>&nbsp;&nbsp;<a  class="mca" href="javascript:shiftBoard(2)"  id="btnsh2"  >width--</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:shiftBoard(1)"  id="btnsh1"  >width++</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:shiftBoard(4)"  id="btnsh4"  >height--</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:shiftBoard(3)"  id="btnsh3"  >height++</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="board1" href="javascript:moveBoard(2)"  id="btnbr2"  >x--</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board1" href="javascript:moveBoard(1)"  id="btnbr1"  >x++</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board2" href="javascript:moveBoard(4)"  id="btnbr4"  >y--</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board2" href="javascript:moveBoard(3)"  id="btnbr3"  >y++</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="board1" href="javascript:shiftBoard(2)"  id="btnsh2"  >width--</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board1" href="javascript:shiftBoard(1)"  id="btnsh1"  >width++</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board2" href="javascript:shiftBoard(4)"  id="btnsh4"  >height--</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board2" href="javascript:shiftBoard(3)"  id="btnsh3"  >height++</a></td>'+
 '</tr>'+
 '<tr id="mcarow">'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:colorRed()"  id="btnCA"  >Color A</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:colorBlack()"  id="btnCB"  >Color B</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:hideToggle()"  id="btnHH"  >Show A./Hide B.</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:hideRusF()"  id="btnHB"  >Hide A.</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:hideGerF()"  id="btnHA"  >Hide B.</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=1;changeSize()"  id="btn18"  >full size</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=2;changeSize()"  id="btn19"  >half size</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:help_window()"  id="btn17"  >Help window</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:colorRed()"  id="btnCA"  >Color A</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:colorBlack()"  id="btnCB"  >Color B</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideToggle()"  id="btnHH"  >Show A./Hide B.</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideRusF()"  id="btnHB"  >Hide A.</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideGerF()"  id="btnHA"  >Hide B.</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:pieceShrink=1;deltaSize=+1;changeSize()"  id="btn18"  >unit size++</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:pieceShrink=1;deltaSize=-1;changeSize()"  id="btn19"  >unit size--</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="board1" href="javascript:shiftNumber()"  id="btnx7"  >now: shift 5</a></td>'+
 '</tr>'+
-'<tr id="pbrow"><td>&nbsp;&nbsp;<a href="javascript:tec_window()"id="btn1"  >Terrain Effects Chart</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:crt_window()"  id="btn2"  >Original CRT</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:d6_window()"  id="btn3"  >Six Sided Die</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:unmarkAll()"  id="btn4"  >unmark all units</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:victoryPoints()"  id="btn12"  >Victory Points</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:makeSmaller()"  id="btn6"  >ZOOM OUT</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:disruptionNumber()"  id="btn7"  >double D</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:changeDice()"  id="btn612"  >now: d6</a></td>'+
+'<tr id="pbrow"><td>&nbsp;&nbsp;<a class="tables" href="javascript:tec_window()"id="btn1"  >Terrain Effects Chart</a></td>'+
+'<td>&nbsp;&nbsp;<a class="tables" href="javascript:crt_window()"  id="btn2"  >Original CRT</a></td>'+
+'<td>&nbsp;&nbsp;<a class="die"  href="javascript:d6_window()"  id="btn3"  >Six Sided Die</a></td>'+
+'<td>&nbsp;&nbsp;<a class="big" href="javascript:unmarkAll()"  id="btn4"  >unmark all units</a></td>'+
+'<td>&nbsp;&nbsp;<a class="big" href="javascript:victoryPoints()"  id="btn12"  >Victory Points</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="help" href="javascript:makeSmaller()"  id="btn6"  >ZOOM OUT</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:disruptionNumber()"  id="btn7"  >single D</a></td>'+
+'<td>&nbsp;&nbsp;<a class="die" href="javascript:changeDice()"  id="btn612"  >now: d6</a></td>'+
 '</tr>'+
 '<tr id="aiwrow">'+
-'<td>&nbsp;&nbsp;<a href="javascript:supply_window()"  id="btn8"  >Weapons matrix</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:crt2_window()"  id="btn9"  >Modified CRT</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:d100_window()"  id="btn18"  >d100</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:noCommandSideA()"  id="btnSA"  >No Comms A</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:noCommandSideB()"  id="btnSB"  >No Comms B</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:makeBigger()"  id="btn13"  >ZOOM IN</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:showBoard()"  id="btn26"  >show board</a></td>'+
-'<td>&nbsp;&nbsp;<a  class="mca" href="javascript:hideTerrain(51)"  id="btnTr51"  >center dot</a></td>'+
+'<td>&nbsp;&nbsp;<a class="tables" href="javascript:supply_window()"  id="btn8"  >Weapons matrix</a></td>'+
+'<td>&nbsp;&nbsp;<a class="tables" href="javascript:crt2_window()"  id="btn9"  >Modified CRT</a></td>'+
+'<td>&nbsp;&nbsp;<a class="die" href="javascript:d100_window()"  id="btn18"  >d100</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:noCommandSideA()"  id="btnSA"  >No Comms A</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:noCommandSideB()"  id="btnSB"  >No Comms B</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="help" href="javascript:makeBigger()"  id="btn13"  >ZOOM IN</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="board1" href="javascript:showBoard()"  id="btn26"  >show board</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="board2" href="javascript:hideTerrain(51)"  id="btnTr51"  >center dot</a></td>'+
 '</tr>'+
 '<tr id="neutrow">'+
-'<td>&nbsp;&nbsp;<a  class="neut" href="javascript:rules_window()"  id="btn14"  >Game Rules</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:RotSideA()"  id="btnRA"  >Rotate A</a></td>'+
-'<td>&nbsp;&nbsp;<a  class="mca" href="javascript:RotSideB()"  id="btnRB"  >Rotate B</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:unfireA()"  id="btn11"   >unfire A</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:unfireB()"  id="btn11"   >unfire B</a></td>'+
-'<td>&nbsp;&nbsp;<a class="neut" href="javascript:mouseOverFlip()"  id="btn28"  >unit Zoom</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:zombies()"  id="btn27"  >zombies</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:hideTerrain(50)"  id="btnTr50"  >coordinates</a></td>'+
+'<td>&nbsp;&nbsp;<a class="tables" href="javascript:crtNap_window()"  id="btn2b"  >NAW CRT</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:RotSideA()"  id="btnRA"  >Rotate A</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="units1" href="javascript:RotSideB()"  id="btnRB"  >Rotate B</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:unfireA()"  id="btn11"   >unfire A</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:unfireB()"  id="btn11"   >unfire B</a></td>'+
+'<td>&nbsp;&nbsp;<a class="help" href="javascript:mouseOverFlip()"  id="btn28"  >unit Zoom</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="zomb" href="javascript:zombies()"  id="btn27"  >zombies</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board1" href="javascript:hideTerrain(50)"  id="btnTr50"  >coordinates</a></td>'+
 '</tr>'+
 '<tr id="terrainrow">'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:hideTerrain(7)"  id="btnTr7"  >Hills Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a  class="mca" href="javascript:hideTerrain(1)"  id="btnTr1"  >Woods Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:hideTerrain(10)"  id="btnTr10"  >Rivers Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:hideTerrain(9)"  id="btnTr9"  >Roads Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:hideTerrain(3)"  id="btnTr3"  >Lakes Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a  class="mca" href="javascript:hideTerrain(5)"  id="btnTr5"  >Swamps Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:hideTerrain(6)"  id="btnTr6"  >Towns Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:hideTerrain(12)"  id="btnTr12"  >Letters Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board1" href="javascript:hideTerrain(7)"  id="btnTr7"  >Hills Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="woods" href="javascript:hideTerrain(1)"  id="btnTr1"  >Woods Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="swamp" href="javascript:hideTerrain(5)"  id="btnTr5"  >Swamps Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a class="water" href="javascript:hideTerrain(10)"  id="btnTr10"  >Rivers Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a class="water" href="javascript:hideTerrain(3)"  id="btnTr3"  >Lakes Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a class="road" href="javascript:hideTerrain(9)"  id="btnTr9"  >Roads Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a class="road" href="javascript:hideTerrain(6)"  id="btnTr6"  >Towns Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a class="letter" href="javascript:hideTerrain(12)"  id="btnTr12"  >Letters Y/N</a></td>'+
 '</tr>'+
 '<tr id="mcarow">'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:hideHopper()"  id="btnHp1"  >Hide Hopper</a></td>'+
-'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:jumpHopper()"  id="btnHp2"  >Jump Hopper</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:unDisrpAll()"  id="btnx4"  >Undisrupt All</a></td>'+
-'<td>&nbsp;&nbsp;<a class="mca" href="javascript:unDisrpA()"  id="btnx5"  >Undisrupt A</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:unDisrpB()"  id="btnx6"  >Undisrupt B</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:shiftNumber()"  id="btnx7"  >now: shift 5</a></td>'+
-'<td>&nbsp;&nbsp;<a  class="mca" href="javascript:hideTerrain(52)"  id="btnx9"  >trackers Y/N</a></td>'+
-'<td>&nbsp;&nbsp;<a href="javascript:crtNap_window()"  id="btn2b"  >NAW CRT</a></td>'+
+'<td>&nbsp;&nbsp;<a class="help" href="javascript:hideHopper()"  id="btnHp1"  >Hide Hopper</a></td>'+
+'<td>&nbsp;&nbsp;<a class="help" href="javascript:jumpHopper()"  id="btnHp2"  >Jump Hopper</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpAll()"  id="btnx4"  >Undisrupt All</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpA()"  id="btnx5"  >Undisrupt A</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpB()"  id="btnx6"  >Undisrupt B</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board1" href="javascript:hideTerrain(52)"  id="btnx9"  >trackers Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board2" href="javascript:hideTerrain(13)"  id="btnx10"  >Flags Y/N</a></td>'+
+'<td>&nbsp;&nbsp;<a class="board1" href="javascript:hideTerrain(14)"  id="btnx11"  >setups Y/N</a></td>'+
 '</tr><tr id="mcarow">'
-+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:reloadSetup()"  id="btn4"  >SETUP GAME</a></td>'
-+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:getCookie()"  id="btn30"  >RELOAD GAME</a></td>'
-+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:reloadReset()"  id="btn22"  >RESET GAME</a></td>'
++'<td>&nbsp;&nbsp;<a class="help" href="javascript:getCookie()"  id="btn30"  >RELOAD GAME</a></td>'
++'<td>&nbsp;&nbsp;<a  class="rules" href="javascript:rules_window()"  id="btn14"  >Game Rules</a></td>'
++'<td>&nbsp;&nbsp;<a class="rules" href="javascript:situation_window()"  id="btn9"  >Situation</a></td>'
++'<td>&nbsp;&nbsp;<a class="rules" href="javascript:"  id="btn2b"  >my rules X</a></td>'
++'<td>&nbsp;&nbsp;<a class="rules" href="javascript:NAW_window()"  id="btn4"  >NAW rules</a></td>'
++'<td>&nbsp;&nbsp;<a class="rules" href="javascript:"  id="btn22"  >discussion X</a></td>'
++'<td>&nbsp;&nbsp;<a class="big" href="javascript:getRuler()"  id="btnx7"  >RULER</a></td>'
++'<td>&nbsp;&nbsp;<a  class="help" href="javascript:help_window()"  id="btn17"  >HELP!!</a></td>'
 +'</tr></table>';
+
 
 //unused stuff
 /*

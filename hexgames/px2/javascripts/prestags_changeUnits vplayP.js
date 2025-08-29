@@ -276,7 +276,7 @@ function changeUnitType(p, i, pd){//(p, i, f){  i=index pr=printdata array
   else if(pieceName0=="GN"){
     if(changeUnitA[pieceIndex]==1){//the function is only called if changeUnitA>0, so is >0
       //now detail the changes - change to "PS"
-      printDataDum[1] = ["D"];
+      //printDataDum[1] = ["D"];
       printDataDum[4] = ["n"];
       printDataDum[5] = ["ch1"];
       printDataDum[6] = ["o"];//CF

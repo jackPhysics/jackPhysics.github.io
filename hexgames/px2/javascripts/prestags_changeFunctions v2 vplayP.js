@@ -2360,3 +2360,8 @@ function hopHop(x, y){ //jump Hopper to new position
 			function jumpHopper(){ //jump Hopper to new position
 					  hopHop(hopperL, hopperT);
 					    }
+
+function getRuler(){
+				alert("This draws a Line of Sight (LOS) ruler on the board.\nClick to set 1 end, and then click somewhere else for the other end, a line is drawn between the 2 points.\nOn 3rd click a line is drawn between the 2nd and 3rd points, etc.\nTo remove the ruler and return to the game click within 1 hex of the previous click.\nYou can click on top of units as well as on board.\nThe LOS ruler can also be reached via the Hopper (without this message...), or the \"V\" key (R and L keys already taken...).\nIn fact using the \"V\" key enables the ruler to be \"locked\" - it will turn cyan to signify this.\nExperiment! to learn the full functionality.");
+				virtualKey(66);
+			}

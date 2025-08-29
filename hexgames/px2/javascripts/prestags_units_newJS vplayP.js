@@ -61,10 +61,10 @@ var Bpanic=100;
 var maxTurns = 20;
 var nameA="Side A";
 var nameB="Side B";
-var D1color = "red";
+var D1color = "YellowGreen";
 var D2color = "hotpink";
-var Acolor = "MediumSpringGreen";
-var Bcolor = "red";
+var Acolor = "YellowGreen";
+var Bcolor = "hotpink";
 var DcolorFlag = false;
 
 //unit sizes - 88 fits 3 to a hex, so hex=264, so if stackin=4 size = 264/4, if stacking=1 size =264 etc.

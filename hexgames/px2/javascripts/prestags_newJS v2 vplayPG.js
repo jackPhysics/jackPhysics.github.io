@@ -1372,6 +1372,12 @@ if(keyText=="J"||keyText=="j"){ //jump Hopper to new position
     	//keyText="w";
     }
 
+    if(keyText=="v"||keyText=="V"){ //LOS ruler - "R" used by rout
+
+        LOSruler();
+
+    	}
+
 if(mouseActive==0){
 
   }
@@ -1453,6 +1459,7 @@ if(keyText=="r"||keyText=="R"){ //rout unit
 		mouseActive=0;
 
 	}
+
 /*
 if(keyText=="d"){ //unit dismounted
     dismount(activeImage, activeIndex, 1);
