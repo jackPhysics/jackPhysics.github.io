@@ -184,6 +184,8 @@ var gerUnits = 0;
 var neutUnits =0;
 var redColor = false;
 var blackColor = false;
+var redColorRnd = false;
+var blackColorRnd = false;
 var initFlag = false;
 var brdNameB = "";
 var brdNameR = "";
@@ -989,7 +991,7 @@ function placePics2() //print new armies
       //changeNeutralPic0(noOfImg);
       }
               else{leaderA[noOfImg]=0;}
-  changeUnitA[noOfImg]=0;
+  //changeUnitA[noOfImg]=0;
                   printUnit(noOfImg, j+1, totalNo, i, countOutUnits0);
 
 	activeImage=imageArray[noOfImg];
@@ -1776,7 +1778,8 @@ function saveWindow(){
   //var allText2 = stripSpace(allText);
   //alert(""+allText2);
   //win.document.write(allText2);
-  win.document.write(allText+"<br><br>"+allLocs);
+  win.document.write(allText);
+  //win.document.write(allText+"<br><br>"+allLocs);
 	allText="";
 	win.document.close();
   //alert(""+allLocs);
@@ -1962,7 +1965,9 @@ Apanic = 1*loadA[loopTill-19-shiftBackwards];
       changeUnitParse(activeIndex);
     }
     else if(leaderA[activeIndex]>0){
-      changeNeutralPicL(activeIndex);
+      //changeNeutralPicL(activeIndex);
+      //routine to re-print unit if it has new value
+      printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex],countIndividual[activeIndex]);
     }
     else{
       //printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex]);
@@ -2048,6 +2053,7 @@ Apanic = 1*loadA[loopTill-19-shiftBackwards];
   turnNumb=1*loadA[loopTill-5];
   turnLetter=""+loadA[loopTill-3];
   turnNumber=1*loadA[loopTill-2];
+  situationAddress=1*loadA[loopTill-1];
   turnNumber=turnNumber*1;
   var codeNumber = "0";
   if(turnNumber<0){turnNumber=0;}

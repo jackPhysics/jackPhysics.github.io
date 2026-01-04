@@ -1,3 +1,4 @@
+var situationAddress="situations/Prestags_setup";
 var printArmiesFlag = false;//needs to be defined here, too late in newJS module
 var hopperHTMLcode = '<table class="mover" id="keyPressTable"><tr>'+
 '<td class="button" width="20%" onclick="virtualKey(22)">rL</td>'+
@@ -16,9 +17,9 @@ var hopperHTMLcode = '<table class="mover" id="keyPressTable"><tr>'+
 '<td class="button" onclick="virtualKey(8)">F</td>'+
 '<td class="button" onclick="virtualKey(7)">R</td></tr>'+
 '<tr><td colspan=5 class="button" onclick="virtualKey(88)">Jump hopper</td></tr>'+
-'<td class="button5" rowspan=2 colspan=5 id="timebox" onclick="virtualKey(99)">&lt;</td>'+
+'<td class="button5" rowspan=2 colspan=5 id="timebox" onclick="">&lt;</td>'+
 '<tr></tr><tr><td class="button1" colspan=5 id="hopText" onclick="virtualKey(33)"></td></tr></table>';
-
+//for turm advance use: virtualKey(99)
 var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcolor="gray">'+
 
 '<tr id="terrainrow">'+
@@ -34,15 +35,16 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 '<tr id="mcarow">'+
 '<td>&nbsp;&nbsp;<a class="units1" href="javascript:colorRed()"  id="btnCA"  >Color A</a></td>'+
 '<td>&nbsp;&nbsp;<a class="units1" href="javascript:colorBlack()"  id="btnCB"  >Color B</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideToggle()"  id="btnHH"  >Show A./Hide B.</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideRusF()"  id="btnHB"  >Hide A.</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideGerF()"  id="btnHA"  >Hide B.</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpAll()"  id="btnx4"  >Undisrupt All</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpA()"  id="btnx5"  >Undisrupt A</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpB()"  id="btnx6"  >Undisrupt B</a></td>'+
 '<td>&nbsp;&nbsp;<a class="units1" href="javascript:pieceShrink=1;deltaSize=+1;changeSize()"  id="btn18"  >unit size++</a></td>'+
 '<td>&nbsp;&nbsp;<a class="units1" href="javascript:pieceShrink=1;deltaSize=-1;changeSize()"  id="btn19"  >unit size--</a></td>'+
 '<td>&nbsp;&nbsp;<a  class="board1" href="javascript:shiftNumber()"  id="btnx7"  >now: shift 5</a></td>'+
 '</tr>'+
-'<tr id="pbrow"><td>&nbsp;&nbsp;<a class="tables" href="javascript:tec_window()"id="btn1"  >Terrain Effects Chart</a></td>'+
-'<td>&nbsp;&nbsp;<a class="tables" href="javascript:crt_window()"  id="btn2"  >Original CRT</a></td>'+
+'<tr id="pbrow">'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:colorRndRed()"  id="btnCA"  >Color A random</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:colorRndBlack()"  id="btnCB"  >Color B random</a></td>'+
 '<td>&nbsp;&nbsp;<a class="die"  href="javascript:d6_window()"  id="btn3"  >Six Sided Die</a></td>'+
 '<td>&nbsp;&nbsp;<a class="big" href="javascript:unmarkAll()"  id="btn4"  >unmark all units</a></td>'+
 '<td>&nbsp;&nbsp;<a class="big" href="javascript:victoryPoints()"  id="btn12"  >Victory Points</a></td>'+
@@ -52,18 +54,18 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 '</tr>'+
 '<tr id="aiwrow">'+
 '<td>&nbsp;&nbsp;<a class="tables" href="javascript:supply_window()"  id="btn8"  >Weapons matrix</a></td>'+
-'<td>&nbsp;&nbsp;<a class="tables" href="javascript:crt2_window()"  id="btn9"  >Modified CRT</a></td>'+
-'<td>&nbsp;&nbsp;<a class="die" href="javascript:d100_window()"  id="btn18"  >d100</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units2" href="javascript:noCommandSideA()"  id="btnSA"  >No Comms A</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units2" href="javascript:noCommandSideB()"  id="btnSB"  >No Comms B</a></td>'+
+'<td>&nbsp;&nbsp;<a class="tables" href="javascript:tec_window()"id="btn1"  >Terrain Effects Chart</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideToggle()"  id="btnHH"  >Show A./Hide B.</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideRusF()"  id="btnHB"  >Hide A.</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:hideGerF()"  id="btnHA"  >Hide B.</a></td>'+
 '<td>&nbsp;&nbsp;<a  class="help" href="javascript:makeBigger()"  id="btn13"  >ZOOM IN</a></td>'+
 '<td>&nbsp;&nbsp;<a  class="board1" href="javascript:showBoard()"  id="btn26"  >show board</a></td>'+
 '<td>&nbsp;&nbsp;<a  class="board2" href="javascript:hideTerrain(51)"  id="btnTr51"  >center dot</a></td>'+
 '</tr>'+
 '<tr id="neutrow">'+
+'<td>&nbsp;&nbsp;<a class="tables" href="javascript:crt2_window()"  id="btn9"  >Modified CRT</a></td>'+
+'<td>&nbsp;&nbsp;<a class="tables" href="javascript:crt_window()"  id="btn2"  >Original CRT</a></td>'+
 '<td>&nbsp;&nbsp;<a class="tables" href="javascript:crtNap_window()"  id="btn2b"  >NAW CRT</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units1" href="javascript:RotSideA()"  id="btnRA"  >Rotate A</a></td>'+
-'<td>&nbsp;&nbsp;<a  class="units1" href="javascript:RotSideB()"  id="btnRB"  >Rotate B</a></td>'+
 '<td>&nbsp;&nbsp;<a class="units2" href="javascript:unfireA()"  id="btn11"   >unfire A</a></td>'+
 '<td>&nbsp;&nbsp;<a class="units2" href="javascript:unfireB()"  id="btn11"   >unfire B</a></td>'+
 '<td>&nbsp;&nbsp;<a class="help" href="javascript:mouseOverFlip()"  id="btn28"  >unit Zoom</a></td>'+
@@ -83,23 +85,22 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 '<tr id="mcarow">'+
 '<td>&nbsp;&nbsp;<a class="help" href="javascript:hideHopper()"  id="btnHp1"  >Hide Hopper</a></td>'+
 '<td>&nbsp;&nbsp;<a class="help" href="javascript:jumpHopper()"  id="btnHp2"  >Jump Hopper</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpAll()"  id="btnx4"  >Undisrupt All</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpA()"  id="btnx5"  >Undisrupt A</a></td>'+
-'<td>&nbsp;&nbsp;<a class="units1" href="javascript:unDisrpB()"  id="btnx6"  >Undisrupt B</a></td>'+
+'<td>&nbsp;&nbsp;<a class="die" href="javascript:d100_window()"  id="btn18"  >d100</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:noCommandSideA()"  id="btnSA"  >No Comms A</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units2" href="javascript:noCommandSideB()"  id="btnSB"  >No Comms B</a></td>'+
 '<td>&nbsp;&nbsp;<a class="board1" href="javascript:hideTerrain(52)"  id="btnx9"  >trackers Y/N</a></td>'+
 '<td>&nbsp;&nbsp;<a class="board2" href="javascript:hideTerrain(13)"  id="btnx10"  >Flags Y/N</a></td>'+
 '<td>&nbsp;&nbsp;<a class="board1" href="javascript:hideTerrain(14)"  id="btnx11"  >setups Y/N</a></td>'+
 '</tr><tr id="mcarow">'
 +'<td>&nbsp;&nbsp;<a class="help" href="javascript:getCookie()"  id="btn30"  >RELOAD GAME</a></td>'
 +'<td>&nbsp;&nbsp;<a  class="rules" href="javascript:rules_window()"  id="btn14"  >Game Rules</a></td>'
-+'<td>&nbsp;&nbsp;<a class="rules" href="javascript:situation_window()"  id="btn9"  >Situation</a></td>'
-+'<td>&nbsp;&nbsp;<a class="rules" href="javascript:"  id="btn2b"  >my rules X</a></td>'
++'<td>&nbsp;&nbsp;<a class="rules" href="javascript:situation_window()"  id="btn9"  >Situation</a></td>'+
+'<td>&nbsp;&nbsp;<a class="units1" href="javascript:RotSideA()"  id="btnRA"  >Rotate A</a></td>'+
+'<td>&nbsp;&nbsp;<a  class="units1" href="javascript:RotSideB()"  id="btnRB"  >Rotate B</a></td>'
 +'<td>&nbsp;&nbsp;<a class="rules" href="javascript:NAW_window()"  id="btn4"  >NAW rules</a></td>'
-+'<td>&nbsp;&nbsp;<a class="rules" href="javascript:"  id="btn22"  >discussion X</a></td>'
 +'<td>&nbsp;&nbsp;<a class="big" href="javascript:getRuler()"  id="btnx7"  >RULER</a></td>'
 +'<td>&nbsp;&nbsp;<a  class="help" href="javascript:help_window()"  id="btn17"  >HELP!!</a></td>'
 +'</tr></table>';
-
 
 //unused stuff
 /*

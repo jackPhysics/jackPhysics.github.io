@@ -1893,11 +1893,11 @@ function hopHop(x, y){ //jump Hopper to new position
 			  var loopTill = loadA.length;
 			  var shiftBackwards = 7;//due to board and army numbers added to list
 			  flipBrdNoB = 1*loadA[loopTill-1-shiftBackwards];//don't think this is used...
-			  blackBno = 1*loadA[loopTill-2-shiftBackwards];
-			  flipBrdNoBY = 1*loadA[loopTill-3-shiftBackwards];
-			  flipBrdNoBX = 1*loadA[loopTill-4-shiftBackwards];
-			  blackArmyNo = 1*loadA[loopTill-5-shiftBackwards];
-			  redArmyNo = 1*loadA[loopTill-6-shiftBackwards];
+			  blackBno = 1*loadA[loopTill-2-shiftBackwards];//board number
+			  flipBrdNoBY = 1*loadA[loopTill-3-shiftBackwards];//shift x of board
+			  flipBrdNoBX = 1*loadA[loopTill-4-shiftBackwards];//shift y of board
+			  blackArmyNo = 1*loadA[loopTill-5-shiftBackwards];//Army B
+			  redArmyNo = 1*loadA[loopTill-6-shiftBackwards];//Army A
 
 			  canvH = 1*loadA[loopTill-7-shiftBackwards];
 			  canvH0 = 1*loadA[loopTill-8-shiftBackwards];
@@ -2070,7 +2070,9 @@ function hopHop(x, y){ //jump Hopper to new position
 			      changeUnitParse(activeIndex);
 			    }
 			    else if(leaderA[activeIndex]>0){
-			      changeNeutralPic0(activeIndex);
+			      //changeNeutralPicL(activeIndex);
+			      //routine to re-print unit if it has new value
+			      printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex],countIndividual[activeIndex]);
 			    }
 			    else{printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex],countIndividual[activeIndex]);}
 			    }
@@ -2155,6 +2157,7 @@ function hopHop(x, y){ //jump Hopper to new position
 			  turnLetter=""+loadA[loopTill-3];
 			  turnNumber=1*loadA[loopTill-2];
 			  turnNumber=turnNumber*1;
+			  situationAddress=1*loadA[loopTill-1];
 			  var codeNumber = "0";
 			  if(turnNumber<0){turnNumber=0;}
 			  if(turnNumber<10){

@@ -51,12 +51,16 @@ var shadeCol = 0;
 var loopNoXtra = 0;
 var boxTop = 60;//40 60
 var boxHt = 60;//80 60
-var dumColorNumbA = 28;
+var dumColorNumbA = 43;
 var dumColorA = "#ffffff";
 var dumColorTA = "#000000";
+var dumColorBxA = "#ffffff";
+var dumColorBxTA = "#000000";
 var dumColorNumbB = 0;
 var dumColorB = "#ffffff";
 var dumColorTB = "#000000";
+var dumColorBxB = "#ffffff";
+var dumColorBxTB = "#000000";
 
 function printUnit(n, b, t, id, c0){//n=number of image b=battalion number, t=Total, id=number of unit,
   noOfItems=11;
@@ -127,6 +131,30 @@ function printUnit(n, b, t, id, c0){//n=number of image b=battalion number, t=To
     boxColor= dumColorB;
     colorThisBT = dumColorTB;//"#000000";//"#000000";
   }
+  else if(redColorRnd&&noOfImgPrnt<gerNumber){
+      //red
+     /*colorThis = "#ff0000";
+     textColorThis = "#ffffff";
+     boxColor="#ff0000";
+     colorThisBT = "#ffffff";*/
+     //green
+      colorThis = dumColorA;
+      textColorThis = dumColorTA;//"#000000";
+      boxColor= dumColorBxA;
+      colorThisBT = dumColorBxTA;//"#000000";
+    }
+    else if(blackColorRnd&&noOfImgPrnt<neutNumber&&noOfImgPrnt>=gerNumber){
+      //black
+     /*colorThis = "#000000";
+     textColorThis = "#ffffff";
+     boxColor="#000000";
+     colorThisBT = "#ffffff";*/
+     //purple
+      colorThis = dumColorB;//"#ff00ff";
+      textColorThis = dumColorTB;//"#000000";
+      boxColor= dumColorBxB;
+      colorThisBT = dumColorBxTB;//"#000000";//"#000000";
+    }
 
   //somewhere else 'changeColor' is changed to #111111 but I can't find where
   changeColor = "#333333";//"#222222";

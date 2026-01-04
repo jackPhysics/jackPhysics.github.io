@@ -1,7 +1,7 @@
-var situationAddress="situations/Playtesting Prestags";
+//var situationAddress="situations/Playtesting Prestags";
 var tecAddress="charts/tec_spartan.html";
 var crtAddress="charts/crt_prestags_plusD6.html"; //"charts/goa crt.htm";
-var crt2Address="charts/crt_prestags.html";
+var crt2Address="charts/crt_prestags compare.html";
 var reinfAddress="charts/d20.htm"; //reinforcments
 var pbmAddress="charts/rallyCalculator.html"; //PBM or spare
 var seqOfPlayAddress="rules/new turn sequence.txt"; //seq of play

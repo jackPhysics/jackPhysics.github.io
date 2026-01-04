@@ -184,6 +184,8 @@ var gerUnits = 0;
 var neutUnits =0;
 var redColor = false;
 var blackColor = false;
+var redColorRnd = false;
+var blackColorRnd = false;
 var initFlag = false;
 var brdNameB = "";
 var brdNameR = "";
@@ -1755,7 +1757,8 @@ function saveWindow(){
   //var allText2 = stripSpace(allText);
   //alert(""+allText2);
   //win.document.write(allText2);
-  win.document.write(allText+"<br><br>"+allLocs);
+  win.document.write(allText);
+  //win.document.write(allText+"<br><br>"+allLocs);
 	allText="";
 	win.document.close();
   //alert(""+allLocs);

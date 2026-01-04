@@ -17,36 +17,7 @@ document.getElementById('btnCA').style.color="Black";
     colorName = colorName1;
     dumColorTA = dumColorTA1;
     dumColorNumbA++;
-    if(dumColorNumbA>28){dumColorNumbA=0}
-      /*switch(dumColorNumbA){
-        case 0: dumColorA = "#fff0f0";//pink
-        colorName = "Pale Pink";
-        break;
-        case 1: dumColorA = "#ff0000";//red
-        colorName = "Red";
-        break;
-        case 2: dumColorA = "#f0ff0f";//lemon
-        colorName = "Lemon";
-        break;
-        case 3: dumColorA = "#fff00f";//yellow
-        colorName = "Yellow";
-        break;
-        case 4: dumColorA = "#0fff0f";//green
-        colorName = "Green";
-        break;
-        case 5: dumColorA = "#f0fff0";//green white
-        colorName = "Green White";
-        break;
-        case 6: dumColorA = "#0ff0ff";//light blue
-        colorName = "Light Blue";
-        break;
-        case 7: dumColorA = "#f0f0ff";//blue white
-        colorName = "Blue White";
-        break;
-        case 8: dumColorA = "#ff00ff";//magenta
-        colorName = "Purple";
-        break;
-      }*/
+    if(dumColorNumbA>43){dumColorNumbA=0}
     document.getElementById('btnCA').innerText="A="+colorName+" ("+dumColorNumbA+")";
   document.getElementById('btnCA').style.backgroundColor=dumColorA;
 document.getElementById('btnCA').style.color=dumColorTA;
@@ -57,7 +28,26 @@ document.getElementById('btnCA').style.color=dumColorTA;
 }
 
 
+function colorRndRed(){//change the color of black units between black and color
+  if(redColor){
+    redColor=false;}
+    redColorRnd=true;
+    var colorName = "Original";
+    var [dumColorA1, dumColorTA1] = makeColorRnd();//unit coour
+    dumColorA = dumColorA1;
+    dumColorTA = dumColorTA1;
+    [dumColorA1, dumColorTA1] = makeColorRnd();//box colour
+    dumColorBxA = dumColorA1;
+    dumColorBxTA = dumColorTA1;
+      document.getElementById('btnCRA').innerText="A="+dumColorA+"|"+dumColorBxA;
+    document.getElementById('btnCRA').style.backgroundColor=dumColorA;
+  document.getElementById('btnCRA').style.color=dumColorTA;
+      for(j=0;j<gerNumber;j++){
+      printUnit(j, typeNumbA[j], typeTotalA[j], thisIsA[j],countIndividual[j]);
+      }
+}
 function colorBlack(){//change the color of black units between black and color
+blackColorRnd=false;
   if(blackColor){
     blackColor=false;
     document.getElementById('btnCB').innerText="B=Original";
@@ -75,36 +65,7 @@ document.getElementById('btnCB').style.color="Black";
   colorName = colorName1;
   dumColorTB = dumColorTB1;
   dumColorNumbB--;
-  if(dumColorNumbB<0){dumColorNumbB=28}
-    /*  switch(dumColorNumbB){
-        case 0: dumColorB = "#fff0f0";//pink
-        colorName = "Pale Pink";
-        break;
-        case 1: dumColorB = "#ff0000";//red
-        colorName = "Red";
-        break;
-        case 2: dumColorB = "#f0ff0f";//lemon
-        colorName = "Lemon";
-        break;
-        case 3: dumColorB = "#fff00f";//yellow
-        colorName = "Yellow";
-        break;
-        case 4: dumColorB = "#0fff0f";//green
-        colorName = "Green";
-        break;
-        case 5: dumColorB = "#f0fff0";//green white
-        colorName = "Green White";
-        break;
-        case 6: dumColorB = "#0ff0ff";//light blue
-        colorName = "Light Blue";
-        break;
-        case 7: dumColorB = "#f0f0ff";//blue white
-        colorName = "Blue White";
-        break;
-        case 8: dumColorB = "#ff00ff";//magenta
-        colorName = "Purple";
-        break;
-      }*/
+  if(dumColorNumbB<0){dumColorNumbB=43}
     document.getElementById('btnCB').innerText="B="+colorName+" ("+dumColorNumbB+")";
   document.getElementById('btnCB').style.backgroundColor=dumColorB;
 document.getElementById('btnCB').style.color=dumColorTB;
@@ -114,6 +75,26 @@ document.getElementById('btnCB').style.color=dumColorTB;
   }
 }
 
+
+function colorRndBlack(){//change the color of black units between black and color
+  if(blackColor){
+    blackColor=false;}
+    blackColorRnd=true;
+    var colorName = "Original";
+    var [dumColorB1, dumColorTB1] = makeColorRnd();//unit coour
+    dumColorB = dumColorB1;
+    dumColorTB = dumColorTB1;
+    [dumColorB1, dumColorTB1] = makeColorRnd();//box colour
+    dumColorBxB = dumColorB1;
+    dumColorBxTB = dumColorTB1;
+      document.getElementById('btnCRB').innerText="B="+dumColorB+"/"+dumColorBxB;
+    document.getElementById('btnCRB').style.backgroundColor=dumColorB;
+  document.getElementById('btnCRB').style.color=dumColorTB;
+      for(j=gerNumber;j<neutNumber;j++){
+      printUnit(j, typeNumbA[j], typeTotalA[j], thisIsA[j],countIndividual[j]);
+      }
+}
+
 function chooseColorArray(n, s){
   var colorCol0 = "#ffffff";
   var colorName0 = "White";
@@ -121,10 +102,10 @@ function chooseColorArray(n, s){
   var colorNumb0 = n;
   if(s=="A"){
   colorNumb0++;
-  if(colorNumb0>28){colorNumb0=0}}
+  if(colorNumb0>43){colorNumb0=0}}
   else{//side B
   colorNumb0--;
-  if(colorNumb0<0){colorNumb0=28}}
+  if(colorNumb0<0){colorNumb0=43}}
   switch(colorNumb0){
     case 0: colorCol0 = "#fa8072";//pink
     colorName0 = "Salmon";
@@ -224,8 +205,171 @@ function chooseColorArray(n, s){
         colorName0 = "White n Red";
         colorText0 = "#ff0000";
         break;
+          case 29: colorCol0 = "#fff0f0";//pink
+          colorName0 = "Pale Pink";
+          break;
+          case 30: colorCol0 = "#ff0000";//red
+          colorName0 = "Red";
+          break;
+          case 31: colorCol0 = "#f0ff0f";//lemon
+          colorName0 = "Lemon";
+          break;
+          case 32: colorCol0 = "#fff00f";//yellow
+          colorName0 = "Yellow";
+          break;
+          case 33: colorCol0 = "#0fff0f";//green
+          colorName0 = "Green";
+          break;
+          case 34: colorCol0 = "#f0fff0";//green white
+          colorName0 = "Green White";
+          break;
+          case 35: colorCol0 = "#0ff0ff";//light blue
+          colorName0 = "Light Blue";
+          break;
+          case 36: colorCol0 = "#f0f0ff";//blue white
+          colorName0 = "Blue White";
+          break;
+          case 37: colorCol0 = "#ff00ff";//magenta
+          colorName0 = "Purple";
+          break;
+          case 38: colorCol0 = "#f4a460";//green
+          colorName0 = "SandyBrown";
+          break;
+          case 32: colorCol0 = "#808080";//green white
+          colorName0 = "Gray";
+          colorText0 = "#ffffff";
+          break;
+          case 39: colorCol0 = "#f0fff0";//lemon
+          colorName0 = "HoneyDew";
+          break;
+          case 40: colorCol0 = "#f0f8ff";//yellow
+          colorName0 = "AliceBlue";
+          break;
+          case 41: colorCol0 = "#b0c4de";//light blue
+          colorName0 = "SteelBlue";
+          break;
+          case 42: colorCol0 = "#3cb371";//green white
+          colorName0 = "SeaGreen";
+          break;
+          case 43: colorCol0 = "#ffe4b5";//light blue
+          colorName0 = "Moccasin";
+          break;
   }
   return[colorCol0,colorName0,colorText0];
+}
+
+function makeColorRnd(){
+  var rndR = Math.floor(Math.random()*255);
+  var rndG = Math.floor(Math.random()*255);
+  var rndB = Math.floor(Math.random()*255);
+  var rndRH = rndR.toString(16);
+  var rndGH = rndG.toString(16);
+  var rndBH = rndB.toString(16);
+  if(Math.random()<0.5){}
+  else{
+  var dumCol = Math.ceil(Math.random()*18);
+  switch (dumCol) {
+  case 1://rndR
+    rndGH="00";
+    rndBH="00";
+    break;
+case 2://rndR
+  rndGH="ff";
+  rndBH="00";
+  break;
+case 3://rndR
+rndGH="00";
+rndBH="ff";
+break;
+case 4://rndR
+rndGH="ff";
+rndBH="ff";
+break;
+case 5://rndG
+rndRH="00";
+rndBH="00";
+break;
+case 6://rndG
+rndRH="ff";
+rndBH="00";
+break;
+case 7://rndG
+rndRH="00";
+rndBH="ff";
+break;
+case 8://rndG
+rndRH="ff";
+rndBH="ff";
+break;
+case 9://rndB
+rndGH="00";
+rndRH="00";
+break;
+case 10://rndB
+rndGH="ff";
+rndRH="00";
+break;
+case 11://rndB
+rndGH="00";
+rndRH="ff";
+break;
+case 12://rndB
+rndGH="ff";
+rndRH="ff";
+break;
+case 13://rndB
+rndRH="ff";
+break;
+case 14://rndB
+rndGH="ff";
+break;
+case 15://rndB
+rndBH="ff";
+break;
+case 16://rndB
+rndRH="00";
+break;
+case 17://rndB
+rndGH="00";
+break;
+case 18://rndB
+rndBH="00";
+break;
+  }}
+  var unitColor = "#"+rndRH+rndGH+rndBH;
+
+  if(unitColor.length<6){
+    var oldCol = unitColor;
+    var colDigit1 = Math.floor(Math.random()*10);
+    var colDigit2 = Math.floor(Math.random()*10);
+    unitColor=""+unitColor+colDigit1+colDigit2;
+    //alert("5: "+oldCol+" "+unitColor);
+  }
+  else if(unitColor.length<7){
+    var oldCol = unitColor;
+    var colDigit = Math.floor(Math.random()*10);
+    unitColor=""+unitColor+colDigit;
+    //alert("6: "+oldCol+" "+unitColor);
+  }
+  else{}
+  //unitColor = unitColor.toUpperCase();
+  rndR = parseInt(rndRH, 16);
+  rndG = parseInt(rndGH, 16);
+  rndB = parseInt(rndBH, 16);
+  var shade = +rndR+rndG+rndB;
+  //alert("RH:"+rndRH+" R:"+rndR+" GH:"+rndGH+" G:"+rndG+" BH:"+rndBH+" B:"+rndB);
+  //alert("H:"+1*(rndRH+rndGH+rndBH)+" dec:"+(rndR+rndG+rndB));
+  shadeCol=shade;
+  //if(shade<380){
+  if(rndR<128&&rndG<128&&rndB<128||shade<380){
+    textColor="#ffffff";textColor2="#000000";}
+  else{textColor="#000000";textColor2="#ffffff";}
+
+  //unitColorA[0]=unitColor;
+  //unitColorA[1]=textColor;
+  //unitColorA[2]=textColor2;
+
+  return[unitColor,textColor];
 }
 
 function chooseColorArrayOld(n){

@@ -1713,7 +1713,8 @@ function saveWindow(){
   //var allText2 = stripSpace(allText);
   //alert(""+allText2);
   //win.document.write(allText2);
-  win.document.write(allText+"<br><br>"+allLocs);
+  win.document.write(allText);
+  //win.document.write(allText+"<br><br>"+allLocs);
 	allText="";
 	win.document.close();
   //alert(""+allLocs);

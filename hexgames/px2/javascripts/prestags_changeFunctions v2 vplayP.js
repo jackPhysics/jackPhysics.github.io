@@ -1875,6 +1875,7 @@ function hopHop(x, y){ //jump Hopper to new position
 		     saveDataFlag=false;}
 			//alert("saved!");
 			saveTheLot(allText);
+			//console.log(allText);
 		  //localStorage.arbelaSave = ""+allText;
 		  //allText="";
 
@@ -2057,7 +2058,10 @@ function hopHop(x, y){ //jump Hopper to new position
 			    //dismountDummyA[activeIndex]=loadA[m+8];
 			    //cmbtFactorsA[activeIndex]=loadA[m+8];
 			    var dumValue8 = loadA[m+8];
-			    if(isNaN(dumValue8)){
+					if(dumValue8=="-"){
+					changeUnitA[activeIndex]=0;
+					}
+			    else if(isNaN(dumValue8)){
 			      leaderA[activeIndex]=0;
 			      changeUnitA[activeIndex]=0;
 			    }
@@ -2070,7 +2074,9 @@ function hopHop(x, y){ //jump Hopper to new position
 			      changeUnitParse(activeIndex);
 			    }
 			    else if(leaderA[activeIndex]>0){
-			      changeNeutralPic0(activeIndex);
+			      //changeNeutralPicL(activeIndex);
+			      //routine to re-print unit if it has new value
+			      printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex],countIndividual[activeIndex]);
 			    }
 			    else{printUnit(activeIndex, typeNumbA[activeIndex], typeTotalA[activeIndex], thisIsA[activeIndex],countIndividual[activeIndex]);}
 			    }
@@ -2154,6 +2160,7 @@ function hopHop(x, y){ //jump Hopper to new position
 			  turnNumb=1*loadA[loopTill-5];
 			  turnLetter=""+loadA[loopTill-3];
 			  turnNumber=1*loadA[loopTill-2];
+			  situationAddress=1*loadA[loopTill-1];
 			  turnNumber=turnNumber*1;
 			  var codeNumber = "0";
 			  if(turnNumber<0){turnNumber=0;}
