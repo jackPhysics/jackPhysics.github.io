@@ -52,6 +52,10 @@ var loopNoXtra = 0;
 var boxTop = 40;//40 60
 var boxHt = 80;//80 60
 
+function isUnicodeSymbol(str) {
+  return /[^\x00-\x7F]/.test(str);
+}
+
 function printUnit(n, b, t, id, c0){//n=number of image b=battalion number, t=Total, id=number of unit,
   var whatType = id;//number to tell which type
   var batTot = t;//total number of that type
@@ -739,7 +743,21 @@ var classType = classFactor;//unit number - out of all
             countOutUnits=0;
             dumFont=36*unitScale;
             ctx.font = ""+dumFont+"px Arial";
-        	  //ctx.font = "30px Arial";
+        	  //ctx.font = "30px Arial"; .fromCodePoint
+            //var dumLabel = new RegExp(designateLA[noOfImgPrnt]);
+            var dumLabel = designateLA[noOfImgPrnt];
+            //console.log(""+dumLabel);
+            if(isUnicodeSymbol(dumLabel)){
+            //console.log("unicode!");
+            dumFont=48*unitScale;
+            ctx.font = ""+dumFont+"px Arial";
+        	  ctx.fillStyle = textColorThis;
+        	  ctx.textAlign = "center";
+        	  ctx.textBaseline = "middle";
+          	ctx.lineWidth = "2";
+        	  ctx.fillText(""+designateLA[noOfImgPrnt],i2*unitSize+40*unitScale,j2*unitSize+unitSize/2.5*unitScale, 100);//, 30
+            }
+            else{
             ctx.translate(50, 50);
             ctx.rotate(-Math.PI/2);
             ctx.translate(-50, -50);
@@ -747,25 +765,39 @@ var classType = classFactor;//unit number - out of all
         	  ctx.textAlign = "center";
         	  ctx.textBaseline = "middle";
           	ctx.lineWidth = "2";
-        	  ctx.fillText(""+designateLA[noOfImgPrnt],i2*unitSize+20*unitScale,j2*unitSize+unitSize/4.5*unitScale, 120);//, 30
+        	  ctx.fillText(""+designateLA[noOfImgPrnt],i2*unitSize+20*unitScale,j2*unitSize+unitSize/4.5*unitScale, 100);//, 30
             ctx.translate(50, 50);
             ctx.rotate(Math.PI/2);
             ctx.translate(-50, -50);
-
+            }
 
           	//**battalion number
             dumFont=36*unitScale;
             ctx.font = ""+dumFont+"px Arial";//"20px Arial";
+            var dumLabel = designateRA[noOfImgPrnt];
+            //console.log(""+dumLabel);
+            if(isUnicodeSymbol(dumLabel)){
+            //console.log("unicode!");
+            dumFont=48*unitScale;
+            ctx.font = ""+dumFont+"px Arial";
+        	  ctx.fillStyle = textColorThis;
+        	  ctx.textAlign = "center";
+        	  ctx.textBaseline = "middle";
+          	ctx.lineWidth = "2";
+        	  ctx.fillText(""+designateRA[noOfImgPrnt],i2*unitSize+158*unitScale,j2*unitSize+unitSize/2.5*unitScale, 100);//, 30
+            }
+            else{
             ctx.translate(150, 150);
             ctx.rotate(-Math.PI/2);
             ctx.translate(-150, -150);
             ctx.fillStyle = textColorThis;
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
-            ctx.fillText(""+designateRA[noOfImgPrnt],i2*unitSize+220*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 110);
+            ctx.fillText(""+designateRA[noOfImgPrnt],i2*unitSize+220*unitScale,j2*unitSize+unitSize/5*4.0*unitScale, 100);
             ctx.translate(150, 150);
             ctx.rotate(Math.PI/2);
             ctx.translate(-150, -150);
+          }
 }//end of not neutral
 else{//if neutral
   //**top text

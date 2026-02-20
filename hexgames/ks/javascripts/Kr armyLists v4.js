@@ -1,6 +1,6 @@
 
-var redArmyMax = 64;
-var blackArmyMax = 64;
+var redArmyMax = 85;
+var blackArmyMax = 85;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -24,7 +24,11 @@ var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democrac
 "Lost Souls","Armoured Fist", "Die Rolling Dystopians", "Coral Combat Committed Caeserian Confederation",
 "Sea-Green Route 66 Convoy", "Seviche Seventeen Servants Severalty", "Geranium Giant Gentry",
 "Gray Castles across the Borderland","Godzilla", "Blue Forts across the Frontier",
-"Simply Infantry", "5 Large Units"];
+"Simply Infantry", "5 Large Units", "Scylla and Charybdis",
+"Green", "Blue", "Metal", "Brown", "White", "Yellow", "Orange", "Pink", "Olive", "Khaki",
+ "Red on White", "Grapefruit n Guava","Blueberry n Lemon", "Ghost", "Swampy Green", "Rich Red",
+ "Rear-Lighted Violet", "Ice Light-Blue", "Giant Ants", "Indigo Blue Invasion Blitz"
+ ];
 
 function findArmies(){
 
@@ -330,8 +334,8 @@ var designateLQ=["Dawn", "Morning-Star", "Sol", "Mars", "Sol",
 
 var designateRQ=["541st", "539th", "416th", "221st", "576th", "639th", "897th",
  "335th", "761st", "269th", "584th", "242nd", "133th", "477th", "776th", "946th",
-  "828th", "599th", "512nd", "824th", "818th", "892nd", "276th", "761st",
-   "668th", "712nd", "712nd", "872nd", "161st", "667th", "155th", "437th",
+  "828th", "599th", "512th", "824th", "818th", "892nd", "276th", "761st",
+   "668th", "712th", "712th", "872nd", "161st", "667th", "155th", "437th",
     "713th", "758th", "985th", "143th", "817th", "915th", "267th", "624th",
      "874th", "968th", "197th", "528th"];
 
@@ -842,13 +846,19 @@ var designateLQ=["Spartans", "Spartans", "Athenians", "Athenians",
 "Etruscans", "Etruscans", "Etruscans", "Etruscans"
 ];
 
-var designateRQ=["716th", "224th", "212nd", "263th", "915th", "487th",
-"487th", "452nd", "371st", "581st", "112nd", "333th", "657th", "583th",
-"722nd", "231st", "183th", "798th", "527th", "771st", "427th", "566th",
-"496th", "887th", "312nd", "898th", "375th", "914th", "935th", "592nd",
-"335th", "573th", "676th", "825th", "938th", "979th", "636th", "261st"
+var designateRQ=[
+"\u03b1","\u03b2","\u03b3","\u03b4","\u03b5",
+"\u03b6","\u03b7","\u03b8","\u03b9","\u03ba",
+"\u03bb","\u03bc","\u03bd","\u03be","\u03bf",
+"\u03c0","\u03c1","\u03c3","\u03c4", "\u03c5",
+"\u03c6","\u03c7","\u03c8","\u03c9","\u03c2",
+"\u0391","\u0392","\u0393","\u0394","\u0395",
+"\u0396","\u0397","\u0398","\u0399"
 ];
-
+//"\u039a",
+//"\u039b","\u039c","\u039d","\u039e","\u039f",
+//"\u03a0","\u03a1","\u03a3","\u03a4",
+//"\u03a5","\u03a6","\u03a7","\u03a8","\u03a9"
 
 var noOfSide = unitsQ.length/noOfItems;
   var sideQ=new Array();
@@ -2648,8 +2658,938 @@ var noOfSide = unitsQ.length/noOfItems;
   for(s=0;s<noOfSide;s++){
     sideQ[s]=1;    }}
 }
+
+
+else if(changeRedFlag&&redArmyNo==64||changeBlackFlag&&blackArmyNo==64){
+var nameQ="Scylla and Charybdis";
+
+var qbase = ["#800080","#808000", "#FFBF00"];
+
+var unitsQ=[
+  "#800080/#ffff00/#808000/#ff0000","Scylla","75","1","n","sf","60","15","xx",
+  "#800080/#ffff00/#808000/#ff0000","Charybdis","75","1","n","sf","60","15","xx",
+  "#800080/#ffff00/#808000/#ff0000","supply","0","0","n","supply","0","10","xx"
+];
+
+var designateLQ=[
+  "MONSTER","MONSTER"
+];
+
+var designateRQ=[
+"SCYLLA","CHARYBDIS"];
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==65||changeBlackFlag&&blackArmyNo==65){
+var nameQ="Garrison of Green";
+
+var qbase = ["#009900","#009900", "#009900"];
+
+var unitsQ=[
+  "#009900/#ffffff/#009900/#ffffff","Special Forces", "9", "7", "n","sf","5","4","x",
+  "#009900/#ffffff/#009900/#ffffff","Infantry", "7", "9", "n","inf","5","5","x",
+  "#009900/#ffffff/#009900/#ffffff","Paratroops", "6", "6", "n","para","5","3","||",
+  "#009900/#ffffff/#009900/#ffffff","Supply","0","0", "n","supply","0","10","||",
+  "#009900/#ffffff/#009900/#ffffff","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=["1", "2", "3", "4", "5", "6",
+ "7", "8", "9", "10", "11", "12",
+  "13", "14", "15", "16", "17", "18",
+  "19", "20"
+];
+
+var designateRQ=["Mount/1","Mount/2","Mount/3","Mount/4","Mount/5","Mount/6","Mount/7",
+"Inf/1","Inf/2","Inf/3","Inf/4","Inf/5","Inf/6","Inf/7","Inf/8","Inf/9",
+"Air/1","Air/2","Air/3","Air/4","Air/5","Air/6"
+];
+
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==66||changeBlackFlag&&blackArmyNo==66){
+var nameQ="Blue";
+
+var qbase = ["#000099","#000099", "#000099"];
+
+var unitsQ=[
+  "#000099/#ffffff/#000099/#ffffff","Armor", "9", "4", "n","arm","7","5","x",
+  "#000099/#ffffff/#000099/#ffffff","Special Forces", "8", "2", "n","sf","4","4","x",
+  "#000099/#ffffff/#000099/#ffffff","Paratroops", "9", "6", "n","para","6","4","||",
+  "#000099/#ffffff/#000099/#ffffff","Infantry", "5", "10", "n","inf","4","4","x",
+  "#000099/#ffffff/#000099/#ffffff","Supply","0","0", "n","supply","0","10","||",
+  "#000099/#ffffff/#000099/#ffffff","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=["North", "South", "West", "East",
+"North", "South",
+ "North", "South", "West", "East", "North", "South",
+  "North", "South", "West", "East", "North", "South", "West", "East", "West", "East"
+];
+
+var designateRQ=["1", "1", "1", "1",
+"2", "2",
+ "3", "3", "2", "2", "4", "4",
+  "5", "5", "3", "3", "6", "6", "4", "4", "5", "5",
+];
+
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==67||changeBlackFlag&&blackArmyNo==67){
+var nameQ="Metal";
+
+var qbase = ["#778899","#778899", "#778899"];
+
+var unitsQ=[
+  "#778899/#ffffff/#607080/#ffffff","Armor", "11", "5", "n","arm","8","6","x",
+  "#778899/#ffffff/#607080/#ffffff","Armor", "11", "5", "n","acav","6","8","x",
+  "#778899/#ffffff/#607080/#ffffff","Special Forces", "8", "2", "n","sf","4","4","x",
+  "#778899/#ffffff/#607080/#ffffff","Paratroops", "3", "3", "n","para","2","3","||",
+  "#778899/#ffffff/#607080/#ffffff","Infantry", "3", "5", "n","inf","4","4","x",
+  "#778899/#ffffff/#607080/#ffffff","Supply","0","0", "n","supply","0","10","||",
+  "#778899/#ffffff/#607080/#ffffff","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[  "2nd XXX", "3th XXX", "7th XXX", "9th XXX", "12th XXX",
+"2nd XXX", "3th XXX", "7th XXX", "9th XXX", "12th XXX",
+ "2nd XXX", "3th XXX", "7th XXX", "9th XXX", "12th XXX",
+  "2nd XXX", "3th XXX", "7th XXX", "9th XXX", "12th XXX"
+];
+
+var designateRQ=[
+  "81st XX", "27th XX", "1st XX", "25th XX", "16th XX",
+  "84th XX", "38th XX", "4th XX", "55th XX", "85th XX",
+  "61st XX", "19th XX", "36th XX", "42nd XX", "87th XX",
+  "76th XX", "74th XX", "8th XX", "49th XX", "988th XX"
+];
+
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==68||changeBlackFlag&&blackArmyNo==68){
+var nameQ="Brown";
+
+var qbase = ["#a0522d","#a0522d", "#a0522d"];
+
+var unitsQ=[
+  "#a0522d/#ffffff/#a0522d/#ffffff","Armor", "9", "5", "n","arm","6","6","x",
+  "#a0522d/#ffffff/#a0522d/#ffffff","Mechanised", "7", "7", "n","mech","5","5","x",
+  "#a0522d/#ffffff/#a0522d/#ffffff","Special Forces", "8", "4", "n","sf","4","4","x",
+  "#a0522d/#ffffff/#a0522d/#ffffff","Infantry", "3", "8", "n","inf","3","3","x",
+  "#a0522d/#ffffff/#a0522d/#ffffff","Supply","0","0", "n","supply","0","10","||",
+  "#a0522d/#ffffff/#a0522d/#ffffff","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "Active", "Reserve", "Active", "Active", "Reserve",
+  "Guards", "Active", "Active", "Active", "Active",
+  "Active", "Reserve", "Active", "Reserve", "Reserve",
+  "Guards", "Reserve", "Active", "Reserve", "Active",
+    "Guards",  "Guards",  "Guards",  "Guards"
+];
+
+var designateRQ=[
+  "1", "1", "2", "3", "2",
+  "1", "4", "5", "6", "7",
+  "8", "3", "9", "4", "5",
+  "2", "6", "10", "7", "11",
+  "3", "4", "5", "6"
+];
+
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==69||changeBlackFlag&&blackArmyNo==69){
+var nameQ="White";
+
+var qbase = ["#eeeeff","#eeeeff", "#eeeeff"];
+
+var unitsQ=[
+  "#eeeeff/#0000cc/#eeeeff/#0000cc","Hover Tanks", "6", "6", "n","acav","4","5","x",
+  "#eeeeff/#0000cc/#eeeeff/#0000cc","Elite Forces", "8", "8", "n","sf","4","4","x",
+  "#eeeeff/#0000cc/#eeeeff/#0000cc","Paratroops", "3", "2", "n","para","2","3","||",
+  "#eeeeff/#0000cc/#eeeeff/#0000cc","Infantry", "4", "11", "n","inf","4","3","x",
+  "#eeeeff/#0000cc/#eeeeff/#0000cc","Supply","0","0", "n","supply","0","10","||",
+  "#eeeeff/#0000cc/#eeeeff/#0000cc","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "Ice", "Ice", "Ice", "Ice", "Ice",
+  "Frost",
+  "Frost", "Frost", "Frost", "Frost",  "Frost", "Frost", "Frost", "Frost", "Frost",
+  "Snow", "Snow",
+  "Snow", "Snow", "Snow", "Snow",  "Snow",  "Snow",  "Snow",
+  "Ice",  "Ice",  "Ice",  "Ice"
+];
+
+var designateRQ=[
+  "1", "2", "3", "4", "5", "9",
+  "1", "2", "3", "4", "5", "6", "7", "8",
+  "8", "9",
+  "1", "2", "3", "4", "5", "6", "7",
+  "6", "7", "8", "9",
+];
+
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==70||changeBlackFlag&&blackArmyNo==70){
+var nameQ="Yellow";
+
+var qbase = ["#eeee00","#eeee00", "#eeee00"];
+
+var unitsQ=[
+  "#eeee00/#000000/#eeee00/#000000","Mechanised", "9", "8", "n","mech","6","6","x",
+  "#eeee00/#000000/#eeee00/#000000","Special Forces", "10", "2", "n","sf","6","4","x",
+  "#eeee00/#000000/#eeee00/#000000","Paratroops", "4", "4", "n","para","3","3","||",
+  "#eeee00/#000000/#eeee00/#000000","Infantry", "7", "6", "n","inf","6","4","x",
+  "#eeee00/#000000/#eeee00/#000000","Supply","0","0", "n","supply","0","10","||",
+  "#eeeeff/#0000cc/#eeee00/#000000","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "1st", "6th", "4th", "8th", "8th",
+  "8th", "1st", "4th", "1st", "4th",
+  "1st", "8th", "8th", "1st", "4th",
+  "6th", "8th", "4th", "6th", "6th"
+];
+
+var designateRQ=[
+  "1", "1", "1", "1", "2",
+  "3", "2", "2", "3", "3",
+  "4", "4", "5", "5", "4",
+  "2", "6", "5", "3", "4",
+];
+
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==71||changeBlackFlag&&blackArmyNo==71){
+  var nameQ="Orange";
+
+  var qbase = ["#ee8c00","#ee8c00", "#ee8c00"];
+
+  var unitsQ=[
+    "#ee8c00/#000000/#ee8c00/#000000","Tanks", "11", "3", "n","arm","8","6","x",
+  "#ee8c00/#000000/#ee8c00/#000000","Mechanised", "10", "4", "n","mech","8","5","x",
+  "#ee8c00/#000000/#ee8c00/#000000","Special Forces", "12", "4", "n","sf","8","4","x",
+  "#ee8c00/#000000/#ee8c00/#000000","Paratroops", "5", "1", "n","para","4","3","||",
+  "#ee8c00/#000000/#ee8c00/#000000","Infantry", "8", "3", "n","inf","8","3","x",
+  "#ee8c00/#000000/#ee8c00/#000000","Supply","0","0", "n","supply","0","10","||",
+  "#ee8c00/#000000/#ee8c00/#000000","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+"Martial", "Martial", "Martial",
+"Conqueror", "Conqueror", "Conqueror", "Conqueror",
+ "Revenge", "Revenge", "Revenge", "Revenge",
+ "Fortune",
+ "Fortune", "Fortune", "Fortune"
+];
+
+var designateRQ=[
+"324th", "537th", "973rd",
+"252nd", "339th", "121st", "912nd",
+"948th", "142nd", "815th", "855th",
+"169th",
+"396th", "517th", "652nd"
+];
+
+
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==72||changeBlackFlag&&blackArmyNo==72){
+  var nameQ="Pink";
+
+  var qbase = ["#eec0cb","#eec0cb", "#eec0cb"];
+
+  var unitsQ=[
+    "#eec0cb/#000000/#eec0cb/#000000","Armoured", "12", "4", "n","arm","10","5","x",
+  "#eec0cb/#000000/#eec0cb/#000000","Mechanised", "10", "3", "n","mech","8","5","x",
+  "#eec0cb/#000000/#eec0cb/#000000","Special Forces", "10", "4", "n","sf","6","4","x",
+  "#eec0cb/#000000/#eec0cb/#000000","Paratroops", "3", "4", "n","para","2","3","||",
+  "#eec0cb/#000000/#eec0cb/#000000","Infantry", "5", "4", "n","inf","4","4","x",
+  "#eec0cb/#000000/#eec0cb/#000000","Supply","0","0", "n","supply","0","10","||",
+  "#eec0cb/#000000/#eec0cb/#000000f","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+"Hog", "Hog", "Hog","Hog",
+"Cat", "Cat", "Cat",
+ "Rat", "Rat", "Rat", "Rat",
+  "Bat", "Bat", "Bat", "Bat",
+   "Dog", "Dog", "Dog", "Dog"
+];
+
+var designateRQ=[
+"1", "2", "3", "4", "5",
+"6", "7", "8", "9", "10",
+"11", "12", "13", "14", "15",
+"16", "17", "18", "19"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==73||changeBlackFlag&&blackArmyNo==73){
+  var nameQ="Olive";
+
+  var qbase = ["#707000","#707000", "#707000"];
+
+  var unitsQ=[
+    "#707000/#ffffff/#707000/#ffffff","Armored", "9", "5", "n","arm","7","5","x",
+  "#707000/#ffffff/#707000/#ffffff","Mechanised", "6", "5", "n","mech","6","5","x",
+  "#707000/#ffffff/#707000/#ffffff","Special Forces", "7", "6", "n","sf","3","4","x",
+  "#707000/#ffffff/#707000/#ffffff","Paratroops", "3", "5", "n","para","3","2","||",
+  "#707000/#ffffff/#707000/#ffffff","Infantry", "3", "6", "n","inf","3","3","x",
+  "#707000/#ffffff/#707000/#ffffff","Supply","0","0", "n","supply","0","10","||",
+  "#707000/#ffffff/#707000/#ffffff","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+"1", "2", "3","4", "5",
+"1", "2", "3","4", "5", "1",
+"1", "2", "3","4", "5",
+"1", "2", "3","4", "5",
+"1", "2", "3","4", "5", "2"
+];
+
+var designateRQ=[
+"A", "A", "A","A", "A",
+"B", "B", "B","B", "B", "C",
+"D", "C", "C","C", "C",
+"E", "D", "D","D", "D",
+"F", "E", "E","E", "E", "F"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==74||changeBlackFlag&&blackArmyNo==74){
+  var nameQ="Khaki";
+
+  var qbase = ["#cec87c","#cec87c", "#cec87c"];
+
+  var unitsQ=[
+  "#cec87c/#8b4513/#cec87c/#8b4513","Mechanised", "8", "6", "n","mech","4","7","x",
+  "#cec87c/#8b4513/#cec87c/#8b4513","Special Forces", "6", "6", "n","sf","2","4","x",
+  "#cec87c/#8b4513/#cec87c/#8b4513","Paratroops", "2", "8", "n","para","2","2","||",
+  "#cec87c/#8b4513/#cec87c/#8b4513","Infantry", "3", "14", "n","inf","2","4","x",
+  "#cec87c/#8b4513/#cec87c/#8b4513","Supply","0","0", "n","supply","0","10","||",
+  "#cec87c/#8b4513/#cec87c/#8b4513","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+"Royals", "Royals", "Royals", "Royals", "Royals", "Royals",
+"Commandos", "Commandos", "Commandos", "Commandos", "Commandos", "Commandos",
+"Paras", "Paras", "Paras", "Paras","Paras", "Paras","Paras", "Paras",
+"Rifles", "Rifles", "Rifles","Rifles", "Rifles", "Rifles","Rifles", "Rifles", "Rifles",
+"Rifles", "Rifles", "Rifles","Rifles", "Rifles"
+];
+
+var designateRQ=[
+  "1", "2", "3", "4", "5", "6",
+  "1", "2", "3", "4", "5", "6",
+  "1", "2", "3", "4", "5", "6",
+   "7", "8",
+  "1", "2", "3", "4", "5", "6",
+   "7", "8", "9", "10", "11", "12", "13", "14"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==75||changeBlackFlag&&blackArmyNo==75){
+  var nameQ="Red on White";
+
+  var qbase = ["#eeeecc","#eeeecc", "#eeeecc"];
+
+  var unitsQ=[
+  "#eeeecc/#cc0000/#eeeecc/#cc0000","Mechanised", "7", "4", "n","mech","2","6","x",
+  "#eeeecc/#cc0000/#eeeecc/#cc0000","Special Forces", "7", "6", "n","sf","3","4","x",
+  "#eeeecc/#cc0000/#eeeecc/#cc0000","Paratroops", "2", "0", "n","para","2","2","||",
+  "#eeeecc/#cc0000/#eeeecc/#cc0000","Infantry", "3", "16", "n","inf","2","4","x",
+  "#eeeecc/#cc0000/#eeeecc/#cc0000","Cavalry", "4", "8", "n","inf","1","6","x",
+  "#eeeecc/#cc0000/#eeeecc/#cc0000","Supply","0","0", "n","supply","0","10","||",
+  "#eeeecc/#cc0000/#eeeecc/#cc0000","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "VI", "V", "IV", "III", "II", "II",
+       "","","","","","",
+       "", "", "II", "I", "VIII", "VII",
+        "VI", "V","IV", "III",
+         "II", "I", "VIII", "VII", "VI", "V",
+         "IV", "III","II", "I", "VIII", "I"
+];
+
+var designateRQ=[
+"Se", "As", "Ge", "Ga", "Zn", "Cu",
+"Ni", "Co", "Fe", "Mn", "Cr", "V",
+"Ti", "Sc", "Ca", "K", "Ar", "Cl",
+"S", "P","Si", "Al",
+"Mg", "Na", "Ne", "F", "O", "N",
+"C", "B","Be", "Li", "He", "H"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==76||changeBlackFlag&&blackArmyNo==76){
+  var nameQ="grapefruit n guava";
+
+  var qbase = ["#dc7861","#dc7861", "#dc7861"];
+
+  var unitsQ=[
+  "#dc7861/#ffffff/#cf476f/#dc7861","Armor", "8", "7", "n","arm","8","3","x",
+  "#dc7861/#ffffff/#cf476f/#dc7861","Mechanised", "6", "5", "n","mech","6","3","x",
+  "#dc7861/#ffffff/#cf476f/#dc7861","Special Forces", "6", "6", "n","sf","4","2","x",
+  "#dc7861/#ffffff/#cf476f/#dc7861","Paratroops", "2", "4", "n","para","2","2","||",
+  "#dc7861/#ffffff/#cf476f/#dc7861","Infantry", "2", "10", "n","inf","4","1","x",
+  "#dc7861/#ffffff/#cf476f/#dc7861","Supply","0","0", "n","supply","0","10","||",
+  "#dc7861/#ffffff/#cf476f/#dc7861","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "Korps 1","Korps 1","Korps 2","Korps 2","Korps 3","Korps 3", "Korps 4",
+  "Korps 1","Korps 1","Korps 2","Korps 3","Korps 4",
+  "Korps 1","Korps 1","Korps 2","Korps 3","Korps 3","Korps 4",
+  "Korps 1","Korps 2","Korps 3","Korps 4",
+  "Korps 1","Korps 1","Korps 1","Korps 2","Korps 2","Korps 2","Korps 3","Korps 3","Korps 4","Korps 4"
+];
+
+var designateRQ=[
+  "1","2","3","4","5","6", "7",
+  "8","9","10","11","12",
+  "13","14","15","16","17","18",
+  "19","20","21","22",
+  "23","24","25","26","27","28","29","30","31","32"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==77||changeBlackFlag&&blackArmyNo==77){
+  var nameQ="blueberry n lemon";
+
+  var qbase = ["#967aff","#967aff", "#967aff"];
+
+  var unitsQ=[
+  "#967aff/#000000/#efd31e/#967aff","Armor", "11", "4", "n","arm","8","6","x",
+  "#967aff/#000000/#efd31e/#967aff","Mechanised", "10", "3", "n","mech","8","5","x",
+  "#967aff/#000000/#efd31e/#967aff","Special Forces", "9", "4", "n","sf","6","3","x",
+  "#967aff/#000000/#efd31e/#967aff","Paratroops", "5", "2", "n","para","4","3","||",
+  "#967aff/#000000/#efd31e/#967aff","Infantry", "5", "6", "n","inf","4","4","x",
+  "#967aff/#000000/#efd31e/#967aff","Supply","0","0", "n","supply","0","10","||",
+  "#967aff/#000000/#efd31e/#967aff","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "1","2","3","4","5","6", "7",
+  "8","9","10","11","12",
+  "13","14","15","16","17","18",
+  "19",
+];
+
+var designateRQ=[
+  "1","2","3","4",
+  "1","2","3",
+  "1","2","3","4",
+  "1","2",
+  "1","2","3","4","5","6"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==78||changeBlackFlag&&blackArmyNo==78){
+  var nameQ="Ghost";
+
+  var qbase = ["#4f5851","#4f5851", "#4f5851"];
+
+  var unitsQ=[
+  "#4f5851/#ffffff/#7318e0/#4f5851","Armored Cars", "7", "4", "n","acav","3","7","x",
+  "#4f5851/#ffffff/#7318e0/#4f5851","Light Tanks", "6", "2", "n","arm","4","5","x",
+  "#4f5851/#ffffff/#7318e0/#4f5851","Special Forces", "8", "4", "n","sf","4","4","x",
+  "#4f5851/#ffffff/#7318e0/#4f5851","Elite Paratroops", "11", "2", "n","para","10","3","||",
+  "#4f5851/#ffffff/#7318e0/#4f5851","Infantry", "8", "7", "n","inf","8","7","x",
+  "#4f5851/#ffffff/#7318e0/#4f5851","Supply","0","0", "n","supply","0","10","||",
+  "#4f5851/#ffffff/#7318e0/#4f5851","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "G","H","O","S","T",
+    "G","H","O","S","T",
+      "G","H","O","S","T",
+        "G","H","O","S",
+];
+
+var designateRQ=[
+  "1","2","3","4","5","6", "7",
+  "8","9","10","11","12",
+  "13","14","15","16","17","18",
+  "19"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==79||changeBlackFlag&&blackArmyNo==79){
+  var nameQ="Swampy Green";
+
+  var qbase = ["#5bbd8c","#5bbd8c", "#5bbd8c"];
+
+  var unitsQ=[
+  "#5bbd8c/#000000/#5a971b/#5bbd8c","Armored", "11", "2", "n","arm","4","10","x",
+  "#5bbd8c/#000000/#5a971b/#5bbd8c","Mechanised", "8", "4", "n","mech","3","8","x",
+  "#5bbd8c/#000000/#5a971b/#5bbd8c","Special Forces", "10", "3", "n","sf","8","2","x",
+  "#5bbd8c/#000000/#5a971b/#5bbd8c","Paratroops", "5", "2", "n","para","6","1","||",
+  "#5bbd8c/#000000/#5a971b/#5bbd8c","Infantry", "7", "8", "n","inf","4","6","x",
+  "#5bbd8c/#000000/#5a971b/#5bbd8c","Supply","0","0", "n","supply","0","10","||",
+  "#5bbd8c/#000000/#5a971b/#5bbd8c","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "\u03ea","\u03ea",
+  "\u03e3","\u03e3","\u03e3","\u03e3",
+  "\u0394","\u0394","\u0394",
+  "\u03ee","\u03ee",
+  "\u0370","\u0370","\u0370","\u0370",
+  "\u0370","\u0370","\u0370","\u0370"
+];
+
+var designateRQ=[
+  "1st","2nd",
+  "1st","2nd","3rd","4th",
+  "1st","2nd","3rd",
+  "1st","2nd",
+  "1st","2nd","3rd","4th",
+  "1st","2nd","3rd","4th",
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==80||changeBlackFlag&&blackArmyNo==80){
+  var nameQ="Rich Red";
+
+  var qbase = ["#ed3e08","#ed3e08", "#ed3e08f"];
+
+  var unitsQ=[
+  "#ed3e08/#ffffff/#7c3f35/#ed3e08","Armored", "6", "5", "n","acav","3","6","x",
+  "#ed3e08/#ffffff/#7c3f35/#ed3e08","Mechanised", "6", "5", "n","mech","4","5","x",
+  "#ed3e08/#ffffff/#7c3f35/#ed3e08","Special Forces", "6", "5", "n","sf","2","4","x",
+  "#ed3e08/#ffffff/#7c3f35/#ed3e08","Paratroops", "6", "5", "n","para","5","3","||",
+  "#ed3e08/#ffffff/#7c3f35/#ed3e08","Infantry", "6", "5", "n","inf","5","4","x",
+  "#ed3e08/#ffffff/#7c3f35/#ed3e08","Supply","0","0", "n","supply","0","10","||",
+  "#ed3e08/#ffffff/#7c3f35/#ed3e08","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "\u03b1","\u03b2","\u03b3","\u03b1","\u03b2","\u03b3",
+  "\u03b1","\u03b2","\u03b3","\u03b1","\u03b2","\u03b3",
+  "\u03b1","\u03b2","\u03b3","\u03b1","\u03b2","\u03b3",
+  "\u03b1","\u03b2","\u03b3","\u03b1","\u03b2","\u03b3",
+  "\u03b1"
+];
+
+var designateRQ=[
+  "Al", "Bing", "Chuck", "Drew", "Evan",
+  "Forrest", "Grant","Hank", "Iago", "Julius",
+  "Kobra", "Liam", "Mac", "Nathan", "Orlando",
+  "Peter", "Quin", "Roger", "Stew", "Tiberius",
+  "Ulrich", "Valentino", "Walt","Yolander", "Zebedee",
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==81||changeBlackFlag&&blackArmyNo==81){
+  var nameQ="Rear-Lighted Violet";
+
+  var qbase = ["#9500ff","#9500ff", "#9500fff"];
+
+  var unitsQ=[
+  "#9500ff/#000000/#7038b2/#9500ff","Armored", "6", "5", "n","acav","3","6","x",
+  "#9500ff/#000000/#7038b2/#9500ff","Mechanised", "6", "10", "n","mech","4","5","x",
+  "#9500ff/#000000/#7038b2/#9500ff","Infantry", "6", "10", "n","inf","6","3","x",
+  "#9500ff/#000000/#7038b2/#9500ff","Supply","0","0", "n","supply","0","10","||",
+  "#9500ff/#000000/#7038b2/#9500ff","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "Alexander",  "Julian",  "Napoleon",  "Oliver",  "Victor",
+  "Alexander",  "Julian",  "Napoleon",  "Oliver",  "Victor",
+    "Alexander",  "Julian",  "Napoleon",  "Oliver",  "Victor",
+      "Alexander",  "Julian",  "Napoleon",  "Oliver",  "Victor",
+        "Alexander",  "Julian",  "Napoleon",  "Oliver",  "Victor",
+];
+
+var designateRQ=["Ai" ,
+  "Belle", "Caitlin", "Dee", "Estelle", "Fiona",
+  "Gertrude", "Hannah","Isobel", "Janine", "Kim",
+  "Linda", "Michel", "Nina", "Olivia", "Pip",
+   "Queenie", "Rhonda", "Sue", "Titania", "Ulrika",
+    "Val", "Wendy", "Yvonne", "Zoe"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==82||changeBlackFlag&&blackArmyNo==82){
+  var nameQ="Ice Light-Blue";
+
+  var qbase = ["#8be0ed","#8be0ed", "#8be0ed"];
+
+  var unitsQ=[
+  "#8be0ed/#000000/#989fd0/#8be0ed","Infantry", "6", "30", "n","inf","5","3","x",
+  "#8be0ed/#000000/#989fd0/#8be0ed","Supply","0","0", "n","supply","0","10","||",
+  "#8be0ed/#000000/#989fd0/#8be0ed","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "\u263f","\u263f","\u263f","\u263f","\u263f",
+  "\u2642","\u2642","\u2642","\u2642","\u2642",
+  "\u2643","\u2643","\u2643","\u2643","\u2643",
+  "\u2644","\u2644","\u2644","\u2644","\u2644",
+  "\u2645","\u2645","\u2645","\u2645","\u2645",
+  "\u2646","\u2646","\u2646","\u2646","\u2646"
+];
+
+var designateRQ=[
+  "1","2","3","4","5","6",
+  "7","8","9",
+  "10","11","12",
+  "13","14","15","16","17","18",
+  "19","20","21","22","23","24",
+  "25","26","27","28","29","30"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==83||changeBlackFlag&&blackArmyNo==83){
+  var nameQ="Giant Ants";
+
+  var qbase = ["#ffae00","#ffae00", "#ffae00"];
+
+  var unitsQ=[
+  "#ffae00/#000000/#ce1954/#ffae00","Queen", "18", "1", "n","arm","20","1","x",
+  "#ffae00/#000000/#ce1954/#ffae00","Soldier Ants", "6", "12", "n","sf","4","2","x",
+  "#ffae00/#000000/#ce1954/#ffae00","Flying Ants", "1", "10", "n","para","2","1","||",
+  "#ffae00/#000000/#ce1954/#ffae00","Drones", "1", "50", "n","inf","2","2","x",
+  "#ffae00/#000000/#ce1954/#ffae00","Supply","0","0", "n","supply","0","10","||",
+  "#ffae00/#000000/#ce1954/#ffae00","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "QUEEN",
+  "Soldier","Soldier","Soldier","Soldier","Soldier","Soldier",
+  "Soldier","Soldier","Soldier","Soldier","Soldier","Soldier",
+  "Flying","Flying","Flying","Flying","Flying",
+  "Flying","Flying","Flying","Flying","Flying",
+  "Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone",
+  "Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone",
+  "Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone",
+  "Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone",
+  "Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone","Drone"
+];
+
+var designateRQ=["",
+  "Ant 1","Ant 2","Ant 3","Ant 4","Ant 5","Ant 6",
+  "Ant 7","Ant 8","Ant 9","Ant 10","Ant 11","Ant 12",
+    "Ant 1","Ant 2","Ant 3","Ant 4","Ant 5","Ant 6",
+    "Ant 7","Ant 8","Ant 9","Ant 10",
+  "Ant 1","Ant 2","Ant 3","Ant 4","Ant 5","Ant 6",
+  "Ant 7","Ant 8","Ant 9","Ant 10","Ant 11","Ant 12",
+  "Ant 13","Ant 14","Ant 15","Ant 16","Ant 17","Ant 18",
+  "Ant 19","Ant 20","Ant 21","Ant 22","Ant 23","Ant 24",
+  "Ant 25","Ant 26","Ant 27","Ant 28","Ant 29","Ant 30",
+  "Ant 31","Ant 32","Ant 33","Ant 34",
+  "Ant 35","Ant 36","Ant 37","Ant 38","Ant 39","Ant 40","Ant 41","Ant 42","Ant 43","Ant 44",
+  "Ant 45","Ant 46","Ant 47","Ant 48","Ant 49","Ant 50"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==84||changeBlackFlag&&blackArmyNo==84){
+  var nameQ="Indigo Blue Invasion Blitz";
+
+  var qbase = ["#164e8a","#164e8a", "#164e8a"];
+
+  var unitsQ=[
+  "#164e8a/#ffffff/#52bab2/#164e8a","Panzer", "13", "4", "n","arm","12","4","x",
+  "#164e8a/#ffffff/#52bab2/#164e8a","Panzergrenadier", "9", "4", "n","mech","8","4","x",
+  "#164e8a/#ffffff/#52bab2/#164e8a","Gebirgsjäger", "8", "2", "n","sf","4","4","x",
+  "#164e8a/#ffffff/#52bab2/#164e8a","Fallschirmjager", "1", "4", "n","para","2","1","||",
+  "#164e8a/#ffffff/#52bab2/#164e8a","Wehrmacht", "6", "7", "n","inf","6","3","x",
+  "#164e8a/#ffffff/#52bab2/#164e8a","Supply","0","0", "n","supply","0","10","||",
+  "#164e8a/#ffffff/#52bab2/#164e8a","blank", "0", "0", "b","blank","0","0","-"
+];
+
+
+var designateLQ=[
+  "AGN", "AGC","AGC","AGS",
+    "AGN", "AGC","AGC","AGS",
+    "AGS","AGS",
+      "AGN", "AGN", "AGC","AGS",
+        "AGN", "AGC","AGC", "AGS", "AGN", "AGC","AGS",
+];
+
+var designateRQ=["2 Pz", "1 Pz", "17 Pz", "24 Pz",
+ "95 Pg", "9 Pg", "48 Pg", "5 Pg",
+  "46 Gj", "4 Gj",
+   "96 Fj", "83 Fj", "11 Fj", "14 Fj",
+    "78 Vk", "44 Vk", "98 Vk", "983 Vk", "965 Vk", "8 Vk", "6 Vk"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
 //interesting colours
 //purple:800080   leaf green:808000
+//"#dc7861/#ffffff/#cf476f/#dc7861" grapefruit n guava
+//"#967aff/#000000/#efd31e/#967aff" blueberry n lemon
+//"#4f5851/#ffffff/#7318e0/#4f5851" ghostly
+//"#5bbd8c/#000000/#5a971b/#5bbd8c" smokey green
+//"#ed3e08/#ffffff/#7c3f35/#ed3e08" rich red
+//"#9500ff/#000000/#7038b2/#9500ff" rear-lighted violet
+//"#8be0ed/#000000/#989fd0/#8be0ed" ice light-blue
+//"#ffae00/#000000/#ce1954/#ffae00" honey n formic acid
+//"#164e8a/#ffffff/#52bab2/#164e8a" battle blue
+//"#f3984a/#000000/#5cb4ca/#f3984a" apricot n grape
+//"#002670/#ffffff/#79786c/#002670" royal blue n gray
+//"#ff4223/#ffffff/#177594/#ff4223" red n gray
+//"#40ff00/#ffffff/#c2e189/#40ff00" glowing green
+//"#810000/#ffffff/#5b47bd/#810000" dried Blood
+
+/*
+  "1","2","3","4","5","6",
+  "7","8","9",
+  "10","11","12",
+  "13","14","15","16","17","18","19","20","21","22","23","24",
+  "25","26","27","28","29","30","31","32","33","34",
+  "35","36","37","38","39","40","41","42","43","44"
+
+
+  "1st","2nd",
+  "1st","2nd","3rd","4th",
+  "1st","2nd","3rd",
+  "1st","2nd",
+  "1st","2nd","3rd","4th",
+  "1st","2nd","3rd","4th",
+
+  greek uppercase
+  "\u0391","\u0392","\u0393","\u0394","\u0395",
+  "\u0396","\u0397","\u0398","\u0399","\u039a",
+  "\u039b","\u039c","\u039d","\u039e","\u039f",
+  "\u03a0","\u03a1","\u03a3","\u03a4",
+  "\u03a5","\u03a6","\u03a7","\u03a8","\u03a9","",
+
+  greek lowercase
+  "\u03b1","\u03b2","\u03b3","\u03b4","\u03b5",
+  "\u03b6","\u03b7","\u03b8","\u03b9","\u03ba",
+  "\u03bb","\u03bc","\u03bd","\u03be","\u03bf",
+  "\u03c0","\u03c1","\u03c3","\u03c4",
+  "\u03c5","\u03c6","\u03c7","\u03c8","\u03c9","\u03c2"
+
+  unused:
+    "716th", "224th", "212th", "263th", "915th", "487th",
+  "487th", "452nd", "371st", "581st", "112th", "333th", "657th", "583th",
+  "722nd", "231st", "183th", "798th", "527th", "771st", "427th", "566th",
+  "496th", "887th", "312th", "898th", "375th", "914th", "935th", "592nd",
+  "335th", "573th", "676th", "825th", "938th", "979th", "636th", "261st"
+*/
 
 if(addSupplyUnitsFlag){
   unitsQ.push(unitsQ[0], "Supply","0","8","n","supply","0","10","xx");
@@ -2816,7 +3756,7 @@ var unitsQ=[
 "#355e43/#ffffff/#b0dd98/#355e43","Phalanx","14","0","n","arm","11"," 6","xx",
 "#355e43/#ffffff/#b0dd98/#355e43","Marine and Mountain","7","0","n","sf","2"," 5","xx",
 "#355e43/#ffffff/#b0dd98/#355e43","Vertical Invaders","3","0","n","para","2"," 3","xx",
-"#355e43/#ffffff/#b0dd98/#355e43","Hoorsemen","5","0","n","cav","3"," 5","xx",
+"#355e43/#ffffff/#b0dd98/#355e43","Horsemen","5","0","n","cav","3"," 5","xx",
 "#355e43/#ffffff/#b0dd98/#355e43","Warriors","2","0","n","inf","3"," 2","xx",
 "#355e43/#ffffff/#b0dd98/#355e43","supply","0","0","n","supply","0"," 10","xx"
 
