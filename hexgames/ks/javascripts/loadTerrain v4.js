@@ -1,5 +1,5 @@
 //hold texture data
-var boardMax=52;//odd=black, even = red
+var boardMax=54;//odd=black, even = red
 
 var allTheBoardsA = ["Black Original","Red Original", "Black High Terrain", "Red Lost City", "Black Blank",
  "Red Blank", "Black Lake District",
@@ -14,7 +14,7 @@ var allTheBoardsA = ["Black Original","Red Original", "Black High Terrain", "Red
 "Black Scattered Terrain","Red Scattered Terrain", "Black Inland Country", "Red Industrial South",
  "Black End of the Road", "Red Criss-cross", "Black Three in a Row", "Red Seven Sisters",
  "Black Highlands", "Red Cut the Pass", "Black Dry Mountains", "Red Wilderness Metropolis",
- "Black Plains Country", "Red Small Country"
+ "Black Plains Country", "Red Small Country", "Black Central City", "Red Central City"
 ]
 
 
@@ -1807,6 +1807,63 @@ roadCOY = [1,5,6,7,9,11,15,100,
 
 }
 
+else if(chooseBrd==52){//
+brdNameB = "Black Central City";
+//terrain code
+swampCOX = [1,3,4,4,100];
+swampCOY = [6,5,6,7,100];
+hillCOX = [100];
+hillCOY = [100];
+smLakeCOX = [100];
+smLakeCOY = [100];
+cityCOX = [4,4,4,4,100];
+cityCOY = [20,21,22,23,100];
+woodCOX = [4,4,1,4,3,2,4,4,4,  1,1,  2,2,2,2,3,3,2,3,3,
+  4,4,4,4,4,4,  3,2,2,2,2,3,2,2,2,  1,1,1,1,1,1,  3,3,3,3,3,3,3,3,3,3,100];
+woodCOY = [24,19,5,11,28,6,28,18,17,  19,21,  8,7,6,5,6,8,9,10,12,
+  13,12,10,9,11,17,  30,31,32,29,27,26,27,29,27,  5,3,2,3,2,5,  27,29,31,33,34,36,34,33,32,34,100];
+mountCOX = [1,2,1,2,1,1,  2,2,1,2,  2,1,1,0,  1,100];
+mountCOY = [12,27,17,14,15,14,  25,26,25,24,  16,15,16,17,  18,100];
+beachCOX = [1,1,1,0,4,100];
+beachCOY = [27,29,31,3,27,100];
+lakeCOX = [4, 1,3,4,1,0,  0,1,  2,2,2,2,2,2,  3,4,4,3,3,3,100];
+lakeCOY = [25, 6,32,8,4,5,  33,34,  31,29,28,30,29,31,  9,10,8,7,9,11,100];
+riverCOX = [  2,2,3,100,0,0,1,100,  5,4,4,100,3,3,3,100,  0,2,4,4,100,  ];
+riverCOY = [  36,34,32,100,26,25,26,100,  10,11,10,100,0,4,5,100,  26,22,26,25,100,  ];
+roadCOX = [2,2,3,3,4,100,
+  2,0,0,100,0,1,1,3,100,
+  5,4,1,1,2,100,5,0,0,1,100,
+  0,0,100,4,3,100];
+roadCOY = [1,3,4,3,5,100,
+  35,31,23,100,24,22,23,20,100,
+  12,14,9,5,3,100,24,15,11,9,100,
+  12,13,100,20,21,100];
+
+}
+else if(chooseBrd==53){//
+brdNameR = "Red Central City";
+swampCOX = [2,0,4,100];
+swampCOY = [17,33,12,100];
+hillCOX = [100];
+hillCOY = [100];
+smLakeCOX = [100];
+smLakeCOY = [100];
+cityCOX = [2,1,1,2,100];
+cityCOY = [24,25,27,26,100];
+woodCOX = [4,1,1,1,3,4,4,0,4,1,0,  4,  1,1,0,1,  1,1,1,1,1, 3,3,2,  4,4,  4,4,4,3,  4,3,3,2,3,100];
+woodCOY = [16,12,1,19,27,7,5,21,2,10,11,  2,  3,2,3,4,  18,16,19,20,21, 27,28,29,  5,1,  7,5,4,5,  3,3,4,5,6,100];
+mountCOX = [0,0,3,4,1,2,3,  0,  2,3,2,3,3,4,  4,4,4,4,4,4,  1,0,0,1,  1,1,1,0,0,1,  3,4,3,4,4,100];
+mountCOY = [5,32,22,8,24,30,24,  33,  23,22,23,22,21,22,  6,7,9,11,13,15,  26,27,29,28,  31,32,30,31,33,34,  25,26,25,26,27,100];
+beachCOX = [1,3,2,100];
+beachCOY = [33,13,19,100];
+lakeCOX = [3,1,  1,1,2,  4,4,4,100];
+lakeCOY = [18,29,  32,31,30,  13,14,15,100];
+riverCOX = [2,2,3,100,  4,3,3,100,  3,3,3,3,4,100,  0,0,0,2,100,  5,2,1,100,  4,0,100,  0,1,2,4,100,  5,4,4,100];
+riverCOY = [0,16,18,100,  13,16,18,100,  36,34,33,31,30,100,  10,9,7,4,100,  26,32,31,100,  30,23,100,  10,8,10,6,100,  26,27,35,100];
+roadCOX = [2,2,2,2,1,1,100,  2,2,1,100,  0,1,2,2,100,  5,4,3,3,100,  5,4,4,100,  0,1,1,4,100,  1,4,100,  2,1,1,2,2,100,1,2,100];
+roadCOY = [1,3,4,8,9,13,100,  35,29,27,100,  24,22,25,29,100,  12,10,12,16,100,  24,23,19,100,  12,14,13,19,100,  23,18,100,  24,25,27,26,24,100,25,26,100];
+
+}
 else{}
 //if(mirrorBrd==1){//mirrored board - reflect across middle column
 if(mirrBrd==1){//mirrored board - reflect across middle column

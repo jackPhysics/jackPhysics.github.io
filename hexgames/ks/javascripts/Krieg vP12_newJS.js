@@ -296,6 +296,31 @@ function findNewBoard(bad)//board address
 
 }
 
+function chooseRandomB(){
+  var timesChosen = Math.floor(Math.random()*4);
+  var boardChosen = Math.floor(Math.random()*boardMax/2);//for Black x2, for Red x2+1
+  //choose Black board
+  boardChosen = boardChosen*2;
+  for(b=0;b<timesChosen;b++){
+    findNewBoard2(boardChosen);
+  }
+  //choose Red board
+  timesChosen = Math.floor(Math.random()*4);
+  boardChosen = Math.floor(Math.random()*boardMax/2);
+  boardChosen = boardChosen*2+1;
+  for(b=0;b<timesChosen;b++){
+    findNewBoard2(boardChosen);
+  }
+}
+
+function chooseRandomA(){
+  var armyChosen = Math.floor(Math.random()*redArmyMax);
+  //choose Black army
+  changeBlackArmy2(armyChosen);
+  //choose Red army
+  armyChosen = Math.floor(Math.random()*redArmyMax);
+  changeRedArmy2(armyChosen);
+}
 
 function findNewBoard2(bad)//board address
 {
