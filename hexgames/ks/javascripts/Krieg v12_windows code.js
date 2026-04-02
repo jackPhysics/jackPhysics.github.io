@@ -53,6 +53,12 @@ function crt_window(){
 	crt=open(crtAddress2, "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
 
 }
+function crtAH_window(){
+	crt=open("charts/crt_AH.html", "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
+}
+function crtNAW_window(){
+	crt=open("charts/CRT_NAW.html", "CRT", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=470,height=350,left=30,top=30");
+}
 
 function crtKey_window(){
 	scenario=open(seqOfPlayAddress, "Scenario", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=210,height=300,left=50,top=352");

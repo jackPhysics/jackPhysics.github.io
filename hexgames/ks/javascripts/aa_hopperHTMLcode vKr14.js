@@ -69,7 +69,16 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:hideGerF()"  id="btn16"  >Hide R.</a></td>'
 +'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=1;changeSize()"  id="btn18"  >full size</a></td>'
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:mouseOverFlip()"  id="btn28"  >unit Zoom</a></td>'
-+'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btnxx"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:crtAH_window()"  id="btnxx"  >AH CRT</a></td>'
++'</tr><tr id="mcarow">'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn23"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn24"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn25"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn15"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn16"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn18"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn28"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:crtNAW_window()"  id="btnxx"  >NAW CRT</a></td>'
 +'</tr></table>';
 
 //'<td>&nbsp;&nbsp;<a class="mca" href="javascript:RotSideA()"  id="btn15"  >Rotate A</a></td>'
@@ -137,9 +146,9 @@ var table2HTMLcode = '<table BORDER="2" id="saveTable" bgcolor="silver">'+
 '<td>'+
 '<br><br><br><br><br><br><br><br><br><br><br><br><br>'+
 '<a class="aiw" href="javascript:chooseRandomB()"  id="chRand">Random boards...</a>'+
-'<br><br><br><br><br><br><br>'+
+'<br><br><br><br>'+
 '<a class="aiw" href="javascript:chooseRandomA()"  id="chRand">Random armies...</a>'+
-'<br><br><br>'+
+'<br><br><br><br><br><br>'+
 '<a class="save" href="javascript:supplyUnitsYesNo()"  id="btnSupply">Supply Units - No</a>'+
 '<br><br>'+
 '<a class="save" href="javascript:blankUnitsYesNo()"  id="btnBlank">Blank Units - No</a>'+

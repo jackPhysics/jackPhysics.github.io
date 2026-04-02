@@ -1,6 +1,6 @@
 
-var redArmyMax = 85;
-var blackArmyMax = 85;
+var redArmyMax = 91;
+var blackArmyMax = 91;
 var addSupplyUnitsFlag = false;
 if(printArmiesFlag){addSupplyUnitsFlag = true;}
 var addDummyUnitsFlag = false;
@@ -27,7 +27,9 @@ var allTheArmiesA = ["Republic of Red","United Black", "Sky Blue Social Democrac
 "Simply Infantry", "5 Large Units", "Scylla and Charybdis",
 "Green", "Blue", "Metal", "Brown", "White", "Yellow", "Orange", "Pink", "Olive", "Khaki",
  "Red on White", "Grapefruit n Guava","Blueberry n Lemon", "Ghost", "Swampy Green", "Rich Red",
- "Rear-Lighted Violet", "Ice Light-Blue", "Giant Ants", "Indigo Blue Invasion Blitz"
+ "Rear-Lighted Violet", "Ice Light-Blue", "Giant Ants", "Indigo Blue Invasion Blitz",
+ "Highlighter-Green Boots on the Ground", "Shoot and Scoot", "Blue and New",
+ "Order 88", "Nazi Hunters", "Singular Scarlettine Scattergun"
  ];
 
 function findArmies(){
@@ -3536,6 +3538,280 @@ var noOfSide = unitsQ.length/noOfItems;
   for(s=0;s<noOfSide;s++){
     sideQ[s]=1;    }}
 }
+
+
+else if(changeRedFlag&&redArmyNo==85||changeBlackFlag&&blackArmyNo==85){
+  var nameQ="Highlighter-Green Boots on the Ground";
+
+  var qbase = ["#39f250","#39f250", "#39f250"];
+
+  var unitsQ=[
+  "#39f250/#000000/#6ff7a2/#000000","arm","14","0","n","arm","11","6","xx",
+  "#39f250/#000000/#6ff7a2/#000000","sf","7","6","n","sf","4","3","xx",
+  "#39f250/#000000/#6ff7a2/#000000","para","6","3","n","para","6","2","xx",
+  "#39f250/#000000/#6ff7a2/#000000","inf","6","10","n","inf","4","5","xx",
+  "#39f250/#000000/#6ff7a2/#000000","inf","5","6","n","inf","5","3","xx",
+  "#39f250/#000000/#6ff7a2/#000000","supply","0","0","n","supply","0"," 10","xx",
+];
+
+
+var designateLQ=[
+"7th", "7th", "7th", "10th", "2nd",
+ "7th", "8th", "7th", "8th", "8th",
+  "2nd", "7th", "2nd", "8th",  "8th",
+   "7th", "7th", "7th", "2nd", "2nd",
+    "7th", "8th", "7th", "7th", "2nd"
+];
+
+var designateRQ=["1", "2", "3", "1", "1",
+ "4", "1", "5", "2", "3",
+  "2", "6", "3", "4", "5",
+   "7", "8", "9",  "4", "5",
+    "10", "6", "11", "12", "6",
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+
+else if(changeRedFlag&&redArmyNo==86||changeBlackFlag&&blackArmyNo==86){
+  var nameQ="Shoot and Scoot";
+
+  var qbase = ["#746644","#746644", "#7466440"];
+
+  var unitsQ=[
+  "#746644/#ffffff/#a0e0e5/#746644","arm","13","2","n","arm","11","5","xx",
+  "#746644/#ffffff/#a0e0e5/#746644","mech","9","3","n","mech","7","5","xx",
+  "#746644/#ffffff/#a0e0e5/#746644","sf","10","1","n","sf","5","5","xx",
+  "#746644/#ffffff/#a0e0e5/#746644","para","3","5","n","para","2","3","xx",
+  "#746644/#ffffff/#a0e0e5/#746644","inf","6","6","n","inf","6","3","xx",
+  "#746644/#ffffff/#a0e0e5/#746644","inf","3","12","n","inf","3","3","xx",
+  "#746644/#ffffff/#a0e0e5/#746644","supply","0","0","n","supply","0"," 10","xx",
+];
+
+
+var designateLQ=[
+"Ardent", "Contest", "Magic", "Contest", "Magic",
+"Magic", "Magic", "Magic", "Ardent", "Contest",
+ "Mandate", "Contest", "Unity", "Unity", "Magic",
+  "Magic", "Ardent", "Unity", "Contest", "Mandate",
+   "Magic", "Magic", "Contest", "Magic", "Contest",
+    "Mandate", "Magic", "Ardent", "Contest"
+];
+
+var designateRQ=["1", "1", "1", "2", "2",
+ "3", "4", "5", "2", "3",
+  "1", "4", "1", "2", "6",
+   "7", "3", "3", "5", "2",
+    "8", "9", "6", "10", "7",
+     "3", "11", "4", "8"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==87||changeBlackFlag&&blackArmyNo==87){
+  var nameQ="Blue and New";
+
+  var qbase = ["#0000e3","#0000e3", "#0000e3"];
+
+  var unitsQ=[
+  "#0000e3/#ffffff/#de725a/#0000e3","arm","11","5","n","arm","9","5","xx",
+  "#0000e3/#ffffff/#de725a/#0000e3","sf","10","2","n","sf","5","5","xx",
+  "#0000e3/#ffffff/#de725a/#0000e3","para","4","4","n","para","3","3","xx",
+  "#0000e3/#ffffff/#de725a/#0000e3","motorised","7","5","n","mot","4","6","xx",
+  "#0000e3/#ffffff/#de725a/#0000e3","inf","4","6","n","inf","4","3","xx",
+  "#0000e3/#ffffff/#de725a/#0000e3","supply","0","0","n","supply","0","10","xx"
+];
+
+
+var designateLQ=[
+"2nd", "3rd", "3rd", "3rd", "5th",
+ "1st", "5th", "2nd", "1st", "2nd",
+  "5th", "5th", "1st", "3rd", "3rd",
+   "1st", "2nd", "5th", "1st", "2nd",
+    "5th", "5th"
+];
+
+var designateRQ=[
+  "1", "2", "3", "4", "5",
+   "6", "7", "8", "9", "10",
+    "11", "12", "13", "14", "15",
+     "16", "17", "18", "19", "20",
+      "21", "22", "23", "24", "25",
+       "26", "27", "28", "29", "30"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==88||changeBlackFlag&&blackArmyNo==88){
+  var nameQ="Order 88";
+
+  var qbase = ["#2f4f4f","#2f4f4f", "#2f4f4f"];
+
+  var unitsQ=[
+    "#2f4f4f/#ffffff/#a0522d/#000000","Elefant","7","2","n","spa","8","2","xx",
+      "#2f4f4f/#ffffff/#a0522d/#000000","Tiger","8","6","n","arm","6","5","xx",
+        "#2f4f4f/#ffffff/#a0522d/#000000","King Tiger","9","2","n","arm","8","4","xx",
+  "#2f4f4f/#ffffff/#a0522d/#000000","Jagdpanther","8","2","n","arm","8","4","xx",
+"#2f4f4f/#ffffff/#a0522d/#000000","Nashorn","6","4","n","art","6","3","xx",
+  "#2f4f4f/#ffffff/#a0522d/#000000","88mm Flak","6","5","n","art","8","1","xx",
+  "#2f4f4f/#ffffff/#a0522d/#000000","supply","0","0","n","supply","0"," 10","xx"
+];
+
+
+var designateLQ=[
+"Sd.Kfz.184", "Sd.Kfz.184",
+"Sd.Kfz.181", "Sd.Kfz.181", "Sd.Kfz.181", "Sd.Kfz.181", "Sd.Kfz.181", "Sd.Kfz.181",
+ "Sd.Kfz.182", "Sd.Kfz.182",
+  "Sd.Kfz.173", "Sd.Kfz.173",
+   "Sd.Kfz.164", "Sd.Kfz.164", "Sd.Kfz.164",  "Sd.Kfz.164",
+    "8.8 cm", "8.8 cm", "8.8 cm", "8.8 cm", "8.8 cm"
+];
+
+var designateRQ=[
+"Ferdinand", "Elefant",
+"Tiger I", "PzKw VI", "Ausf.H", "Ausf.E", "Tiger Tank", "PzKpfw VI E",
+ "King Tiger", "Konigstiger",
+  "Jagdpanther G1", "Jagdpanther G2",
+   "Hornisse", "Hornet", "Nashorn",  "Rhino",
+    "KwK 36", "KwK 43", "Pak 43", "Flak 18", "Flak 37"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+
+else if(changeRedFlag&&redArmyNo==89||changeBlackFlag&&blackArmyNo==89){
+  var nameQ="Nazi Hunters";
+
+  var qbase = ["#6b8e23","#808000", "#bdb76b"];
+
+  var unitsQ=[
+    "#6b8e23/#000000/#6b8e23/#000000","Sherman","5","7","n","arm","4","4","xx",
+      "#808000/#000000/#808000/#000000","Sherman","5","1","n","arm","4","4","xx",
+      "#bdb76b/#000000/#bdb76b/#000000","T-34","7","7","n","arm","4","6","xx",
+        "#808000/#000000/#808000/#000000","Commandos","6","4","n","sf","2","4","xx",
+  "#6b8e23/#000000/#6b8e23/#000000","Airborne","5","2","n","para","4","3","xx",
+"#6b8e23/#000000/#6b8e23/#000000","U.S. G.I.","3","3","n","inf","3","3","xx",
+  "#808000/#000000/#808000/#000000","Commonwealth","3","3","n","inf","3","3","xx",
+    "#bdb76b/#000000/#bdb76b/#000000","CCCP","3","3","n","inf","3","3","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","supply","0","0","n","supply","0"," 10","xx"
+];
+
+
+var designateLQ=[
+"Sherman", "Sherman", "Sherman", "Sherman", "Sherman", "Sherman", "Sherman", "Sherman",
+ "T-34", "T-34",  "T-34", "T-34", "T-34", "T-34", "T-34",
+   "Commando", "Commando", "Commando", "Commando",
+    "Airborne", "Airborne",
+     "G.I.", "G.I.", "G.I.",
+      "Rifles", "Rifles", "Rifles",
+       "Co"+"\u043b"+"\u0434"+"a"+"\u0442", "Co"+"\u043b"+"\u0434"+"a"+"\u0442", "Co"+"\u043b"+"\u0434"+"a"+"\u0442"
+];
+//skull n bones: \u2620
+var designateRQ=[
+"M4A1", "M4A2", "M4A3", "M4A4", "M4A3E2", "M4A3E8", "M4(105)", "Firefly",
+ "Model1940", "Model1941",  "Model1942", "Model1943", "Model1944", "Model1945", "A-34",
+   "A", "B", "C", "D",
+    "82nd", "101st",
+     "7", "8", "9",
+      "1", "2", "3",
+     "4", "5", "6",
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
+else if(changeRedFlag&&redArmyNo==90||changeBlackFlag&&blackArmyNo==90){
+  var nameQ="Singular Scarlettine Scattergun";
+
+  var qbase = ["#da3a52","#da3a52", "#da3a52"];
+
+  var unitsQ=[
+    "#da3a52/#ffffff/#6d34aa/#da3a52","Tanks","14","1","n","arm","12","5","xx",
+      "#da3a52/#ffffff/#6d34aa/#da3a52","Tanks","13","1","n","arm","10","6","xx",
+        "#da3a52/#ffffff/#6d34aa/#da3a52","Mechanised","10","1","n","arm","8","5","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Elite","10","1","n","sf","6","4","xx",
+"#da3a52/#ffffff/#6d34aa/#da3a52","Elite","7","1","n","sf","3","4","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Paratroopers","6","1","n","para","5","3","xx",
+    "#da3a52/#ffffff/#6d34aa/#da3a52","Paratroopers","3","1","n","para","2","3","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Infantry","6","1","n","inf","5","4","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Infantry","4","1","n","inf","3","4","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Light troops","2","1","n","inf","1","4","xx",
+
+    "#da3a52/#ffffff/#6d34aa/#da3a52","Tanks","14","1","n","arm","11","6","xx",
+      "#da3a52/#ffffff/#6d34aa/#da3a52","Tanks","13","1","n","arm","11","5","xx",
+        "#da3a52/#ffffff/#6d34aa/#da3a52","Mechanised","10","1","n","arm","7","6","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Elite","10","1","n","sf","4","6","xx",
+"#da3a52/#ffffff/#6d34aa/#da3a52","Elite","7","1","n","sf","1","6","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Paratroopers","6","1","n","para","6","2","xx",
+    "#da3a52/#ffffff/#6d34aa/#da3a52","Paratroopers","3","1","n","para","3","2","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Infantry","6","1","n","inf","6","3","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Infantry","4","1","n","inf","4","3","xx",
+  "#da3a52/#ffffff/#6d34aa/#da3a52","Light troops","2","1","n","inf","2","3","xx",
+
+  "#da3a52/#ffffff/#6d34aa/#da3a52","supply","0","0","n","supply","0"," 10","xx"
+];
+
+
+var designateLQ=[
+"Hold", "Surround", "Charge", "Charge", "Surround",
+ "Charge", "Charge", "Hold", "Charge", "Charge",
+  "Hold", "Surround", "Invade", "Hold", "Charge",
+   "Surround", "Hold", "Hold", "Hold", "Surround"
+];
+
+var designateRQ=[
+"1", "1", "1", "2", "2",
+ "3", "4", "2", "5", "6",
+  "3", "3", "1", "4", "7",
+   "4", "5", "6", "7", "5"
+];
+
+var noOfSide = unitsQ.length/noOfItems;
+  var sideQ=new Array();
+  if(changeRedFlag){
+ for(s=0;s<noOfSide;s++){
+   sideQ[s]=0;    }}
+  else if(changeBlackFlag){
+  for(s=0;s<noOfSide;s++){
+    sideQ[s]=1;    }}
+}
 //interesting colours
 //purple:800080   leaf green:808000
 //"#dc7861/#ffffff/#cf476f/#dc7861" grapefruit n guava
@@ -3648,10 +3924,10 @@ var unitsN = [
 "#dddd00/#000000/#ffffff/#000000", "side move","0","1","x", "Side to", "MOVE", "", ""];}
 else{
   var unitsN = [
-  "#ff8888/#000000/#ffffff/#000000","R AIR","1","1","x", "<--R x1", "AIR PTS", "", "",
-  "#ff8888/#000000/#ffffff/#000000","R AIR x10","1","1","x", "<--R x10", "AIR PTS", "", "",
-  "#aaaaaa/#000000/#ffffff/#000000","B AIR","1","1","x", "<--B x1", "AIR PTS", "", "",
-  "#aaaaaa/#000000/#ffffff/#000000","B AIR x10","1","1","x", "<--B x10", "AIR PTS", "", "",
+  "#ff8888/#000000/#ffffff/#000000","R AIR","1","1","x", "R x1-->", "AIR PTS", "", "",
+  "#ff8888/#000000/#ffffff/#000000","R AIR x10","1","1","x", "R x10-->", "AIR PTS", "", "",
+  "#aaaaaa/#000000/#ffffff/#000000","B AIR","1","1","x", "B x1-->", "AIR PTS", "", "",
+  "#aaaaaa/#000000/#ffffff/#000000","B AIR x10","1","1","x", "B x10-->", "AIR PTS", "", "",
   "#ffaaaa/#000000/#ffffff/#000000","R REPLC","1","1","x", "<--R x1", "REPL", "", "",
   "#ffaaaa/#000000/#ffffff/#000000","R REPLC x10","1","1","x", "<--R x10", "REPL", "", "",
   "#dddddd/#000000/#ffffff/#000000","B REPLC","1","1","x", "<--B x1", "REPL", "", "",

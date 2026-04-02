@@ -70,8 +70,16 @@ var table1HTMLcode = '<table id="bigTable" cellpadding="2" cellspacing="0" bgcol
 +'<td>&nbsp;&nbsp;<a href="javascript:pieceShrink=1;changeSize()"  id="btn18"  >full size</a></td>'
 +'<td>&nbsp;&nbsp;<a class="neut" href="javascript:mouseOverFlip()"  id="btn28"  >unit Zoom</a></td>'
 +'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:d6x3_window()"  id="btn3x6"  >3d6</a></td>'
++'</tr><tr id="mcarow">'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn23"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn24"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn25"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn15"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn16"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:"  id="btn18"  >-</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:crtAH_window()"  id="btnxx"  >AH CRT</a></td>'
++'<td>&nbsp;&nbsp;<a class="aiw" href="javascript:crtNAW_window()"  id="btnxx"  >NAW CRT</a></td>'
 +'</tr></table>';
-
 //'<td>&nbsp;&nbsp;<a class="mca" href="javascript:RotSideA()"  id="btn15"  >Rotate A</a></td>'
 //'<td>&nbsp;&nbsp;<a class="mca" href="javascript:RotSideB()"  id="btn16"  >Rotate B</a></td>'
 
