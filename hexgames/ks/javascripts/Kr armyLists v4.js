@@ -1900,12 +1900,12 @@ var qbase = ["#d39600","#d39600", "#d39600"];
 
 
 var unitsQ=[
-  "#d39600/#ffffff/#79a25e/#d39600","Tank Troops","11","4","n","arm","9","5","xx",
-  "#d39600/#ffffff/#79a25e/#d39600","Elite Troops","11","4","n","sf","5","6","xx",
-  "#d39600/#ffffff/#79a25e/#d39600","Para Troops","3","4","n","para","4","1","xx",
-  "#d39600/#ffffff/#79a25e/#d39600","Motorbike Troops","4","5","n","motor","1","6","xx",
-  "#d39600/#ffffff/#79a25e/#d39600","Regular Troops","3","10","n","inf","3","3","xx",
-  "#d39600/#ffffff/#79a25e/#d39600","supply","0","0","n","supply","0","10","xx",
+  "#d39600/#ffffff/#79a25e/#ffff00","Tank Troops","11","4","n","arm","9","5","xx",
+  "#d39600/#ffffff/#79a25e/#ffff00","Elite Troops","11","4","n","sf","5","6","xx",
+  "#d39600/#ffffff/#79a25e/#ffff00","Para Troops","3","4","n","para","4","1","xx",
+  "#d39600/#ffffff/#79a25e/#ffff00","Motorbike Troops","4","5","n","motor","1","6","xx",
+  "#d39600/#ffffff/#79a25e/#ffff00","Regular Troops","3","10","n","inf","3","3","xx",
+  "#d39600/#ffffff/#79a25e/#ffff00","supply","0","0","n","supply","0","10","xx",
 
 ];
 
