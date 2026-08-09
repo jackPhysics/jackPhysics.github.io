@@ -1,0 +1,10 @@
+Gorillas notes:
+
+gorillas v6: more or less finished version of simulation of original QBasic game
+
+gorillas v6M: use mouse to launch bananas rather than keyboard - quite hard as don't really know angle and speed, have to 'judge' from previous shots
+
+gorillas v6M2: using mouse but line drawn to show andgle and speed - still has keyboard events
+
+gorillas v6M3: no keyboard events, only mouse
+
