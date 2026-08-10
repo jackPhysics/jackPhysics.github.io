@@ -277,6 +277,18 @@ function drawLine(event){//-4 and -17 are because of offset of h1 elements
 {
     xpos = event.pageX;
     ypos = event.pageY;
+    //drawDots(xpos,ypos);
+        //xposS = event.screenX;
+        //yposS = event.screenY;
+            //xposO = event.offsetX;
+            //yposO = event.offsetY;
+    if(mouseActive==0){
+    var xpos2 = Math.round(xpos/1.5/boardSize*4);
+    var ypos2 = Math.round((ypos)/1.62/boardSize*4);
+    drawDots2(xpos2,ypos2);}
+    //console.log("x="+xpos+" y="+ypos);
+    //console.log("x2="+xpos2+" y2="+ypos2);
+    //drawDots2(xpos2,ypos2);
     //alert("left:"+xpos+ " top:"+ypos);
     //alert("noOfPieces:"+noOfPieces+ " unitTotal:"+unitTotal+ " lastIndex:"+lastIndex+ " gerNumber:"+gerNumber);
 
