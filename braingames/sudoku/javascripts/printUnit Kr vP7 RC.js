@@ -133,8 +133,10 @@ function printUnit(n, b, t, id, c0){//n=number of image b=battalion number, t=To
   gradient.addColorStop(0.8, unitColor3);
   gradient.addColorStop(1, unitColor4);
 
-
-  ctx.globalAlpha = 0.7;
+if(thisGame == "nomogram"){
+  var colorTrans = (Math.floor(Math.random() * 4) + 6) / 10;
+  //background of disc
+  ctx.globalAlpha = colorTrans; //0.7;
   ctx.beginPath();
 ctx.fillStyle = colorThis;
   ctx.arc(unitSize/2+circleEdge, unitSize/2+circleEdge, unitSize/2+circleEdge, 0, Math.PI*2);
@@ -142,33 +144,57 @@ ctx.fillStyle = colorThis;
   ctx.closePath();
 
   // Set the fill style and draw a rectangle
+  // shading ontop
+  var shiftAmount = 10;
+  var shift1 = Math.floor(Math.random() * 2*shiftAmount);
+  var shift2 = Math.floor(Math.random() * 2*shiftAmount);
+  var shift3 = Math.floor(Math.random() * 2*shiftAmount);
   ctx.fillStyle = gradient;
   ctx.beginPath();
-    ctx.arc(unitSize/2-circleEdge/2, unitSize/2-circleEdge/2, unitSize/2, 0, Math.PI*2);
+    ctx.arc(unitSize/2-circleEdge/2+shift1, unitSize/2-circleEdge/2+shift2, unitSize/2+shift3, 0, Math.PI*2);
     ctx.fill();
   ctx.closePath();
 
   // Set the fill style and draw a rectangle
+  // edge of highlight
+  shiftAmount = 6;
+  shift1 = Math.floor(Math.random() * 2*shiftAmount)-shiftAmount;
+  shift2 = Math.floor(Math.random() * 2*shiftAmount)-shiftAmount;
+  shift3 = Math.floor(Math.random() * 2*shiftAmount)-shiftAmount;
+  shift1 = 0;
+  shift2 = 0;
+  shift3 = 0;
+
   ctx.fillStyle = unitColor3;
   ctx.beginPath();
-    ctx.arc(unitSize/2-circleEdge*2, unitSize/2-circleEdge, unitSize/10, 0, Math.PI*2);
+    ctx.arc(unitSize/2-circleEdge*2+shift1, unitSize/2-circleEdge+shift2, unitSize/10+shift3, 0, Math.PI*2);
     ctx.fill();
   ctx.closePath();
 
   // Set the fill style and draw a rectangle
-  ctx.fillStyle = "White";
+  // highlight
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = "White";//unitColor1;
   ctx.beginPath();
-    ctx.arc(unitSize/2-circleEdge*2.1, unitSize/2-circleEdge*0.9, unitSize/20, 0, Math.PI*2);
+    ctx.arc(unitSize/2-circleEdge*2.1+shift1, unitSize/2-circleEdge*0.9+shift2, unitSize/20+shift3, 0, Math.PI*2);
     ctx.fill();
     ctx.closePath();
-/*
+}
+else{
+  // Set the fill style and draw a rectangle
+  ctx.fillStyle = gradient;
+  ctx.beginPath();
+    ctx.arc(unitSize/2+circleEdge, unitSize/2+circleEdge, unitSize/2+circleEdge, 0, Math.PI*2);
+    ctx.fill();
+    ctx.closePath();
+
   //ctx.globalAlpha = 1;
   ctx.beginPath();
 ctx.fillStyle = colorThis;
   ctx.arc(unitSize/2+circleEdge, unitSize/2+circleEdge, unitSize/2, 0, Math.PI*2);
   ctx.fill();
   ctx.closePath();
-*/
+}
   var i2=0;
   var j2=0;
 
