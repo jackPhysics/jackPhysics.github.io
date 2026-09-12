@@ -88,14 +88,20 @@ font-family: "American Typewriter", serif;
     				top: 20px;
         }
 
+	
+
 	h2.nap {
 				font-family: "Lucida Calligraphy";
-				color: Red;
-  				background-color: White;
+				color: White;
+  				background-color: Navy;
   				padding: inherit;
     				position: relative;
     				top: 20px;
         }
+
+	a.nap {
+				color: Red;
+	}
 			/* rgb value */
 			p {
 				font-family: Arial, Helvetica, sans-serif;
