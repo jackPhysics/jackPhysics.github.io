@@ -24,7 +24,7 @@ var colJump = Math.floor(colrSpecLen / colNo);
     var noOfEachColPc = new Array();
     var noOfEachColPcT = new Array();
     var noOfEachColPcT2 = new Array();
-    var orderedColFlag =0;//0=all colours in order;1=colours in order but remove empty colours;2=random colour;3=colours as by how many present by %
+    var orderedColFlag =1;//0=all colours in order;1=colours in order but remove empty colours;2=random colour;3=colours as by how many present by %
 
     for(i=0;i<colNo;i++){
       noOfEachCol[i]=0;
@@ -156,10 +156,9 @@ function drawCheckerboard() {
     allColors[cl] = htmlColorHex[colDummy2];//makeColor2();
   }
   */
+
   //colours from each section of spectrum
-
   colJump = Math.floor(colrSpecLen / colNo);
-
   var colDummy2 = Math.floor(Math.random() * colJump);
   //using ordered colours
 
@@ -168,15 +167,17 @@ function drawCheckerboard() {
     allColors[cl] = colrSpecOrder[colDummy2];//makeColor2();
     console.log("colDummy2="+colDummy2);
   }
-
-  //using random colours
+  console.log("1 allColors="+allColors)
   /*
+  //using random colours
   for (cl = 0; cl < colNo; cl++){
     var colDummy3 = makeColor2();
     allColors[cl] = colDummy3;
     console.log("allColors="+allColors);
   }
   */
+  chooseColors(colNo);
+  console.log("2 allColors="+allColors)
 
   for (let row = 0; row < gridSizeY; row++) {
     for (let col = 0; col < gridSizeX; col++) {
@@ -189,6 +190,7 @@ function drawCheckerboard() {
       ctx.fillRect(col * cellSize + 140, row * cellSize + 140, cellSize, cellSize);
       ctx.closePath();
       makeUnitColor2(color);
+      //console.log("color="+color);
      //**top edge
    	  ctx.lineWidth = "1";
    	  ctx.fillStyle = unitColor1;
@@ -752,19 +754,19 @@ function reverseSingleCells(x0,y0) {
 
     }
 
-        function numberOfClicks(){
-              ctx.beginPath();
-              ctx.fillStyle = "Black";
-              ctx.fillRect(2 * cellSize, 0 * cellSize + 20, cellSize*1, cellSize);
-              ctx.closePath();
-              ctx.beginPath();
-              ctx.fillStyle = "White";
-              ctx.font = "48px Arial";
-              ctx.textAlign = "center";
-              ctx.textBaseline = "middle";
-              ctx.fillText(""+turnNo,cellSize + 120, 0 * cellSize + 60);
-              ctx.closePath();
-        }
+    function numberOfClicks(){
+          ctx.beginPath();
+          ctx.fillStyle = "Black";
+          ctx.fillRect(2 * cellSize, 0 * cellSize + 20, cellSize*1, cellSize);
+          ctx.closePath();
+          ctx.beginPath();
+          ctx.fillStyle = "White";
+          ctx.font = "48px Arial";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText(""+turnNo,cellSize + 120, 0 * cellSize + 60);
+          ctx.closePath();
+    }
 
 // Draw single cell
 function changeSingleCells(x0,y0) {
@@ -899,11 +901,11 @@ function countColours(){
         console.log("noOfEachCol="+noOfEachCol);}
   //end of zero removal routine
 
-          for(i=0;i<colNo;i++){
-            noOfEachColPc[i]=noOfEachCol[i]/totalCells;
-            if(noOfEachColPc[i]==1){alert("GAME COMPLETED!\nYOU WIN!\nIn "+turnNo+" turns.\n\n'I am glad to see you well, Horatio!'");
-            gameEndFlag=true;}
-          }
+        for(i=0;i<colNo;i++){
+          noOfEachColPc[i]=noOfEachCol[i]/totalCells;
+          if(noOfEachColPc[i]==1){alert("GAME COMPLETED!\nYOU WIN!\nIn "+turnNo+" turns.\n\n'I am glad to see you well, Horatio!'");
+          gameEndFlag=true;}
+        }
         //console.log("noOfEachColPc="+noOfEachColPc);
 
     noOfEachColPcT[0]=noOfEachColPc[0];
