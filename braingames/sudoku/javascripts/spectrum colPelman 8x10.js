@@ -983,6 +983,16 @@ function reverseSingleCells(x0,y0) {
               ctx.fillStyle = "White";
               ctx.fillText("score: "+donePc2+"%",7.5 *cellSize + 120, 0 * cellSize + 60);
               ctx.closePath();
+
+
+                            if(donePc==100){//gameEnd
+                              if(Math.random()*100<donePc2){
+                                gameEndFlag = 1;//Richard wins
+                              }
+                              else{
+                                gameEndFlag = 2;//Henry wins
+                              }
+                            }              
         }
 
 // Draw single cell

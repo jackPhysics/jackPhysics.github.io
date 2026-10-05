@@ -208,6 +208,7 @@ var doneNo = 0;
 
 var firstClick = false;//not done 1st click, true=have done 1st click, looking for 2nd
 var firstColor = "";
+var gameEndFlag = 0;//0=game going 1=richard wins 2=henry wins
 
 
 //function init(){
@@ -393,6 +394,11 @@ if(!repeatFlag){
     //drawCurrentCells();
     turnNo++;
     numberOfClicks();
+    if(gameEndFlag>0){
+      if(gameEndFlag==1){alert("You win! And you keep your crown.\nGod save King Richard!\n(Bolingbroke goes to the tower)");
+      }
+      else{alert("You lose! And you lose your crown.\nGod save King Henry!\n(You go to the tower)")}
+    }
     //drawFilledboard2();//use this to check the change of index
     }
 
