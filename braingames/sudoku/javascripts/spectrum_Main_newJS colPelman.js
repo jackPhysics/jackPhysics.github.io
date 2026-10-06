@@ -395,9 +395,29 @@ if(!repeatFlag){
     turnNo++;
     numberOfClicks();
     if(gameEndFlag>0){
+      var gameEndText1 = "";
+      var gameEndText2 = "";
+      var gameEndText3 = "";
       if(gameEndFlag==1){alert("You win! And you keep your crown.\nGod save King Richard!\n(Bolingbroke goes to the tower)");
-      }
-      else{alert("You lose! And you lose your crown.\nGod save King Henry!\n(You go to the tower)")}
+          gameEndText1 = "You win! And you keep your crown.";
+          gameEndText2 = "God save King Richard!";
+          gameEndText3 = "(Bolingbroke goes to the tower)";
+        }
+      else{alert("You lose! And you lose your crown.\nGod save King Henry!\n(You go to the tower)");
+          gameEndText1 = "You lose! And you lose your crown.";
+          gameEndText2 = "God save King Henry!";
+          gameEndText3 = "(You go to the tower)";
+        }
+    ctx.beginPath();
+    ctx.font = "bold 24px Arial";
+    ctx.fillStyle = "White";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("" + gameEndText1 + "",gridSizeX * cellSize*0.5+140, gridSizeY * cellSize*0.5-cellSize*0.5+140);
+    ctx.fillText("" + gameEndText2 + "",gridSizeX * cellSize*0.5+140, gridSizeY * cellSize*0.5+140);
+    ctx.fillText("" + gameEndText3 + "",gridSizeX * cellSize*0.5+140, gridSizeY * cellSize*0.5+cellSize*0.5+140);
+    ctx.stroke();
+    ctx.closePath();
     }
     //drawFilledboard2();//use this to check the change of index
     }
